@@ -1,243 +1,263 @@
 # cre8-atp-backend
 
-CRE8 ATP 的鏈下後端（第一刀）。Bun + TypeScript + Postgres，直接用 `pg`，**不用 ORM**（與 web app 一致）。
-預設鏈是 BNB Chain mainnet（chain 56）。目前做策略資料層、版本發布、SIWE（EIP-4361）錢包簽章 auth、
-portfolio 續期，以及 **bundler relay**（`POST /bundler`：瀏覽器不能直連 alto，見 §bundler relay）。
+The off-chain backend for CRE8 ATP. Bun + TypeScript + Postgres, using `pg` directly and **no ORM**
+(matching the web app). The default chain is BNB Chain mainnet (chain 56). It currently provides the
+strategy data layer, version publishing, SIWE (EIP-4361) wallet-signature auth, portfolio renewal, and a
+**bundler relay** (`POST /bundler` — browsers cannot reach alto directly, see §bundler relay).
 
-## 架構
+## Architecture
 
 ```
-HTTP → src/index.ts（啟動：config → migrate → listen）
-         └─ src/server.ts（node:http 路由、JSON、錯誤映射、auth 守門）
-              ├─ src/auth.ts（SIWE nonce、EIP-4361 驗簽、session token）
-              └─ src/strategies.ts（領域邏輯 + 純函式校驗）
-                   └─ src/db.ts（pg Pool、query、transaction、migrate）
-                        └─ Postgres（schema 在 ../db/migrations）
+HTTP → src/index.ts (startup: config → migrate → listen)
+         └─ src/server.ts (node:http routing, JSON, error mapping, auth gate)
+              ├─ src/auth.ts (SIWE nonce, EIP-4361 verification, session token)
+              └─ src/strategies.ts (domain logic + pure validation)
+                   └─ src/db.ts (pg Pool, query, transaction, migrate)
+                        └─ Postgres (schema in ../db/migrations)
 ```
 
-| 檔案 | 職責 |
+| File | Responsibility |
 | --- | --- |
-| `src/config.ts` | 讀 env；`DATABASE_URL` 必填，`PORT` 預設 8080，`CHAIN_ID` 預設 56，`AUTH_DOMAIN` 預設 `localhost`。 |
-| `src/auth.ts` | nonce／session 的 in-memory store、EIP-4361（SIWE）驗簽（viem `parseSiweMessage` + `recoverMessageAddress`）、`authenticate()`。 |
-| `src/db.ts` | 單一 `Pool`、`query()`、`withTransaction()`、`migrate()`（checksum + advisory lock）。 |
-| `src/errors.ts` | `AppError`／`ValidationError`／`NotFoundError`，讓領域層不必知道 HTTP。 |
-| `src/strategies.ts` | `listStrategies`、`getStrategy`、`createStrategy`、`publishVersion`，以及 allocation／schedule 校驗。 |
-| `src/portfolios.ts` | `enrollPortfolio`、`listPortfolios`、`requireOwnedPortfolio`：portfolio 的讀寫與擁有者檢查。 |
-| `src/renewal.ts` | 續期：派生新 session key（`nextRenewalKeyIndex`／`buildRenewalKey`）、`buildRenewalParams`、`recordRenewalResult`。 |
-| `src/server.ts` | 路由、body 解析（上限 1 MB）、錯誤 → JSON、CORS、access log、`POST /bundler` 的 relay 與方法白名單。 |
-| `src/index.ts` | 啟動與優雅關閉（SIGINT／SIGTERM）。 |
-| `src/migrate.ts` | `bun run migrate`：只跑 migration，不啟 server。 |
-| `test/strategies.test.ts` | 校驗純函式與 HTTP 路由單測（路由層可注入 `createStrategy`／`publishVersion`，不需 DB）；DB 整合測試以 `DATABASE_URL` 為 gate。 |
-| `test/auth.test.ts` | SIWE nonce／login／session 與 provider ownership；用 viem `createSiweMessage` + 隨機錢包在測試內簽名，走完整 HTTP 流程。 |
-| `test/renewal.test.ts` | `/portfolios` 列表、`renewal-params`／`renewal-result`、路由分派、CORS 與 `/bundler` relay（含「白名單外不轉發」）；DB／鏈／時鐘／bundler 上游都以 DI 換成假替身。 |
+| `src/config.ts` | Reads env; `DATABASE_URL` is required, `PORT` defaults to 8080, `CHAIN_ID` to 56, `AUTH_DOMAIN` to `localhost`. |
+| `src/auth.ts` | In-memory nonce/session store, EIP-4361 (SIWE) verification (viem `parseSiweMessage` + `recoverMessageAddress`), `authenticate()`. |
+| `src/db.ts` | A single `Pool`, `query()`, `withTransaction()`, `migrate()` (checksums + advisory lock). |
+| `src/errors.ts` | `AppError` / `ValidationError` / `NotFoundError`, so the domain layer never knows about HTTP. |
+| `src/strategies.ts` | `listStrategies`, `getStrategy`, `createStrategy`, `publishVersion`, plus allocation and schedule validation. |
+| `src/portfolios.ts` | `enrollPortfolio`, `listPortfolios`, `requireOwnedPortfolio`: portfolio reads and writes, with owner checks. |
+| `src/renewal.ts` | Renewal: derives a new session key (`nextRenewalKeyIndex` / `buildRenewalKey`), `buildRenewalParams`, `recordRenewalResult`. |
+| `src/server.ts` | Routing, body parsing (1 MB limit), errors → JSON, CORS, access log, the `POST /bundler` relay and its method allowlist. |
+| `src/index.ts` | Startup and graceful shutdown (SIGINT/SIGTERM). |
+| `src/migrate.ts` | `bun run migrate`: migrations only, no server. |
+| `test/strategies.test.ts` | Pure-function and HTTP route tests for validation (the route layer accepts injected `createStrategy` / `publishVersion`, so no DB needed); DB integration tests are gated on `DATABASE_URL`. |
+| `test/auth.test.ts` | SIWE nonce/login/session and provider ownership; signs inside the test with viem `createSiweMessage` and a random wallet, exercising the full HTTP flow. |
+| `test/renewal.test.ts` | `/portfolios` listing, `renewal-params` / `renewal-result`, route dispatch, CORS and the `/bundler` relay (including "not forwarded when outside the allowlist"); DB, chain, clock and the bundler upstream are all replaced with fakes via DI. |
 
-選擇 `node:http` 而不是 express：這一刀只有七個路由，少一層依賴；`server.ts` 的 `route()` 是唯一需要換掉的
-地方，之後要上 express/Fastify 不會動到領域層。
+`node:http` rather than express: this round had seven routes and one fewer dependency. `route()` in
+`server.ts` is the only place that would change, so moving to express or Fastify later does not touch the
+domain layer.
 
-## 環境變數
+## Environment variables
 
-| 變數 | 必填 | 預設 | 說明 |
+| Variable | Required | Default | Description |
 | --- | --- | --- | --- |
-| `DATABASE_URL` | ✅ | — | Postgres 連線字串；缺少時 `getConfig()` 直接 throw。 |
-| `PORT` | | `8080` | HTTP 埠，1–65535。 |
-| `CHAIN_ID` | | `56` | EIP-155 chain id；56 = BSC mainnet，97 = testnet。SIWE 訊息必須綁同一個 chain。 |
-| `AUTH_DOMAIN` | | `localhost` | EIP-4361 `domain`：錢包要簽的站台 authority（純 host，可帶 port，不含 scheme／path）。部署時必填自己的網域。 |
-| `AUTH_URI` | | `http://<AUTH_DOMAIN>` | EIP-4361 `uri`：這次登入指涉的資源。必須是 http/https 絕對 URI；部署時建議設 `https://app…`。 |
-| `RPC_URL` | | 空 | JSON-RPC endpoint；目前只用於 `/health` 回報是否設定。 |
-| `EXECUTOR_ADDRESS` | 續期／enroll 時 ✅ | 空 | session key CallPolicy 允許呼叫的 target（rebalance executor）。缺它時 enroll 與 `renewal-params` 會帶著變數名失敗。 |
-| `SESSION_KEY_MASTER_SEED` | 續期／enroll 時 ✅ | 空 | 派生 session key 的 HD master seed（`0x` + 64 hex）。私鑰永不落 DB，DB 只存派生路徑 `m/44'/60'/0'/0/<index>`。 |
-| `BUNDLER_URL` | | `http://127.0.0.1:3001` | `POST /bundler` 轉發的上游（alto）。`renewal-params` 也把它回給前端當**資訊**顯示。留空 = 這個預設值。 |
-| `CORS_ALLOWED_ORIGINS` | | `http://localhost:5173,http://127.0.0.1:5173` | 逗號分隔的允許 origin（完整 origin，不分大小寫）。未設定 = dev 預設；不支援 `*`。 |
+| `DATABASE_URL` | ✅ | — | Postgres connection string; `getConfig()` throws without it. |
+| `PORT` | | `8080` | HTTP port, 1–65535. |
+| `CHAIN_ID` | | `56` | EIP-155 chain id; 56 = BSC mainnet, 97 = testnet. The SIWE message must bind the same chain. |
+| `AUTH_DOMAIN` | | `localhost` | EIP-4361 `domain`: the site authority the wallet signs (host only, port allowed, no scheme or path). Must be set to your own domain in production. |
+| `AUTH_URI` | | `http://<AUTH_DOMAIN>` | EIP-4361 `uri`: the resource this sign-in refers to. Must be an absolute http/https URI; set `https://app…` in production. |
+| `RPC_URL` | | empty | JSON-RPC endpoint; currently only reported by `/health`. |
+| `EXECUTOR_ADDRESS` | ✅ at renewal/enroll | empty | The target the session key's CallPolicy allows (the rebalance executor). Without it, enrollment and `renewal-params` fail naming the variable. |
+| `SESSION_KEY_MASTER_SEED` | ✅ at renewal/enroll | empty | The HD master seed (`0x` + 64 hex) for deriving session keys. The private key never enters the DB; only the derivation path `m/44'/60'/0'/0/<index>` is stored. |
+| `BUNDLER_URL` | | `http://127.0.0.1:3001` | Upstream for `POST /bundler` (alto). `renewal-params` also returns it to the frontend as **information**. Empty means the default. |
+| `CORS_ALLOWED_ORIGINS` | | `http://localhost:5173,http://127.0.0.1:5173` | Comma-separated allowed origins (full origin, case-insensitive). Unset means the dev default; `*` is not supported. |
+| `MIN_SESSION_GAS_WEI` | | `500000000000000` | Per-account gas threshold (0.0005 BNB, about 20 rebalances). See the note under "account funding" in the runbook. |
 
-複製 `.env.example` 為 `.env` 即可；`.env` 不進版控。**不要**把真的 RPC URL 或連線字串寫進 repo。
+Copy `.env.example` to `.env`; `.env` is not committed. **Do not** put a real RPC URL or connection
+string in the repo.
 
-## 指令
+## Commands
 
 ```bash
 bun install
-cp .env.example .env       # 填入 DATABASE_URL
+cp .env.example .env       # fill in DATABASE_URL
 
-bun run dev                # bun --watch src/index.ts（啟動時先 migrate）
-bun run migrate            # 只套用 migration
+bun run dev                # bun --watch src/index.ts (migrates on startup)
+bun run migrate            # apply migrations only
 bun run start              # bun src/index.ts
-bun run typecheck          # tsc --noEmit（src + test 兩份 tsconfig）
-bun test                   # bun 內建 test runner；沒有 DATABASE_URL 時 DB 測試會 skip
+bun run typecheck          # tsc --noEmit (two tsconfigs: src + test)
+bun test                   # bun's built-in runner; DB tests skip without DATABASE_URL
 ```
 
-需求：Bun >= 1.4（`package.json` 的 `engines`）。bun 原生跑 TypeScript，不需 build 步驟、不需 tsx。
+Requires Bun >= 1.4 (`engines` in `package.json`). Bun runs TypeScript natively, so there is no build step
+and no tsx.
 
-### 測試與 DB
+### Tests and the DB
 
 ```bash
-# 純函式 + auth／路由測試（不需 DB）
+# pure functions + auth/route tests (no DB)
 bun test
 
-# 加上 DB 整合測試；請用可拋棄的資料庫，測試會跑 migration 並建立／刪除資料
+# with DB integration tests; use a disposable database, the tests migrate and create/delete rows
 DATABASE_URL='postgres://postgres@127.0.0.1:5432/cre8_atp_test' bun test
 ```
 
-### 會送鏈上交易的測試（`RUN_CHAIN_TESTS=1`）
+### Tests that send on-chain transactions (`RUN_CHAIN_TESTS=1`)
 
-有四個測試會**真的送出鏈上交易**：`createStrategy` 會 mirror 到 `AtpRegistry`、`publishVersion`
-會上鏈、`enrollPortfolio` 會走 counterfactual deploy。它們預設**關閉**，就算 `.env` 齊全也一樣：
+Four tests **really send on-chain transactions**: `createStrategy` mirrors to `AtpRegistry`,
+`publishVersion` goes on-chain, and `enrollPortfolio` performs a counterfactual deploy. They are **off by
+default**, even with a complete `.env`:
 
-| 測試 | 檔案 |
+| Test | File |
 | --- | --- |
 | `DB: strategy and version round trip` | `test/strategies.test.ts` |
 | `DB: POST /strategies/:id/versions publishes a version over HTTP` | `test/strategies.test.ts` |
 | `DB: provider ownership is enforced end to end over HTTP` | `test/auth.test.ts` |
 | `enrollPortfolio mirrors to chain and writes portfolio + smart account` | `test/portfolios.test.ts` |
 
-為什麼要另外一個開關：「後端設定齊全」（`RPC_URL` / `OPERATOR_PRIVATE_KEY` / `REGISTRY_ADDRESS`）
-只代表**伺服器**能用，不代表**測試**可以動鏈。把 `.env` 補齊就自動開跑，等於讓 `bun test` 變成一支
-會寫鏈的腳本，而這幾條測試共用同一個 operator 帳號的 nonce。
+Why a separate switch: "the backend is fully configured" (`RPC_URL` / `OPERATOR_PRIVATE_KEY` /
+`REGISTRY_ADDRESS`) only means **the server** can work, not that **tests** may touch the chain. Enabling
+them automatically once `.env` is filled would turn `bun test` into a script that writes to the chain, and
+these four tests share one operator account's nonce.
 
 ```bash
-# 預設：上面四個測試 skip，其餘照跑（0 fail）
+# default: those four skip, everything else runs (0 fail)
 bun test
 
-# 真的跑鏈上寫入：一定要給足 timeout，而且不要開 --concurrent
+# really write on-chain: never omit the timeout, and never use --concurrent
 RUN_CHAIN_TESTS=1 bun test --timeout=120000
 ```
 
-兩個細節，都是實測踩出來的：
+Two details, both learned the hard way:
 
-- **`--timeout` 不能省。** 每筆送交易 + 等 receipt 是幾秒的事（`enrollPortfolio` 那條整體實測 13–15
-  秒），bun 預設每測試 5 秒一定逾時。而逾時的測試**底層的送交易不會停**，於是下一個測試用同一個
-  operator 帳號讀到舊 nonce，就變成 `NonceTooLowError`。實測：`RUN_CHAIN_TESTS=1 bun test`
-  （不加 `--timeout`）是 4 fail，加上 `--timeout=120000` 連兩輪都是 410 pass / 0 fail。
-- **不要用 `--concurrent`。** 它會讓同一檔案內的測試並行，nonce 直接對撞。順帶一提
-  `bun test --concurrent 1` 在 bun 1.4 是**無效**的寫法：`--concurrent` 不吃值，那個 `1` 會被當成
-  檔名 filter，結果是「The following filters did not match any test files: 1」。bun 預設就是一個檔案
-  跑完再換下一個，所以正確做法是**只給 `--timeout`、不要碰 `--concurrent`**。
+- **`--timeout` is not optional.** Sending a transaction and waiting for the receipt takes seconds (the
+  `enrollPortfolio` test measured 13–15 s end to end), and bun's default is 5 s per test. A timed-out test
+  **does not stop the underlying send**, so the next test reads a stale nonce on the same operator account
+  and fails with `NonceTooLowError`. Measured: `RUN_CHAIN_TESTS=1 bun test` without `--timeout` gives 4
+  failures; with `--timeout=120000` it is 410 pass / 0 fail two runs in a row.
+- **Do not use `--concurrent`.** It parallelises tests within a file and the nonces collide. Note also that
+  `bun test --concurrent 1` is **invalid** in bun 1.4: `--concurrent` takes no value, so the `1` is treated
+  as a filename filter and you get "The following filters did not match any test files: 1". Bun already
+  runs one file at a time, so the correct invocation is **only `--timeout`, no `--concurrent`**.
 
-⚠ 這四個測試會把交易送到 `RPC_URL` 指的鏈，並且在 `DATABASE_URL` 的資料庫留下 strategy 資料列。
-**只對著本機 anvil fork（例如 `http://127.0.0.1:8545`）跑，不要對著主網跑。**
+⚠ Those four tests send transactions to the chain at `RPC_URL` and leave strategy rows in the database at
+`DATABASE_URL`. **Only run them against a local anvil fork (e.g. `http://127.0.0.1:8545`), never mainnet.**
 
-只**讀**鏈的測試（`test/pricing.crosscheck.test.ts`、`test/rebalance-plan.test.ts` 的真鏈驗證、
-`test/snapshot.integration.test.ts`）不受這個開關影響：它們不送交易、不佔 nonce，可以安全並行，
-skip 條件只看 fork 可不可用。
+Tests that only **read** the chain (`test/pricing.crosscheck.test.ts`, the real-chain checks in
+`test/rebalance-plan.test.ts`, `test/snapshot.integration.test.ts`) are unaffected by this switch: they
+send no transactions and take no nonce, so they are safe to parallelise; they skip only when the fork is
+unavailable.
 
-### Fork 鏈上整合測試（Anvil fork BSC mainnet）
+### Fork integration test (anvil forking BSC mainnet)
 
-需要三個終端／背景程序：Anvil fork、帶鏈設定的 backend、整合腳本。
+Needs three terminals or background processes: the anvil fork, a chain-configured backend, and the
+integration script.
 
 ```bash
-# 1. 起 Anvil fork（chain 56，常駐）
+# 1. start the anvil fork (chain 56, resident)
 cd ../cre8-contracts
-/Users/jareklin/.foundry/bin/anvil --fork-url https://bsc-rpc.publicnode.com --chain-id 56 --port 8545
+anvil --fork-url https://bsc-rpc.publicnode.com --chain-id 56 --port 8545
 
-# 2. 部署三個合約，記下 registry 地址（另一終端）
-/Users/jareklin/.foundry/bin/forge script script/DeployAtp.s.sol \
+# 2. deploy the contracts and note the registry address (another terminal)
+forge script script/DeployAtp.s.sol \
   --rpc-url http://127.0.0.1:8545 --broadcast --skip-simulation \
   --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80
 
-# 3. 起帶鏈設定的 backend（8081，避免撞到 8080）
+# 3. start a chain-configured backend (8081, to avoid colliding with 8080)
 cd ../backend
 DATABASE_URL='postgres://postgres:postgres@127.0.0.1:5432/cre8_atp' \
 RPC_URL='http://127.0.0.1:8545' \
 OPERATOR_PRIVATE_KEY='0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80' \
-REGISTRY_ADDRESS='<第 2 步印出的 registry>' \
+REGISTRY_ADDRESS='<registry printed in step 2>' \
 PORT=8081 AUTH_DOMAIN=localhost bun src/index.ts
 
-# 4. 跑端到端整合（auth → 建策略 → 發版本 → enroll）
+# 4. run the end-to-end integration (auth → create strategy → publish version → enroll)
 bun run scripts/integration-fork.ts
 ```
 
-驗證鏈上狀態：
+Verify the on-chain state:
 
 ```bash
 cast call $REGISTRY 'enrollments(address)(uint256,uint16,bool)' $WALLET --rpc-url http://127.0.0.1:8545
-# → 1 / 1 / false（strategyId / version / paused）
+# → 1 / 1 / false (strategyId / version / paused)
 ```
 
-注意：Anvil fork 的帳戶私鑰是公開的測試金鑰，**只用在本地 fork**；真實鏈上要用自己的錢包。
+Note: anvil's account private keys are public test keys, **for a local fork only**; a real chain needs your
+own wallet.
 
-沒有 `DATABASE_URL` 時，`node:test` 會把 DB 測試標成 skipped（不是 passed）。整合測試會自己
-`migrate()`，並在 `finally` 清掉建立的 strategy（versions 由 FK cascade）。
+Without `DATABASE_URL`, the DB tests are reported as skipped (not passed). The integration test migrates
+itself and deletes the strategy it created in a `finally` block (versions cascade by FK).
 
 ## API
 
-所有回應都是 `application/json; charset=utf-8`，錯誤格式固定為
-`{"error":{"code":"...","message":"..."}}`。
+Every response is `application/json; charset=utf-8`, and errors always look like
+`{"error":{"code":"...","message":"..."}}`.
 
-| Method | Path | 說明 | 成功碼 |
+| Method | Path | Description | Success |
 | --- | --- | --- | --- |
-| `GET` | `/health` | Postgres 可連線時 200，否則 503（`db: "down"`） | 200 |
-| `GET` | `/strategies` | 列表；`limit`（1–100，預設 50）、`offset`、`provider`（不分大小寫）、`public=true\|false` | 200 |
-| `GET` | `/strategies/:id` | 單一策略 + 版本歷史（新到舊） | 200 |
-| `POST` | `/auth/nonce` | 取得一次性 nonce 與 SIWE 欄位（`domain`／`chainId`／`uri`／`statement`／`issuedAt`，TTL 5 分鐘）；不需 body | 200 |
-| `POST` | `/auth/login` | body `{message, signature}`（完整 EIP-4361 訊息）；回 `{token, expiresAt}` | 200 |
-| `POST` | `/strategies` | 建立策略 metadata；**需** `Authorization: Bearer <token>` | 201 + `Location` |
-| `POST` | `/strategies/:id/versions` | 發布新版本；**需** token 且必須是該策略的 provider | 201 |
-| `GET` | `/portfolios` | 目前登入錢包的 portfolio 列表（含 gas 狀態與現行 session key）；**需** token | 200 |
-| `POST` | `/portfolios` | enroll 一個策略；**需** token，body `{strategyId}` | 201 + `Location` |
-| `GET` | `/portfolios/:id/renewal-params` | 派生一把新的 session key，回傳前端組續期 UserOp 所需的全部材料；**需** token 且必須是擁有者 | 200 |
-| `POST` | `/portfolios/:id/renewal-result` | 前端回報續期 UserOp 已上鏈，後端記進 `session_keys`；**需** token 且必須是擁有者 | 200 |
-| `POST` | `/bundler` | bundler relay：把 JSON-RPC 原樣轉給 `BUNDLER_URL` 並原樣回傳；**需** token，方法必須在白名單內 | 上游的 status |
+| `GET` | `/health` | 200 when Postgres is reachable, otherwise 503 (`db: "down"`) | 200 |
+| `GET` | `/strategies` | List; `limit` (1–100, default 50), `offset`, `provider` (case-insensitive), `public=true\|false` | 200 |
+| `GET` | `/strategies/:id` | One strategy plus its version history (newest first) | 200 |
+| `POST` | `/auth/nonce` | A one-shot nonce and the SIWE fields (`domain` / `chainId` / `uri` / `statement` / `issuedAt`, TTL 5 min); no body | 200 |
+| `POST` | `/auth/login` | Body `{message, signature}` (a complete EIP-4361 message); returns `{token, expiresAt}` | 200 |
+| `POST` | `/strategies` | Create strategy metadata; **requires** `Authorization: Bearer <token>` | 201 + `Location` |
+| `POST` | `/strategies/:id/versions` | Publish a new version; **requires** a token and must be the strategy's provider | 201 |
+| `GET` | `/portfolios` | The signed-in wallet's portfolios (with gas state and the current session key); **requires** a token | 200 |
+| `POST` | `/portfolios` | Enroll a strategy; **requires** a token, body `{strategyId}` | 201 + `Location` |
+| `GET` | `/portfolios/:id/renewal-params` | Derives a new session key and returns everything the frontend needs to build the renewal UserOp; **requires** a token and ownership | 200 |
+| `POST` | `/portfolios/:id/renewal-result` | The frontend reports that the renewal UserOp landed; recorded in `session_keys`; **requires** a token and ownership | 200 |
+| `POST` | `/bundler` | Bundler relay: forwards JSON-RPC to `BUNDLER_URL` verbatim and returns it verbatim; **requires** a token, and the method must be allowlisted | the upstream status |
 
-所有需要 token 的路徑都在讀 body **之前**驗證：沒帶 token 的請求即使 body 不合法也是 401，不是 400。
+Every authenticated path validates the token **before reading the body**: a request without a token is a
+401 even if the body is invalid, never a 400.
 
-### Auth（SIWE／EIP-4361 + session token）
+### Auth (SIWE / EIP-4361 + session token)
 
-沒有密碼、沒有第三方服務。流程是「拿 SIWE 欄位 → 前端用 viem 組 EIP-4361 訊息 → 錢包簽 → 換 token →
-帶 token 打寫入路由」。訊息綁住 **domain + chainId + nonce + issuedAt**，被釣到別的站台或別的鏈都簽不出可用的
-訊息。
+No passwords and no third-party service. The flow is "get the SIWE fields → the frontend builds an
+EIP-4361 message with viem → the wallet signs → exchange for a token → call write routes with it". The
+message binds **domain + chainId + nonce + issuedAt**, so a message phished to another site or another
+chain is unusable.
 
-1. `POST /auth/nonce` 取得一次性 nonce（32 bytes hex，TTL 5 分鐘）與組訊息所需的欄位：
+1. `POST /auth/nonce` returns a one-shot nonce (32 bytes hex, TTL 5 minutes) and the fields needed to build
+   the message:
    ```bash
    curl -s -X POST localhost:8080/auth/nonce
    # {"nonce":"<64 hex>","domain":"localhost","chainId":56,"uri":"http://localhost",
    #  "statement":"Sign in to CRE8 ATP","version":"1",
    #  "issuedAt":"2026-11-06T01:00:00.000Z","expiresAt":"2026-11-06T01:05:00.000Z"}
    ```
-   `domain`／`chainId`／`uri`／`statement` 來自伺服器設定（`AUTH_DOMAIN`、`CHAIN_ID`、`AUTH_URI`）；
-   `issuedAt` 是伺服器時間，前端直接拿來用就不會被本機時鐘偏差影響。
-2. 前端用 viem 把這些欄位加上**自己的地址**組成完整 EIP-4361 訊息並簽名
-   （`viem/siwe` 的 `createSiweMessage`，`version: "1"`）：
+   `domain` / `chainId` / `uri` / `statement` come from server config (`AUTH_DOMAIN`, `CHAIN_ID`,
+   `AUTH_URI`); `issuedAt` is server time, so using it directly makes local clock skew irrelevant.
+2. The frontend combines those fields with **its own address** into a complete EIP-4361 message and signs
+   it (`createSiweMessage` from `viem/siwe`, `version: "1"`):
    ```ts
    import { createSiweMessage } from 'viem/siwe';
 
    const challenge = await (await fetch('/auth/nonce', { method: 'POST' })).json();
    const message = createSiweMessage({
-     address: account.address,          // 簽名者自己填
+     address: account.address,          // supplied by the signer
      chainId: challenge.chainId,
      domain: challenge.domain,
      uri: challenge.uri,
      statement: challenge.statement,
      version: '1',
      nonce: challenge.nonce,
-     issuedAt: new Date(challenge.issuedAt),   // 或用 new Date()
+     issuedAt: new Date(challenge.issuedAt),   // or new Date()
    });
    const signature = await walletClient.signMessage({ account, message });
    ```
-   錢包顯示的是標準 SIWE 版面（`<domain> wants you to sign in with your Ethereum account:` + 地址 +
-   `Sign in to CRE8 ATP` + `URI`／`Version`／`Chain ID`／`Nonce`／`Issued At`）。
-3. `POST /auth/login`，body 只有 `{"message":"<完整 EIP-4361 訊息>","signature":"0x…"}`：
+   The wallet shows the standard SIWE layout (`<domain> wants you to sign in with your Ethereum account:`
+   plus the address, `Sign in to CRE8 ATP`, and `URI` / `Version` / `Chain ID` / `Nonce` / `Issued At`).
+3. `POST /auth/login` with a body of just `{"message":"<complete EIP-4361 message>","signature":"0x…"}`:
    ```bash
    curl -s -X POST localhost:8080/auth/login -H 'content-type: application/json' -d '{
-     "message": "<完整 SIWE 訊息，含換行>",
+     "message": "<complete SIWE message, newlines included>",
      "signature": "0x<65-byte signature>"
    }'
    # {"token":"<64 hex>","expiresAt":"..."}
    ```
-   後端依序檢查（順序刻意如此：先驗信封，再燒 nonce）：
-   - 訊息可解析，且 `version=1`、`statement`、`domain`、`uri`、`chainId` 都等於本伺服器設定，
-     否則 400 `INVALID_SIWE_MESSAGE`（**此時不消耗 nonce**，釣魚訊息燒不掉使用者的 challenge）。
-   - 訊息裡的 nonce 存在（否則 400 `INVALID_NONCE`）且未過 TTL（否則 400 `NONCE_EXPIRED`）。
-   - `issuedAt` 不在未來、不超過 nonce TTL + 2 分鐘時鐘容差，`expirationTime`／`notBefore` 若填了也要成立，
-     否則 400 `SIWE_EXPIRED`／`INVALID_SIWE_MESSAGE`。
-   - `recoverMessageAddress({ message, signature })` 解出的地址必須等於**訊息內**的地址，
-     否則 401 `INVALID_SIGNATURE`。
-   - 通過後立即刪除 nonce（重放 → 400 `INVALID_NONCE`），簽發 TTL 24 小時的 token。
-4. 寫入路由帶 `Authorization: Bearer <token>`；伺服器把 token 換回錢包地址，**provider 一律由 session 推導**，
-   body 裡的 `provider` 會被忽略。不是策略 owner 卻發布版本 → 403 `FORBIDDEN`。
+   The server checks, in this order (deliberately: validate the envelope, then burn the nonce):
+   - The message parses, and `version=1`, `statement`, `domain`, `uri`, `chainId` all equal this server's
+     config, otherwise 400 `INVALID_SIWE_MESSAGE` (**the nonce is not consumed**, so a phishing message
+     cannot burn the user's challenge).
+   - The nonce in the message exists (otherwise 400 `INVALID_NONCE`) and has not passed its TTL (otherwise
+     400 `NONCE_EXPIRED`).
+   - `issuedAt` is not in the future and does not exceed the nonce TTL plus a 2-minute clock tolerance;
+     `expirationTime` / `notBefore`, if present, must also hold, otherwise 400 `SIWE_EXPIRED` /
+     `INVALID_SIWE_MESSAGE`.
+   - `recoverMessageAddress({ message, signature })` equals the address **inside the message**, otherwise
+     401 `INVALID_SIGNATURE`.
+   - On success the nonce is deleted immediately (a replay is 400 `INVALID_NONCE`) and a token with a
+     24-hour TTL is issued.
+4. Write routes carry `Authorization: Bearer <token>`; the server maps the token back to a wallet address,
+   and **the provider is always derived from the session** — a `provider` in the body is ignored.
+   Publishing a version for a strategy you do not own is 403 `FORBIDDEN`.
 
-驗簽只用 `recoverMessageAddress`（EOA），**不支援 EIP-1271 合約錢包**：那需要 RPC 去問合約。
-要支援就得把 `verifySiweMessage`（viem，帶 `publicClient`）接上 `RPC_URL`，屬於下一刀。
+Verification uses `recoverMessageAddress` only (EOA); **EIP-1271 contract wallets are not supported**,
+because that requires asking the contract over RPC. Supporting it means wiring viem's `verifySiweMessage`
+(with a `publicClient`) to `RPC_URL` — a later round.
 
-nonce 與 session 目前是**單一 process 的 in-memory Map**：重啟即失效，也只能跑單實例。水平擴展前必須換成
-Redis 或其它共享 store（見 TODO）。
+Nonces and sessions are a **single-process in-memory Map**: a restart invalidates them, and only one
+instance can run. Horizontal scaling requires Redis or another shared store (TODO).
 
 ```bash
 curl -s localhost:8080/health
@@ -262,51 +282,56 @@ curl -s -X POST localhost:8080/strategies/1/versions -H "authorization: Bearer $
 # {"strategyId":1,"version":1,"allocation":{...},"schedule":{...},"changeLog":"initial weights","activeAt":"...","createdAt":"..."}
 ```
 
-`POST /strategies/:id/versions` 回傳的是**建立的版本紀錄本身**（`strategyId`、`version`、`allocation`、
-`schedule`、`changeLog`、`activeAt`、`createdAt`），不是 strategy detail。版本號由後端配置
-（`max(version)+1`，併發時靠唯一鍵重試），策略不存在回 404、allocation／schedule 校驗失敗回 400。
+`POST /strategies/:id/versions` returns **the version record it created** (`strategyId`, `version`,
+`allocation`, `schedule`, `changeLog`, `activeAt`, `createdAt`), not the strategy detail. The version number
+is assigned by the backend (`max(version)+1`, retried on the unique key under concurrency). A missing
+strategy is 404; a failed allocation or schedule validation is 400.
 
-列表回傳 `{ items, total, limit, offset }`；`total` 是符合條件的總筆數，不是本頁筆數。
+Listings return `{ items, total, limit, offset }`, where `total` is the number of matching rows, not the
+page size.
 
-### 校驗規則（與鏈上 `AtpRegistry` 對齊）
+### Validation rules (aligned with the on-chain `AtpRegistry`)
 
-`POST /strategies`：
+`POST /strategies`:
 
-- `name` 必填、去空白後非空、≤ 120 字。`provider` **不從 body 讀**：由 `Authorization` 的 session 推導
-  （body 帶了也忽略），長度上限 200 字。
-- `description` ≤ 2000 字，預設 `""`。
-- `isPublic` 必須是 boolean，預設 `true`。
-- `swapFeeBps` 必須是 0–300 的整數（3% 上限，對齊 `MAX_SWAP_FEE_BPS`），預設 0。
+- `name` is required, non-empty after trimming, ≤ 120 characters. `provider` is **not** read from the body:
+  it is derived from the `Authorization` session (a body value is ignored), with a 200-character cap.
+- `description` ≤ 2000 characters, default `""`.
+- `isPublic` must be a boolean, default `true`.
+- `swapFeeBps` must be an integer in 0–300 (a 3% cap, matching `MAX_SWAP_FEE_BPS`), default 0.
 
-`POST /strategies/:id/versions`（`publishVersion()`）：
+`POST /strategies/:id/versions` (`publishVersion()`):
 
-- 請求 body 必須是物件；`allocation`、`schedule` 必填，`changeLog`、`activeAt` 選填。
-- `allocation` 必須是 `{"assets":[{"address":"0x…","symbol"?:"  ≤32 字","weightBps":2500}]}`。
-- 1–16 個資產（`MAX_VERSION_ASSETS`）；address 必須是 0x + 40 hex，入庫前轉小寫。
-- 同一版本內資產不可重複（address 不分大小寫）。
-- `weightBps` 必須是 1–10000 的整數，總和**必須剛好 10000**。
-- `schedule` 是 `{"kind":"interval","intervalSeconds":>=60}` 或 `{"kind":"cron","cron":"…"}`。
-- `changeLog` 選填，≤ 2000 字；`activeAt` 選填，預設 `now()`。
-- 必須帶 token，且該策略 DB 的 `provider` 必須等於 session 錢包（不分大小寫），否則 403 `FORBIDDEN`。
+- The body must be an object; `allocation` and `schedule` are required, `changeLog` and `activeAt`
+  optional.
+- `allocation` must be `{"assets":[{"address":"0x…","symbol"?:" ≤32 chars","weightBps":2500}]}`.
+- 1–16 assets (`MAX_VERSION_ASSETS`); an address must be 0x + 40 hex and is lowercased before storage.
+- Assets may not repeat within a version (addresses compared case-insensitively).
+- `weightBps` must be an integer in 1–10000, and the sum **must be exactly 10000**.
+- `schedule` is `{"kind":"interval","intervalSeconds":>=60}` or `{"kind":"cron","cron":"…"}`.
+- `changeLog` optional, ≤ 2000 characters; `activeAt` optional, default `now()`.
+- A token is required, and the strategy's DB `provider` must equal the session wallet
+  (case-insensitively), otherwise 403 `FORBIDDEN`.
 
-錯誤碼：`INVALID_ALLOCATION`、`ALLOCATION_EMPTY`、`TOO_MANY_ASSETS`、`INVALID_ASSET`、
-`DUPLICATE_ASSET`、`WEIGHT_OUT_OF_RANGE`、`WEIGHT_SUM`、`INVALID_SCHEDULE`、`INVALID_VERSION`、
-`INVALID_STRATEGY`、`INVALID_SWAP_FEE`、`INVALID_ID`、`INVALID_QUERY`、`INVALID_JSON`、`NOT_FOUND`、
-`METHOD_NOT_ALLOWED`、`PAYLOAD_TOO_LARGE`、`DB_UNAVAILABLE`、`INTERNAL`、`UNAUTHORIZED`、
-`FORBIDDEN`、`INVALID_AUTH`、`INVALID_NONCE`、`NONCE_EXPIRED`、`INVALID_SIGNATURE`、
-`INVALID_SIWE_MESSAGE`、`SIWE_EXPIRED`、`INVALID_RENEWAL`、`KEY_REF_CONFLICT`、`SESSION_KEY_CONFIG`、
-`BUNDLER_METHOD_NOT_ALLOWED`、`BUNDLER_UNAVAILABLE`。
+Error codes: `INVALID_ALLOCATION`, `ALLOCATION_EMPTY`, `TOO_MANY_ASSETS`, `INVALID_ASSET`,
+`DUPLICATE_ASSET`, `WEIGHT_OUT_OF_RANGE`, `WEIGHT_SUM`, `INVALID_SCHEDULE`, `INVALID_VERSION`,
+`INVALID_STRATEGY`, `INVALID_SWAP_FEE`, `INVALID_ID`, `INVALID_QUERY`, `INVALID_JSON`, `NOT_FOUND`,
+`METHOD_NOT_ALLOWED`, `PAYLOAD_TOO_LARGE`, `DB_UNAVAILABLE`, `INTERNAL`, `UNAUTHORIZED`, `FORBIDDEN`,
+`INVALID_AUTH`, `INVALID_NONCE`, `NONCE_EXPIRED`, `INVALID_SIGNATURE`, `INVALID_SIWE_MESSAGE`,
+`SIWE_EXPIRED`, `INVALID_RENEWAL`, `KEY_REF_CONFLICT`, `SESSION_KEY_CONFIG`,
+`BUNDLER_METHOD_NOT_ALLOWED`, `BUNDLER_UNAVAILABLE`.
 
+## Portfolios and session-key renewal
 
-## Portfolio 與 session key 續期
-
-三支 endpoint，全部需要 `Authorization: Bearer <token>`。設計原則：**後端只做前端做不到的事** ——
-派生新的 session key（要 master seed，絕不進瀏覽器）。UserOp 的組裝、簽章、送 bundler 全在前端。
+Three endpoints, all requiring `Authorization: Bearer <token>`. The principle: **the backend only does
+what the frontend cannot** — deriving a new session key (which needs the master seed, and must never reach
+a browser). Building, signing and sending the UserOp all happen in the frontend.
 
 ### `GET /portfolios`
 
-目前登入錢包的所有 portfolio。只回 token 對應錢包的列（`lower(portfolios.user_id) = token 的錢包`），
-沒有任何「查誰」的參數，所以不存在改一個 query string 就讀到別人 portfolio 這條路。
+Every portfolio of the signed-in wallet. It returns only rows for the token's wallet
+(`lower(portfolios.user_id) = token wallet`); there is no "whose" parameter, so no query string can be
+edited to read someone else's portfolio.
 
 ```bash
 curl -s localhost:8080/portfolios -H "authorization: Bearer $TOKEN"
@@ -317,22 +342,23 @@ curl -s localhost:8080/portfolios -H "authorization: Bearer $TOKEN"
   { "id": 3, "userId": "0xabc…", "strategyId": 11, "version": 1, "scheduleState": "active",
     "createdAt": "2026-11-06T00:00:00.000Z",
     "smartAccounts": [ { "chainId": 56, "address": "0xdef…", "owner": "0xabc…", "accountType": "KERNEL" } ],
-    "gas": { "address": "0xdef…", "balanceWei": "50000000000000000", "minimumWei": "10000000000000000",
-             "ready": true, "shortfallWei": "0", "estimatedOps": 163, "gasPriceKnown": true },
+    "gas": { "address": "0xdef…", "balanceWei": "500000000000000", "minimumWei": "500000000000000",
+             "ready": true, "shortfallWei": "0", "estimatedOps": 20, "gasPriceKnown": true },
     "sessionKey": { "permissionId": "0xc0449df6", "sessionKeyAddress": "0x123…",
                     "keyRef": "m/44'/60'/0'/0/787718448", "expiresAt": "2028-01-15T08:00:00.000Z",
                     "status": "active" } }
 ] }
 ```
 
-- `gas` 與 `sessionKey` 取不到時是 **`null`**，不是整個請求失敗：`null` 代表「暫時查不到」，不是
-  「餘額 0」或「沒有 key」。
-- `sessionKey` 是**現行**的那一把（`status = 'active'` 優先，其次到期日新到舊）。
-- 錯誤：401 `UNAUTHORIZED`；DB 不可用 503 `DB_UNAVAILABLE`。
+- When `gas` or `sessionKey` cannot be read they are **`null`**, and the request still succeeds: `null`
+  means "temporarily unavailable", not "zero balance" or "no key".
+- `sessionKey` is the **current** one (`status = 'active'` preferred, then newest expiry).
+- Errors: 401 `UNAUTHORIZED`; 503 `DB_UNAVAILABLE`.
 
 ### `GET /portfolios/:id/renewal-params`
 
-**派生一把新的 session key，回傳前端組 UserOp 所需的一切。不簽章、不上鏈、不寫 DB。**
+**Derives a new session key and returns everything the frontend needs to build the UserOp. It does not
+sign, does not touch the chain, and does not write the DB.**
 
 ```bash
 curl -s localhost:8080/portfolios/3/renewal-params -H "authorization: Bearer $TOKEN"
@@ -362,21 +388,28 @@ curl -s localhost:8080/portfolios/3/renewal-params -H "authorization: Bearer $TO
 }
 ```
 
-- `accountAddress` 是 **DB `smart_accounts.address` 的權威值，不是重新推導**：已部署帳戶的位址取決於
-  當初那組 `initConfig`，重算會落到另一個（沒部署過）的地址，見 `docs/pitfalls` §4.7。
-- `initConfig` 是兩筆 calldata，`to` 都是**帳戶自己**（帳戶內的 `msg.sender == self`）。
-- `validUntil` 是 `sessionValidUntil()` = now + 365 天（Unix 秒，uint48），`expiresAt` 是同一個瞬間的 ISO。
-- `policySnapshot` 前端不需要解，但**必須原樣回傳**給 `renewal-result`。
-- **新 key 的索引一定與既有那把不同**：`max(既有所有 key_ref 的索引, base) + 1`，其中
-  `base = keccak256(owner, strategyId) % 2^31`。同一秒內重打這支 endpoint 會回**完全相同**的 key
-  （索引只依賴 DB 狀態、`validUntil` 只到秒），所以前端逾時重試不會拿到另一把 key 去簽前一個 op。
-- 錯誤：401 `UNAUTHORIZED`；404 `NOT_FOUND`（portfolio 不存在，或它沒有任何 smart account）；
-  403 `FORBIDDEN`（不是你的）；400 `INVALID_ID`；500 `SESSION_KEY_CONFIG`（缺 `EXECUTOR_ADDRESS` 或
-  `SESSION_KEY_MASTER_SEED`，訊息會指出缺哪一個）。
+- `accountAddress` is **the authoritative `smart_accounts.address` from the DB, not a re-derivation**: an
+  already-deployed account's address depends on the `initConfig` used at the time, and recomputing lands
+  on a different (never deployed) address. See `docs/pitfalls` §4.7.
+- `initConfig` is two calldata blobs, both addressed to **the account itself** (inside the account
+  `msg.sender == self`).
+- `validUntil` is `sessionValidUntil()` = now + 365 days (Unix seconds, uint48); `expiresAt` is the same
+  instant in ISO.
+- The frontend does not need to decode `policySnapshot`, but **must return it verbatim** to
+  `renewal-result`.
+- **The new key's index always differs from the existing one**:
+  `max(index of every existing key_ref, base) + 1`, where `base = keccak256(owner, strategyId) % 2^31`.
+  Calling this endpoint twice within the same second returns the **same** key (the index depends only on DB
+  state and `validUntil` is second-granular), so a frontend timeout-and-retry does not get a different key
+  to sign the previous op with.
+- Errors: 401 `UNAUTHORIZED`; 404 `NOT_FOUND` (no such portfolio, or it has no smart account);
+  403 `FORBIDDEN` (not yours); 400 `INVALID_ID`; 500 `SESSION_KEY_CONFIG` (missing `EXECUTOR_ADDRESS` or
+  `SESSION_KEY_MASTER_SEED`, and the message says which).
 
 ### `POST /portfolios/:id/renewal-result`
 
-前端把已上鏈的續期結果記回 DB。**鏈是權威**，所以這裡不驗證 txHash 是否真的上鏈，只記錄。
+The frontend records the landed renewal back into the DB. **The chain is authoritative**, so this does not
+verify that the txHash actually landed; it only records.
 
 ```bash
 curl -s -X POST localhost:8080/portfolios/3/renewal-result \
@@ -387,144 +420,167 @@ curl -s -X POST localhost:8080/portfolios/3/renewal-result \
   "policySnapshot": { "…": "…" }
 }'
 # {"ok":true,"recorded":{"keyRef":"m/44'/60'/0'/0/787718449","permissionId":"0x9ab4cdef"}}
-# 重複提交（同一個 keyRef 再送一次）：
+# duplicate submission (same keyRef again):
 # {"ok":true,"recorded":{"…":"…"},"duplicate":true}
 ```
 
-寫入的是一列**新的** `session_keys`（`permissions` = `policySnapshot`，`expires_at` = `validUntil`，
-`status = 'active'`），SQL 是 `insert … on conflict (key_ref) do nothing`：
+It inserts a **new** `session_keys` row (`permissions` = `policySnapshot`, `expires_at` = `validUntil`,
+`status = 'active'`) with `insert … on conflict (key_ref) do nothing`:
 
-- **舊的那一列一個字都不動**：舊權限在鏈上仍然有效到它自己的 `expires_at`，改它的 status 會讓 DB 說一件
-  鏈上不成立的事。
-- 重複提交不是錯誤：`on conflict do nothing` 之後 `returning` 是空的，回應帶 `duplicate: true`，列的數量
-  不變。
-- 同一個 `keyRef` 已屬於**別的** portfolio 時回 409 `KEY_REF_CONFLICT`（那不是重複提交，是兩個 portfolio
-  搶同一把 key）。
-- 錯誤：401 `UNAUTHORIZED`；404 `NOT_FOUND`；403 `FORBIDDEN`；400 `INVALID_RENEWAL`（缺 `keyRef`／
-  `permissionId`、`validUntil` 不在 uint48 內、`policySnapshot` 不是物件）、`INVALID_ID`、`INVALID_JSON`。
+- **The old row is not touched at all**: the old permission remains valid on-chain until its own
+  `expires_at`, and changing its status would make the DB assert something untrue about the chain.
+- A duplicate submission is not an error: after `on conflict do nothing` the `returning` is empty, the
+  response carries `duplicate: true`, and the row count is unchanged.
+- A `keyRef` that already belongs to a **different** portfolio is 409 `KEY_REF_CONFLICT` (that is not a
+  duplicate submission but two portfolios fighting over one key).
+- Errors: 401 `UNAUTHORIZED`; 404 `NOT_FOUND`; 403 `FORBIDDEN`; 400 `INVALID_RENEWAL` (missing `keyRef` /
+  `permissionId`, `validUntil` outside uint48, `policySnapshot` not an object), `INVALID_ID`,
+  `INVALID_JSON`.
 
-### 前端拿到 `renewal-params` 之後還缺什麼
+### What the frontend still lacks after `renewal-params`
 
-缺兩樣，而且**全部刻意放在前端**：`ownerAddress` 的 **sudo 簽章者**（後端沒有使用者的 owner 私鑰，
-也不該有）、以及 **gas 參數**（`maxFeePerGas`／`maxPriorityFeePerGas`，前端讀鏈現況）。UserOp 的
-`sender` 是 `accountAddress`、`callData` 由 `initConfig` 那兩筆 call 組成 —— 這些都在前端組，後端不碰。
+Two things, and **both are deliberately frontend-side**: the **sudo signer** for `ownerAddress` (the
+backend does not have, and should not have, the user's owner key), and the **gas parameters**
+(`maxFeePerGas` / `maxPriorityFeePerGas`, read from the chain). The UserOp's `sender` is
+`accountAddress` and its `callData` is built from those two `initConfig` calls — all assembled in the
+frontend; the backend does not touch it.
 
-**送 bundler 的傳輸層是後端的 `POST /bundler`**，不是前端自己連 alto：回應裡的 `bundlerUrl` 只是
-「後端會打哪裡」的資訊，前端不拿它發請求（原因見下一節）。
+**The transport to the bundler is the backend's `POST /bundler`**, not a direct connection from the
+frontend: the `bundlerUrl` in the response is only information about where the backend will call, and the
+frontend must not use it to send (see the next section).
 
 ## CORS
 
-瀏覽器從別的 origin（vite dev 的 `http://localhost:5173`）打這支 API 時，preflight 由
-`src/server.ts` 回答：
+When a browser calls this API from another origin (the vite dev server at `http://localhost:5173`),
+`src/server.ts` answers the preflight:
 
-- 允許的 origin 來自 `CORS_ALLOWED_ORIGINS`（逗號分隔的**完整 origin**；未設定 = 上面那組 dev 預設）。
-- `OPTIONS` → `204`，帶 `Access-Control-Allow-Methods`（`GET, POST, OPTIONS`）、
-  `Access-Control-Allow-Headers`（`authorization, content-type`）、`Access-Control-Max-Age`（600）、
-  `Access-Control-Allow-Origin`（**回具體 origin**）與 `Access-Control-Allow-Credentials: true`。
-- 每個回應（含 401／404／405）都帶 `Access-Control-Allow-Origin` 與 `Vary: Origin`：同一條 URL 會因為
-  Origin 不同而回應不同標頭，快取必須按 Origin 分開。
-- **不在清單裡的 origin 不會拿到任何 CORS 標頭**（讓瀏覽器自己擋），但請求照常處理完 —— CORS 是瀏覽器的
-  規則，不是認證；能不能存取由 `Authorization` 決定。
-- 刻意不支援 `*`：請求帶 `Authorization`，而 `*` 不能與 credentials 併用。
+- Allowed origins come from `CORS_ALLOWED_ORIGINS` (comma-separated **full origins**; unset means the dev
+  defaults above).
+- `OPTIONS` → `204` with `Access-Control-Allow-Methods` (`GET, POST, OPTIONS`),
+  `Access-Control-Allow-Headers` (`authorization, content-type`), `Access-Control-Max-Age` (600),
+  `Access-Control-Allow-Origin` (**the concrete origin**) and `Access-Control-Allow-Credentials: true`.
+- Every response (including 401 / 404 / 405) carries `Access-Control-Allow-Origin` and `Vary: Origin`: the
+  same URL returns different headers per origin, so caches must key on origin.
+- **An origin outside the list gets no CORS headers at all** (the browser blocks it), but the request is
+  still processed — CORS is a browser rule, not authentication; access is decided by `Authorization`.
+- `*` is deliberately unsupported: requests carry `Authorization`, and `*` cannot be combined with
+  credentials.
 
-## bundler relay（`POST /bundler`）
+## Bundler relay (`POST /bundler`)
 
-### 為什麼需要
+### Why it exists
 
-**alto v1.2.5 完全沒有 CORS 支援**：`--help` 沒有相關選項，`OPTIONS` 請求回 404 且回應不帶任何
-`access-control-*` 標頭（v1.2.8 才有 `enable-cors`，但它對 EntryPoint v0.7 的 SafeValidator 是壞的）。
-所以瀏覽器直連 bundler 一律被 preflight 擋掉：
+**alto v1.2.5 has no CORS support at all**: `--help` has no relevant flag, `OPTIONS` returns 404 with no
+`access-control-*` headers (v1.2.8 added `enable-cors`, but its SafeValidator is broken against EntryPoint
+v0.7). A browser therefore cannot connect to the bundler directly:
 
 ```
 Access to fetch at 'http://127.0.0.1:3001/' from origin 'http://localhost:5173'
 has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header
 ```
 
-**這不是 dev 問題 —— 生產環境一樣。** 瀏覽器永遠無法直連 bundler，所以 UserOp 只能由這支 API 代送。
-這支 API 自己已經有 CORS（上一節），前端只需要一個 same-origin（或已列入允許清單）的 `/bundler`。
+**This is not a dev-only problem — production is the same.** A browser can never reach the bundler
+directly, so the API must relay UserOps. The API already has CORS (previous section), so the frontend needs
+only a same-origin (or allowlisted) `/bundler`.
 
-### 契約
+### Contract
 
 ```bash
 curl -s -X POST localhost:8080/bundler   -H "authorization: Bearer $TOKEN" -H 'content-type: application/json'   -d '{"jsonrpc":"2.0","id":1,"method":"eth_chainId","params":[]}'
 # {"jsonrpc":"2.0","id":1,"result":"0x38"}
 ```
 
-- 請求 body **就是** JSON-RPC 信封（`{jsonrpc, id, method, params}`），後端**原樣轉發**收到的 bytes
-  （不重新序列化），到 `BUNDLER_URL`。
-- 回應也是**上游的 status 與原始 bytes**，含 `result` 或 `error`。**JSON-RPC 的錯誤形狀不改寫**——
-  前端要靠 `{code, message, data}` 的原文診斷 AA 錯誤，重新包一層等於把唯一有用的線索丟掉。
-- 需要 `Authorization: Bearer <token>`（順序與其他寫入路由一致：先驗 token，再讀 body）。
-- 上游 timeout 30 秒。
+- The request body **is** the JSON-RPC envelope (`{jsonrpc, id, method, params}`) and the backend forwards
+  the received bytes **verbatim** (no re-serialisation) to `BUNDLER_URL`.
+- The response is the **upstream status and raw bytes**, including `result` or `error`. **The JSON-RPC error
+  shape is not rewritten** — the frontend needs the original `{code, message, data}` to diagnose AA errors,
+  and re-wrapping would throw away the only useful clue.
+- `Authorization: Bearer <token>` is required (same order as other write routes: token first, then body).
+- Upstream timeout is 30 seconds.
 
-### 方法白名單
+### Method allowlist
 
-只有這六個會被轉發，其餘一律 `403` 且**不轉發**（檢查在 `fetch` 之前）：
+Only these six are forwarded; everything else is `403` and **not forwarded at all** (checked before
+`fetch`):
 
 ```
 eth_sendUserOperation   eth_estimateUserOperationGas   eth_getUserOperationReceipt
 eth_getUserOperationByHash   eth_supportedEntryPoints   eth_chainId
 ```
 
-是**白名單**而不是黑名單：這支 relay 帶著使用者的 session token，能碰到 bundler 就等於能代替使用者發
-UserOp；黑名單永遠會漏一個方法，白名單漏掉的代價只是一個 403。
+It is an **allowlist, not a denylist**: this relay carries the user's session token, and reaching the
+bundler means being able to send UserOps on their behalf. A denylist always misses a method; an allowlist
+misses at the cost of a 403.
 
-### 錯誤碼
+### Error codes
 
-| 情況 | status | code |
+| Case | status | code |
 | --- | --- | --- |
-| 沒帶／帶錯 token | 401 | `UNAUTHORIZED` |
-| body 不是合法 JSON、或不是物件 | 400 | `INVALID_JSON` |
-| `method` 不在白名單、或沒有 `method` | **403** | `BUNDLER_METHOD_NOT_ALLOWED` |
-| 上游連不上／timeout | **502** | `BUNDLER_UNAVAILABLE` |
+| Missing or wrong token | 401 | `UNAUTHORIZED` |
+| Body is not valid JSON, or not an object | 400 | `INVALID_JSON` |
+| `method` not in the allowlist, or absent | **403** | `BUNDLER_METHOD_NOT_ALLOWED` |
+| Upstream unreachable / timeout | **502** | `BUNDLER_UNAVAILABLE` |
 
-502 的訊息帶上游位址（例：`bundler http://127.0.0.1:3001/ 無法連上（eth_chainId，timeout 30000ms）：…`），
-但 URL 的 userinfo 會被剝掉——bundler 的 API key 常常就嵌在那裡，印出去等於寫進 log 與瀏覽器。
-這條路徑不碰任何私鑰，回應裡也不會出現 `0x` + 64 hex 這種東西。
+A 502 message includes the upstream address (e.g. `bundler http://127.0.0.1:3001/ unreachable (eth_chainId, timeout 30000ms): …`)
+but strips URL userinfo — bundler API keys are often embedded there, and printing it would write the key
+into logs and the browser. This path touches no private key and never returns a `0x` + 64 hex digest.
 
-## Migration
+## Migrations
 
-- SQL 在 **`../db/migrations`**（`db/` 必須與 `backend/` 並排 checkout）。路徑由 `src/db.ts` 以
-  `import.meta.url` 解析，`src/`（tsx）與 `dist/`（tsc）都指向同一個資料夾。
-- 啟動時與 `bun run migrate` 都會跑：依檔名排序、每個檔案一個交易、`schema_migrations` 記錄
-  filename + sha256、已套用就跳過、已套用檔案被改動則報錯。
-- `pg_advisory_lock` 避免多個 instance 同時 migrate。
-- 檔案內不要寫 `BEGIN`/`COMMIT`，也不要用 `CREATE INDEX CONCURRENTLY`。細節見 [`../db/README.md`](../db/README.md)。
-- 目前兩個檔案：`0001_init.sql`（初始 schema）、`0002_normalize_provider.sql`（既有 `provider` 轉小寫，
-  並加上 `strategies_provider_lowercase` CHECK，之後插入／更新都只能是小寫）。
+- SQL lives in **`../db/migrations`** (`db/` must be checked out next to `backend/`). The path is resolved
+  in `src/db.ts` via `import.meta.url`, so `src/` (tsx) and `dist/` (tsc) point at the same directory.
+- They run at startup and via `bun run migrate`: sorted by filename, one transaction per file,
+  `schema_migrations` records filename + sha256, already-applied files are skipped, and an applied file
+  that changed is an error.
+- `pg_advisory_lock` prevents two instances migrating concurrently.
+- Do not write `BEGIN`/`COMMIT` inside a file, and do not use `CREATE INDEX CONCURRENTLY`. Details in
+  [`../db/README.md`](../db/README.md).
+- Two files today: `0001_init.sql` (initial schema) and `0002_normalize_provider.sql` (lowercases existing
+  `provider` values and adds the `strategies_provider_lowercase` CHECK, so later inserts and updates can
+  only be lowercase).
 
-## 設計取捨
+## Design trade-offs
 
-- **config / pool 延遲載入**：`getConfig()`、`getPool()` 在第一次使用時才初始化，所以測試可以 import
-  `strategies.ts` 而不需要 `DATABASE_URL`；同時 `DATABASE_URL` 仍會在啟動時 fail fast。
-- **id 轉型**：`bigserial` 經 `pg` 回來是字串；mapper 明確 `Number()` 成 number（遠低於 2^53），
-  `numeric` 欄位則維持字串，避免精度流失。
-- **版本號配置**：`max(version)+1` + PK `(strategy_id, version)`。併發發布時靠唯一鍵衝突重試（最多 3 次），
-  不需要額外鎖。
-- **jsonb 不另開表**：allocation／schedule 是「版本的一份快照」，用 jsonb 保留原樣；形狀由 DB CHECK
-  ＋ 應用層校驗兩道把關。
-- **路由依賴注入**：`createServer(deps)` 的 deps 是 `Partial<ServerDeps>`（`createStrategy`、`publishVersion`），
-  讓路由層測試（201／401／403／404／405）不需要 DB；正式啟動用預設 deps，跑真正的實作。
-- **auth 用記憶體 store ＋ SIWE**：nonce／session 都是 process 內的 Map，訊息是標準 EIP-4361，
-  驗簽用 `parseSiweMessage` ＋ `recoverMessageAddress`，不引入 JWT 或 session 資料表。好處是零額外基礎設施、
-  auth 測試不必連 DB；代價是重啟後 token 全失效、不能水平擴展——單實例 v1 成立，多實例要換共享 store（TODO）。
-- **SIWE 訊息由前端組**：`/auth/nonce` 只回欄位，地址由錢包自己填。若後端代填一個示範地址，前端就得重組
-  訊息，等於多一份可能不同步的字串樣板；而 `createSiweMessage` 本來就是 viem 的公開 API。
-- **不用 `verifySiweMessage`**：它需要 `publicClient`／RPC（合約錢包走 ERC-6492），而這一刀不保證有
-  `RPC_URL`；EOA + `recoverMessageAddress` 對目前的使用者足夠，合約錢包列在 TODO。
-- **provider 一律小寫**：寫入時 `validateCreateStrategyInput` 轉小寫，DB 再加
-  `check (provider = lower(provider))`（0002）當第二道；查詢參數也先轉小寫再精確比對，走得到索引。
-- **provider 由 session 推導**：`createStrategy(body, provider)`、`publishVersion(id, body, provider)` 的
-  provider 是參數，不採信 body；`publishVersion` 先讀策略列比對 owner 再寫入，不符回 403。
+- **Lazy config and pool**: `getConfig()` and `getPool()` initialise on first use, so tests can import
+  `strategies.ts` without `DATABASE_URL`, while startup still fails fast when it is missing.
+- **Id conversion**: `bigserial` comes back from `pg` as a string; mappers explicitly `Number()` it (far
+  below 2^53), while `numeric` columns stay strings to avoid precision loss.
+- **Version numbering**: `max(version)+1` with a `(strategy_id, version)` primary key. Concurrent
+  publishing retries on the unique-key conflict (at most 3 times) instead of taking a lock.
+- **jsonb rather than extra tables**: allocation and schedule are a snapshot of a version, kept as jsonb;
+  the shape is enforced twice, by a DB CHECK and by application validation.
+- **Route dependency injection**: `createServer(deps)` takes `Partial<ServerDeps>` (`createStrategy`,
+  `publishVersion`), so route tests (201/401/403/404/405) need no DB; production uses the defaults and the
+  real implementations.
+- **Auth in memory plus SIWE**: nonces and sessions are process-local Maps, the message is standard
+  EIP-4361, and verification is `parseSiweMessage` + `recoverMessageAddress`, with no JWT and no session
+  table. The win is zero extra infrastructure and auth tests that need no DB; the cost is that a restart
+  invalidates every token and the service cannot scale horizontally — fine for a single-instance v1, and a
+  shared store is required for multiple instances (TODO).
+- **The frontend builds the SIWE message**: `/auth/nonce` returns fields only, and the wallet supplies the
+  address. If the backend substituted a sample address the frontend would have to rebuild the message,
+  creating a second template that can drift; and `createSiweMessage` is already a public viem API.
+- **Not using `verifySiweMessage`**: it needs a `publicClient`/RPC (contract wallets go through ERC-6492),
+  and this round does not guarantee `RPC_URL`. EOA + `recoverMessageAddress` is enough for current users;
+  contract wallets are on the TODO list.
+- **Providers are always lowercase**: `validateCreateStrategyInput` lowercases on write, and the DB adds
+  `check (provider = lower(provider))` (0002) as a second gate; query parameters are lowercased before the
+  exact comparison, so the index is usable.
+- **The provider comes from the session**: `createStrategy(body, provider)` and
+  `publishVersion(id, body, provider)` take the provider as a parameter and never trust the body;
+  `publishVersion` reads the strategy row and compares the owner before writing, returning 403 on mismatch.
 
-## TODO（後續硬化）
+## TODO (hardening)
 
-1. 合約錢包（EIP-1271／ERC-6492）：現在只認 EOA 的 `recoverMessageAddress`；接 `RPC_URL` 後改用 viem
-   `verifySiweMessage`，讓 smart account 也能登入。
-2. Session／nonce 共享 store：in-memory Map 只支援單實例；多實例前換 Redis（或 Postgres），處理 TTL 與併發。
-3. CORS、rate limit、request id（`correlation_id` 已有欄位）、body size 以外的防護。
-4. `GET /strategies/:id` 要不要把 private 策略也公開？目前是；已有 auth，可據此收斂可見性。
-5. operations／positions／performance 的讀寫 API（schema 已就緒，尚無程式）。
-6. 錯誤回應加上 `details`（哪個 asset 出錯），方便 web app 顯示。
-7. 用 OpenAPI 描述 API；現在 README 是唯一契約。
-8. `portfolios.version` 的複合 FK（見 `db/README.md` 的已知缺口）。
+1. Contract wallets (EIP-1271 / ERC-6492): only EOA `recoverMessageAddress` works today; once `RPC_URL` is
+   wired, switch to viem's `verifySiweMessage` so a smart account can sign in too.
+2. A shared store for sessions and nonces: the in-memory Map only supports one instance; Redis (or
+   Postgres) is needed before scaling, along with TTL and concurrency handling.
+3. CORS hardening, rate limiting, request ids (the `correlation_id` column already exists), and protections
+   beyond body size.
+4. Should `GET /strategies/:id` expose private strategies? It does today; with auth in place, visibility
+   could be narrowed on that basis.
+5. Read/write APIs for operations, positions and performance (the schema is ready; no code yet).
+6. Add `details` to error responses (which asset failed) so the web app can show it.
+7. Describe the API with OpenAPI; today this README is the only contract.
+8. A composite FK for `portfolios.version` (see the known gap in `db/README.md`).
