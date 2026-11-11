@@ -1,68 +1,79 @@
-# CRE8 ATP 文件
+# CRE8 ATP documentation
 
-CRE8 從 pooled vault 遷移到 **ATP（Automated Token Portfolio）**：每人一個 non-custodial smart account，架構照 Glider。第一版只做股票指數（目標權重＋再平衡排程，標的是 BSC 上的 bStock）。
-
----
-
-## 從哪裡開始
-
-**第一次接手這個專案 → 按這個順序讀：**
-
-1. [HANDOFF.zh-TW.md](./HANDOFF.zh-TW.md) — 現況、已完成、下一刀
-2. [pitfalls.zh-TW.md](./pitfalls.zh-TW.md) — 踩過的坑。**這份最能省你的時間**
-3. [decisions.zh-TW.md](./decisions.zh-TW.md) — 為什麼做成這樣，包含被推翻的決策
-4. [runbook.zh-TW.md](./runbook.zh-TW.md) — 怎麼跑起來、故障排除
-
-**要動手改東西之前**：先看 `pitfalls` 裡的「診斷心法」（附錄）。這個專案有大量「錯誤訊息指向的位置不是真正原因」的情況。
+CRE8 moved from a pooled vault to **ATP (Automated Token Portfolio)**: one non-custodial smart
+account per user, with the architecture modelled on Glider. The first release covers equity index
+funds only — target weights plus a rebalance schedule, with bStock tokens on BSC as the underlying.
 
 ---
 
-## 文件地圖
+## Where to start
 
-### 現行文件（會持續更新）
+**New to this project → read in this order:**
 
-| 文件 | 內容 | 什麼時候看 |
+1. [HANDOFF.md](./HANDOFF.md) — current state, what is done, what to do next
+2. [pitfalls.md](./pitfalls.md) — the traps we already hit. **This one saves you the most time**
+3. [decisions.md](./decisions.md) — why things are built this way, including decisions that were overturned
+4. [runbook.md](./runbook.md) — how to start it, how to verify, how to debug
+
+**Before you change anything**: read the "diagnostic discipline" appendix in `pitfalls`. This project
+has many cases where the error message points at the wrong thing.
+
+---
+
+## Documentation map
+
+### Living documents (kept up to date)
+
+| Document | Content | When to read |
 |---|---|---|
-| [HANDOFF.zh-TW.md](./HANDOFF.zh-TW.md) | 現況、待辦、下一刀的決策點 | 每次接手、每個里程碑結束 |
-| [pitfalls.zh-TW.md](./pitfalls.zh-TW.md) | 已實際踩過的坑，症狀→原因→解法 | **遇到怪問題時優先查這份** |
-| [decisions.zh-TW.md](./decisions.zh-TW.md) | 決策日誌：選項、選擇、理由、風險、誰拍的 | 想改架構前、質疑某個設計時 |
-| [runbook.zh-TW.md](./runbook.zh-TW.md) | 環境啟動、驗證指令、故障排除表 | 要跑東西的時候 |
+| [HANDOFF.md](./HANDOFF.md) | Current state, open items, next decision points | Every handover, end of every milestone |
+| [pitfalls.md](./pitfalls.md) | Traps actually hit: symptom → cause → fix | **First stop when something behaves oddly** |
+| [decisions.md](./decisions.md) | Decision log: options, choice, rationale, risk, owner | Before an architectural change, or when questioning a design |
+| [runbook.md](./runbook.md) | Environment startup, verification commands, troubleshooting table | Whenever you need to run something |
 
-### 歷史設計文件（原樣保留，不修訂）
+### Historical design documents (kept verbatim, not revised)
 
-| 文件 | 內容 |
+| Document | Content |
 |---|---|
-| [atp-pivot-plan.zh-TW.md](./atp-pivot-plan.zh-TW.md) | 遷移計畫：五層架構、退休/重用/新建、分階段時程 |
-| [atp-pivot-executor-spec.zh-TW.md](./atp-pivot-executor-spec.zh-TW.md) | Executor 骨架規格：Registry／Executor 介面、minGross 反推、command allowlist |
+| [atp-pivot-plan.md](./atp-pivot-plan.md) | Migration plan: five layers, retire/reuse/build, phased schedule |
+| [atp-pivot-executor-spec.md](./atp-pivot-executor-spec.md) | Executor skeleton spec: Registry/Executor interfaces, minGross derivation, command allowlist |
 
-這兩份是 2026-11-06 當時的規劃，**內容未經修訂**。若與現況衝突，以 `HANDOFF.zh-TW.md` 與 `decisions.zh-TW.md` 為準。
+Both were written on 2026-11-06 and **have not been revised**. Where they conflict with the current
+system, `HANDOFF.md` and `decisions.md` win.
 
-### 封存（archive）
+### Archive
 
-| 路徑 | 內容 | 為什麼留著 |
+| Path | Content | Why it is kept |
 |---|---|---|
-| [archive/handoff-2026-11-06.zh-TW.md](./archive/handoff-2026-11-06.zh-TW.md) | 2026-11-06 的交接文件 | 它記錄了當時的進度與已知坑，是歷史紀錄。**已被現行 HANDOFF 取代** |
-| [archive/legacy-vault/](./archive/legacy-vault/) | 舊 pooled vault 架構：`VAULT_RULES_V2`、`ARCHITECTURE`、`strategy-v3` 產品決策、舊文件索引 | **已廢棄架構，不可作為現況參考。** 保留用來說明「為什麼要遷移」 |
+| [archive/handoff-2026-11-06.zh-TW.md](./archive/handoff-2026-11-06.zh-TW.md) | The handover document as of 2026-11-06 | It records the state and known traps of that moment. **Superseded by the current HANDOFF** |
+| [archive/legacy-vault/](./archive/legacy-vault/) | The old pooled vault architecture: `VAULT_RULES_V2`, `ARCHITECTURE`, `strategy-v3` product decisions, old index | **Abandoned architecture — not a reference for current behaviour.** Kept to explain *why* we migrated |
 
 ---
 
-## 這套文件的維護原則
+## How this documentation is maintained
 
-1. **`pitfalls` 只記錄已實際踩過的坑**，不寫「可能會有問題」。每條都要有「症狀 → 原因 → 解法」。
-2. **`decisions` 只追加、不改寫**。決策被推翻時，在原條目標記 `⚠ 已被 D-xx 取代` 並保留 —— **被推翻的決策比正確的更有價值**，它記錄了哪條推理路徑走不通。
-3. **歷史文件原樣保留**，用檔頭註解標明狀態與取代關係，不改動內文。
-4. **數字要能查證**。任何「N 個測試通過」「地址是 0x…」都應該是實際跑過或查過的結果，不是記憶。
+1. **`pitfalls` records only traps we actually hit**, never "this might be a problem". Every entry
+   needs symptom → cause → fix.
+2. **`decisions` is append-only; entries are never rewritten.** When a decision is overturned, mark the
+   original `⚠ superseded by D-xx` and keep it — **an overturned decision is more valuable than a
+   correct one**, because it records which line of reasoning does not work.
+3. **Historical documents are preserved verbatim**, with a header noting their status and what replaced
+   them. Their body is not edited.
+4. **Numbers must be verifiable.** Any "N tests pass" or "the address is 0x…" should come from something
+   actually run or looked up, not from memory.
 
 ---
 
-## 相關位置
+## Related locations
 
-| 位置 | 說明 |
+| Location | Description |
 |---|---|
-| `../backend/README.md` | 後端完整說明（API、校驗規則、env、runbook） |
-| `../db/README.md` | schema 概觀與 JSON 形狀 |
-| `../cre8-contracts/src/atp/*.sol` | 合約實作（最終權威） |
-| `../cre8-contracts/deployments/fork.json` | fork 部署地址紀錄（權威） |
-| `../spike/` | 評估用產物（不在任何 repo 的版控內，可安全刪除） |
+| `../backend/README.md` | Backend in full (API, validation rules, env, runbook) |
+| `../db/README.md` | Schema overview and JSON shapes |
+| `../cre8-contracts/src/atp/*.sol` | Contract implementation (final authority) |
+| `../cre8-contracts/deployments/mainnet.json` | Mainnet deployment record (authority) |
+| `../cre8-contracts/deployments/fork.json` | Fork deployment record |
 
-三個 repo 的 git 根目錄各自獨立（`cre8-contracts/`、`backend/`、`db/`）。`cre8-protocol/` 本身**不是** git repo。
+The three sub-projects each have their own git root (`cre8-contracts/`, `backend/`, `db/`); the
+`cre8-protocol/` directory itself is **not** a git repository. In this consolidated repository they
+are directories of one repository.
