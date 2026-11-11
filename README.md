@@ -181,7 +181,7 @@ A few choices are deliberate and documented in `docs/` rather than left implicit
 Working end-to-end on BNB Chain mainnet: deposit, automatic allocation, scheduled rebalancing,
 withdrawal and full position close, each verified with real transactions.
 
-Known limitations are tracked in [`docs/mainnet-todo.zh-TW.md`](docs/mainnet-todo.zh-TW.md)
+Known limitations are tracked in [`backend/docs/mainnet-todo.md`](backend/docs/mainnet-todo.md)
 (Chinese). The most relevant:
 
 - The bundler runs with `safe-mode` disabled because tracing-capable RPCs are not available on a
