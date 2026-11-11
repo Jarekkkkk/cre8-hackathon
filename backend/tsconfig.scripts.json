@@ -1,0 +1,29 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "rootDir": ".",
+    "noEmit": true
+  },
+  "include": ["scripts/**/*.ts"],
+  // `scripts/` 原本不在任何 tsconfig 的 include 裡，所以這裡的型別錯誤從來沒有被 `bun run typecheck`
+  // 抓到（`docs/pitfalls` 的 tsconfig-gap：`gen-kernel-golden.ts` 就是這樣壞掉的）。
+  //
+  // 下面兩個檔案**已知有型別錯誤、目前排除**，是既有債不是新債；修它們不在這次改動的範圍內
+  // （`@types/bun` 沒裝、`decodeFunctionData` 的呼叫形狀要動），所以先逐條列在這裡，讓清單本身可被檢查：
+  //
+  // gen-kernel-golden.ts
+  //   (30,42)  TS2339 Property 'dir' does not exist on type 'ImportMeta'        ← import.meta.dir（Bun-only）
+  //   (152,64) TS2353 decodeFunctionData 不接受 functionName
+  //   (154,60) TS2353 同上
+  //   (158,38) TS2868 Cannot find name 'Bun'                                    ← 需要 @types/bun
+  //   (159,23) TS2339 Property 'dir' does not exist on type 'ImportMeta'
+  //   (161,28) TS2868 Cannot find name 'Bun'
+  //   (161,57) TS2339 Property 'dir' does not exist on type 'ImportMeta'
+  //   (246,5)  TS2322 string | undefined 不能賦給 string（noUncheckedIndexedAccess）
+  // demo-flow.ts
+  //   (49,3)   TS2322 Type 'string' is not assignable to type '"1"'
+  //
+  // 排除的是**這兩個檔案**，不是放寬 strict：compilerOptions 全部繼承主設定，其餘 12 個 script 一律
+  // 受完整 strict 檢查。這兩個檔案修好後把 exclude 拿掉即可，不需要動任何 compilerOption。
+  "exclude": ["scripts/gen-kernel-golden.ts", "scripts/demo-flow.ts"]
+}

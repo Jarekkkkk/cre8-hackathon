@@ -1,0 +1,1047 @@
+{
+  "series": "DGS3MO",
+  "source": "https://fred.stlouisfed.org/series/DGS3MO",
+  "through": "2026-11-09",
+  "rates": [
+    {
+      "date": "2025-10-24",
+      "annualPct": 3.93
+    },
+    {
+      "date": "2025-10-27",
+      "annualPct": 3.89
+    },
+    {
+      "date": "2025-10-28",
+      "annualPct": 3.89
+    },
+    {
+      "date": "2025-10-29",
+      "annualPct": 3.93
+    },
+    {
+      "date": "2025-10-30",
+      "annualPct": 3.92
+    },
+    {
+      "date": "2025-10-31",
+      "annualPct": 3.89
+    },
+    {
+      "date": "2025-11-03",
+      "annualPct": 3.98
+    },
+    {
+      "date": "2025-11-04",
+      "annualPct": 3.96
+    },
+    {
+      "date": "2025-11-05",
+      "annualPct": 3.96
+    },
+    {
+      "date": "2025-11-06",
+      "annualPct": 3.93
+    },
+    {
+      "date": "2025-11-07",
+      "annualPct": 3.92
+    },
+    {
+      "date": "2025-11-10",
+      "annualPct": 3.95
+    },
+    {
+      "date": "2025-11-12",
+      "annualPct": 3.95
+    },
+    {
+      "date": "2025-11-13",
+      "annualPct": 3.96
+    },
+    {
+      "date": "2025-11-14",
+      "annualPct": 3.95
+    },
+    {
+      "date": "2025-11-17",
+      "annualPct": 3.97
+    },
+    {
+      "date": "2025-11-18",
+      "annualPct": 3.94
+    },
+    {
+      "date": "2025-11-19",
+      "annualPct": 3.95
+    },
+    {
+      "date": "2025-11-20",
+      "annualPct": 3.94
+    },
+    {
+      "date": "2025-11-21",
+      "annualPct": 3.9
+    },
+    {
+      "date": "2025-11-24",
+      "annualPct": 3.91
+    },
+    {
+      "date": "2025-11-25",
+      "annualPct": 3.9
+    },
+    {
+      "date": "2025-11-26",
+      "annualPct": 3.92
+    },
+    {
+      "date": "2025-11-28",
+      "annualPct": 3.88
+    },
+    {
+      "date": "2025-12-01",
+      "annualPct": 3.81
+    },
+    {
+      "date": "2025-12-02",
+      "annualPct": 3.77
+    },
+    {
+      "date": "2025-12-03",
+      "annualPct": 3.72
+    },
+    {
+      "date": "2025-12-04",
+      "annualPct": 3.71
+    },
+    {
+      "date": "2025-12-05",
+      "annualPct": 3.71
+    },
+    {
+      "date": "2025-12-08",
+      "annualPct": 3.73
+    },
+    {
+      "date": "2025-12-09",
+      "annualPct": 3.73
+    },
+    {
+      "date": "2025-12-10",
+      "annualPct": 3.69
+    },
+    {
+      "date": "2025-12-11",
+      "annualPct": 3.66
+    },
+    {
+      "date": "2025-12-12",
+      "annualPct": 3.63
+    },
+    {
+      "date": "2025-12-15",
+      "annualPct": 3.65
+    },
+    {
+      "date": "2025-12-16",
+      "annualPct": 3.64
+    },
+    {
+      "date": "2025-12-17",
+      "annualPct": 3.64
+    },
+    {
+      "date": "2025-12-18",
+      "annualPct": 3.62
+    },
+    {
+      "date": "2025-12-19",
+      "annualPct": 3.62
+    },
+    {
+      "date": "2025-12-22",
+      "annualPct": 3.64
+    },
+    {
+      "date": "2025-12-23",
+      "annualPct": 3.65
+    },
+    {
+      "date": "2025-12-24",
+      "annualPct": 3.69
+    },
+    {
+      "date": "2025-12-26",
+      "annualPct": 3.64
+    },
+    {
+      "date": "2025-12-29",
+      "annualPct": 3.68
+    },
+    {
+      "date": "2025-12-30",
+      "annualPct": 3.65
+    },
+    {
+      "date": "2025-12-31",
+      "annualPct": 3.67
+    },
+    {
+      "date": "2026-01-02",
+      "annualPct": 3.65
+    },
+    {
+      "date": "2026-01-05",
+      "annualPct": 3.64
+    },
+    {
+      "date": "2026-01-06",
+      "annualPct": 3.63
+    },
+    {
+      "date": "2026-01-07",
+      "annualPct": 3.62
+    },
+    {
+      "date": "2026-01-08",
+      "annualPct": 3.62
+    },
+    {
+      "date": "2026-01-09",
+      "annualPct": 3.62
+    },
+    {
+      "date": "2026-01-12",
+      "annualPct": 3.67
+    },
+    {
+      "date": "2026-01-13",
+      "annualPct": 3.67
+    },
+    {
+      "date": "2026-01-14",
+      "annualPct": 3.67
+    },
+    {
+      "date": "2026-01-15",
+      "annualPct": 3.68
+    },
+    {
+      "date": "2026-01-16",
+      "annualPct": 3.67
+    },
+    {
+      "date": "2026-01-20",
+      "annualPct": 3.7
+    },
+    {
+      "date": "2026-01-21",
+      "annualPct": 3.7
+    },
+    {
+      "date": "2026-01-22",
+      "annualPct": 3.71
+    },
+    {
+      "date": "2026-01-23",
+      "annualPct": 3.7
+    },
+    {
+      "date": "2026-01-26",
+      "annualPct": 3.67
+    },
+    {
+      "date": "2026-01-27",
+      "annualPct": 3.67
+    },
+    {
+      "date": "2026-01-28",
+      "annualPct": 3.68
+    },
+    {
+      "date": "2026-01-29",
+      "annualPct": 3.67
+    },
+    {
+      "date": "2026-01-30",
+      "annualPct": 3.67
+    },
+    {
+      "date": "2026-02-02",
+      "annualPct": 3.69
+    },
+    {
+      "date": "2026-02-03",
+      "annualPct": 3.69
+    },
+    {
+      "date": "2026-02-04",
+      "annualPct": 3.69
+    },
+    {
+      "date": "2026-02-05",
+      "annualPct": 3.67
+    },
+    {
+      "date": "2026-02-06",
+      "annualPct": 3.68
+    },
+    {
+      "date": "2026-02-09",
+      "annualPct": 3.69
+    },
+    {
+      "date": "2026-02-10",
+      "annualPct": 3.69
+    },
+    {
+      "date": "2026-02-11",
+      "annualPct": 3.7
+    },
+    {
+      "date": "2026-02-12",
+      "annualPct": 3.7
+    },
+    {
+      "date": "2026-02-13",
+      "annualPct": 3.68
+    },
+    {
+      "date": "2026-02-17",
+      "annualPct": 3.69
+    },
+    {
+      "date": "2026-02-18",
+      "annualPct": 3.7
+    },
+    {
+      "date": "2026-02-19",
+      "annualPct": 3.69
+    },
+    {
+      "date": "2026-02-20",
+      "annualPct": 3.69
+    },
+    {
+      "date": "2026-02-23",
+      "annualPct": 3.69
+    },
+    {
+      "date": "2026-02-24",
+      "annualPct": 3.69
+    },
+    {
+      "date": "2026-02-25",
+      "annualPct": 3.69
+    },
+    {
+      "date": "2026-02-26",
+      "annualPct": 3.68
+    },
+    {
+      "date": "2026-02-27",
+      "annualPct": 3.67
+    },
+    {
+      "date": "2026-03-02",
+      "annualPct": 3.72
+    },
+    {
+      "date": "2026-03-03",
+      "annualPct": 3.71
+    },
+    {
+      "date": "2026-03-04",
+      "annualPct": 3.71
+    },
+    {
+      "date": "2026-03-05",
+      "annualPct": 3.7
+    },
+    {
+      "date": "2026-03-06",
+      "annualPct": 3.69
+    },
+    {
+      "date": "2026-03-09",
+      "annualPct": 3.71
+    },
+    {
+      "date": "2026-03-10",
+      "annualPct": 3.71
+    },
+    {
+      "date": "2026-03-11",
+      "annualPct": 3.71
+    },
+    {
+      "date": "2026-03-12",
+      "annualPct": 3.72
+    },
+    {
+      "date": "2026-03-13",
+      "annualPct": 3.72
+    },
+    {
+      "date": "2026-03-16",
+      "annualPct": 3.72
+    },
+    {
+      "date": "2026-03-17",
+      "annualPct": 3.72
+    },
+    {
+      "date": "2026-03-18",
+      "annualPct": 3.73
+    },
+    {
+      "date": "2026-03-19",
+      "annualPct": 3.73
+    },
+    {
+      "date": "2026-03-20",
+      "annualPct": 3.74
+    },
+    {
+      "date": "2026-03-23",
+      "annualPct": 3.74
+    },
+    {
+      "date": "2026-03-24",
+      "annualPct": 3.74
+    },
+    {
+      "date": "2026-03-25",
+      "annualPct": 3.73
+    },
+    {
+      "date": "2026-03-26",
+      "annualPct": 3.73
+    },
+    {
+      "date": "2026-03-27",
+      "annualPct": 3.73
+    },
+    {
+      "date": "2026-03-30",
+      "annualPct": 3.71
+    },
+    {
+      "date": "2026-03-31",
+      "annualPct": 3.7
+    },
+    {
+      "date": "2026-04-01",
+      "annualPct": 3.7
+    },
+    {
+      "date": "2026-04-02",
+      "annualPct": 3.7
+    },
+    {
+      "date": "2026-04-03",
+      "annualPct": 3.71
+    },
+    {
+      "date": "2026-04-06",
+      "annualPct": 3.72
+    },
+    {
+      "date": "2026-04-07",
+      "annualPct": 3.71
+    },
+    {
+      "date": "2026-04-08",
+      "annualPct": 3.69
+    },
+    {
+      "date": "2026-04-09",
+      "annualPct": 3.68
+    },
+    {
+      "date": "2026-04-10",
+      "annualPct": 3.69
+    },
+    {
+      "date": "2026-04-13",
+      "annualPct": 3.71
+    },
+    {
+      "date": "2026-04-14",
+      "annualPct": 3.71
+    },
+    {
+      "date": "2026-04-15",
+      "annualPct": 3.71
+    },
+    {
+      "date": "2026-04-16",
+      "annualPct": 3.7
+    },
+    {
+      "date": "2026-04-17",
+      "annualPct": 3.7
+    },
+    {
+      "date": "2026-04-20",
+      "annualPct": 3.71
+    },
+    {
+      "date": "2026-04-21",
+      "annualPct": 3.69
+    },
+    {
+      "date": "2026-04-22",
+      "annualPct": 3.69
+    },
+    {
+      "date": "2026-04-23",
+      "annualPct": 3.69
+    },
+    {
+      "date": "2026-04-24",
+      "annualPct": 3.69
+    },
+    {
+      "date": "2026-04-27",
+      "annualPct": 3.68
+    },
+    {
+      "date": "2026-04-28",
+      "annualPct": 3.68
+    },
+    {
+      "date": "2026-04-29",
+      "annualPct": 3.68
+    },
+    {
+      "date": "2026-04-30",
+      "annualPct": 3.68
+    },
+    {
+      "date": "2026-05-01",
+      "annualPct": 3.68
+    },
+    {
+      "date": "2026-05-04",
+      "annualPct": 3.7
+    },
+    {
+      "date": "2026-05-05",
+      "annualPct": 3.69
+    },
+    {
+      "date": "2026-05-06",
+      "annualPct": 3.69
+    },
+    {
+      "date": "2026-05-07",
+      "annualPct": 3.69
+    },
+    {
+      "date": "2026-05-08",
+      "annualPct": 3.69
+    },
+    {
+      "date": "2026-05-11",
+      "annualPct": 3.7
+    },
+    {
+      "date": "2026-05-12",
+      "annualPct": 3.7
+    },
+    {
+      "date": "2026-05-13",
+      "annualPct": 3.69
+    },
+    {
+      "date": "2026-05-14",
+      "annualPct": 3.69
+    },
+    {
+      "date": "2026-05-15",
+      "annualPct": 3.69
+    },
+    {
+      "date": "2026-05-18",
+      "annualPct": 3.68
+    },
+    {
+      "date": "2026-05-19",
+      "annualPct": 3.67
+    },
+    {
+      "date": "2026-05-20",
+      "annualPct": 3.65
+    },
+    {
+      "date": "2026-05-21",
+      "annualPct": 3.68
+    },
+    {
+      "date": "2026-05-22",
+      "annualPct": 3.68
+    },
+    {
+      "date": "2026-05-26",
+      "annualPct": 3.68
+    },
+    {
+      "date": "2026-05-27",
+      "annualPct": 3.68
+    },
+    {
+      "date": "2026-05-28",
+      "annualPct": 3.69
+    },
+    {
+      "date": "2026-05-29",
+      "annualPct": 3.69
+    },
+    {
+      "date": "2026-06-01",
+      "annualPct": 3.78
+    },
+    {
+      "date": "2026-06-02",
+      "annualPct": 3.77
+    },
+    {
+      "date": "2026-06-03",
+      "annualPct": 3.78
+    },
+    {
+      "date": "2026-06-04",
+      "annualPct": 3.78
+    },
+    {
+      "date": "2026-06-05",
+      "annualPct": 3.78
+    },
+    {
+      "date": "2026-06-08",
+      "annualPct": 3.8
+    },
+    {
+      "date": "2026-06-09",
+      "annualPct": 3.79
+    },
+    {
+      "date": "2026-06-10",
+      "annualPct": 3.79
+    },
+    {
+      "date": "2026-06-11",
+      "annualPct": 3.78
+    },
+    {
+      "date": "2026-06-12",
+      "annualPct": 3.78
+    },
+    {
+      "date": "2026-06-15",
+      "annualPct": 3.79
+    },
+    {
+      "date": "2026-06-16",
+      "annualPct": 3.79
+    },
+    {
+      "date": "2026-06-17",
+      "annualPct": 3.83
+    },
+    {
+      "date": "2026-06-18",
+      "annualPct": 3.83
+    },
+    {
+      "date": "2026-06-22",
+      "annualPct": 3.85
+    },
+    {
+      "date": "2026-06-23",
+      "annualPct": 3.85
+    },
+    {
+      "date": "2026-06-24",
+      "annualPct": 3.85
+    },
+    {
+      "date": "2026-06-25",
+      "annualPct": 3.84
+    },
+    {
+      "date": "2026-06-26",
+      "annualPct": 3.83
+    },
+    {
+      "date": "2026-06-29",
+      "annualPct": 3.87
+    },
+    {
+      "date": "2026-06-30",
+      "annualPct": 3.87
+    },
+    {
+      "date": "2026-07-01",
+      "annualPct": 3.85
+    },
+    {
+      "date": "2026-07-02",
+      "annualPct": 3.82
+    },
+    {
+      "date": "2026-07-06",
+      "annualPct": 3.87
+    },
+    {
+      "date": "2026-07-07",
+      "annualPct": 3.86
+    },
+    {
+      "date": "2026-07-08",
+      "annualPct": 3.87
+    },
+    {
+      "date": "2026-07-09",
+      "annualPct": 3.83
+    },
+    {
+      "date": "2026-07-10",
+      "annualPct": 3.85
+    },
+    {
+      "date": "2026-07-13",
+      "annualPct": 3.89
+    },
+    {
+      "date": "2026-07-14",
+      "annualPct": 3.84
+    },
+    {
+      "date": "2026-07-15",
+      "annualPct": 3.83
+    },
+    {
+      "date": "2026-07-16",
+      "annualPct": 3.84
+    },
+    {
+      "date": "2026-07-17",
+      "annualPct": 3.85
+    },
+    {
+      "date": "2026-07-20",
+      "annualPct": 3.86
+    },
+    {
+      "date": "2026-07-21",
+      "annualPct": 3.87
+    },
+    {
+      "date": "2026-07-22",
+      "annualPct": 3.89
+    },
+    {
+      "date": "2026-07-23",
+      "annualPct": 3.95
+    },
+    {
+      "date": "2026-07-24",
+      "annualPct": 3.96
+    },
+    {
+      "date": "2026-07-27",
+      "annualPct": 3.96
+    },
+    {
+      "date": "2026-07-28",
+      "annualPct": 3.9
+    },
+    {
+      "date": "2026-07-29",
+      "annualPct": 3.83
+    },
+    {
+      "date": "2026-07-30",
+      "annualPct": 3.82
+    },
+    {
+      "date": "2026-07-31",
+      "annualPct": 3.83
+    },
+    {
+      "date": "2026-08-03",
+      "annualPct": 3.91
+    },
+    {
+      "date": "2026-08-04",
+      "annualPct": 3.89
+    },
+    {
+      "date": "2026-08-05",
+      "annualPct": 3.89
+    },
+    {
+      "date": "2026-08-06",
+      "annualPct": 3.9
+    },
+    {
+      "date": "2026-08-07",
+      "annualPct": 3.87
+    },
+    {
+      "date": "2026-08-10",
+      "annualPct": 3.89
+    },
+    {
+      "date": "2026-08-11",
+      "annualPct": 3.89
+    },
+    {
+      "date": "2026-08-12",
+      "annualPct": 3.87
+    },
+    {
+      "date": "2026-08-13",
+      "annualPct": 3.87
+    },
+    {
+      "date": "2026-08-14",
+      "annualPct": 3.86
+    },
+    {
+      "date": "2026-08-17",
+      "annualPct": 3.87
+    },
+    {
+      "date": "2026-08-18",
+      "annualPct": 3.86
+    },
+    {
+      "date": "2026-08-19",
+      "annualPct": 3.86
+    },
+    {
+      "date": "2026-08-20",
+      "annualPct": 3.87
+    },
+    {
+      "date": "2026-08-21",
+      "annualPct": 3.88
+    },
+    {
+      "date": "2026-08-24",
+      "annualPct": 3.87
+    },
+    {
+      "date": "2026-08-25",
+      "annualPct": 3.86
+    },
+    {
+      "date": "2026-08-26",
+      "annualPct": 3.85
+    },
+    {
+      "date": "2026-08-27",
+      "annualPct": 3.84
+    },
+    {
+      "date": "2026-08-28",
+      "annualPct": 3.9
+    },
+    {
+      "date": "2026-08-31",
+      "annualPct": 3.91
+    },
+    {
+      "date": "2026-09-01",
+      "annualPct": 3.92
+    },
+    {
+      "date": "2026-09-02",
+      "annualPct": 3.92
+    },
+    {
+      "date": "2026-09-03",
+      "annualPct": 3.89
+    },
+    {
+      "date": "2026-09-04",
+      "annualPct": 3.91
+    },
+    {
+      "date": "2026-09-08",
+      "annualPct": 3.94
+    },
+    {
+      "date": "2026-09-09",
+      "annualPct": 3.95
+    },
+    {
+      "date": "2026-09-10",
+      "annualPct": 4.0
+    },
+    {
+      "date": "2026-09-11",
+      "annualPct": 4.07
+    },
+    {
+      "date": "2026-09-14",
+      "annualPct": 4.11
+    },
+    {
+      "date": "2026-09-15",
+      "annualPct": 4.11
+    },
+    {
+      "date": "2026-09-16",
+      "annualPct": 4.14
+    },
+    {
+      "date": "2026-09-17",
+      "annualPct": 4.12
+    },
+    {
+      "date": "2026-09-18",
+      "annualPct": 4.14
+    },
+    {
+      "date": "2026-09-21",
+      "annualPct": 4.17
+    },
+    {
+      "date": "2026-09-22",
+      "annualPct": 4.16
+    },
+    {
+      "date": "2026-09-23",
+      "annualPct": 4.19
+    },
+    {
+      "date": "2026-09-24",
+      "annualPct": 4.24
+    },
+    {
+      "date": "2026-09-25",
+      "annualPct": 4.24
+    },
+    {
+      "date": "2026-09-28",
+      "annualPct": 4.28
+    },
+    {
+      "date": "2026-09-29",
+      "annualPct": 4.25
+    },
+    {
+      "date": "2026-09-30",
+      "annualPct": 4.2
+    },
+    {
+      "date": "2026-10-01",
+      "annualPct": 4.17
+    },
+    {
+      "date": "2026-10-02",
+      "annualPct": 4.19
+    },
+    {
+      "date": "2026-10-05",
+      "annualPct": 4.22
+    },
+    {
+      "date": "2026-10-06",
+      "annualPct": 4.21
+    },
+    {
+      "date": "2026-10-07",
+      "annualPct": 4.22
+    },
+    {
+      "date": "2026-10-08",
+      "annualPct": 4.23
+    },
+    {
+      "date": "2026-10-09",
+      "annualPct": 4.25
+    },
+    {
+      "date": "2026-10-13",
+      "annualPct": 4.26
+    },
+    {
+      "date": "2026-10-14",
+      "annualPct": 4.28
+    },
+    {
+      "date": "2026-10-15",
+      "annualPct": 4.28
+    },
+    {
+      "date": "2026-10-16",
+      "annualPct": 4.26
+    },
+    {
+      "date": "2026-10-19",
+      "annualPct": 4.27
+    },
+    {
+      "date": "2026-10-20",
+      "annualPct": 4.26
+    },
+    {
+      "date": "2026-10-21",
+      "annualPct": 4.25
+    },
+    {
+      "date": "2026-10-22",
+      "annualPct": 4.22
+    },
+    {
+      "date": "2026-10-23",
+      "annualPct": 4.22
+    },
+    {
+      "date": "2026-10-26",
+      "annualPct": 4.22
+    },
+    {
+      "date": "2026-10-27",
+      "annualPct": 4.22
+    },
+    {
+      "date": "2026-10-28",
+      "annualPct": 4.18
+    },
+    {
+      "date": "2026-10-29",
+      "annualPct": 4.18
+    },
+    {
+      "date": "2026-10-30",
+      "annualPct": 4.16
+    },
+    {
+      "date": "2026-11-02",
+      "annualPct": 4.21
+    },
+    {
+      "date": "2026-11-03",
+      "annualPct": 4.21
+    },
+    {
+      "date": "2026-11-04",
+      "annualPct": 4.21
+    },
+    {
+      "date": "2026-11-05",
+      "annualPct": 4.17
+    },
+    {
+      "date": "2026-11-06",
+      "annualPct": 4.19
+    }
+  ]
+}

@@ -1,0 +1,956 @@
+<!doctype html>
+<html lang="en" data-fonts="self" data-network="demo">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/logos/cre8-icon.svg" type="image/svg+xml">
+<title>CRE8 — The Fund Market For Everyone</title>
+<!-- Original CRE8 landing from bnb-agent-vaults at 0f3196d37821561050dee1176d9d33e3b51c5d5e. -->
+<link rel="stylesheet" href="/landing/static/chunks/0b_fvyf-eogcd.css">
+<link rel="stylesheet" href="/landing/static/chunks/2mzm1_kyzqu29.css">
+<link rel="stylesheet" href="/landing/static/chunks/2vuk6mhjauxsw.css">
+</head>
+<body class="antialiased landing-page">
+<div class="bav-fog" aria-hidden="true"><i></i></div>
+<div data-prototype-page="landing">
+<link rel="stylesheet" href="/landing/assets/landing.css">
+<link rel="stylesheet" href="/landing/assets/cre8-flow.css">
+<header class="cl-nav" id="mh"><div class="wrap cl-nav-in">
+<a class="brand" href="/" id="brand" aria-label="CRE8 home"></a>
+<nav class="cl-links" aria-label="Main navigation"><a href="#funds">Funds</a><a href="#how">Open a fund</a><a href="#ai">CRE8 AI</a><a href="#questions">FAQ</a></nav>
+<a class="btn sm" href="/vaults" data-wipe>Launch app</a>
+</div></header>
+<main>
+<section class="cl-hero" id="top" aria-labelledby="cl-hero-title">
+<div class="wrap cl-hero-in">
+<h1 class="cl-hero-h1" id="cl-hero-title"><span class="cl-l1"><span class="cl-w" style="--d:.05s"><span>The</span></span> <span class="cl-w" style="--d:.13s"><span>Fund</span></span> <span class="cl-w" style="--d:.21s"><span>Market</span></span></span> <span class="cl-l2"><span class="cl-w" style="--d:.5s"><span>For</span></span> <span class="cl-w" style="--d:.58s"><span>Everyone</span></span></span></h1>
+<p class="cl-hero-lead">From NVIDIA to Bitcoin, <span class="cl-keep">in one fund.</span></p>
+<div class="cl-ctas"><a class="btn" href="/vaults" data-wipe>Explore funds</a><a class="btn ghost" href="https://bnb-agent-vaults.vercel.app/docs/">Learn more</a></div>
+</div>
+<div class="cl-hero-stage" id="cl-hero-stage" aria-hidden="true" data-ui><canvas></canvas><p class="cl-fund-label" id="cl-fund-label"><b id="cl-fund-name"></b><span id="cl-fund-mix"></span></p></div>
+</section>
+
+<section class="cl-split" id="story" aria-labelledby="cl-split-title">
+<div class="cl-split-bg"><img data-src="/landing/img/floor-split-1280.webp" data-srcset="/landing/img/floor-split-800.webp 800w, /landing/img/floor-split-1280.webp 1280w, /landing/img/floor-split-1600.webp 1600w" sizes="100vw" width="1600" height="1069" alt="A 1900s trading floor whose right half turns into a grid of data" decoding="async"><noscript><img src="/landing/img/floor-split-1280.webp" srcset="/landing/img/floor-split-800.webp 800w, /landing/img/floor-split-1280.webp 1280w, /landing/img/floor-split-1600.webp 1600w" sizes="100vw" width="1600" height="1069" alt="A 1900s trading floor whose right half turns into a grid of data"></noscript><canvas aria-hidden="true"></canvas></div>
+<div class="cl-split-shade"></div>
+<div class="wrap cl-split-in">
+<p class="cl-split-say" data-reveal><span>We rebuilt Wall Street’s best product onchain.</span></p>
+<h2 class="cl-split-heads" id="cl-split-title"><span class="cl-ws">Wall Street</span> <span class="cl-mid" aria-label="to"></span> <span class="cl-oc">onchain</span></h2>
+<dl class="cl-split-rows">
+<div style="--i:0"><dt>Rules</dt><dd class="cl-ws">In the fine print</dd><dd class="cl-oc">Written into the contract</dd></div>
+<div style="--i:1"><dt>You see</dt><dd class="cl-ws">Holdings once a quarter</dd><dd class="cl-oc">Every trade, as it happens</dd></div>
+<div style="--i:2"><dt>Leaving</dt><dd class="cl-ws">In market hours</dd><dd class="cl-oc">Any time</dd></div>
+</dl>
+</div>
+</section>
+
+<section class="cl-sec cl-funds" id="funds" aria-labelledby="cl-funds-title"><div class="wrap">
+<div class="cl-head cl-head-stack"><h2 class="cl-h2" id="cl-funds-title" data-reveal="heading">Pick a fund</h2>
+<p class="cl-lead" data-reveal>Holdings, returns and holders, side by side.</p></div>
+<div class="cl-fbar"><div class="cl-sort" role="group" aria-label="Sort the example funds"><button type="button" data-sort="holders" aria-pressed="true">Most holders</button><button type="button" data-sort="newest" aria-pressed="false">Newest</button><button type="button" data-sort="fee" aria-pressed="false">Lowest fee</button></div><p class="cl-sim">Example funds, simulated data</p></div>
+<div class="cl-fcards" id="cl-fcards" data-reveal="steps"></div>
+<div class="cl-dots" id="cl-fdots" role="group" aria-label="Choose a fund"></div>
+<div class="cl-vp-foot"><a class="cl-textlink" href="/vaults" data-wipe>See all funds</a><a class="cl-textlink" href="/funds/mag7" data-wipe>Read an example fund</a></div>
+</div></section>
+
+<section class="cl-flow" id="how" aria-labelledby="cl-flow-title">
+<div class="wrap cl-flow-head"><h2 class="cl-h2 cl-flow-h" id="cl-flow-title" data-reveal="heading"><span>Wall Street built funds.</span> <span>Now anyone can CRE8 one.</span></h2></div>
+<div class="cl-flow-main">
+<div class="cl-flow-stage" data-ui>
+<div class="cl-sc cl-sc-create is-on" aria-hidden="true" data-loop="16000"><div class="cl-art"></div><div class="cc-mount"></div></div>
+<div class="cl-sc cl-sc-deposit" aria-hidden="true" data-loop="11000"><div class="cl-art"></div><div class="cc-mount"></div></div>
+<div class="cl-sc cl-sc-trade" aria-hidden="true" data-loop="10000"><div class="cl-art"></div><div class="cc-mount"></div></div>
+<div class="cl-sc cl-sc-earn" aria-hidden="true" data-loop="11000"><div class="cl-art"></div><div class="cc-mount"></div></div>
+<div class="cl-flow-nav" role="group" aria-label="Steps">
+<button type="button" class="is-on" aria-current="step"><span>Create</span><i></i></button>
+<button type="button"><span>Deposit</span><i></i></button>
+<button type="button"><span>Trade</span><i></i></button>
+<button type="button"><span>Get paid</span><i></i></button>
+</div>
+</div>
+<div class="cl-flow-body">
+<div class="cl-flow-arrows"><button type="button" data-flow-prev aria-label="Previous step" disabled>←</button><button type="button" data-flow-next aria-label="Next step">→</button></div>
+<ol class="cl-flow-steps">
+<li class="cl-flow-step is-on"><div class="cl-flow-text"><h3>Open a fund</h3>
+<p class="cl-flow-sum">Write a thesis, pick what it can hold, where it trades and your fee, then seed it with at least 100 USDT.</p>
+<div class="cl-flow-links"><a class="btn" href="/create" data-wipe>Open a fund</a><a class="cl-flow-more" href="#ai">Or just ask CRE8 AI</a></div></div></li>
+<li class="cl-flow-step"><div class="cl-flow-text"><h3>Holders deposit</h3>
+<p class="cl-flow-sum">Anyone can deposit USDT. The money sits in the fund contract, not with you.</p>
+<div class="cl-flow-links"><a class="btn ghost" href="/vaults" data-wipe>Explore funds</a><a class="cl-flow-more" href="/funds/mag7" data-wipe>Read an example fund</a></div></div></li>
+<li class="cl-flow-step"><div class="cl-flow-text"><h3>It runs by its rules</h3>
+<p class="cl-flow-sum">The plan places the orders, and the contract checks each one first.</p>
+</div></li>
+<li class="cl-flow-step"><div class="cl-flow-text"><h3>Everyone gets paid</h3>
+<p class="cl-flow-sum">Holders withdraw at the share price. You earn a performance fee when the fund makes a profit.</p>
+</div></li>
+</ol>
+</div>
+</div>
+</section>
+
+<section class="cl-ai" id="ai" aria-labelledby="cl-ai-title">
+<div class="cl-ai-stage">
+<div class="cl-ai-head"><div class="cl-ai-copy"><h2 class="cl-h2 cl-ai-title" id="cl-ai-title">Or just ask CRE8&nbsp;AI.</h2>
+<p class="cl-ai-lede">One sentence in. A fund out. Nothing moves until you approve.</p>
+<div class="cl-ctas"><a class="btn cl-btn-light" href="https://bnb-agent-vaults.vercel.app/agent/" data-wipe>Ask CRE8 AI</a></div></div>
+<div class="cl-ai-bot" aria-hidden="true"><img src="/landing/img/agent-think.webp" width="375" height="333" alt="" decoding="async"><canvas></canvas></div></div>
+<div class="cl-ai-app" aria-hidden="true" data-ui>
+<div class="cl-ai-chat">
+<div class="cl-ai-log">
+<div class="cl-ai-msg ai on"><img src="/landing/assets/agents/agent-07.webp" alt="" width="28" height="28" loading="lazy"><p>What should your fund hold? Describe it in one sentence.</p></div>
+<div class="cl-ai-msg me on" data-k="me"><small>Design</small><p>Own Big Tech and Bitcoin, buying a little every week.</p></div>
+<div class="cl-ai-msg ai on" data-k="reply"><img src="/landing/assets/agents/agent-07.webp" alt="" width="28" height="28" loading="lazy"><p>Here’s Big Tech + Bitcoin. Edit anything, or tell me what to change.</p></div>
+<div class="cl-ai-changes on" data-k="changes"><p>7 changes to your fund</p><ul><li class="on"><b>+</b>NVIDIA, 15%</li><li class="on"><b>+</b>Apple, 15%</li><li class="on"><b>+</b>Alphabet, 14%</li><li class="on"><b>+</b>Microsoft, 14%</li><li class="on"><b>+</b>Meta, 14%</li><li class="on"><b>+</b>Amazon, 14%</li><li class="on"><b>+</b>Bitcoin, 14%</li></ul></div>
+<div class="cl-ai-chips on" data-k="chips"><span>Rebalance quarterly</span><span>Keep 10% in cash</span><span>Add a 20% stop-loss</span></div>
+</div>
+<div class="cl-ai-compose"><span class="cl-ai-typed"></span><i class="cl-ai-caret"></i><b class="cl-ai-send">↑</b></div>
+</div>
+<div class="cl-ai-panel">
+<div class="cl-ai-ptop"><b class="cl-ai-name">Big Tech + Bitcoin</b><span class="cl-ai-tag">Draft</span><span class="cl-ai-x">×</span></div>
+<div class="cl-ai-card">
+<div class="cl-ai-chead"><b>Assets</b><span class="cl-ai-count">7 of 7</span></div>
+<div class="cl-ai-th"><span>Asset</span><span>Share</span><span>Strategy</span></div>
+<p class="cl-ai-empty">Your fund takes shape here.</p>
+<div class="cl-ai-rows">
+<div class="cl-ai-row on"><div class="cl-ai-asset"><img src="/logos/stocks/underlying/nvda.png" alt="" width="28" height="28" loading="lazy"><span><b>NVIDIA</b><small>NVDAB</small></span></div><div class="cl-ai-share">15%</div><div class="cl-ai-strat"><svg viewBox="0 0 52 22"><path d="M1 15 L8 12 L14 16 L21 9 L28 13 L35 7 L42 10 L51 3" fill="none" stroke="#4E6A7F" stroke-width="1.4"/></svg><span><b>Stack</b><small>Every Monday, 12 buys</small></span></div></div>
+<div class="cl-ai-row on"><div class="cl-ai-asset"><img src="/logos/stocks/underlying/aapl.png" alt="" width="28" height="28" loading="lazy"><span><b>Apple</b><small>AAPLB</small></span></div><div class="cl-ai-share">15%</div><div class="cl-ai-strat"><svg viewBox="0 0 52 22"><path d="M1 15 L8 12 L14 16 L21 9 L28 13 L35 7 L42 10 L51 3" fill="none" stroke="#4E6A7F" stroke-width="1.4"/></svg><span><b>Stack</b><small>Every Monday, 12 buys</small></span></div></div>
+<div class="cl-ai-row on"><div class="cl-ai-asset"><img src="/logos/stocks/underlying/googl.png" alt="" width="28" height="28" loading="lazy"><span><b>Alphabet</b><small>GOOGLB</small></span></div><div class="cl-ai-share">14%</div><div class="cl-ai-strat"><svg viewBox="0 0 52 22"><path d="M1 15 L8 12 L14 16 L21 9 L28 13 L35 7 L42 10 L51 3" fill="none" stroke="#4E6A7F" stroke-width="1.4"/></svg><span><b>Stack</b><small>Every Monday, 12 buys</small></span></div></div>
+<div class="cl-ai-row on"><div class="cl-ai-asset"><img src="/logos/stocks/underlying/msft.png" alt="" width="28" height="28" loading="lazy"><span><b>Microsoft</b><small>MSFTB</small></span></div><div class="cl-ai-share">14%</div><div class="cl-ai-strat"><svg viewBox="0 0 52 22"><path d="M1 15 L8 12 L14 16 L21 9 L28 13 L35 7 L42 10 L51 3" fill="none" stroke="#4E6A7F" stroke-width="1.4"/></svg><span><b>Stack</b><small>Every Monday, 12 buys</small></span></div></div>
+<div class="cl-ai-row on"><div class="cl-ai-asset"><img src="/logos/stocks/underlying/meta.png" alt="" width="28" height="28" loading="lazy"><span><b>Meta</b><small>METAB</small></span></div><div class="cl-ai-share">14%</div><div class="cl-ai-strat"><svg viewBox="0 0 52 22"><path d="M1 15 L8 12 L14 16 L21 9 L28 13 L35 7 L42 10 L51 3" fill="none" stroke="#4E6A7F" stroke-width="1.4"/></svg><span><b>Stack</b><small>Every Monday, 12 buys</small></span></div></div>
+<div class="cl-ai-row on"><div class="cl-ai-asset"><img src="/logos/stocks/underlying/amzn.png?background=dark" alt="" width="28" height="28" loading="lazy"><span><b>Amazon</b><small>AMZNB</small></span></div><div class="cl-ai-share">14%</div><div class="cl-ai-strat"><svg viewBox="0 0 52 22"><path d="M1 15 L8 12 L14 16 L21 9 L28 13 L35 7 L42 10 L51 3" fill="none" stroke="#4E6A7F" stroke-width="1.4"/></svg><span><b>Stack</b><small>Every Monday, 12 buys</small></span></div></div>
+<div class="cl-ai-row on"><div class="cl-ai-asset"><img src="/logos/tokens/btc.png" alt="" width="28" height="28" loading="lazy"><span><b>Bitcoin</b><small>BTCB</small></span></div><div class="cl-ai-share">14%</div><div class="cl-ai-strat"><svg viewBox="0 0 52 22"><path d="M1 15 L8 12 L14 16 L21 9 L28 13 L35 7 L42 10 L51 3" fill="none" stroke="#4E6A7F" stroke-width="1.4"/></svg><span><b>Stack</b><small>Every Monday, 12 buys</small></span></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="cl-sec cl-faq" id="questions" aria-labelledby="cl-faq-title"><div class="wrap cl-faq-in">
+<h2 class="cl-h2" id="cl-faq-title" data-reveal="heading">Questions</h2>
+<div class="cl-qs" data-reveal="steps">
+<details><summary>What can a fund hold?</summary><div><p>Tokenized US stocks, crypto, and stablecoins that earn by lending. Each fund lists exactly which ones, and the contract refuses everything else.</p></div></details>
+<details><summary>Who holds my money?</summary><div><p>The fund contract. The creator and the fund’s plan can only trade within the rules. Only holders can withdraw, and only their own share.</p></div></details>
+<details><summary>When can I leave?</summary><div><p>Any time. Withdraw as USDT, or take your share of the fund’s assets directly.</p></div></details>
+<details><summary>What does it cost?</summary><div><p>No yearly management fee. Every fund shows its fees before you deposit. The creator’s fee is set at launch and is taken only from profit.</p></div></details>
+<details><summary>Can I use it today?</summary><div><p>CRE8 runs on BNB Chain testnet today, and the funds on this page are examples. Join the waitlist in the app to try it.</p></div></details>
+<details><summary>What are the risks?</summary><div><p>Prices can fall and you can lose money. Contracts, price feeds and the markets a fund trades on can fail. Nothing here is investment advice.</p></div></details>
+</div>
+</div></section>
+</main>
+<div class="cl-foot"><div class="cl-foot-bg"><picture><source media="(max-width: 860px)" sizes="100vw" srcset="/landing/img/sign-480.webp 480w, /landing/img/sign-800.webp 800w"><img src="/landing/img/sign-wide-1280.webp" srcset="/landing/img/sign-wide-800.webp 800w, /landing/img/sign-wide-1280.webp 1280w, /landing/img/sign-wide-2000.webp 2000w" sizes="100vw" width="2000" height="667" alt="Street signs for CRE8 St and Wall St on the same corner" loading="lazy" decoding="async"></picture></div><div id="footer"></div></div>
+</div>
+<script>
+  window.__BAV_BASE_PATH__ = "/landing";
+  window.__BAV_MARKETING_ORIGIN__ = location.origin;
+  window.__BAV_APP_ORIGIN__ = location.origin;
+  window.__BAV_DOCS_ORIGIN__ = "https://bnb-agent-vaults.vercel.app";
+  window.__BAV_NETWORK__ = "demo";
+</script>
+<script src="/landing/assets/app.js"></script>
+<script>
+(function () {
+  const { $, $$ } = BAV;
+  const reduce = true; /* The page is still: sections do not ride the scroll. The floor, How it works and CRE8 AI play on their own and check reduced motion themselves. */
+  $("#brand").innerHTML = BAV.brandLogo("light");
+  $("#footer").outerHTML = BAV.footerHTML();
+  BAV.wireShell();
+  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const sleep = (ms) => new Promise((done) => setTimeout(done, ms));
+
+  /* hero: keep the costly WebGL scene off phones, touch-first devices and data-saving connections. On capable
+     desktops it starts after critical rendering work. */
+  (function () {
+    const stage = $("#cl-hero-stage");
+    if (!stage) return;
+    // The page-wide `reduce` above is fixed to true to keep the sections still; the hero asks the visitor's setting.
+    const richMotion = !matchMedia("(prefers-reduced-motion: reduce)").matches
+      && matchMedia("(min-width: 1024px) and (hover: hover) and (pointer: fine)").matches
+      && !navigator.connection?.saveData;
+    if (!richMotion) { stage.hidden = true; return; }
+    const probe = document.createElement("canvas").getContext("webgl2");
+    if (!probe) { stage.hidden = true; return; }
+    probe.getExtension("WEBGL_lose_context")?.loseContext();
+    const version = window.__BAV_RUNTIME_VERSION__;
+    // The stacks are the app's example funds, in the app's order: each shows its largest holdings (up to six, the
+    // tokens' underlying tickers) and its name.
+    const demo = window.__CRE8_DEMO_FUNDS__ || {};
+    const kindOf = Object.fromEntries((demo.markets || []).map((m) => [m.name, m.g === "stocks" ? "stock" : m.g]));
+    const coin = (symbol, kind) => kind === "crypto" ? ({ BTCB: "BTC", WBNB: "BNB" })[symbol] || symbol : symbol.replace(/(?:on|B)$/, "").toUpperCase();
+    const funds = (demo.funds || []).map((f) => {
+      const held = (f.backtest?.targets || []).filter((t) => t.eligible).sort((a, b) => b.weight - a.weight);
+      return { name: f.name, more: Math.max(0, held.length - 6), assets: held.slice(0, 6).map((t) => ({ ticker: coin(t.symbol, kindOf[t.symbol] || "stock"), kind: kindOf[t.symbol] || "stock" })) };
+    }).filter((f) => f.assets.length);
+    const fonts = document.fonts ? Promise.all([document.fonts.load('700 100px "Archivo"'), document.fonts.load('500 32px "IBM Plex Mono"')]).catch(() => {}) : Promise.resolve();
+    // The script downloads at once; the scene is built when the page next has a moment (at most 300ms on), and the
+    // coins fade in once their first frame is drawn.
+    const mod = import(BAV.assetUrl("assets/hero-tokens.mjs") + (version ? "?v=" + version : ""));
+    const idle = new Promise((done) => "requestIdleCallback" in window ? requestIdleCallback(done, { timeout: 300 }) : setTimeout(done, 0));
+    Promise.all([mod, fonts, idle])
+      .then(([{ mountHero }]) => {
+        if (!stage.isConnected) return;
+        const stop = mountHero({ stage, canvas: $("canvas", stage), label: $("#cl-fund-label"), mix: $("#cl-fund-mix"), title: $("#cl-fund-name"), funds, reduce: false });
+        if (!stop) { stage.hidden = true; return; }
+        return Promise.resolve(stop.ready).then(() => { if (stage.isConnected) stage.classList.add("is-on"); });
+      })
+      .catch(() => { stage.hidden = true; });
+  })();
+
+  /* Wall Street, rebuilt onchain: the right half of the floor is dark until a scan line lights it up as data;
+     then it twinkles, a scan sweeps now and then, and on wide screens example prices run down the right edge */
+  (function () {
+    const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const section = $("#story"), box = $(".cl-split-bg", section), img = $("img", box), cv = $("canvas", box), rowsEl = $(".cl-split-rows", section);
+    if (!section || !img || !cv) return;
+    const ctx = cv.getContext("2d");
+    if (!ctx) return;
+    section.classList.add("js");
+    const QUOTES = [["NVDAB", 186.42, 0.84], ["BTC", 112840, 1.12], ["AAPLB", 232.18, 0.21], ["ETH", 4210.35, 1.53], ["MSFTB", 498.9, 0.66], ["TSLAB", 251.1, -0.42],
+      ["BNB", 1012.4, -0.37], ["METAB", 712.3, 0.48], ["TSMB", 241.05, 1.04], ["GOOGLB", 205.7, 0.31]];
+    const price = (v) => v >= 10000 ? Math.round(v).toLocaleString("en-US") : v.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    const SEAM = 0.56;
+    let W = 0, H = 0, fit = null, cell = 7, gw = 0, gh = 0, lum = null, bright = [], twinkles = [], flashes = [];
+    let scanStart = -1, revealed = false, nextSweep = 0, colOffset = 0, hot = -1, hotUntil = 0, column = null, running = false, last = 0, tickAt = 0;
+    function layout() {
+      const r = cv.getBoundingClientRect(), dpr = Math.min(r.width < 640 ? 1 : 1.5, devicePixelRatio || 1);
+      W = r.width; H = r.height;
+      if (!W || !H || !img.naturalWidth) return false;
+      cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr); ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      const s = Math.max(W / img.naturalWidth, H / img.naturalHeight);
+      fit = { w: img.naturalWidth * s, h: img.naturalHeight * s }; fit.x = (W - fit.w) / 2; fit.y = (H - fit.h) / 2;
+      cell = W < 700 ? 5 : 7; gw = Math.ceil(fit.w / cell); gh = Math.ceil(fit.h / cell);
+      const small = document.createElement("canvas"); small.width = gw; small.height = gh;
+      const sx = small.getContext("2d"); sx.imageSmoothingQuality = "high"; sx.drawImage(img, 0, 0, gw, gh);
+      const d = sx.getImageData(0, 0, gw, gh).data; lum = new Float32Array(gw * gh); bright = [];
+      for (let i = 0; i < gw * gh; i++) {
+        lum[i] = (d[i * 4] * .3 + d[i * 4 + 1] * .59 + d[i * 4 + 2] * .11) / 255;
+        const gx = i % gw, gy = (i / gw) | 0, x = fit.x + gx * cell;
+        if (gx / gw > SEAM + .03 && lum[i] > .42 && x > 0 && x < W && fit.y + gy * cell < H) bright.push(i);
+      }
+      // The price column only where the table leaves room beside it.
+      const room = W - (rowsEl.getBoundingClientRect().right - r.left);
+      column = W >= 700 && room >= 108 ? { x: W - Math.min(room - 6, 132), w: Math.min(room - 6, 132), lh: 17 } : null;
+      return true;
+    }
+    const xy = (i) => [fit.x + (i % gw) * cell, fit.y + ((i / gw) | 0) * cell];
+    function draw(now) {
+      ctx.clearRect(0, 0, W, H); ctx.drawImage(img, fit.x, fit.y, fit.w, fit.h);
+      const seamX = fit.x + fit.w * SEAM, dark = "rgba(9,14,19,.78)";
+      let scanX = null;
+      if (!revealed) {
+        if (scanStart < 0) { ctx.fillStyle = dark; ctx.fillRect(seamX - 40, 0, W, H); return; }
+        const p = Math.min(1, (now - scanStart) / 1800), e = 1 - Math.pow(1 - p, 3);
+        scanX = seamX + (W - seamX) * e;
+        const g = ctx.createLinearGradient(scanX, 0, scanX + 60, 0); g.addColorStop(0, "rgba(9,14,19,0)"); g.addColorStop(1, dark);
+        ctx.fillStyle = g; ctx.fillRect(scanX, 0, 60, H); ctx.fillStyle = dark; ctx.fillRect(scanX + 60, 0, W, H);
+        if (p >= 1) { revealed = true; nextSweep = now + 5000; }
+      } else if (now >= nextSweep) {
+        const p = (now - nextSweep) / 2600;
+        if (p <= 1) scanX = seamX + (W - seamX) * p; else nextSweep = now + 6000 + Math.random() * 3000;
+      }
+      ctx.globalCompositeOperation = "lighter";
+      twinkles = twinkles.filter((t) => now - t.t0 < t.dur);
+      for (const t of twinkles) {
+        const a = Math.sin(Math.PI * (now - t.t0) / t.dur), [x, y] = xy(t.i);
+        ctx.fillStyle = t.blue ? `rgba(120,165,200,${a})` : `rgba(235,244,250,${.8 * a})`; ctx.fillRect(x + 1, y + 1, cell - 2, cell - 2);
+      }
+      flashes = flashes.filter((f) => now - f.t0 < f.dur);
+      for (const f of flashes) {
+        if (now < f.t0) continue;
+        const a = 1 - (now - f.t0) / f.dur, [x, y] = xy(f.i);
+        ctx.fillStyle = `rgba(111,160,200,${.95 * a})`; ctx.fillRect(x + 1, y + 1, cell - 2, cell - 2);
+      }
+      if (scanX !== null) {
+        for (let k = 0; k < 14; k++) {
+          const gy = (Math.random() * gh) | 0, gx = Math.floor((scanX - fit.x) / cell) - ((Math.random() * 3) | 0), i = gy * gw + gx;
+          if (gx > 0 && gx < gw && lum[i] > .3) { const [x, y] = xy(i); ctx.fillStyle = "rgba(170,205,230,.7)"; ctx.fillRect(x + 1, y + 1, cell - 2, cell - 2); }
+        }
+        const lg = ctx.createLinearGradient(scanX - 24, 0, scanX + 2, 0); lg.addColorStop(0, "rgba(111,147,174,0)"); lg.addColorStop(1, "rgba(140,180,210,.55)");
+        ctx.fillStyle = lg; ctx.fillRect(scanX - 24, 0, 26, H); ctx.fillStyle = "rgba(190,220,240,.9)"; ctx.fillRect(scanX, 0, 1, H);
+      }
+      ctx.globalCompositeOperation = "source-over";
+      if (column && revealed) {
+        const { x, w, lh } = column, g = ctx.createLinearGradient(x - 28, 0, x, 0); g.addColorStop(0, "rgba(9,14,19,0)"); g.addColorStop(1, "rgba(9,14,19,.86)");
+        ctx.fillStyle = g; ctx.fillRect(x - 28, 0, 28, H); ctx.fillStyle = "rgba(9,14,19,.86)"; ctx.fillRect(x, 0, w, H);
+        ctx.font = '500 10.5px "IBM Plex Mono"'; ctx.textBaseline = "middle";
+        const off = colOffset % (QUOTES.length * 2 * lh);
+        for (let k = 0, y = -off; y < H + lh; k++, y += lh) {
+          const qi = Math.floor(k / 2) % QUOTES.length, [sym, px, chg] = QUOTES[qi];
+          ctx.fillStyle = qi === hot && now < hotUntil ? "#8FBCE0" : k % 2 === 0 ? "rgba(238,243,247,.92)" : "rgba(183,205,222,.75)";
+          ctx.fillText(k % 2 === 0 ? sym : `${price(px)} ${chg >= 0 ? "▲" : "▼"}`, x + 10, y + lh / 2);
+        }
+      }
+    }
+    const FRAME_MS = 50;
+    let lastDraw = 0;
+    function loop(now) {
+      if (!running) return;
+      if (!section.isConnected) { running = false; return; }
+      if (lastDraw && now - lastDraw < FRAME_MS) { requestAnimationFrame(loop); return; }
+      lastDraw = now;
+      const dt = last ? Math.min(100, now - last) : 16; last = now;
+      if (revealed) {
+        colOffset += dt * .016;
+        if (Math.random() < dt / 40) for (let k = 0, n = 4 + ((Math.random() * 5) | 0); k < n && bright.length; k++) twinkles.push({ i: bright[(Math.random() * bright.length) | 0], t0: now, dur: 500 + Math.random() * 600, blue: Math.random() < .18 });
+        // An example price moves now and then, and a patch of the floor flashes with it.
+        if (now > tickAt) {
+          tickAt = now + 1400;
+          const i = (Math.random() * QUOTES.length) | 0, q = QUOTES[i], step = q[1] * (Math.random() - .45) * .002;
+          q[1] = Math.max(.01, q[1] + step); q[2] = +(q[2] + step / q[1] * 100).toFixed(2); hot = i; hotUntil = now + 800;
+          if (bright.length) { const c = bright[(Math.random() * bright.length) | 0]; for (let dy = 0; dy < 3; dy++) for (let dx = 0; dx < 7; dx++) flashes.push({ i: c + dy * gw + dx, t0: now + dx * 35, dur: 1100 }); }
+        }
+      }
+      draw(now); requestAnimationFrame(loop);
+    }
+    function start() {
+      try { if (!layout()) return; } catch { return; } // a canvas it may not read (file://) leaves the photo as it is
+      box.classList.add("is-on");
+      if (reduce) { revealed = true; section.classList.add("in"); draw(0); return; }
+      draw(performance.now());
+      new IntersectionObserver(([e]) => {
+        if (e.isIntersecting) {
+          if (scanStart < 0) { scanStart = performance.now(); section.classList.add("in"); }
+          if (!running) { running = true; last = 0; lastDraw = 0; requestAnimationFrame(loop); }
+        } else running = false;
+      }, { threshold: .3 }).observe(section);
+      let timer = 0;
+      new ResizeObserver(() => { clearTimeout(timer); timer = setTimeout(() => { try { if (layout()) draw(performance.now()); } catch { /* keep the last frame */ } }, 150); }).observe(box);
+    }
+    // Without the canvas (no script, or before the photo loads) the rows still show.
+    new IntersectionObserver(([e], io) => { if (e.isIntersecting && (reduce || !img.complete)) { io.disconnect(); section.classList.add("in"); } }, { threshold: .3 }).observe(section);
+    new IntersectionObserver(([e], io) => {
+      if (!e.isIntersecting) return;
+      io.disconnect();
+      const { src, srcset } = img.dataset;
+      if (!src || !srcset) return;
+      img.src = src;
+      img.srcset = srcset;
+      delete img.dataset.src; delete img.dataset.srcset;
+    }, { rootMargin: "600px" }).observe(section);
+    if (img.complete && img.naturalWidth) start(); else img.addEventListener("load", start, { once: true });
+    img.addEventListener("error", () => section.classList.add("in"), { once: true });
+  })();
+
+  /* example funds: the app's example funds with the best return since Jan 1 (the Pelosi fund always among them),
+     each with its largest holdings in whole percents, its return and its holders. Each sort deals the top three:
+     cards that stay slide to their new place, the others fade out and new ones rise in. */
+  (function () {
+    const box = $("#cl-fcards");
+    if (!box) return;
+    const LOGO = { BTC: "tokens/btc", BTCB: "tokens/btc", ETH: "tokens/eth", BNB: "tokens/bnb", WBNB: "tokens/bnb", USDT: "tokens/usdt" };
+    // Coin logos sit beside the ones in the markup, wherever the site serves those (/logos/ or /logos/).
+    const base = ($('img[src*="logos/stocks/underlying/nvda.png"]')?.getAttribute("src") || "/logos/stocks/underlying/nvda.png").split("stocks/")[0];
+    const logo = (t) => base + (LOGO[t] ? LOGO[t] + ".png" : window.__CRE8_STOCK_LOGOS__?.[String(t).toUpperCase()] || "stocks/" + t.toLowerCase() + ".png");
+    const tokensOf = (v) => [...new Set(BAV.vaultMarkets(v).flatMap((m) => m.tokens || []))];
+    // Holdings read as the asset's own ticker (AAPLB, IEFon -> AAPL, IEF), largest first, in whole percents.
+    const kindOf = Object.fromEntries((window.__CRE8_DEMO_FUNDS__?.markets || []).map((m) => [m.name, m.g]));
+    const ticker = (s) => kindOf[s] === "crypto" ? ({ BTCB: "BTC", WBNB: "BNB" })[s] || s : String(s).replace(/(?:on|B)$/, "").toUpperCase();
+    const pct = (w) => (w > 0 && w < 1 ? "<1" : Math.round(w)) + "%";
+    const ret = (v) => v.returns?.ALL ?? 0;
+    const signed = (r) => (r > 0 ? "+" : r < 0 ? "−" : "") + Math.abs(r).toFixed(1) + "%";
+    const PIN = "pelosi-disclosed-equity";
+    const by = (v) => v.official ? "CRE8" : v.creator.slice(0, 6) + "…" + v.creator.slice(-4);
+    const SHOW = 3, funds = [...BAV.VAULTS];
+    box.innerHTML = funds.map((v, i) => {
+      const id = "cl-fc-" + v.slug;
+      const held = v.positions.filter((p) => p.p !== "Idle" && p.w > 0).sort((a, b) => b.w - a.w);
+      // Logos in the same order as the holdings below, from the app's own logo for each asset.
+      const logoOf = Object.fromEntries((v.backtest?.targets || []).filter((x) => x.logo).map((x) => [x.symbol, base + x.logo]));
+      const srcs = held.some((p) => logoOf[p.loc]) ? held.map((p) => logoOf[p.loc]).filter(Boolean) : tokensOf(v).map(logo);
+      const logos = srcs.slice(0, 4).map((u) => '<img src="' + esc(u) + '" alt="" width="28" height="28" loading="lazy">').join("") + (srcs.length > 4 ? "<i>+" + (srcs.length - 4) + "</i>" : "");
+      const cash = v.positions.filter((p) => p.p === "Idle").reduce((a, p) => a + p.w, 0);
+      const name = (p) => p.p === "PancakeSwap" || p.p === "Fund" ? ticker(p.loc) : "Lent on " + p.p;
+      const allocation = held.slice(0, 4).map((p) => ({ w: p.w, label: name(p), kind: "" }));
+      const other = held.slice(4).reduce((sum, p) => sum + p.w, 0);
+      if (other > 0) allocation.push({ w: other, label: "+" + (held.length - 4) + " more", kind: "other" });
+      if (cash >= .5) allocation.push({ w: cash, label: "Cash", kind: "idle" });
+      const bar = allocation.map((p) => '<i class="' + p.kind + '" style="--w:' + p.w.toFixed(4) + '" title="' + esc(p.label + " " + pct(p.w)) + '"><span>' + pct(p.w) + "</span></i>").join("");
+      const legend = allocation.map((p) => '<li class="' + p.kind + '"><b>' + pct(p.w) + "</b>" + esc(p.label) + "</li>").join("");
+      return '<a class="cl-fcard" href="' + esc(BAV.route("funds/" + v.slug)) + '" aria-labelledby="' + id + '" data-holders="' + v.followers + '" data-fee="' + v.fees.perf + '" data-days="' + v.runtimeDays + '" data-return="' + ret(v) + '" data-pin="' + (v.slug === PIN ? 1 : 0) + '" style="--k:' + i + '"><span class="cl-fcard-in">' +
+        '<span class="cl-fcard-top"><span class="cl-fcard-logos">' + logos + '</span><span class="cl-fcard-by">by ' + esc(by(v)) + "</span></span>" +
+        '<span class="cl-fcard-name" id="' + id + '">' + esc(v.name) + "</span>" +
+        '<span class="cl-fcard-rule">' + esc(v.strategy.split(/(?<=\.) /)[0]) + "</span>" +
+        '<span class="cl-fcard-bar">' + bar + '</span><ul class="cl-fcard-legend">' + legend + "</ul>" +
+        '<dl class="cl-fcard-facts"><div><dt>Return since Jan 1</dt><dd>' + signed(ret(v)) + '</dd></div><div><dt>Holders</dt><dd>' + BAV.fmt.n(v.followers) + "</dd></div></dl>" +
+        '<span class="cl-fcard-go">View fund</span></span></a>';
+    }).join("");
+    const cards = $$(".cl-fcard", box);
+    cards.forEach((c) => c.addEventListener("click", (e) => {
+      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      e.preventDefault(); BAV.fogTo(c.href);
+    }));
+    // A card leans toward the pointer, with a light that follows it.
+    if (!reduce && matchMedia("(hover: hover) and (pointer: fine)").matches) cards.forEach((c) => {
+      const inner = c.firstElementChild;
+      c.addEventListener("pointermove", (e) => {
+        const r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+        inner.style.setProperty("--rx", ((.5 - y) * 7).toFixed(2) + "deg"); inner.style.setProperty("--ry", ((x - .5) * 9).toFixed(2) + "deg");
+        inner.style.setProperty("--gx", (x * 100).toFixed(1) + "%"); inner.style.setProperty("--gy", (y * 100).toFixed(1) + "%");
+      });
+      c.addEventListener("pointerleave", () => { ["--rx", "--ry"].forEach((k) => inner.style.setProperty(k, "0deg")); });
+    });
+    const cmp = {
+      holders: (a, b) => b.dataset.holders - a.dataset.holders,
+      newest: (a, b) => a.dataset.days - b.dataset.days,
+      fee: (a, b) => a.dataset.fee - b.dataset.fee || b.dataset.holders - a.dataset.holders,
+      return: (a, b) => b.dataset.return - a.dataset.return,
+    };
+    const shown = () => $$(".cl-fcard", box).filter((c) => !c.hidden);
+    function deal(key) {
+      const order = [...cards].sort(cmp[key]), next = order.slice(0, SHOW);
+      // The Pelosi fund is always dealt: it takes the last place when its return alone would leave it out.
+      const pin = cards.find((c) => c.dataset.pin === "1");
+      if (pin && !next.includes(pin)) { next[SHOW - 1] = pin; order.splice(order.indexOf(pin), 1); order.splice(SHOW - 1, 0, pin); }
+      order.forEach((c) => box.appendChild(c));
+      // A card coming in gets its place in the row, so the reveal staggers it from the left.
+      cards.forEach((c) => { const k = next.indexOf(c); c.hidden = k < 0; if (k >= 0) c.style.setProperty("--k", k); });
+    }
+    const sorts = $$(".cl-sort button");
+    let busy = false, queued = null;
+    async function sortBy(key) {
+      if (busy) { queued = key; return; }
+      busy = true;
+      const next = [...cards].sort(cmp[key]).slice(0, SHOW), leaving = shown().filter((c) => !next.includes(c));
+      if (!reduce && leaving.length) {
+        const out = leaving.map((c) => c.animate([{ opacity: 1 }, { opacity: 0, transform: "translateY(10px) scale(.98)" }], { duration: 220, easing: "ease-in", fill: "forwards" }));
+        await Promise.all(out.map((a) => a.finished.catch(() => {})));
+        out.forEach((a) => a.cancel());
+      }
+      const before = new Map(shown().map((c) => [c, c.getBoundingClientRect()]));
+      deal(key);
+      if (box.scrollLeft) box.scrollTo({ left: 0, behavior: reduce ? "auto" : "smooth" });
+      if (!reduce) shown().forEach((c) => {
+        const a = before.get(c);
+        if (!a) return;
+        const b = c.getBoundingClientRect(), dx = a.left - b.left, dy = a.top - b.top;
+        if (dx || dy) c.animate([{ transform: "translate(" + dx + "px," + dy + "px)" }, { transform: "none" }], { duration: 700, easing: "cubic-bezier(.2,.75,.2,1)" });
+      });
+      syncDots();
+      busy = false;
+      if (queued) { const k = queued; queued = null; if (k !== key) sortBy(k); }
+    }
+    sorts.forEach((btn) => btn.addEventListener("click", () => {
+      if (btn.getAttribute("aria-pressed") === "true") return;
+      sorts.forEach((b) => b.setAttribute("aria-pressed", String(b === btn)));
+      sortBy(btn.dataset.sort);
+    }));
+    // Where the three don't fit in a row they swipe; dots follow and jump.
+    const dotsBox = $("#cl-fdots");
+    dotsBox.innerHTML = Array.from({ length: SHOW }, (_, i) => '<button type="button" aria-label="Fund ' + (i + 1) + '" aria-current="' + (i === 0) + '"></button>').join("");
+    const dots = $$("button", dotsBox);
+    dots.forEach((d, i) => d.addEventListener("click", () => { const c = shown()[i]; box.scrollTo({ left: c.offsetLeft - box.offsetLeft - parseFloat(getComputedStyle(box).paddingLeft), behavior: reduce ? "auto" : "smooth" }); }));
+    function syncDots() {
+      const mid = box.scrollLeft + box.clientWidth / 2;
+      let k = 0;
+      shown().forEach((c, i) => { if (c.offsetLeft - box.offsetLeft <= mid) k = i; });
+      dots.forEach((d, i) => d.setAttribute("aria-current", String(i === k)));
+    }
+    deal("return");
+    box.addEventListener("scroll", syncDots, { passive: true });
+  })();
+
+  /* fog over the page, then on to the app (BAV.fogTo; the app sweeps the same fog away) */
+  const go = (href) => BAV.fogTo(href);
+  $$("[data-wipe]").forEach((a) => a.addEventListener("click", (e) => {
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    e.preventDefault(); go(a.href);
+  }));
+
+  /* coins that died: the dots light up as the section comes in. While it is pinned more than half of them go out and
+     the count climbs to 11.6M (CoinGecko, 2025), then the field holds. Scroll drives it, so it plays back too; still
+     screens get the end state. */
+  (function () {
+    const sec = $("#coins"), cv = sec && $("canvas", sec), num = $("#cl-coins-n"), live = $("#cl-coins-live"), since = $("#cl-coins-since");
+    const ctx = cv && cv.getContext("2d");
+    if (!ctx) return;
+    sec.classList.add("js");
+    const DEAD = 0.532, TOTAL = 11.6, opened = performance.now();
+    let W = 0, H = 0, dots = [], dying = 1, running = false, frame = 0, lastNum = "";
+    const clamp = (v) => Math.min(1, Math.max(0, v));
+    function layout() {
+      const r = cv.getBoundingClientRect(), dpr = Math.min(r.width < 640 ? 1 : 1.5, devicePixelRatio || 1);
+      W = r.width; H = r.height;
+      if (!W || !H) return;
+      cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr); ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      const phone = W < 640, cell = phone ? 15 : 19, cols = Math.floor(W / cell), rows = Math.floor(H / cell);
+      const ox = (W - cols * cell) / 2 + cell / 2, oy = (H - rows * cell) / 2 + cell / 2;
+      let seed = 11;
+      const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+      dots = [];
+      for (let y = 0; y < rows; y++) for (let x = 0; x < cols; x++) {
+        const px = ox + x * cell, py = oy + y * cell;
+        // They light up in a wave from the right, where the text isn't, as the section comes in.
+        dots.push({ x: px, y: py, on: .6 * (1 - px / W) + rnd() * .2, death: rnd(), tw: rnd() * 6.28, r: cell * .16 });
+      }
+      const order = dots.map((d, i) => i).sort((a, b) => dots[a].death - dots[b].death);
+      dying = Math.round(dots.length * DEAD);
+      // They die over the first 55% of the pinned stretch; the rest of it holds the count at 11.6M.
+      order.forEach((i, k) => { dots[i].dies = k < dying; dots[i].at = .04 + (k / dying) * .51; });
+    }
+    // e: how far the section has come in (0 entering, 1 under the bar); p: how far through the pinned stretch
+    const progress = () => {
+      const r = sec.getBoundingClientRect(), span = r.height - innerHeight;
+      return reduce ? [1, 1] : [clamp((innerHeight - r.top) / Math.max(1, innerHeight - 69)), span <= 0 ? 1 : clamp((69 - r.top) / span)];
+    };
+    function draw(now) {
+      const [e, p] = progress();
+      ctx.clearRect(0, 0, W, H);
+      let dead = 0;
+      for (const d of dots) {
+        const on = clamp((e - d.on) / .12);
+        if (!on) continue;
+        const tw = reduce ? 1 : .82 + Math.sin(now / 900 + d.tw) * .18;
+        if (d.dies) {
+          const gone = clamp((p - d.at) / .035);
+          if (gone >= 1) dead++;
+          if (gone > 0 && gone < 1) { ctx.fillStyle = "rgba(160,78,88," + (1 - gone) * .9 + ")"; ctx.beginPath(); ctx.arc(d.x, d.y, d.r * (1 + gone * 1.8), 0, 6.283); ctx.fill(); }
+          ctx.fillStyle = gone >= 1 ? "rgba(160,78,88,.34)" : "rgba(238,243,247," + (on * (1 - gone * .8) * tw).toFixed(3) + ")";
+          ctx.beginPath(); ctx.arc(d.x, d.y + gone * 3, d.r * (1 - gone * .45), 0, 6.283); ctx.fill();
+        } else {
+          ctx.fillStyle = "rgba(238,243,247," + (on * tw).toFixed(3) + ")";
+          ctx.beginPath(); ctx.arc(d.x, d.y, d.r, 0, 6.283); ctx.fill();
+        }
+      }
+      const m = TOTAL * dead / dying, shown = m >= TOTAL - .05 ? TOTAL.toFixed(1) + "M" : m < .1 ? "0.1M" : m.toFixed(1) + "M";
+      if (shown !== lastNum) { lastNum = shown; num.textContent = shown; }
+      sec.classList.toggle("ph-n", dead > 0);
+    }
+    const requestDraw = () => {
+      if (!running || frame) return;
+      frame = requestAnimationFrame((now) => { frame = 0; if (running) draw(now); });
+    };
+    layout(); draw(0);
+    // At 2025's rate (11.6M in a year, about one every 2.7 seconds), how many since this page opened.
+    if (live && since) { live.hidden = false; const tick = () => { since.textContent = BAV.fmt.n(Math.floor((performance.now() - opened) / 2720)); }; tick(); setInterval(tick, 1000); }
+    if (reduce) { sec.classList.add("ph-n"); num.textContent = "11.6M"; return; }
+    new IntersectionObserver(([e]) => {
+      running = e.isIntersecting;
+      if (running) requestDraw();
+      else if (frame) { cancelAnimationFrame(frame); frame = 0; }
+    }).observe(sec);
+    addEventListener("scroll", requestDraw, { passive: true });
+    new ResizeObserver(() => { layout(); if (running) requestDraw(); else draw(performance.now()); }).observe(cv);
+  })();
+
+  /* every rule, enforced: each order goes to the fund contract, which checks it against the rules. It plays on its own
+     until someone picks one. */
+  (function () {
+    const sec = $("#rules");
+    if (!sec) return;
+    const tries = $$("[data-try]", sec), req = $("#cl-rreq"), reqT = $("#cl-rreq-t"), rc = $("#cl-rc"), rows = $$("[data-rule]", sec);
+    const verdict = $("#cl-verdict"), vk = $("#cl-verdict-k"), vt = $("#cl-verdict-t"), clock = $("#cl-clock");
+    const CASES = [
+      { req: "Withdraw 50,000 USDT", ok: false, k: "Rejected", t: "Only holders can withdraw, and only their own share." },
+      { req: "Buy 10,000 USDT of DOGE", ok: false, k: "Rejected", t: "DOGE isn’t on this fund’s list." },
+      { req: "Put 60% into NVDAB", ok: false, k: "Rejected", t: "One asset can be at most 30% of the fund." },
+      { req: "Raise the limit to 40%", ok: true, k: "Waits 24 hours", t: "Holders are told now and can leave before it applies." },
+    ];
+    let run = 0, cur = -1, auto = true, inView = false, cycle = 0, tick = 0, resume = 0;
+    const sleep = (ms) => new Promise((done) => setTimeout(done, ms));
+    function settle(i) {
+      const c = CASES[i];
+      reqT.textContent = c.req; vk.textContent = c.k; vt.textContent = c.t;
+      rows.forEach((r) => r.classList.toggle("hit", +r.dataset.rule === i));
+      sec.dataset.case = String(i); sec.classList.toggle("is-ok", c.ok);
+      tries.forEach((b) => b.setAttribute("aria-pressed", String(+b.dataset.try === i)));
+    }
+    async function play(i) {
+      const id = ++run, live = () => id === run;
+      cur = i; clearInterval(tick);
+      settle(i);
+      if (reduce) { sec.classList.add("is-sent", "is-done"); clock.textContent = "24:00:00"; return; }
+      sec.classList.remove("is-sent", "is-done", "is-check"); void rc.offsetWidth;
+      await sleep(60); if (!live()) return;
+      sec.classList.add("is-sent");
+      await sleep(750); if (!live()) return;
+      sec.classList.add("is-check");
+      await sleep(650); if (!live()) return;
+      sec.classList.add("is-done");
+      if (CASES[i].ok) {
+        let left = 24 * 3600;
+        const fmt = (s) => [Math.floor(s / 3600), Math.floor(s / 60) % 60, s % 60].map((n) => String(n).padStart(2, "0")).join(":");
+        clock.textContent = fmt(left);
+        tick = setInterval(() => { if (!live()) { clearInterval(tick); return; } left -= 1; clock.textContent = fmt(left); }, 1000);
+      }
+    }
+    const next = () => { if (auto && inView && !document.hidden) play((cur + 1) % CASES.length); };
+    tries.forEach((b) => b.addEventListener("click", () => {
+      auto = false; clearTimeout(resume);
+      // Someone is trying it: stop the tour, and pick it up again a while after they stop.
+      resume = setTimeout(() => { auto = true; }, 20000);
+      play(+b.dataset.try);
+    }));
+    settle(0);
+    if (reduce) { play(0); return; }
+    new IntersectionObserver(([e]) => {
+      inView = e.isIntersecting;
+      if (inView && !cycle) { if (cur < 0) play(0); cycle = setInterval(next, 4800); }
+      else if (!inView && cycle) { clearInterval(cycle); cycle = 0; }
+    }, { threshold: .35 }).observe(sec);
+  })();
+
+  /* questions open and close with a slide */
+  $$(".cl-qs details").forEach((d) => {
+    const sum = $("summary", d), body = $("div", d);
+    sum.addEventListener("click", (e) => {
+      if (reduce || !body.animate) return;
+      e.preventDefault();
+      if (d.open) {
+        d.classList.add("closing");
+        body.animate([{ height: body.offsetHeight + "px", opacity: 1 }, { height: "0px", opacity: 0 }], { duration: 260, easing: "cubic-bezier(.2,.75,.2,1)" }).onfinish = () => { d.open = false; d.classList.remove("closing"); };
+      } else {
+        d.open = true;
+        body.animate([{ height: "0px", opacity: 0 }, { height: body.offsetHeight + "px", opacity: 1 }], { duration: 340, easing: "cubic-bezier(.2,.75,.2,1)" });
+      }
+    });
+  });
+
+  /* sections come into view: headings rise out of a mask, groups arrive one after another (html.cl-motion holds
+     them back; without script or with reduced motion everything simply shows) */
+  (function () {
+    if (reduce || !("IntersectionObserver" in window)) return;
+    // Words are the text between spaces; an element inside a word (the 8 tile) stays with it, a plain span is a line.
+    function words(el, n = { i: 0 }) {
+      let group = null;
+      const close = () => { group = null; };
+      const open = (before) => {
+        const w = document.createElement("span"), inner = document.createElement("span");
+        w.className = "cl-w"; w.style.setProperty("--d", (n.i++ * 0.07).toFixed(2) + "s"); w.appendChild(inner);
+        el.insertBefore(w, before); group = inner;
+      };
+      for (const node of [...el.childNodes]) {
+        if (node.nodeType === 3) {
+          const parts = node.textContent.split(/(\s+)/);
+          for (const part of parts) {
+            if (!part) continue;
+            if (/^\s+$/.test(part)) { el.insertBefore(document.createTextNode(part), node); close(); }
+            else { if (!group) open(node); group.appendChild(document.createTextNode(part)); }
+          }
+          node.remove();
+        } else if (node.nodeType === 1 && node.tagName === "SPAN" && !node.className) { close(); words(node, n); }
+        else if (node.nodeType === 1) { if (!group) open(node); group.appendChild(node); }
+      }
+    }
+    $$('[data-reveal="heading"]').forEach((h) => words(h));
+    const els = $$("[data-reveal]");
+    $$('[data-reveal="steps"]').forEach((g) => [...g.children].forEach((c, i) => c.style.setProperty("--k", i)));
+    const io = new IntersectionObserver((entries) => entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); } }), { rootMargin: "0px 0px -10% 0px" });
+    els.forEach((el) => { if (el.getBoundingClientRect().top < innerHeight * .9) el.classList.add("is-in"); else io.observe(el); });
+    document.documentElement.classList.add("cl-motion");
+  })();
+
+  /* How it works (after spark.finance): on desktop the stage follows the step being read; on phones the steps swipe */
+  (function () {
+    const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const flow = $("#how"), stage = $(".cl-flow-stage", flow), track = $(".cl-flow-steps", flow);
+    if (!flow || !stage || !track) return;
+    const scenes = $$(".cl-sc", flow), steps = $$(".cl-flow-step", flow), bars = $$(".cl-flow-nav button", flow);
+    const prev = $("[data-flow-prev]", flow), next = $("[data-flow-next]", flow);
+    const wide = { matches: false, addEventListener() {} }; /* the step carousel on every screen size; the stage does not follow the scroll */
+    let on = 0, seen = false;
+    // Each scene is a 520x500 artboard. Its cards are measured (their text sets their height), then every scene is
+    // scaled alike and centred so no card is clipped or covers the step bar.
+    const arts = scenes.map((scene) => $(".cl-art", scene)), label = $(".cl-flow-nav span", flow);
+    const fit = () => {
+      const boxes = arts.map((art) => {
+        const box = { t: 0, b: 500, l: 0, r: 520 };
+        for (const el of art.children) {
+          if (!(el instanceof HTMLElement) || el.classList.contains("cl-cursor")) continue;
+          box.t = Math.min(box.t, el.offsetTop); box.b = Math.max(box.b, el.offsetTop + el.offsetHeight);
+          box.l = Math.min(box.l, el.offsetLeft); box.r = Math.max(box.r, el.offsetLeft + el.offsetWidth);
+        }
+        return box;
+      });
+      const top = 16, room = label.getBoundingClientRect().top - stage.getBoundingClientRect().top - 18 - top;
+      const tall = Math.max(...boxes.map((b) => b.b - b.t)), wide = Math.max(...boxes.map((b) => b.r - b.l));
+      const scale = Math.max(0.4, Math.min((stage.clientWidth - 32) / wide, room / tall, 1.3));
+      stage.style.setProperty("--art", scale.toFixed(3));
+      arts.forEach((art, i) => {
+        const b = boxes[i];
+        art.style.left = `${stage.clientWidth / 2 - scale * ((b.l + b.r) / 2 - 260)}px`;
+        art.style.top = `${top + room / 2 - scale * ((b.t + b.b) / 2 - 250)}px`;
+      });
+    };
+    const fmt = (n, dec) => n.toLocaleString("en-US", { minimumFractionDigits: dec, maximumFractionDigits: dec });
+    function count(el) {
+      const to = +el.dataset.count, from = +(el.dataset.from || 0), dec = +(el.dataset.dec || 0);
+      if (reduce) { el.textContent = fmt(to, dec); return; }
+      const start = performance.now() + +(el.dataset.delay || 300);
+      const tick = (now) => {
+        const p = Math.min(1, Math.max(0, (now - start) / 1500));
+        el.textContent = fmt(from + (to - from) * (1 - Math.pow(1 - p, 3)), dec);
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      el.textContent = fmt(from, dec); requestAnimationFrame(tick);
+    }
+    // Scenes play from the start each time they come on, and not before the stage is first seen.
+    // Like an animation on loop, the step being read fades out and plays again every few seconds.
+    let loop = 0, fade = 0;
+    function play(scene) {
+      scene.classList.remove("is-play", "is-out"); void scene.offsetWidth; scene.classList.add("is-play");
+      $$("[data-count]", scene).forEach(count);
+    }
+    function paint() {
+      clearInterval(loop); clearTimeout(fade);
+      scenes.forEach((s, i) => s.classList.toggle("is-on", seen && i === on));
+      if (!seen || reduce) return;
+      const scene = scenes[on];
+      play(scene);
+      loop = setInterval(() => {
+        if (document.hidden) return;
+        scene.classList.add("is-out");
+        fade = setTimeout(() => play(scene), 400);
+      }, +(scene.dataset.loop || 8500));
+    }
+    function show(k) {
+      if (k === on) return;
+      on = k; paint();
+      steps.forEach((s, i) => s.classList.toggle("is-on", i === k));
+      bars.forEach((b, i) => { b.classList.toggle("is-on", i === k); if (i === k) b.setAttribute("aria-current", "step"); else b.removeAttribute("aria-current"); });
+      prev.disabled = k === 0; next.disabled = k === steps.length - 1;
+    }
+    // A step is current once its text has scrolled fully into view.
+    const fromScroll = () => {
+      let k = 0;
+      steps.forEach((s, i) => { if ($(".cl-flow-text", s).getBoundingClientRect().bottom <= innerHeight - 100) k = i; });
+      show(k);
+    };
+    const fromSwipe = () => show(Math.min(steps.length - 1, Math.max(0, Math.round(track.scrollLeft / track.clientWidth))));
+    let frame = 0;
+    const sync = () => { if (!frame) frame = requestAnimationFrame(() => { frame = 0; if (wide.matches) fromScroll(); else fromSwipe(); }); };
+    function go(k) {
+      const behavior = reduce ? "auto" : "smooth";
+      if (wide.matches) scrollTo({ top: steps[k].getBoundingClientRect().top + scrollY - 69 - innerHeight * 0.05, behavior });
+      else track.scrollTo({ left: k * track.clientWidth, behavior });
+    }
+    bars.forEach((b, i) => b.addEventListener("click", () => go(i)));
+    prev.addEventListener("click", () => go(Math.max(0, on - 1)));
+    next.addEventListener("click", () => go(Math.min(steps.length - 1, on + 1)));
+    addEventListener("scroll", sync, { passive: true });
+    track.addEventListener("scroll", sync, { passive: true });
+    // The last step's text holds just past where it becomes current (its bottom 100px above the fold), so it stays
+    // current through the extra scroll and leaves with the stage.
+    const lastText = $(".cl-flow-text", steps[steps.length - 1]);
+    const hold = () => flow.style.setProperty("--hold", `${Math.max(113, innerHeight - 112 - lastText.offsetHeight)}px`);
+    addEventListener("resize", () => { fit(); hold(); sync(); });
+    wide.addEventListener("change", () => { track.scrollLeft = 0; fit(); sync(); });
+    new IntersectionObserver((entries, io) => { if (entries.some((e) => e.isIntersecting)) { seen = true; io.disconnect(); paint(); } }, { threshold: 0.3 }).observe(stage);
+    fit(); hold(); paint(); sync();
+    document.fonts?.ready.then(() => { fit(); hold(); });
+  })();
+
+  /* CRE8 AI: a thesis is typed, the reply lists its changes and the fund fills in beside the chat; it loops while in view */
+  (function () {
+    const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const app = $(".cl-ai-app");
+    if (!app || reduce) return;
+    const log = $(".cl-ai-log", app), typed = $(".cl-ai-typed", app), send = $(".cl-ai-send", app), empty = $(".cl-ai-empty", app);
+    const name = $(".cl-ai-name", app), count = $(".cl-ai-count", app);
+    const part = (k) => $(`[data-k="${k}"]`, log), parts = ["me", "reply", "changes", "chips"];
+    const changes = $$(".cl-ai-changes li", app), rows = $$(".cl-ai-row", app);
+    const THESIS = part("me").querySelector("p").textContent, FUND = name.textContent;
+    let run = 0, inView = false;
+    function reset() {
+      app.classList.remove("out", "is-typing");
+      parts.forEach((k) => part(k).classList.remove("on"));
+      changes.forEach((li) => li.classList.remove("on")); rows.forEach((row) => row.classList.remove("on"));
+      empty.style.opacity = 1; name.textContent = "New fund"; count.textContent = "0 of " + rows.length; typed.textContent = ""; send.classList.remove("ready");
+    }
+    async function play(id) {
+      const live = () => id === run && inView;
+      reset(); await sleep(700);
+      app.classList.add("is-typing");
+      for (let i = 1; i <= THESIS.length; i++) { if (!live()) return; typed.textContent = THESIS.slice(0, i); if (i === 1) send.classList.add("ready"); await sleep(38); }
+      await sleep(450); if (!live()) return;
+      app.classList.remove("is-typing"); typed.textContent = ""; send.classList.remove("ready"); part("me").classList.add("on");
+      await sleep(800); if (!live()) return;
+      part("reply").classList.add("on");
+      await sleep(600); if (!live()) return;
+      part("changes").classList.add("on"); empty.style.opacity = 0; name.textContent = FUND;
+      for (let i = 0; i < rows.length; i++) { await sleep(330); if (!live()) return; changes[i]?.classList.add("on"); rows[i].classList.add("on"); count.textContent = `${i + 1} of ${rows.length}`; }
+      await sleep(500); if (!live()) return;
+      part("chips").classList.add("on");
+      await sleep(5500); if (!live()) return;
+      app.classList.add("out");
+      await sleep(600); if (live()) play(id);
+    }
+    reset();
+    new IntersectionObserver(([e]) => { inView = e.isIntersecting; if (inView) play(++run); else run++; }, { threshold: .12 }).observe(app);
+  })();
+
+  /* CRE8 AI's agent, drawn in ASCII beside the heading: the bust prints in from the top as the section comes in, then
+     a few characters flicker, the visor breathes and a light runs across it, faster while a thesis is being typed.
+     Still screens get the finished bust. */
+  (function () {
+    const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const box = $(".cl-ai-bot"), img = box && $("img", box), cv = box && $("canvas", box), app = $(".cl-ai-app");
+    const ctx = cv && cv.getContext("2d");
+    if (!ctx || !img || !app) return;
+    const RAMP = " .,:;-=+*x%#@";
+    let W = 0, H = 0, fs = 9, cw = 6, lh = 10, cells = [], base = null, running = false, frame = 0, last = 0, start = -1, built = false;
+    const clamp = (v) => Math.min(1, Math.max(0, v));
+    const glyph = (t) => RAMP[Math.round(clamp(t) * (RAMP.length - 1))];
+    function layout() {
+      const r = cv.getBoundingClientRect(), dpr = Math.min(r.width < 640 ? 1 : 1.5, devicePixelRatio || 1);
+      W = r.width; H = r.height;
+      if (!W || !H || !img.naturalWidth) return false;
+      cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr); ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      fs = W < 400 ? 7 : 9; lh = Math.round(fs * 1.05);
+      ctx.font = `${fs}px ${getComputedStyle(cv).fontFamily}`; ctx.textBaseline = "top";
+      cw = ctx.measureText("M").width;
+      // The whole bust fits the box, standing on its bottom edge.
+      const s = Math.min(W / img.naturalWidth, H / img.naturalHeight), aw = img.naturalWidth * s, ah = img.naturalHeight * s;
+      const ax = (W - aw) / 2, ay = H - ah, cols = Math.ceil(aw / cw), rows = Math.ceil(ah / lh);
+      const small = document.createElement("canvas"); small.width = cols; small.height = rows;
+      const sx = small.getContext("2d"); sx.imageSmoothingQuality = "high"; sx.drawImage(img, 0, 0, cols, rows);
+      const d = sx.getImageData(0, 0, cols, rows).data;
+      let seed = 7;
+      const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+      const lum = (i) => (d[i * 4] * .3 + d[i * 4 + 1] * .59 + d[i * 4 + 2] * .11) / 255;
+      // The visor is the bright, blue-tinted cells; the gaps between them along a row (its white core) count too.
+      const visor = new Uint8Array(cols * rows);
+      for (let y = 0; y < rows; y++) {
+        let x0 = cols, x1 = -1;
+        for (let x = 0; x < cols; x++) { const i = y * cols + x; if (lum(i) > .55 && d[i * 4 + 2] - d[i * 4] >= 12) { x0 = Math.min(x0, x); x1 = x; } }
+        for (let x = x0; x <= x1; x++) if (lum(y * cols + x) > .35) visor[y * cols + x] = 1;
+      }
+      cells = [];
+      for (let y = 0; y < rows; y++) for (let x = 0; x < cols; x++) {
+        const k = y * cols + x, a = d[k * 4 + 3] / 255;
+        if (a < .35) continue;
+        const v = visor[k] === 1;
+        // Brighter metal reads as denser characters, capped so the white shirt does not outshine the head; the bust
+        // fades out at the bottom and sides instead of ending on a cut.
+        const t = Math.min(.8, Math.pow(clamp((lum(k) - .05) / .55), .8));
+        const fade = clamp((rows - 1 - y) / (rows * .22)) * clamp(x / (cols * .12)) * clamp((cols - 1 - x) / (cols * .12));
+        cells.push({ x: ax + x * cw, y: ay + y * lh, ch: t < .06 ? "." : glyph(t), a: v ? 1 : a * (.34 + .62 * t) * fade, visor: v,
+          at: (y / rows) * 1100 + rnd() * 260, fl: rnd() });
+      }
+      // The settled bust, drawn once; frames add the flicker and the visor on top of it.
+      base = document.createElement("canvas"); base.width = cv.width; base.height = cv.height;
+      const bx = base.getContext("2d"); bx.setTransform(dpr, 0, 0, dpr, 0, 0); bx.font = ctx.font; bx.textBaseline = "top";
+      for (const c of cells) if (!c.visor && c.a > .02) { bx.fillStyle = `rgba(214,226,236,${c.a.toFixed(3)})`; bx.fillText(c.ch, c.x, c.y); }
+      return true;
+    }
+    function visor(now) {
+      const vis = cells.filter((c) => c.visor);
+      if (!vis.length) return;
+      const fast = app.classList.contains("is-typing"), breathe = reduce ? 1 : .78 + .22 * Math.sin(now / 520);
+      const x0 = vis[0].x, x1 = Math.max(...vis.map((c) => c.x)), period = fast ? 900 : 3600;
+      const runX = reduce ? -1e9 : x0 - 60 + ((now % period) / period) * (x1 - x0 + 120);
+      // Each visor cell is a short lit segment rather than a character, so the visor reads as one glowing bar.
+      ctx.save(); ctx.shadowColor = "rgba(110,170,235,.95)"; ctx.shadowBlur = fs * 2.2;
+      for (const c of vis) {
+        const lit = clamp(1 - Math.abs(c.x - runX) / 40);
+        ctx.fillStyle = `rgba(${190 + 65 * lit | 0},${222 + 33 * lit | 0},255,${(breathe * (.75 + .25 * lit)).toFixed(3)})`;
+        ctx.fillRect(c.x, c.y + lh * .3, cw - .5, lh * .4);
+      }
+      ctx.restore();
+    }
+    function draw(now) {
+      ctx.clearRect(0, 0, W, H);
+      const t = start < 0 ? 0 : now - start;
+      if (!reduce && t < 1700) {
+        // Printing in: each character scrambles for a moment, then lands.
+        for (const c of cells) {
+          if (c.visor || t < c.at || c.a <= .02) continue;
+          const k = (t - c.at) / 180;
+          ctx.fillStyle = `rgba(214,226,236,${(k < 1 ? Math.min(1, c.a * 2.2) : c.a).toFixed(3)})`;
+          ctx.fillText(k < 1 ? RAMP[1 + (Math.random() * (RAMP.length - 1)) | 0] : c.ch, c.x, c.y);
+        }
+        if (t > 1000) { ctx.globalAlpha = clamp((t - 1000) / 400); visor(now); ctx.globalAlpha = 1; }
+        return;
+      }
+      ctx.save(); ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.drawImage(base, 0, 0); ctx.restore();
+      if (!reduce) {
+        // A few characters change for a moment, each on its own slow beat.
+        const beat = Math.floor(now / 140);
+        for (const c of cells) {
+          if (c.visor || c.a <= .02 || ((c.fl * 997 + beat) % 160) >= 1) continue;
+          ctx.clearRect(c.x - .5, c.y - .5, cw + 1, lh + 1);
+          ctx.fillStyle = `rgba(214,226,236,${Math.min(1, c.a * 1.8).toFixed(3)})`;
+          ctx.fillText(RAMP[1 + ((c.fl * 13 + beat) % (RAMP.length - 1)) | 0], c.x, c.y);
+        }
+      }
+      visor(now);
+    }
+    const loop = (now) => {
+      frame = 0;
+      if (!running) return;
+      if (now - last >= 50) { last = now; draw(now); }
+      frame = requestAnimationFrame(loop);
+    };
+    function build() {
+      if (!layout()) return;
+      built = true;
+      if (reduce) { start = 0; draw(0); return; }
+      if (!running) draw(performance.now());
+    }
+    const ready = () => (img.complete ? Promise.resolve() : new Promise((done) => img.addEventListener("load", done, { once: true })));
+    Promise.all([ready(), document.fonts?.ready]).then(() => {
+      build();
+      if (reduce) return;
+      new IntersectionObserver(([e]) => {
+        running = e.isIntersecting && built;
+        if (running && start < 0) start = performance.now();
+        if (running && !frame) frame = requestAnimationFrame(loop);
+      }, { threshold: .2 }).observe(box);
+    });
+    new ResizeObserver(() => { if (img.complete && img.naturalWidth) build(); }).observe(cv);
+  })();
+
+  /* how you get paid: the creator keeps their performance fee on the fund's profit */
+  (function () {
+    const size = $("#cl-size"), ret = $("#cl-ret"), take = $("#cl-take"), said = $("#cl-out");
+    if (!size || !ret || !take) return;
+    const f = BAV.feeBreakdown(20), share = f.creatorNet / f.total;
+    const money = (n) => "$" + Math.round(n).toLocaleString("en-US");
+    const column = (ch) => '<span class="cl-d"><span style="transform:translateY(-' + ch * 10 + '%)">' + "0123456789".split("").map((n) => "<i>" + n + "</i>").join("") + "</span></span>";
+    // Digits roll to their new value, like the 8 in the logo; a change in length redraws the number.
+    function roll(text) {
+      const cur = $$(".cl-d", take);
+      if (cur.length !== text.length || [...text].some((ch, i) => /\d/.test(ch) === cur[i].classList.contains("sep"))) {
+        take.innerHTML = [...text].map((ch) => /\d/.test(ch) ? column(ch) : '<span class="cl-d sep">' + esc(ch) + "</span>").join("");
+        return;
+      }
+      [...text].forEach((ch, i) => { if (/\d/.test(ch)) cur[i].firstElementChild.style.transform = "translateY(-" + ch * 10 + "%)"; });
+    }
+    let speak = 0;
+    function update() {
+      const s = +size.value, r = +ret.value, value = money(s * r / 100 * f.total / 100 * share);
+      $("#cl-size-out").textContent = money(s); $("#cl-ret-out").textContent = r + "%";
+      size.setAttribute("aria-valuetext", money(s)); ret.setAttribute("aria-valuetext", r + "%");
+      roll(value);
+      // Screen readers hear the result once the slider settles, not on every step.
+      clearTimeout(speak); speak = setTimeout(() => { said.textContent = value; }, 500);
+    }
+    said.setAttribute("aria-live", "polite");
+    size.addEventListener("input", update); ret.addEventListener("input", update);
+    update();
+  })();
+})();
+</script>
+<script>
+/* 1px hairlines become 0.5px on high-density screens */
+(function () {
+  if ((window.devicePixelRatio || 1) < 2) return;
+  const sides = ["Top", "Right", "Bottom", "Left"];
+  const thin = () => document.querySelectorAll(".cl-nav, main *, .cl-foot *").forEach((el) => {
+    const cs = getComputedStyle(el);
+    sides.forEach((x) => { if (cs["border" + x + "Style"] !== "none" && cs["border" + x + "Width"] === "1px") el.style["border" + x + "Width"] = ".5px"; });
+  });
+  if (document.readyState === "complete") thin(); else addEventListener("load", thin);
+})();
+</script>
+<script>
+/* How it works scenes (Stageshow, assets/cre8-flow.js), loaded once */
+(function () {
+  if (document.querySelector("script[data-cre8-flow]")) return;
+  const s = document.createElement("script");
+  s.src = BAV.assetUrl("assets/cre8-flow.js");
+  s.defer = true;
+  s.dataset.cre8Flow = "";
+  document.body.appendChild(s);
+})();
+</script>
+</body></html>

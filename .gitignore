@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build output
+dist/
+build/
+out/
+cache/
+.deploy/
+
+# Secrets — never commit
+.env
+.env.*
+# Public build configuration only (chain id, public RPC, public project id). Needed to build.
+!.env.example
+!.env.production
+
+# Local tool state
+.wrangler-home/
+.railway-home/
+.bun-cache/
+.gh-cache/
+*.log
+
+# OS / editor
+.DS_Store

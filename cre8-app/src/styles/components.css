@@ -1,0 +1,435 @@
+/* 版面 */
+.page {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: var(--sp-6) var(--sp-5) var(--sp-7);
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  flex-wrap: wrap;
+}
+
+.spread {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  flex-wrap: wrap;
+}
+
+/* 卡片 */
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  padding: var(--sp-5);
+  box-shadow: var(--shadow);
+}
+
+.card--flat {
+  box-shadow: none;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.lead {
+  margin: 10px 0 0;
+  color: var(--ink-2);
+  max-width: 70ch;
+}
+
+/* 同功能按鈕共用 DESIGN.md 尺寸；兩種既有 class 拼法都保留。 */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  min-height: 46px;
+  height: auto;
+  padding: 0 22px;
+  border: 1px solid var(--ink);
+  border-radius: 0;
+  background: var(--ink);
+  color: var(--snow);
+  font: 500 15px/1.3 var(--sans);
+  letter-spacing: 0;
+  text-transform: none;
+  box-shadow: none;
+  cursor: pointer;
+  transition: background .14s ease, border-color .14s ease, color .14s ease;
+}
+.btn:hover:not(:disabled) { background: var(--deep); border-color: var(--deep); color: var(--snow); }
+.btn:active:not(:disabled) { transform: translateY(1px); }
+.btn:is(.ghost, .light, .btn--ghost) { background: transparent; color: var(--ink); border-color: var(--hair-2); }
+.btn:is(.ghost, .light, .btn--ghost):hover:not(:disabled) { background: var(--snow); border-color: var(--ink); color: var(--ink); }
+.btn:is(.sm, .btn--sm) { min-height: 38px; padding: 0 16px; font-size: 14px; }
+.btn:disabled { background: var(--snow); color: var(--slate); border-color: var(--hair); opacity: 1; cursor: not-allowed; }
+@media (pointer: coarse) { .btn:is(.sm, .btn--sm) { min-height: 40px; } }
+
+/* 表單 */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* 設計稿的欄位用 `> span` 當標籤、`> small` 當提示（見 components/ui.tsx 的 Field）。 */
+.field > span {
+  font-size: 13px;
+  color: var(--ink-2);
+}
+
+.field > small {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.field input,
+.field select {
+  height: 40px;
+  width: 100%;
+  min-width: 0;
+  padding: 0 var(--sp-3);
+  border: 1px solid var(--hair-2);
+  border-radius: var(--r-sm);
+  background: var(--white);
+}
+
+.field input:focus-visible,
+.field select:focus-visible {
+  outline: none;
+  border-color: var(--ink);
+}
+
+.field__hint {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* 表格 */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+.table th {
+  text-align: left;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 0 var(--sp-3) var(--sp-2);
+  border-bottom: 1px solid var(--hair);
+  white-space: nowrap;
+}
+
+.table td {
+  padding: var(--sp-3);
+  border-bottom: 1px solid var(--hair);
+  vertical-align: middle;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.table .num {
+  text-align: right;
+  font-family: var(--mono);
+}
+
+/* 語意 */
+.pos {
+  color: var(--pos);
+}
+
+.neg {
+  color: var(--neg);
+}
+
+.warn {
+  color: var(--warn);
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/*
+ * badge：狀態用「色點＋文字」，不用外框小方塊。外框＋等寬字的標籤一多，畫面就像模板；
+ * 色點已足夠分辨狀態，文字本身仍寫出狀態（不只靠顏色）。
+ */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 20px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--steel);
+  font: 500 13px/1.3 var(--sans);
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+.badge::before {
+  width: 6px;
+  height: 6px;
+  flex: none;
+  border-radius: 50%;
+  background: currentColor;
+  content: "";
+}
+
+.badge--ok { color: var(--pos); }
+.badge--warn { color: var(--warn); }
+.badge--bad { color: var(--neg); }
+
+/* 提示區塊 */
+.note {
+  border-radius: var(--r-sm);
+  border: 1px solid var(--hair);
+  background: var(--white);
+  padding: var(--sp-3) var(--sp-4);
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
+
+.note--bad {
+  border-color: rgba(178, 59, 59, 0.35);
+  background: rgba(178, 59, 59, 0.06);
+  color: var(--neg);
+}
+
+.note--warn {
+  border-color: rgba(138, 90, 31, 0.35);
+  background: rgba(138, 90, 31, 0.06);
+  color: var(--warn);
+}
+
+.note strong {
+  font-weight: 600;
+}
+
+/* 鍵值列 */
+.kv {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 6px var(--sp-4);
+  font-size: 13px;
+}
+
+.kv dt {
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 12px;
+}
+
+.kv dd {
+  margin: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+/* 頁首 */
+.topbar {
+  border-bottom: 1px solid var(--hair);
+  background: var(--bg-2);
+}
+
+.topbar__inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: var(--sp-3) var(--sp-5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+}
+
+.brand {
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+/* 載入中 */
+.spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--hair-2);
+  border-top-color: var(--ink);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 空狀態 */
+.empty {
+  padding: var(--sp-7) var(--sp-4);
+  text-align: center;
+  color: var(--muted);
+}
+
+.linkish {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+/* ---------------------------------------------------------------------------
+   錢包選單（取代原本的 /login 整頁）
+   刻意寫在這裡而不是 design.css：design.css 是從原站複製的，我們不往裡面加東西。
+--------------------------------------------------------------------------- */
+
+.wallet-menu {
+  position: relative;
+}
+
+.wallet-menu__panel {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  z-index: 80;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px;
+  border-radius: 14px;
+  background: var(--card, #fff);
+  border: 1px solid var(--hair, #d8e3ec);
+  box-shadow: 0 24px 60px rgba(22, 34, 45, 0.18);
+  text-align: left;
+}
+
+.wallet-menu--inline > .btn {
+  width: 100%;
+}
+.wallet-menu--inline .wallet-menu__panel {
+  position: static;
+  width: 100%;
+  margin-top: 12px;
+  box-shadow: none;
+}
+
+.wallet-menu__title {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.wallet-menu__hint {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--muted, #5a7286);
+}
+
+.wallet-menu__addr {
+  margin: 0;
+  font-size: 13px;
+  color: var(--ink);
+}
+
+.wallet-menu__status {
+  margin: 0;
+  font-size: 12px;
+  color: var(--pos, #1f7a4d);
+}
+
+.wallet-menu__item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--hair, #d8e3ec);
+  border-radius: 10px;
+  background: transparent;
+  font-size: 13px;
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+}
+
+.wallet-menu__item:hover {
+  border-color: var(--ink, #16222d);
+}
+
+.wallet-menu__item img {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+}
+
+.wallet-menu__link {
+  align-self: flex-start;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-size: 12px;
+  color: var(--muted, #5a7286);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* 頁面上的「Sign in」：長得像連結，但動作是叫出標頭的選單。 */
+.link-button {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  color: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.wallet-menu__walletconnect {
+  min-height: 44px;
+  border-color: transparent;
+  background: var(--app-grouped);
+  color: var(--deep);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.wallet-menu__walletconnect > span { flex: 1; }
+
+.wallet-connect-qr { align-self: stretch; }
+.wallet-connect-qr summary { min-height: 44px; align-content: center; cursor: pointer; font-size: 13px; }
+.wallet-connect-qr img { display: block; max-width: 100%; height: auto; margin: 4px auto; }
+
+@media (max-width: 719px) {
+  .wallet-menu__panel { max-width: calc(100vw - 32px); }
+  .wallet-menu__item { min-height: 44px; }
+}

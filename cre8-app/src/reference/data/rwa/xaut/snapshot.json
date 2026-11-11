@@ -1,0 +1,132 @@
+{
+  "schema": "cre8/xaut-planning@1",
+  "chainId": 56,
+  "token": "0x21caef8a43163eea865baee23b9c2e327696a3bf",
+  "symbol": "XAUt",
+  "name": "Tether Gold",
+  "decimals": 6,
+  "checkedAt": "2026-11-04T14:10:45.538Z",
+  "blockNumber": 131638486,
+  "blockHash": "0xf2bb27ac59c41d090c12fc38b48ad5040dc6453c6dd9d5afb0533a181843bf97",
+  "officialSource": {
+    "url": "https://usdt0.to/ecosystem/bnb-chain",
+    "sha256": "a29a0b6d1ac1bcc68fd3ee29f60751af0835cd996ec5c2b24bd26756cb2c27c4"
+  },
+  "liquidity": {
+    "sufficient": true,
+    "entry": {
+      "token": "0x21caef8a43163eea865baee23b9c2e327696a3bf",
+      "symbol": "XAUt",
+      "checkedAt": "2026-11-04T14:10:44.340Z",
+      "method": "pancake-v3",
+      "pools": [
+        {
+          "address": "0xca715361a1e1bfd7a0a782864fc619a4fac03a79",
+          "fee": 100,
+          "quoteBalanceRaw": "1797889112112829821",
+          "depthUpRaw": "0",
+          "depthDownRaw": "0",
+          "liquidityGapWithin25": true,
+          "liquidity": "0",
+          "unlocked": true
+        },
+        {
+          "address": "0x83a0a8a723262651ae9c54bbba929f167443bc59",
+          "fee": 500,
+          "quoteBalanceRaw": "642698344302335826917846",
+          "depthUpRaw": "129142281715260262566544",
+          "depthDownRaw": "140984803564814711968108",
+          "liquidityGapWithin25": false,
+          "liquidity": "229181983040164761",
+          "unlocked": true
+        },
+        {
+          "address": "0xc655e1a100a084d9ac91c269b0a7cb0e62263fcf",
+          "fee": 2500,
+          "quoteBalanceRaw": "11438615550423781599232",
+          "depthUpRaw": "5770417045867879178718",
+          "depthDownRaw": "4628085666500050279726",
+          "liquidityGapWithin25": false,
+          "liquidity": "10044256768473795",
+          "unlocked": true
+        },
+        {
+          "address": "0x06d181f786a8444fc5a81566a87641a6ce1b7e32",
+          "fee": 10000,
+          "quoteBalanceRaw": "238783253547372089118",
+          "depthUpRaw": "87005821854434535039",
+          "depthDownRaw": "23196085696656230836",
+          "liquidityGapWithin25": true,
+          "liquidity": "36644126621814",
+          "unlocked": true
+        }
+      ]
+    }
+  },
+  "lista": {
+    "borrow": {
+      "moolah": "0x8F73b65B4caAf64FBA2aF91cC5D4a2A1318E5D8C",
+      "id": "0x9ed14e92e2db39099d2e5bb23f55a64caf03ea63b39af1364387bd7d5832a668",
+      "runtime": "0xf750279ae58381b54333b098a1123c4fda807c9c22ccb7dc73c24d355b77262a",
+      "params": {
+        "loanToken": "0x55d398326f99059fF775485246999027B3197955",
+        "collateralToken": "0x21cAef8A43163Eea865baeE23b9C2E327696A3bf",
+        "oracle": "0xf3afD82A4071f272F403dC176916141f44E6c750",
+        "irm": "0xFe7dAe87Ebb11a7BEB9F534BB23267992d9cDe7c",
+        "lltv": "770000000000000000"
+      },
+      "totalSupplyAssets": "100027304359490367785418",
+      "totalBorrowAssets": "87826710428155782210447",
+      "liquidity": "12200593931334585574971",
+      "utilizationBps": 8780,
+      "feeWad": "100000000000000000",
+      "minLoan": "15019525382997897266",
+      "loanProvider": "0x0000000000000000000000000000000000000000",
+      "broker": "0x0000000000000000000000000000000000000000",
+      "collateralProvider": "0x0000000000000000000000000000000000000000",
+      "whitelist": [],
+      "paused": false,
+      "witnesses": [
+        {
+          "target": "0x8F73b65B4caAf64FBA2aF91cC5D4a2A1318E5D8C",
+          "runtime": "0xf750279ae58381b54333b098a1123c4fda807c9c22ccb7dc73c24d355b77262a",
+          "query": "0x2c3c91579ed14e92e2db39099d2e5bb23f55a64caf03ea63b39af1364387bd7d5832a668",
+          "returnLength": 160,
+          "result": "0x9ed14e92e2db39099d2e5bb23f55a64caf03ea63b39af1364387bd7d5832a668"
+        },
+        {
+          "target": "0x8F73b65B4caAf64FBA2aF91cC5D4a2A1318E5D8C",
+          "runtime": "0xf750279ae58381b54333b098a1123c4fda807c9c22ccb7dc73c24d355b77262a",
+          "query": "0x2b9a878a9ed14e92e2db39099d2e5bb23f55a64caf03ea63b39af1364387bd7d5832a668",
+          "returnLength": 32,
+          "result": "0x290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e563"
+        },
+        {
+          "target": "0x8F73b65B4caAf64FBA2aF91cC5D4a2A1318E5D8C",
+          "runtime": "0xf750279ae58381b54333b098a1123c4fda807c9c22ccb7dc73c24d355b77262a",
+          "query": "0x1e6189b49ed14e92e2db39099d2e5bb23f55a64caf03ea63b39af1364387bd7d5832a66800000000000000000000000021caef8a43163eea865baee23b9c2e327696a3bf",
+          "returnLength": 32,
+          "result": "0x290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e563"
+        },
+        {
+          "target": "0x8F73b65B4caAf64FBA2aF91cC5D4a2A1318E5D8C",
+          "runtime": "0xf750279ae58381b54333b098a1123c4fda807c9c22ccb7dc73c24d355b77262a",
+          "query": "0xc10f7b399ed14e92e2db39099d2e5bb23f55a64caf03ea63b39af1364387bd7d5832a668",
+          "returnLength": 64,
+          "result": "0x569e75fc77c1a856f6daaf9e69d8a9566ca34aa47f9133711ce065a571af0cfd"
+        }
+      ],
+      "problems": []
+    },
+    "vault": {
+      "vault": "0x4109415DE2271097FB5fa16aF8A753aab8c46D6f",
+      "asset": "0x21cAef8A43163Eea865baeE23b9C2E327696A3bf",
+      "moolah": "0x8F73b65B4caAf64FBA2aF91cC5D4a2A1318E5D8C",
+      "withdrawQueueLength": 11,
+      "supplyQueueLength": 11,
+      "maxQueue": 30,
+      "problems": []
+    }
+  },
+  "scope": "App planning only. Pool reserve >=50,000 USDT, depth >=10,000 USDT each way within 2%, no liquidity gap within 25%. Exact official BNB identity and Lista dependencies checked. No trade or admission authorization."
+}

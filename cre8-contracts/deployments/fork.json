@@ -1,0 +1,31 @@
+{
+  "_note": "此檔由 script/DeployAtp.s.sol 的輸出更新。該腳本內含地址簿常數（chain 56），可重複執行：地址還有 code 就重用、沒有才重新部署，所以第二次跑不會產生新地址。registry/executor/oracle 是 v1 單池堆疊（仍在鏈上，供舊工具與文件對照）；目前的多池堆疊是 multiPoolOracle + executorMultiPool。注意這裡的 router 是 PancakeSwap Universal Router，不是 multiPoolOracle。",
+  "chainId": 56,
+  "registry": "0x27739a1AD35a924F5545C7d04C2B0537069CA76C",
+  "executor": "0x60691760815C69d32c1f68146FA11669F62A4b38",
+  "oracle": "0x3D79c9BE8c087097Cbb1A8Be0D2714cf8BA95B84",
+  "pool": "0x36696169C63e42cd08ce11f5deeBbCeBae652050",
+  "poolFee": 500,
+  "router": "0x1A0A18AC4BECDDbd6389559687d1A73d8927E416",
+  "permit2": "0x31c2F6fcFf4F8759b3Bd5Bf0e1084A055615c768",
+  "numeraire": "0x55d398326f99059fF775485246999027B3197955",
+  "oracleWbnbUsdt": "0x535111F60a9cB7C3b95A17fB8d1dd2D17275DBFE",
+  "oracleNvdabUsdt": "0x12Ce4542B25fe53a3c606dd7783513357b6D838d",
+  "poolNvdabUsdt": "0x8FB4243b553aC29BA088aCf00B9B7dA24bD6690C",
+  "poolFeeNvdabUsdt": 2500,
+  "multiPoolOracle": "0x132cDfCe34d385f783dAB7F011B2E66E78A2f87f",
+  "executorMultiPool": "0x9C41696ea7FaA5470eAfb77415D063beEef83f4a",
+  "_history": {
+    "note": "ORACLE_WBNB_USDT / ORACLE_NVDAB_USDT v1 below were retired by the one-sided pair check fix in PancakeV3TwapOracle.previewSwap (a tokenIn outside the pool was priced off the token1 leg). They are still on chain and still buggy; nothing points at them any more. multiPoolOracle and executorMultiPool did not change.",
+    "oracleWbnbUsdt_v1": {
+      "address": "0x3e736BF184C3FBEF85909A6407bD2Cc3Af6ba3DB",
+      "sha256": "5857c545e30c1305b512225e540029dfe1c350a93f443149e5be3aac5b3ef68a",
+      "code_len_bytes": 5699
+    },
+    "oracleNvdabUsdt_v1": {
+      "address": "0xD14e18278cDe758E9cC6f3214f5766E7917dCE25",
+      "sha256": "31884765761a00a3d503689948d122487a622a6e176030dd663c6420d2f74818",
+      "code_len_bytes": 5699
+    }
+  }
+}

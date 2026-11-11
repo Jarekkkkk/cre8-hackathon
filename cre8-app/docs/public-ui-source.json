@@ -1,0 +1,171 @@
+{
+  "repository": "0xJoooe/bnb-agent-vaults",
+  "commit": "0f3196d37821561050dee1176d9d33e3b51c5d5e",
+  "runtimeSha256": "6f2c7b84a9b06816ff91ad184c6049d339f7fb73c96dd806dea964644cd42d9f",
+  "fundsSha256": "d8b1346fbea45bdebe61e32477b1f9569379e6fd951bc0d1c961e3dbb5282773",
+  "funds": 30,
+  "assets": 219,
+  "createAssets": 218,
+  "files": [
+    {
+      "source": "lib/stock-catalog-data.ts",
+      "sha256": "ea8bb23043152c9b73258041b5e457e13964074ed4f3195f982e220201721db1"
+    },
+    {
+      "source": "lib/stock-catalog.ts",
+      "sha256": "796c3ab4d02746bd675b8189f30649aaf5d0d18c8f3d6baaa8d85d7089874144"
+    },
+    {
+      "source": "lib/fund-builder-stocks.ts",
+      "sha256": "c39e45b594e76daf5a4018b7e94146871c26be3c6d0608425f0fc1315e61232c"
+    },
+    {
+      "source": "data/stock-liquidity/current.json",
+      "sha256": "a1c5a185f1dbb35ba42c6d18b06cf2146f90bbc995b1f0d132c024d72e282409"
+    },
+    {
+      "source": "lib/stock-liquidity-policy.ts",
+      "sha256": "b77e7fdcb82fc9ba46819f384e3fae8289eec815ccbb19337a016ff779d40063"
+    },
+    {
+      "source": "lib/stock-liquidity.ts",
+      "sha256": "264cf43a3f358dff05fca820aebe152a6a1aecd7351a70574d7bb004b51b9f02"
+    },
+    {
+      "source": "lib/stock-icons.generated.ts",
+      "sha256": "be5122d208166c4b579a207982f8ba484afe9c6ea92b826f32ba7a65028a1c66"
+    },
+    {
+      "source": "lib/asset-display.ts",
+      "sha256": "5b360121a92efd25b4845f633b705bd7a48a3eb0203df068ea06fc435d272aa1"
+    },
+    {
+      "source": "lib/x-profile.ts",
+      "sha256": "ace920073f2623d8bcb4bcd11fb1cc88d0ad9dcdd3e186e9a496254029416b2b"
+    },
+    {
+      "source": "lib/fund-cover.ts",
+      "sha256": "38bfda660c5bdcee6c12672b9c3815c8ee19114f37b90ecf253cc14e4a16c414"
+    },
+    {
+      "source": "data/stock-liquidity/source-comparison.json",
+      "sha256": "0e3650ad2b44f7a7d9e3cdd9deb68f9001c540d6d367e8cddd11527041a4b59d"
+    },
+    {
+      "source": "lib/stock-source-selection.ts",
+      "sha256": "144a8338d4fb39a387aaf9268a1fa0efeb563f85fb2cc2a3fef32c8c78e434b4"
+    },
+    {
+      "source": "lib/stock-venue-data.ts",
+      "sha256": "f7b7331e776f6486bccbf5b75fd8ee174ca4c06618544ceeaf0bdc4c74a2bc85"
+    },
+    {
+      "source": "data/rwa/xaut/snapshot.json",
+      "sha256": "59abb580cd1ab3970ece1166dcd98769b70f923ce0b550b5aff5d3a20af09b13"
+    },
+    {
+      "source": "lib/rwa-assets.ts",
+      "sha256": "e17d03f6ff24e044dd028063b06146a790849c21cd2ba542b38e812652dc5454"
+    },
+    {
+      "source": "lib/asset-classification.ts",
+      "sha256": "1f21b8e3eb0e2cca04233dc05a9c389644d5bc633c5af2635d25dd250349c2ba"
+    },
+    {
+      "source": "lib/fund-builder.ts",
+      "sha256": "cd0e701da22112448547c3f608e481fc2deb77316a0ff40d6243aa023c623e4f"
+    },
+    {
+      "source": "lib/fund-builder-charts.ts",
+      "sha256": "4f5c62643cec39c46e1c1ee91a67b9ddc46deef83046f94515e2be20b98c6d04"
+    },
+    {
+      "source": "data/fund-explore/asset-names.json",
+      "sha256": "1118f5eb697151014f05070e6358daec93d610902e95e3f843dccb84f22ff45e"
+    },
+    {
+      "source": "lib/fund-navigation.ts",
+      "sha256": "cc06ad77a72acb70b830443211d2e05d42dcc706e4888be3dcf7b7fb8edaeaae"
+    },
+    {
+      "source": "lib/fund-editorial.ts",
+      "sha256": "dcb8aa844e79c5f2be44179fd6c02007fe8216abe87f9a6035d76e3e2cd3126a"
+    },
+    {
+      "source": "data/fund-performance/2026-11-11/treasury-3m.json",
+      "sha256": "c16d8faa8a297cc15d63e4550440806249f9855d31637262cdb68986f120acf3"
+    },
+    {
+      "source": "lib/risk-free-rates.ts",
+      "sha256": "f845929572f53c8adf43b90031fd19095f7ca290f53450405fa335f198959db3"
+    },
+    {
+      "source": "lib/fund-performance.ts",
+      "sha256": "3b00111164cfaba4378498349514b966a8a03c98ae495c9813bef5b20fd2ada9"
+    },
+    {
+      "source": "lib/asset-navigation.ts",
+      "sha256": "02b51cca24c57e10f3b20452f8861f3b6fac225e95e37fec41c082bff46d90d7"
+    },
+    {
+      "source": "lib/underlying-assets.ts",
+      "sha256": "af71834b1abc560be66ebaa23f4cdd44f11e9ca880c8311509428bb97408e3c4"
+    },
+    {
+      "source": "lib/fund-holdings.ts",
+      "sha256": "96a841d76219cfc2788ff16dbd57a83aa3160a661d14b333f208fdca27d4ffc2"
+    },
+    {
+      "source": "lib/asset-preview.ts",
+      "sha256": "d1be470f992cfa8c054abe3a8940111df8f08d7a55c480d8c7419ec8ae7e3414"
+    },
+    {
+      "source": "data/fund-explore/profiles.json",
+      "sha256": "c99137d51e3caab45700079d9e321e502db2e606da7215ee91aa75f6212c44a6"
+    },
+    {
+      "source": "lib/fund-profile.ts",
+      "sha256": "8da6e131fd9a30100cfac2ec49d1e7d4139a950c5465b8ceec095cdd5726ead4"
+    },
+    {
+      "source": "lib/demo-fund-backtest.ts",
+      "sha256": "2c15e58e12b73e31f29678c9bacd77fb6a3f8bea0c3ab3f1daea00172111695f"
+    },
+    {
+      "source": "lib/recent-trades.ts",
+      "sha256": "af3ac35592812faed0df0f4c56301eca22c45a6abf5980ad56f3643349bbc5a8"
+    },
+    {
+      "source": "lib/fund-explore.ts",
+      "sha256": "a0ea7786d6f3327227904435c1b7c3f382f8864d3665adf6fec618d632c1277e"
+    },
+    {
+      "source": "components/fund-builder.tsx",
+      "sha256": "c6e2aeb50324c17ce51f1d0a6556a9f9167751d44032cc82e943b7a06a9feb4b"
+    },
+    {
+      "source": "components/fund-builder.module.css",
+      "sha256": "57b4fc316f54a8c66ac21733db21d749427e6be17b60d7d0c884f2bceba6be96"
+    },
+    {
+      "source": "components/fund-cover-editor.tsx",
+      "sha256": "6560d52092b61a30d7536cf9938a437955e39d117ae189222c1d16d703e8b959"
+    },
+    {
+      "source": "components/fund-cover-editor.module.css",
+      "sha256": "9b6f38cfb52b49d4f61b861e2a1b754a1c1abfe361ccb4e63d03ba2ca3964a25"
+    },
+    {
+      "source": "components/x-profile.tsx",
+      "sha256": "f9b62162b8aaaeca3605b15541015c54cf0b87df3207ea36cb8b4d18d39de7dc"
+    },
+    {
+      "source": "components/x-profile.module.css",
+      "sha256": "3ed708c6a598da9f2af569862b342bbed5f5c04d6056c040022cb5c66dfa55ae"
+    },
+    {
+      "source": "components/asset-detail.module.css",
+      "sha256": "d8173c9cc502bf3321756c8bcbf1d848cda4ca3f0548c1bd12e48af22fc3f8fb"
+    }
+  ]
+}

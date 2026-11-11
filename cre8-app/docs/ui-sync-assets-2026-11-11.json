@@ -1,0 +1,96 @@
+{
+  "sourceRepository": "0xJoooe/bnb-agent-vaults",
+  "sourceCommit": "4045d854402090255cb36b8b4a84d4f4a30f5561",
+  "assets": [
+    {
+      "file": "public/fund-covers/ai-20261109-r3.webp",
+      "sha256": "a5f4f94e78577e5134ccafed972c4e9308e577e1179b34aa8594aa4943482868",
+      "bytes": 224604
+    },
+    {
+      "file": "public/fund-covers/ai-20261109-r3-thumb.webp",
+      "sha256": "4bde423da17e236c9b14764f0c9aa2e19ac9e209e4dd81f7e2bd5eb6e361f1c7",
+      "bytes": 17710
+    },
+    {
+      "file": "public/fund-covers/mag7-20261109-r3.webp",
+      "sha256": "aae4983acf261a4d8dc15a468df0185aa83495c1e6f108d3c4db6b61497034ff",
+      "bytes": 163348
+    },
+    {
+      "file": "public/fund-covers/mag7-20261109-r3-thumb.webp",
+      "sha256": "6be0b8012d0c0bec98064c9768d576ca373ae673d42fab899fff18adae770a26",
+      "bytes": 9296
+    },
+    {
+      "file": "public/fund-covers/balanced-20261109-r3.webp",
+      "sha256": "0ea68e6e7f0288c23deaa93a65475b66a35406df5a3b8311cd96fda91cc7a08e",
+      "bytes": 189272
+    },
+    {
+      "file": "public/fund-covers/balanced-20261109-r3-thumb.webp",
+      "sha256": "bbdad8a315186660e13f6e09d68295ac2677d9fbd1a085aa9b45cd7d007f8e6a",
+      "bytes": 8630
+    },
+    {
+      "file": "public/fund-covers/crypto-20261109-r3.webp",
+      "sha256": "d768944a5b80e04935ad8434980f9be3a445c7374524fb97dfc66e97fbdce891",
+      "bytes": 149854
+    },
+    {
+      "file": "public/fund-covers/crypto-20261109-r3-thumb.webp",
+      "sha256": "1b7ded6249b29a8dde10caaca5ac1c1391b3b91eb3f56e4856bc69fd9c33757c",
+      "bytes": 7812
+    },
+    {
+      "file": "public/fund-covers/treasury-20261109-r3.webp",
+      "sha256": "8d4dc0623edc9a93e2f5054c9a3b48f683bf4d2b4145066be56ffd1cb6386598",
+      "bytes": 179264
+    },
+    {
+      "file": "public/fund-covers/treasury-20261109-r3-thumb.webp",
+      "sha256": "4bbb98da7d7f6de764e0119b50059f259822f8d1d4d78bb6d7fd2292e02f583c",
+      "bytes": 12274
+    },
+    {
+      "file": "public/fund-covers/elon-20261109.webp",
+      "sha256": "2c92237400a96a4e95a7498f91c3d5bb50098fb64d3c5ff419a298ad59d656ef",
+      "bytes": 55294
+    },
+    {
+      "file": "public/fund-covers/elon-20261109-thumb.webp",
+      "sha256": "6ad993280d4843608abf3d1755ba4f3d288bd0f0aa6148a7a26dd82fd7c3a84d",
+      "bytes": 6108
+    },
+    {
+      "file": "public/fund-covers/pelosi-20261109.webp",
+      "sha256": "b799220b21285701c386353d290dd728617fb88050264fb419cd1cf5a18e9a7b",
+      "bytes": 49838
+    },
+    {
+      "file": "public/fund-covers/pelosi-20261109-thumb.webp",
+      "sha256": "56e8c84524c87214f143529fc24e337416588027984982fd4efaefb25a6b1800",
+      "bytes": 6296
+    },
+    {
+      "file": "public/fund-covers/buffett-20261109.webp",
+      "sha256": "4a29f7cb764a183b852a5599c3aabccba241c489981a8da5781533fdc436c998",
+      "bytes": 82268
+    },
+    {
+      "file": "public/fund-covers/buffett-20261109-thumb.webp",
+      "sha256": "23f74f0e4f5bb7af420be4ed24b083022b0edd4c5eed16a84e21778aa6496833",
+      "bytes": 8396
+    },
+    {
+      "file": "public/fund-covers/trump-20261109.webp",
+      "sha256": "1ca3a628533d622658c1adfc9177427b69a73a1e3f69bd1bfccb795f6c2d887a",
+      "bytes": 88258
+    },
+    {
+      "file": "public/fund-covers/trump-20261109-thumb.webp",
+      "sha256": "891d7acc82c13d1bbb5e2a5e08b086f69d8c9903900af7662f1ce8b64110171f",
+      "bytes": 7858
+    }
+  ]
+}

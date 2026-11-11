@@ -1,0 +1,227 @@
+{
+  "verifiedAt": "2026-11-10T08:03:02.909445+00:00",
+  "profiles": {
+    "elon-universe": {
+      "name": "Elon Musk",
+      "role": "Tesla & SpaceX",
+      "bio": "Leads Tesla and SpaceX, the businesses behind electric vehicles, reusable rockets and Starlink. He has led Tesla since 2008 and founded SpaceX in 2002.",
+      "sources": [
+        "https://ir.tesla.com/corporate/elon-musk"
+      ]
+    },
+    "pelosi-disclosed-equity": {
+      "name": "Nancy Pelosi",
+      "role": "Former Speaker of the US House",
+      "bio": "The first woman elected Speaker of the US House of Representatives, serving two separate terms. Her household’s public financial disclosures, primarily involving Paul Pelosi, are closely watched by investors.",
+      "sources": [
+        "https://pelosi.house.gov/biography"
+      ]
+    },
+    "berkshire-disclosed-equities": {
+      "name": "Warren Buffett",
+      "role": "Berkshire Hathaway chairman",
+      "bio": "Built Berkshire Hathaway into a diversified investment and operating-business group over six decades. Buffett remains chairman; Greg Abel succeeded him as CEO in January 2026.",
+      "sources": [
+        "https://www.berkshirehathaway.com/meet01/2026proxystatement.pdf"
+      ]
+    },
+    "trump-universe": {
+      "name": "Donald Trump",
+      "role": "45th & 47th US president",
+      "bio": "A real-estate businessman who became the 45th and 47th president of the United States. This portfolio follows a CRE8-selected investment theme around his public disclosures and associated businesses.",
+      "sources": [
+        "https://www.whitehouse.gov/administration/donald-j-trump/"
+      ]
+    },
+    "dan-bin-oriental-harbor": {
+      "name": "Dan Bin 但斌",
+      "role": "Oriental Harbor founder",
+      "bio": "Founded Shenzhen-based Oriental Harbor in 2004. The Chinese investment manager and author of The Rose of Time is known for his long-term approach to owning businesses.",
+      "sources": [
+        "https://www.ohim.cn/ohim/contents/2025/12/15-c6a6e8cec5f545759dee0a96968cba76.html",
+        "https://econ.fudan.edu.cn/info/1582/12476.htm"
+      ]
+    },
+    "ray-dalio-bridgewater": {
+      "name": "Ray Dalio",
+      "role": "Bridgewater founder",
+      "bio": "Founded Bridgewater Associates in 1975 and helped establish institutional global-macro investing. His economic frameworks shaped the firm’s approach; its disclosed holdings represent Bridgewater, rather than his personal account.",
+      "sources": [
+        "https://www.bridgewater.com/our-founder"
+      ]
+    },
+    "bill-ackman-pershing": {
+      "name": "Bill Ackman",
+      "role": "Pershing Square founder",
+      "bio": "Founded Pershing Square, known for concentrated ownership of major businesses and shareholder activism. Its core portfolio typically holds just eight to twelve companies, giving each investment substantial influence.",
+      "sources": [
+        "https://pershingsquareholdings.com/about-us/",
+        "https://pershingsquaresparcholdings.com/team/bill-ackman/"
+      ]
+    },
+    "bill-gates-foundation": {
+      "name": "Bill Gates",
+      "role": "Microsoft co-founder",
+      "bio": "Co-founded Microsoft in 1975 and chairs the Gates Foundation, a major global-health and development organization. The holdings tracked here belong to the Foundation Trust, rather than his personal investment account.",
+      "sources": [
+        "https://www.gatesfoundation.org/about/leadership/bill-gates"
+      ]
+    },
+    "cathie-wood-arkk": {
+      "name": "Cathie Wood",
+      "role": "ARK Invest founder & CIO",
+      "bio": "Founded ARK Invest in 2014 after decades in thematic investing. She leads its research and investment approach to disruptive innovation, spanning technologies such as AI, robotics and genomic medicine.",
+      "sources": [
+        "https://helpcenter.ark-funds.com/what-is-cathie-woods-background"
+      ]
+    },
+    "tom-lee-granny-shots": {
+      "name": "Tom Lee",
+      "role": "Fundstrat co-founder · GRNY lead PM",
+      "bio": "A former JPMorgan chief equity strategist and co-founder of Fundstrat. He leads GRNY’s Granny Shots strategy, selecting companies that connect to multiple investment themes.",
+      "sources": [
+        "https://fundstratcapital.com/team/",
+        "https://fundstrat.com/client-portal/author/thomas-lee/"
+      ]
+    },
+    "dan-ives-ai": {
+      "name": "Dan Ives",
+      "role": "Technology analyst · IVES AI framework",
+      "bio": "A prominent technology analyst and former global head of technology research at Wedbush. His AI research framework underpins the IVES ETF’s selection of companies across the AI economy.",
+      "sources": [
+        "https://wedbushfunds.com/IVES",
+        "https://wedbush.com/wedbush-announces-departure-of-dan-ives-to-new-venture-remains-committed-to-its-global-technology-banking-and-research-platform/"
+      ]
+    },
+    "stanley-druckenmiller-duquesne": {
+      "name": "Stanley Druckenmiller",
+      "role": "Duquesne founder",
+      "bio": "Founded Duquesne Capital in 1981 and later managed money for George Soros. His career spans macroeconomic positioning and concentrated equity investing; this selection tracks disclosed Duquesne holdings.",
+      "sources": [
+        "https://pittsburghquarterly.com/articles/what-do-i-know-stanley-druckenmiller/",
+        "https://library.bowdoin.edu/arch/college-history-and-archives/honors/druckenmiller07.pdf"
+      ]
+    },
+    "ken-griffin-citadel": {
+      "name": "Ken Griffin",
+      "role": "Citadel founder & CEO",
+      "bio": "Founded Citadel in 1990 after beginning to invest from his Harvard dorm room. He built an institutional investment business and also founded the separate market-making firm Citadel Securities.",
+      "sources": [
+        "https://www.citadel.com/who-we-are/leadership/kenneth-c-griffin/"
+      ]
+    },
+    "serenity-x": {
+      "name": "Serenity",
+      "role": "AI & semiconductor supply-chain research",
+      "bio": "Publishes research on the physical supply chain behind AI, including photonics, optical networking and memory. The account connects technical industry developments with publicly listed companies across global markets.",
+      "sources": [
+        "https://x.com/aleabitoreddit/with_replies?lang=en",
+        "https://x-top-20-p4yq.pages.grok.bot/"
+      ]
+    },
+    "raoul-pal-x": {
+      "name": "Raoul Pal",
+      "role": "Real Vision co-founder & CEO",
+      "bio": "Co-founded Real Vision and founded Global Macro Investor. A former Goldman Sachs and GLG professional, he connects macroeconomic cycles, liquidity and technology adoption with digital-asset markets.",
+      "sources": [
+        "https://www.realvision.com/contributor/raoul-pal"
+      ]
+    },
+    "ansem-x": {
+      "name": "Ansem",
+      "role": "Crypto trader & market commentator",
+      "bio": "A widely followed voice in crypto, especially Solana and onchain market rotations. His public posts cover market sentiment, token narratives and his own stated trading decisions.",
+      "sources": [
+        "https://x.com/blknoiz06",
+        "https://x-top-20-p4yq.pages.grok.bot/"
+      ]
+    },
+    "ming-chi-kuo-x": {
+      "name": "Ming-Chi Kuo 郭明錤",
+      "role": "TF International Securities analyst",
+      "bio": "A technology analyst known for research on Apple’s supply chain and product roadmap. His public work follows component suppliers, manufacturing developments and the wider AI infrastructure industry.",
+      "sources": [
+        "https://medium.com/@mingchikuo",
+        "https://x.com/mingchikuo"
+      ]
+    },
+    "herman-jin-x": {
+      "name": "Herman Jin",
+      "role": "Former Goldman Sachs FICC executive",
+      "bio": "A former Goldman Sachs FICC executive and founder of Zen Family Office. His public commentary brings institutional macro experience to semiconductors, AI infrastructure and digital assets.",
+      "sources": [
+        "https://panews.io/articles/019e2b09-164f-772d-8835-a4a1cfc0bb2f",
+        "https://x.com/ShanghaoJin"
+      ]
+    },
+    "chris-lee-x": {
+      "name": "Chris Lee",
+      "role": "Former crypto-exchange executive",
+      "bio": "A former OKEx CEO who later joined Huobi’s leadership. He shares views on AI, semiconductors and digital assets from personal, family-office and fund portfolios, which may hold different positions.",
+      "sources": [
+        "https://www.newswire.ca/news-releases/huobi-group-hires-ex-ceo-of-okex-chris-lee-as-companys-board-secretary-and-vice-president-of-global-business-development-683203871.html",
+        "https://x.com/ViewsOfChris/with_replies"
+      ]
+    },
+    "jim-cramer-x": {
+      "name": "Jim Cramer",
+      "role": "CNBC host & former hedge fund manager",
+      "bio": "Hosts CNBC’s Mad Money and co-anchors Squawk on the Street. A former hedge fund manager and founder of TheStreet, he also leads CNBC Investing Club, making him one of US financial television’s best-known stock commentators.",
+      "sources": [
+        "https://www.cnbc.com/jim-cramer-bio/",
+        "https://jim-cramer.com/"
+      ]
+    },
+    "peter-schiff-euro-pacific": {
+      "name": "Peter Schiff",
+      "role": "Economist, author & SchiffGold founder",
+      "bio": "An economist, bestselling author and founder of SchiffGold, known for his commentary on gold, inflation and global markets. This model follows the supported selection from Euro Pacific Asset Management’s institutional filings.",
+      "sources": [
+        "https://www.schiffgold.com/our-team/peter-schiff",
+        "https://schiffradio.com/about-the-show/"
+      ]
+    },
+    "jeffrey-gundlach-doubleline": {
+      "name": "Jeffrey Gundlach",
+      "role": "DoubleLine co-founder & CEO",
+      "bio": "Co-founded DoubleLine in 2009 and leads the investment firm as CEO and CIO. Known for fixed-income and macro investing, his public market commentary is widely followed. This model covers DoubleLine ETF Adviser’s disclosed equity sleeve.",
+      "sources": [
+        "https://doubleline.com/markets-insights/doubleline-corporate-overview/"
+      ]
+    },
+    "gavin-baker-atreides": {
+      "name": "Gavin Baker",
+      "role": "Atreides managing partner & CIO",
+      "bio": "Managing partner and chief investment officer of Atreides Management, an investment firm focused on technology and consumer businesses. He founded Atreides in 2019; its public filings provide a view into its AI and technology investments.",
+      "sources": [
+        "https://atreidesmgmt.com/team/gavin-baker/",
+        "https://reports.adviserinfo.sec.gov/reports/ADV/301152/PDF/301152.pdf"
+      ]
+    },
+    "david-einhorn-dme": {
+      "name": "David Einhorn",
+      "role": "Greenlight Capital co-founder",
+      "bio": "Co-founded Greenlight Capital in 1996 and built a long-short, value-oriented investing career. He is also the author of Fooling Some of the People All of the Time. This model uses DME Capital’s disclosed supported holdings.",
+      "sources": [
+        "https://foolingsomepeople.com/about-david/"
+      ]
+    },
+    "lyn-alden-x": {
+      "name": "Lyn Alden",
+      "role": "Investment researcher & Broken Money author",
+      "bio": "Founded Lyn Alden Investment Strategy in 2016, combining engineering and finance to research monetary systems, energy and global markets. She wrote Broken Money and is a general partner at Ego Death Capital.",
+      "sources": [
+        "https://www.lynalden.com/about-lyn-alden/"
+      ]
+    },
+    "leopold-aschenbrenner-situational": {
+      "name": "Leopold Aschenbrenner",
+      "role": "Founder, Situational Awareness",
+      "bio": "Founded Situational Awareness in 2024 after working at OpenAI. With a background in mathematics, statistics and economics, he researches how AI development reshapes technology, energy and global businesses, translating that work into an AI-focused investment strategy.",
+      "sources": [
+        "https://situationalawarenesslp.com/about",
+        "https://situationalawarenesslp.com/"
+      ]
+    }
+  }
+}

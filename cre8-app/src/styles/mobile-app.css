@@ -1,0 +1,1547 @@
+/* App preview: shared symbol sizes and mobile surfaces, with CRE8 typography and palette. */
+:root {
+  --app-control-radius: 12px;
+  --app-card-radius: 16px;
+  --app-sheet-radius: 24px;
+  --app-inset: 16px;
+  --app-sheet-inset: 20px;
+  --app-badge-radius: 6px;
+  --app-grouped: #f6f7f8;
+  --app-segment: #f1f2f4;
+  --app-card-line: rgba(22, 34, 45, .13);
+  --app-action: #4e6a7f;
+  --app-action-hover: #2b4254;
+}
+
+html, body, body.create-page, #root .app-masthead { background: var(--white); }
+
+#root .masthead .header-wallet {
+  border-color: var(--app-card-line);
+  background: var(--app-grouped);
+  color: var(--ink);
+}
+#root .masthead .header-wallet:hover { background: var(--app-segment); }
+
+#root .btn:is(.primary, .btn--primary):not(:disabled) {
+  border-color: var(--app-action);
+  background: var(--app-action);
+  color: var(--white);
+}
+#root .btn:is(.primary, .btn--primary):not(:disabled):is(:hover, :active) {
+  border-color: var(--app-action-hover);
+  background: var(--app-action-hover);
+}
+.app-icon { display: block; flex: none; }
+.app-live-strategies {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.app-live-strategies > li + li { border-top: 1px solid var(--app-card-line); }
+.app-live-strategies a {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  min-height: 52px;
+  padding: 7px 0;
+  color: var(--ink);
+  text-decoration: none;
+}
+.app-live-strategies h3 {
+  margin: 0;
+  font: var(--app-row-title, 600 1.0625rem/1.25 var(--sans));
+  overflow-wrap: anywhere;
+}
+.app-live-strategies .app-icon, .app-live-strategy-meta { color: var(--steel); }
+.app-live-strategy-meta {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 10px;
+  font: var(--app-caption, 400 .8125rem/1.4 var(--sans));
+}
+.app-icon-tile {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 36px;
+  height: 36px;
+  color: var(--deep);
+  background: var(--app-segment);
+}
+.app-field-label, .app-portfolio-kicker, .app-portfolio-meta > span, .app-ledger-title,
+body.atp-formal-fund .atp-facts-trigger, .app-position-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.app-portfolio-create { flex-direction: row-reverse; }
+body.atp-formal-fund .vault-back, .trade-updates-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.vault-details > summary > .app-icon { display: inline-block; vertical-align: -3px; margin-right: 3px; }
+.holding-sort-ascending .app-icon { transform: rotate(180deg); }
+.vault-details a > .app-icon { display: inline-block; vertical-align: -2px; }
+.app-position-trigger, .holdings-heading .btn, .app-sheet-actions > .btn,
+.app-bottom-sheet #ticket .btn, .app-portfolio .wallet-menu .btn {
+  gap: 7px;
+}
+.app-mobile-nav, .app-fund-toolbar, .fund-list-trend { display: none; }
+.app-bottom-sheet[data-slot="sheet-content"] {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-height: calc(100dvh - max(20px, env(safe-area-inset-top)));
+  overflow: hidden;
+  border: 1px solid var(--hair);
+  border-bottom: 0;
+  background: var(--white);
+  color: var(--ink);
+  box-shadow: none;
+}
+.app-bottom-sheet [data-slot="sheet-header"] {
+  flex: none;
+  justify-content: center;
+  min-height: 60px;
+  padding: 14px max(70px, env(safe-area-inset-right)) 8px max(var(--app-sheet-inset), env(safe-area-inset-left));
+}
+.app-bottom-sheet [data-slot="sheet-title"] {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink);
+  font: 600 24px/1.15 var(--sans);
+  letter-spacing: -.65px;
+}
+.app-bottom-sheet [data-slot="sheet-description"] {
+  color: var(--steel);
+  font: 400 14px/1.4 var(--sans);
+}
+:is(.app-bottom-sheet, .app-fund-facts-sheet) .app-sheet-close {
+  position: absolute;
+  top: 10px;
+  right: max(12px, env(safe-area-inset-right));
+  display: grid;
+  place-items: center;
+  min-width: 44px;
+  min-height: 44px;
+  border: 0;
+  background: var(--app-grouped);
+  color: var(--ink);
+}
+.app-sheet-close:disabled { opacity: .45; }
+.app-sheet-body, .app-fund-info-sheet > .pros-body {
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 8px max(var(--app-sheet-inset), env(safe-area-inset-right)) calc(16px + env(safe-area-inset-bottom)) max(var(--app-sheet-inset), env(safe-area-inset-left));
+}
+body.atp-formal-fund .atp-facts-trigger {
+  min-height: 44px;
+  padding: 0 12px;
+  border: 1px solid var(--app-card-line);
+  background: transparent;
+  color: var(--deep);
+}
+.fund-introduction-trigger {
+  min-height: 44px;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--app-action);
+  font: 500 .875rem/1.35 var(--sans);
+  text-align: left;
+  cursor: pointer;
+}
+.fund-introduction-trigger:hover { text-decoration: underline; }
+.fund-introduction { display: grid; gap: 14px; color: var(--ink); }
+.fund-introduction-identity {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--steel);
+  font: 500 .9375rem/1.4 var(--sans);
+}
+.fund-introduction-identity img { flex: none; object-fit: cover; }
+.fund-introduction p { margin: 0; font: 400 1rem/1.5 var(--sans); }
+
+.app-fund-facts-sheet[data-slot="sheet-content"] {
+  width: min(100%, 36rem);
+  max-width: none;
+  padding-top: env(safe-area-inset-top);
+  background: var(--white);
+  color: var(--ink);
+}
+.app-fund-facts-sheet [data-slot="sheet-header"] {
+  flex: none;
+  padding: 18px 68px 8px var(--app-sheet-inset);
+}
+.app-fund-facts-sheet .app-sheet-close { top: calc(10px + env(safe-area-inset-top)); }
+.app-facts-label { margin: 0; color: var(--steel); font: 500 .8125rem/1.35 var(--sans); }
+.app-fund-facts-sheet [data-slot="sheet-title"] {
+  color: var(--ink);
+  font: 700 1.5rem/1.2 var(--sans);
+  text-wrap: balance;
+}
+.app-facts-navigation {
+  display: flex;
+  gap: 4px;
+  flex: none;
+  padding: 4px var(--app-sheet-inset) 8px;
+  border-bottom: 1px solid var(--app-card-line);
+}
+.app-facts-navigation :is(a, summary) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 6px 8px;
+  color: var(--deep);
+  font: 500 .875rem/1.3 var(--sans);
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+}
+.app-facts-navigation :is(a, summary):is(:hover, :active),
+.app-facts-navigation details[open] summary { background: var(--app-grouped); }
+.app-facts-navigation > :is(a, details) { flex: 1; }
+.app-facts-navigation details { position: relative; }
+.app-facts-navigation summary { list-style: none; }
+.app-facts-navigation summary::-webkit-details-marker { display: none; }
+.app-facts-navigation summary::after {
+  width: 6px;
+  height: 6px;
+  margin: -3px 0 0 7px;
+  border: solid currentColor;
+  border-width: 0 1px 1px 0;
+  transform: rotate(45deg);
+  content: "";
+}
+.app-facts-navigation details > div {
+  position: absolute;
+  z-index: 2;
+  top: 100%;
+  right: 0;
+  width: 13rem;
+  padding: 4px;
+  border: 1px solid var(--app-card-line);
+  background: var(--white);
+  box-shadow: 0 8px 24px rgb(22 34 45 / 12%);
+}
+.app-facts-navigation details a { justify-content: flex-start; }
+.app-fund-facts-sheet > .pros-body {
+  flex: 1;
+  padding: 0 var(--app-sheet-inset) calc(20px + env(safe-area-inset-bottom));
+}
+.app-fund-facts-sheet .pros-body .pros-sec { padding: 18px 0; scroll-margin-top: 8px; }
+.app-fund-facts-sheet .pros-sec:focus { outline: none; }
+body.vault-page .app-fund-facts-sheet .pros-sec .panel-h h3::before { content: none; }
+.app-fund-facts-sheet .pros-sec .panel-b { padding-top: 12px; }
+.app-fund-facts-sheet .panel-b:has(> .dk-table) { overflow-x: auto; }
+.app-fund-facts-sheet .kv dd { overflow-wrap: anywhere; }
+.app-facts-overview { display: grid; gap: 14px; margin: 0; }
+.app-facts-overview dt { margin: 0 0 3px; color: var(--steel); font: 400 .8125rem/1.35 var(--sans); }
+.app-facts-overview dd { margin: 0; color: var(--ink); font: 400 1rem/1.45 var(--sans); }
+
+.app-sheet-actions {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+.app-sheet-actions > .btn { flex: 1 0 auto; justify-content: center; min-height: 50px; padding-inline: 12px; }
+.app-sheet-actions > .btn.primary { flex-grow: 2; }
+.app-bottom-sheet :is(.app-sheet-close, .btn, select, input):focus-visible,
+.app-mobile-nav a:focus-visible {
+  outline: 2px solid var(--fog);
+  outline-offset: -2px;
+}
+body.atp-formal-fund .app-bottom-sheet #ticket {
+  border: 0;
+  border-radius: 0 !important;
+  overflow: visible;
+}
+.app-bottom-sheet #ticket > [data-slot="tabs"] { gap: 0; }
+.app-bottom-sheet #ticket .panel-b { padding: 16px 0 0; }
+.app-bottom-sheet #ticket .swap-box > input { font-size: max(16px, 1.6rem); }
+.app-bottom-sheet #ticket .swap-picks > button { min-height: 40px; min-width: 44px; }
+.app-bottom-sheet [data-slot="sheet-title"]:focus { outline: none; }
+.app-ticket-details {
+  display: grid;
+  grid-template-columns: minmax(78px, 1fr) minmax(0, 1.6fr);
+  column-gap: 12px;
+  margin: 0;
+}
+.app-ticket-details > * {
+  min-width: 0;
+  margin: 0;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--hair);
+  font: 400 13px/1.4 var(--sans);
+  overflow-wrap: anywhere;
+}
+.app-ticket-details dt { color: var(--steel); }
+.app-ticket-details dd { color: var(--ink); text-align: right; font-family: var(--mono); }
+.app-ticket-note {
+  margin: 14px 0 0;
+  color: var(--steel);
+  font: 400 14px/1.55 var(--sans);
+}
+.app-ticket-result {
+  display: grid;
+  grid-template-columns: 40px minmax(0, 1fr);
+  align-items: start;
+  gap: 12px;
+  padding: 15px;
+  background: var(--app-grouped);
+  border: 1px solid var(--app-card-line);
+}
+.app-ticket-result-icon {
+  display: grid;
+  place-items: center;
+  height: 40px;
+  color: var(--deep);
+  background: var(--app-segment);
+}
+.app-ticket-result[data-tone="confirmed"] .app-ticket-result-icon { color: var(--pos); background: #dcefe8; }
+.app-ticket-result[data-tone="error"] .app-ticket-result-icon { color: var(--neg); background: #f5e5e9; }
+.app-ticket-result strong { color: var(--ink); font: 600 16px/1.35 var(--sans); }
+.app-ticket-result p { margin: 4px 0 0; color: var(--steel); font-size: 14px; overflow-wrap: anywhere; }
+.app-ticket-explorer { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; font-size: 14px; }
+.app-filter-fields { min-inline-size: 0; margin: 0; padding: 0; border: 0; }
+.app-filter-fields legend { padding: 0 0 8px; font-size: 14px; font-weight: 600; }
+.app-filter-fields .explore-filter-option {
+  position: relative;
+  min-height: 47px;
+  padding-inline: 12px;
+  background: var(--app-grouped);
+  font-size: 15px;
+}
+.app-filter-fields .explore-filter-option + .explore-filter-option { margin-top: 3px; }
+.app-filter-fields .explore-filter-option:focus-within:has(input:focus-visible) {
+  outline: 2px solid var(--fog);
+  outline-offset: -2px;
+}
+.app-filter-fields .explore-filter-option input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+.app-filter-fields .app-filter-check {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 23px;
+  height: 23px;
+  border: 1px solid var(--hair-2);
+  background: var(--white);
+  color: transparent;
+}
+.app-filter-fields input:checked ~ .app-filter-check {
+  border-color: var(--deep);
+  background: var(--deep);
+  color: var(--white);
+}
+.app-filter-options { display: grid; gap: 5px; margin-top: 14px; }
+.app-filter-options .explore-filter-field { padding: 0; font-size: 14px; }
+.app-filter-options select { min-height: 44px; padding-inline: 10px; font-size: 16px; }
+.app-ticket-summary {
+  grid-template-columns: minmax(100px, .95fr) minmax(0, 1.3fr);
+  padding: 2px 14px;
+  background: var(--app-grouped);
+}
+.app-ticket-summary dt { display: flex; align-items: center; gap: 7px; }
+.app-ticket-summary dd { align-content: center; }
+.app-ticket-summary > :nth-last-child(-n+2) { border-bottom: 0; }
+
+/* 寬度交給全站版面格線（design-controls.css），不在這裡另訂。 */
+.app-portfolio .explore-heading { margin-bottom: 20px; }
+.app-portfolio-create { gap: 7px; }
+/* 摘要不再是灰底外框卡片：數字本身就是重點，只用底部一條細線和下方內容分開。 */
+.app-portfolio-summary {
+  display: grid;
+  gap: 8px;
+  padding: 4px 0 28px;
+  margin: 0 0 8px;
+  border-bottom: 1px solid var(--hair);
+}
+.app-portfolio-guest { border-bottom: 0; }
+.app-portfolio-summary :is(h2, p) { margin: 0; }
+.app-portfolio-summary p { font: 400 14px/1.55 var(--sans); color: var(--steel); }
+.app-portfolio-summary h2 { font: 600 22px/1.25 var(--sans); letter-spacing: -.45px; }
+.app-portfolio-value { font: 550 clamp(29px, 6vw, 42px)/1.15 var(--mono); letter-spacing: -.05em; overflow-wrap: anywhere; }
+.app-portfolio-meta { display: flex; flex-wrap: wrap; gap: 6px 16px; color: var(--steel); font-size: 13px; }
+.app-portfolio-guest { max-width: 560px; gap: 10px; }
+.app-portfolio-guest > svg { color: var(--deep); }
+.app-portfolio-guest .wallet-menu--inline { margin-top: 6px; max-width: 330px; }
+.app-portfolio-guest > a { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; width: fit-content; font-size: 14px; }
+.app-portfolio-tabs [data-slot="tabs-list"] {
+  display: flex;
+  justify-content: start;
+  width: 100%;
+  height: auto;
+  padding: 0;
+  border-bottom: 1px solid var(--hair);
+  border-radius: 0;
+  background: var(--white);
+}
+.app-portfolio-tabs [data-slot="tabs-trigger"] {
+  flex: 0 1 140px;
+  min-height: 46px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  box-shadow: none;
+  color: var(--steel);
+  font: 500 14px var(--sans);
+}
+.app-portfolio-tabs [data-slot="tabs-trigger"][data-state="active"] { border-color: var(--ink); color: var(--ink); }
+.app-portfolio-pane .directory-empty { margin-top: 6px; }
+.app-portfolio-pane .directory-empty .btn { margin-top: 14px; }
+.app-portfolio-caption { margin: 9px 0; color: var(--steel); font-size: 13px; }
+.app-portfolio-ledger { padding: 0; margin: 6px 0; list-style: none; }
+/* 清單是一條連續的列表，列與列之間一條細線，不是一張張有框的卡片。 */
+.app-portfolio-ledger > li {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--hair);
+}
+.app-ledger-heading, .app-ledger-meta { display: flex; justify-content: space-between; align-items: start; flex-wrap: wrap; gap: 6px 12px; }
+.app-ledger-heading h3 { margin: 0; font: 600 15px/1.35 var(--sans); }
+.app-ledger-heading h3 a { display: inline-flex; align-items: center; gap: 4px; min-height: 32px; }
+.app-ledger-link { position: relative; }
+.app-ledger-link h3 a::after { position: absolute; inset: 0; content: ""; }
+.app-ledger-link:hover { background: var(--paper); }
+.app-ledger-heading strong { font: 500 15px/1.45 var(--mono); overflow-wrap: anywhere; }
+.app-ledger-meta { margin-top: 6px; color: var(--steel); font-size: 12px; }
+.app-portfolio-ledger > li > p { margin: 6px 0 0; font-size: 13px; color: var(--steel); }
+
+@media (max-width: 719px) {
+  :root { --app-dock-height: calc(77px + env(safe-area-inset-bottom)); }
+  html { scroll-padding-bottom: calc(var(--app-dock-height) + 16px); }
+  #root:has(.app-mobile-nav):not(:has(.public-mobile-cta)) { padding-bottom: var(--app-dock-height); }
+  #root .masthead.app-masthead {
+    padding-top: env(safe-area-inset-top);
+  }
+  #root .app-masthead .wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 58px;
+    padding: 0 max(16px, env(safe-area-inset-right)) 0 max(16px, env(safe-area-inset-left));
+  }
+  #root .app-masthead .nav,
+  #root .app-masthead .head-link { display: none; }
+  #root .app-masthead .head-right { margin: 0; }
+  .app-mobile-nav {
+    position: fixed;
+    z-index: 40;
+    inset: auto max(9px, env(safe-area-inset-right)) max(8px, env(safe-area-inset-bottom)) max(9px, env(safe-area-inset-left));
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    min-height: 62px;
+    padding: 3px;
+    border: 1px solid var(--app-card-line);
+    background: rgb(255 255 255 / 96%);
+    box-shadow: 0 3px 18px rgb(22 34 45 / 8%);
+  }
+  #root:has(.public-mobile-cta) .app-mobile-nav, .app-fund-toolbar { display: none; }
+  .app-mobile-nav a {
+    position: relative;
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    gap: 4px;
+    min-width: 0;
+    min-height: 54px;
+    padding: 3px 1px;
+    color: var(--steel);
+    text-align: center;
+    text-decoration: none;
+    font: 500 12px/1.2 var(--sans);
+  }
+  .app-mobile-nav a[aria-current="page"] {
+    background: var(--app-segment);
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .app-mobile-nav svg { display: block; }
+  #root .public-mobile-cta {
+    inset: auto max(10px, env(safe-area-inset-right)) max(8px, env(safe-area-inset-bottom)) max(10px, env(safe-area-inset-left));
+    gap: 7px;
+    min-height: 0;
+    padding: 6px;
+    border: 1px solid var(--app-card-line);
+    background: rgb(255 255 255 / 96%);
+    box-shadow: 0 3px 18px rgb(22 34 45 / 8%);
+  }
+  #root .public-mobile-cta .btn { gap: 7px; padding-inline: 9px; }
+  #root .public-mobile-cta .btn.ghost { flex: 0 1 42%; border-color: transparent; background: var(--app-segment); }
+  body.atp-complete-fund .vault-content { padding-bottom: calc(104px + env(safe-area-inset-bottom)); }
+  body:not(:has(.app-bottom-sheet[data-state="open"])) [data-sonner-toaster][data-y-position="bottom"] {
+    bottom: calc(var(--app-dock-height) + 12px);
+  }
+  body.atp-complete-fund:not(:has(.app-bottom-sheet[data-state="open"])) [data-sonner-toaster][data-y-position="bottom"] {
+    bottom: calc(92px + env(safe-area-inset-bottom));
+  }
+  body:has(.app-bottom-sheet[data-state="open"] .app-ticket-result) [data-sonner-toaster] { visibility: hidden; }
+
+  body.atp-formal-market #fund-explore { padding: 22px 16px 28px; }
+  body.atp-formal-market #fund-explore .explore-heading { margin: 0 0 7px; }
+  body.atp-formal-market #fund-explore .explore-heading h1 { font-size: 34px; letter-spacing: -1px; }
+  body.atp-formal-market #fund-explore .explore-disclosure { margin: 0 0 15px; font-size: 12px; }
+  body.atp-formal-market #fund-explore .explore-toolbar {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 8px;
+    padding: 0;
+    margin: 0 0 10px;
+    border: 0;
+  }
+  #fund-explore .explore-toolbar .explore-search {
+    width: 100%;
+    height: 46px;
+    padding-inline: 12px;
+    border-color: var(--hair);
+    background: var(--white);
+  }
+  #fund-explore .explore-search input { font-size: 16px; }
+  #fund-explore .app-filter-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 46px;
+    padding: 0 12px;
+    border: 1px solid var(--app-card-line);
+    background: var(--white);
+    color: var(--ink);
+    font: 500 14px var(--sans);
+  }
+  #fund-explore .app-filter-count {
+    display: grid;
+    place-items: center;
+    min-width: 21px;
+    min-height: 21px;
+    padding-inline: 4px;
+    color: var(--deep);
+    background: var(--app-segment);
+    font: 500 12px var(--mono);
+  }
+  #fund-explore .collection-tabs {
+    display: flex;
+    width: 100%;
+    gap: 5px;
+    margin: 0 0 19px;
+    border: 0;
+    overflow-x: auto;
+  }
+  #fund-explore .collection-tabs > a {
+    width: auto;
+    min-height: 44px;
+    padding: 0 10px;
+    border: 0;
+    font-size: 13px;
+  }
+  #fund-explore .collection-tabs > a[aria-current="page"] {
+    color: var(--ink);
+    background: var(--app-segment);
+    font-weight: 600;
+  }
+  body.atp-formal-market #fund-explore .explore-collection { margin-bottom: 23px; }
+  body.atp-formal-market #fund-explore .explore-collection > header { margin-bottom: 8px; align-items: center; }
+  body.atp-formal-market #fund-explore .explore-collection h2 { font-size: 18px; gap: 7px; margin: 0; letter-spacing: -.4px; }
+  #fund-explore .explore-current-period { font-size: 12px; }
+  #fund-explore .fund-list { border: 1px solid var(--app-card-line); background: var(--white); }
+  #fund-explore .fund-row { background: transparent; }
+  #fund-explore .fund-row-link { padding: 12px 10px; }
+  #fund-explore .fund-list-body h3 { font-size: 16px; overflow-wrap: anywhere; }
+  #fund-explore .fund-list-result strong { font-size: 17px; }
+  #fund-explore .fund-list-result small { font-size: 12px; }
+  #fund-explore .fund-row-creator,
+  #fund-explore .fund-source-caption { font-size: 12px; }
+  body.portfolio-page .app-portfolio { padding-block: 22px 28px; }
+  .app-portfolio-summary { padding: 17px; }
+  .app-portfolio-tabs [data-slot="tabs-trigger"] { flex: 1; }
+  .app-portfolio-create { min-height: 44px; padding-inline: 10px; font-size: 13px; }
+}
+@media (max-width: 360px) {
+  #fund-explore .fund-row-link { grid-template-columns: 53px minmax(0, 1fr) 70px; column-gap: 8px; }
+  #fund-explore :is(.fund-thumb, .public-portrait) { max-width: 53px; }
+  #fund-explore .fund-thumb { max-height: 53px; }
+  #fund-explore .collection-tabs { gap: 3px; }
+  #fund-explore nav.collection-tabs > a { padding-inline: 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .app-bottom-sheet[data-slot="sheet-content"] { animation: none; transition: none; }
+}
+
+@media (max-width: 719px) {
+  #root .app-masthead .header-wallet { min-height: 44px; gap: 7px; }
+  #fund-explore .explore-toolbar .explore-search svg { width: 19px; height: 19px; }
+  #fund-explore .app-search-empty { padding-inline: 0; background: transparent; border: 0; }
+  .app-icon-tile + strong { display: block; margin-top: 10px; }
+
+  body.atp-complete-fund .vault-content {
+    padding-top: calc(10px + env(safe-area-inset-top));
+  }
+  body.atp-complete-fund #atp-fund-cover {
+    width: 100%;
+    margin-inline: 0;
+  }
+  body.atp-complete-fund #atp-fund-cover h1 {
+    inset: auto 14px 16px;
+    font-size: clamp(27px, 8vw, 35px);
+  }
+  body.atp-complete-fund .vault-heading { row-gap: 7px; }
+  body.atp-complete-fund .atp-fund-byline { flex-wrap: wrap; gap: 4px 10px; }
+  body.atp-complete-fund .vault-heading .vault-head-actions {
+    min-height: 44px;
+    max-width: none;
+    gap: 6px;
+  }
+  body.atp-formal-fund .app-position-trigger {
+    min-height: 44px;
+    padding: 0 5px;
+    border: 0;
+    background: transparent;
+    font: 500 .9375rem/1.2 var(--sans);
+    color: var(--deep);
+  }
+  body.atp-complete-fund .vault-top { margin-bottom: 12px; }
+  body.atp-complete-fund #root .app-performance-card {
+    min-width: 0;
+    padding: 0;
+    background: transparent;
+    border: 0;
+  }
+  body.atp-complete-fund #root .vault-performance .public-chart {
+    width: 100%;
+    margin: 12px 0 7px;
+  }
+  body.atp-complete-fund #root #keyfig.dk-kpis {
+    margin: 15px 0 7px;
+    padding: 0 1px;
+  }
+  #root .performance-details-open {
+    width: 100%;
+    min-height: 44px;
+    margin: 0;
+    padding: 8px 0 0;
+    border-top: 1px solid var(--app-card-line);
+  }
+  #root .performance-details-open .app-icon:last-child { margin-left: auto; }
+  #root .app-performance-card > .performance-details-open,
+  #root .app-performance-card :is(.performance-meta, #keyfig) { color: var(--steel); }
+  body.atp-complete-fund .vgrid > .main > :is(.vault-about, .recent-trades, .vault-allocation) {
+    min-width: 0;
+    margin: 24px 0 0;
+    padding: 16px 0 0;
+    border: 0;
+    border-top: 1px solid var(--app-card-line);
+    background: transparent;
+  }
+  #root .vault-allocation .holdings-heading .btn {
+    min-height: 44px;
+    padding-inline: 8px;
+    border-color: var(--app-card-line);
+    background: var(--app-grouped);
+    font-size: 12px;
+  }
+  .app-fund-info-sheet .pros-sec {
+    margin: 0 0 16px;
+    border: 0;
+    background: transparent;
+  }
+  .app-fund-info-sheet .pros-sec + .pros-sec { padding-top: 12px; border-top: 1px solid var(--app-card-line); }
+  .app-fund-info-sheet .pros-sec > :is(.panel-h, .panel-b) { padding-inline: 0; }
+  .app-fund-info-sheet .pros-sec .panel-h { border: 0; }
+  .app-fund-info-sheet .panel-h h3 { font: var(--app-section-title); }
+  .app-fund-info-sheet .panel-b :is(p, .kv) { font: var(--app-secondary); }
+  .app-fund-info-sheet .panel-b:has(> .dk-table) { overflow-x: auto; }
+  body.vault-page .app-fund-info-sheet .kv dd { overflow-wrap: anywhere; }
+  .app-bottom-sheet .public-sheet-body { padding: 0; }
+  body.atp-formal-fund .app-bottom-sheet #ticket .swap-box { background: var(--app-grouped); }
+  body.atp-formal-fund .app-bottom-sheet #ticket .swap-picks > button { background: var(--white); }
+  body.atp-formal-fund .app-bottom-sheet #ticket .swap-picks > button:disabled {
+    background: var(--paper);
+    color: var(--slate);
+  }
+  body.atp-formal-fund .app-bottom-sheet #ticket .swap-picks > button:hover:not(:disabled) {
+    background: var(--deep);
+    color: var(--white);
+  }
+
+  #root .app-portfolio-summary {
+    padding: 19px 16px;
+    border: 1px solid var(--app-card-line);
+    background: var(--white);
+  }
+  #root .app-portfolio-guest { gap: 12px; }
+  .app-portfolio-hero-icon { width: 47px; height: 47px; }
+  #root .app-portfolio .wallet-menu--inline .btn { min-height: 49px; }
+  #root .app-portfolio .app-portfolio-create { border-color: var(--app-card-line); background: var(--white); }
+  #root .app-portfolio-tabs [data-slot="tabs-trigger"],
+  :is(#root, #atp-reference-sheet) .vault-performance .public-periods > button,
+  #atp-reference-sheet.app-bottom-sheet .public-periods > button {
+    min-height: 42px;
+    height: auto;
+    border: 0;
+    background: transparent;
+    color: var(--steel);
+  }
+  #root .app-portfolio-tabs [data-slot="tabs-list"],
+  #root .vault-performance .public-periods,
+  #atp-reference-sheet.app-bottom-sheet .public-periods {
+    display: flex;
+    width: 100%;
+    min-height: 48px;
+    height: auto;
+    padding: 3px;
+    gap: 3px;
+    border: 1px solid transparent;
+    background: var(--app-segment);
+  }
+  #root .app-portfolio-tabs [data-slot="tabs-trigger"][data-state="active"],
+  #root .vault-performance .public-periods > button[aria-pressed="true"],
+  #atp-reference-sheet.app-bottom-sheet .public-periods > button[aria-pressed="true"] {
+    background: var(--white);
+    color: var(--ink);
+    box-shadow: 0 1px 3px rgb(22 34 45 / 10%);
+  }
+  #root .app-portfolio-tabs [data-slot="tabs-trigger"] { gap: 6px; }
+  .app-ledger-title { min-width: 0; }
+  .app-ledger-title .app-icon-tile { width: 30px; height: 30px; }
+  #root .app-portfolio-ledger > li, #root .app-portfolio-pane .directory-empty {
+    border: 1px solid var(--app-card-line);
+    background: var(--white);
+  }
+  #root .app-portfolio-pane .directory-empty { padding: 18px; }
+  #root .app-portfolio-ledger .badge { letter-spacing: 0; text-transform: none; }
+}
+
+/* Phone layout: system typography, inset groups and compact native-style toolbars. */
+@media (max-width: 719px) {
+  :root {
+    --app-native-font: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --app-page-title: 700 2rem/1.12 var(--app-native-font);
+    --app-row-title: 600 1.0625rem/1.25 var(--app-native-font);
+    --app-caption: 400 .8125rem/1.4 var(--app-native-font);
+    --app-body: 400 1.0625rem/1.45 var(--app-native-font);
+    --app-secondary: 400 .9375rem/1.45 var(--app-native-font);
+    --app-section-title: 600 1.25rem/1.25 var(--app-native-font);
+  }
+  body:is(.atp-formal-market, .atp-formal-fund, .portfolio-page, .create-page, .atp-asset-page),
+  #root :is(.app-masthead, .app-mobile-nav), .app-bottom-sheet {
+    --sans: var(--app-native-font);
+    --ink: #16222d;
+    --deep: #2b4254;
+    --steel: #4e6a7f;
+    --fog: #6f93ae;
+    --positive: #25784f;
+    --negative: #a53749;
+  }
+  #root .app-masthead { border-bottom: 0; }
+  #root .app-masthead .wrap { min-height: 52px; }
+  /* 頁面本身已有大的連線按鈕時，右上角不再重複一個。 */
+  #root:has(.app-portfolio-guest) .app-nav-bar .header-wallet[data-wallet-state="disconnected"] { visibility: hidden; }
+  #root :is(.masthead, .app-nav-bar) .header-wallet.app-wallet-toolbar {
+    position: relative;
+    width: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0;
+    justify-content: center;
+    border: 0;
+    background: var(--app-grouped);
+    color: var(--ink);
+  }
+  #root :is(.masthead, .app-nav-bar) .app-wallet-toolbar[data-wallet-state="verified"]::after {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--positive);
+    content: "";
+  }
+  #root .app-mobile-nav, #root .public-mobile-cta {
+    inset: auto 0 0;
+    border: 0;
+    border-top: 1px solid var(--app-card-line);
+    background: rgb(255 255 255 / 95%);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+    box-shadow: none;
+  }
+  #root .app-mobile-nav {
+    padding: 2px env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  }
+  #root .app-mobile-nav a {
+    min-height: 53px;
+    gap: 3px;
+    color: var(--steel);
+    font: 500 11px/1.2 var(--sans);
+  }
+  #root .app-mobile-nav a[aria-current="page"] {
+    color: var(--deep);
+    background: transparent;
+    font-weight: 700;
+  }
+  #root .app-mobile-nav a[aria-current="page"] svg { stroke-width: 2.05; }
+  #root .app-mobile-nav a[aria-current="page"] :is(path, circle, rect, g)[fill="currentColor"] {
+    fill: var(--deep);
+  }
+
+  #root :is(.app-portfolio, .app-manage), body.atp-formal-market :is(#fund-explore, #creator-leaderboard) {
+    padding-top: calc(15px + env(safe-area-inset-top));
+  }
+  #root :is(.app-portfolio, .app-manage, #fund-explore, #creator-leaderboard) .explore-heading {
+    min-height: 44px;
+    margin-bottom: 14px;
+  }
+  #root .app-portfolio .explore-heading { padding-right: 54px; }
+  body.create-page #root main.page > h1,
+  body.create-page #root main.page > div:first-child > h1 { font: var(--app-page-title); }
+  body.create-page #root main.page > section.card,
+  #root .app-manage :is(.directory-empty, .card, .panel),
+  #root .app-portfolio-pane .directory-empty {
+    padding-inline: 0;
+    border: 0;
+    background: transparent;
+  }
+  body.create-page #root main.page > section.card,
+  #root .app-manage :is(.card, .panel) { border-top: 1px solid var(--app-card-line); }
+  #root .app-manage .directory-empty p { font: var(--app-body); }
+  #root :is(.app-portfolio, .app-manage, #fund-explore, #creator-leaderboard) .explore-heading h1 span { display: none; }
+
+  body.atp-formal-market #fund-explore .explore-toolbar { margin-bottom: 12px; }
+  #fund-explore .explore-toolbar .explore-search,
+  #fund-explore .app-filter-trigger { border: 0; background: var(--app-segment); }
+  #fund-explore .explore-toolbar .explore-search { gap: 8px; }
+  #fund-explore .explore-search input { min-height: 46px; font-size: 17px; }
+  #fund-explore .app-filter-trigger {
+    position: relative;
+    width: 46px;
+    justify-content: center;
+    padding: 0;
+    color: var(--app-action);
+  }
+  #fund-explore .app-filter-trigger .app-filter-count {
+    position: absolute;
+    right: -2px;
+    top: -3px;
+    min-width: 17px;
+    min-height: 17px;
+    background: var(--app-segment);
+    color: var(--ink);
+    font: 600 10px/1 var(--sans);
+  }
+  #fund-explore .collection-tabs { gap: 1px; margin-bottom: 11px; }
+  #fund-explore .collection-tabs > a { padding-inline: 11px; font-size: 14px; }
+  #fund-explore .collection-tabs > a[aria-current="page"] { background: var(--app-segment); color: var(--ink); }
+  body.atp-formal-market #fund-explore .explore-disclosure {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+    padding-inline: 3px;
+    margin: 0 0 19px;
+    line-height: 1.35;
+  }
+  body.atp-formal-market #fund-explore .explore-collection h2 { font-size: 22px; }
+
+  body.atp-complete-fund .vault-content {
+    padding-top: calc(10px + env(safe-area-inset-top));
+  }
+  .app-fund-toolbar {
+    position: absolute;
+    z-index: 1;
+    inset: 10px 10px auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  .app-fund-toolbar > :is(a, button) {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 0;
+    background: rgb(22 34 45 / 66%);
+    color: var(--white);
+  }
+  #root .public-mobile-cta {
+    gap: 6px;
+    padding: 7px max(16px, env(safe-area-inset-right)) calc(7px + env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+  }
+  #root .public-mobile-cta .btn { min-height: 53px; font: 600 16px/1.2 var(--sans); }
+  #root .public-mobile-cta .btn.ghost { background: transparent; }
+
+  .app-bottom-sheet [data-slot="sheet-title"] { font: 700 1.5rem/1.2 var(--sans); }
+  .app-bottom-sheet [data-slot="sheet-description"] { font: var(--app-secondary); }
+  .app-sheet-actions > .btn { font: 600 1rem/1.25 var(--sans); }
+  .app-sheet-actions > .btn.ghost { border-color: transparent; background: transparent; color: var(--app-action); }
+  .app-sheet-actions-stacked { flex-direction: column; gap: 4px; }
+  .app-sheet-actions-stacked > .btn {
+    flex: none;
+    width: 100%;
+    min-height: 52px;
+    font: 600 16px/1.2 var(--sans);
+  }
+  .app-sheet-actions-stacked > .btn.ghost {
+    min-height: 44px;
+    border-color: transparent;
+    background: transparent;
+    color: var(--app-action);
+  }
+  .app-filter-fields legend { padding-bottom: 3px; font: var(--app-caption); }
+  .app-filter-fields .explore-filter-option {
+    min-height: 47px;
+    padding-inline: 0;
+    background: transparent;
+    font: var(--app-body);
+  }
+  .app-filter-fields .explore-filter-option + .explore-filter-option {
+    margin-top: 0;
+    border-top: 1px solid var(--app-card-line);
+  }
+  .app-filter-options { gap: 0; margin-top: 16px; }
+  .creator-filter-form .app-filter-options { margin-top: 0; }
+  .app-bottom-sheet .app-filter-options > label {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
+    align-items: center;
+    gap: 8px;
+    padding: 0;
+    color: var(--ink);
+    font: var(--app-body);
+  }
+  .app-filter-options > label + label { border-top: 1px solid var(--app-card-line); }
+  .app-bottom-sheet .app-filter-options select {
+    width: 100%;
+    max-width: none;
+    min-height: 46px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--steel);
+    font: var(--app-body);
+  }
+
+  #root .app-portfolio-summary {
+    position: relative;
+    isolation: isolate;
+    padding: 21px;
+    margin-bottom: 23px;
+    border: 0;
+    background: var(--white);
+    color: var(--ink);
+  }
+  #root .app-portfolio-summary > p, #root .app-portfolio-meta { color: var(--steel); }
+  #root .app-portfolio-summary h2 { font: 700 24px/1.15 var(--sans); }
+  #root .app-portfolio-value { font: 650 clamp(33px, 11vw, 48px)/1.1 var(--sans); }
+  #root .app-portfolio-guest > .wallet-menu--inline { max-width: none; }
+  #root .app-portfolio-guest .wallet-menu--inline > .btn {
+    border: 0;
+    font: 600 16px/1.2 var(--sans);
+  }
+
+  #root .public-mobile-cta .btn:not(.ghost, :disabled),
+  #root .app-portfolio-guest .wallet-menu--inline > .btn:not(:disabled),
+  body.atp-formal-fund .app-bottom-sheet #ticket .btn.primary:not(:disabled),
+  .app-bottom-sheet .app-sheet-actions > .btn.primary:not(:disabled) {
+    border-color: var(--app-action);
+    background: var(--app-action);
+    color: var(--white);
+  }
+  #root .public-mobile-cta .btn.ghost:not(:disabled) { color: var(--app-action); }
+  #root .public-mobile-cta .btn:not(.ghost, :disabled):active,
+  #root .app-portfolio-guest .wallet-menu--inline > .btn:not(:disabled):active,
+  body.atp-formal-fund .app-bottom-sheet #ticket .btn.primary:not(:disabled):active,
+  .app-bottom-sheet .app-sheet-actions > .btn.primary:not(:disabled):active {
+    background: var(--app-action-hover);
+  }
+  .app-filter-fields input:checked ~ .app-filter-check {
+    background: var(--ink);
+    border-color: var(--ink);
+  }
+  #root .app-portfolio-tabs [data-slot="tabs-trigger"][data-state="active"],
+  #root .vault-performance .public-periods > button[aria-pressed="true"],
+  #atp-reference-sheet.app-bottom-sheet .public-periods > button[aria-pressed="true"] {
+    color: var(--ink);
+  }
+}
+
+
+@media (max-width: 719px) {
+  #root :is(.app-portfolio, .app-manage, #fund-explore, #creator-leaderboard) .explore-heading h1 {
+    font: var(--app-page-title);
+    letter-spacing: -.03em;
+  }
+  body.atp-formal-market #fund-explore .explore-collection h2 { font: 650 1.25rem/1.25 var(--sans); }
+  #fund-explore .explore-current-period { font: var(--app-caption); }
+  body.atp-complete-fund #atp-fund-cover h1 { font-size: 2rem; line-height: 1.12; }
+  body.atp-complete-fund #root .vault-performance .performance-return {
+    font: 650 34px/1.08 var(--sans);
+    letter-spacing: -.035em;
+    font-variant-numeric: tabular-nums;
+  }
+  body.atp-complete-fund #root .performance-meta :is(.performance-dates, .performance-description) {
+    font: var(--app-caption);
+  }
+  #root .vault-performance .public-periods { margin-top: 12px; }
+  :is(#root .vault-performance, #atp-reference-sheet.app-bottom-sheet) .public-periods {
+    padding: 2px 4px;
+    gap: 2px;
+    border: 0;
+    background: var(--app-segment);
+  }
+  :is(#root .vault-performance, #atp-reference-sheet.app-bottom-sheet) .public-periods > button {
+    min-height: 44px;
+    padding: 0 4px;
+    font: 500 .875rem/1.2 var(--sans);
+    letter-spacing: 0;
+  }
+  :is(#root .vault-performance, #atp-reference-sheet.app-bottom-sheet) .public-periods > button[aria-pressed="true"] {
+    background: transparent;
+    color: var(--ink);
+    box-shadow: none;
+    font-weight: 700;
+  }
+  body.atp-complete-fund #root .vault-performance .public-chart { margin-top: 4px; }
+
+  #fund-explore .fund-list { display: grid; border: 0; background: transparent; }
+  #fund-explore .fund-row { margin: 0; border: 0; background: transparent; }
+  #fund-explore .fund-row + .fund-row { border-top: 1px solid var(--app-card-line); }
+  #fund-explore .fund-row-link {
+    grid-template-columns: 36px minmax(0, 1fr) clamp(44px, 16vw, 72px) max-content;
+    grid-template-rows: auto;
+    gap: 8px;
+    min-height: 60px;
+    padding: 9px 0;
+  }
+  body.atp-formal-market #fund-explore :is(.public-portrait, .fund-thumb) {
+    grid-column: 1;
+    grid-row: 1;
+    width: 36px;
+    height: 36px;
+    max-width: 36px;
+    max-height: 36px;
+  }
+  #fund-explore .fund-list-body { grid-column: 2; grid-row: 1; }
+  #fund-explore .fund-list-body h3 {
+    margin-bottom: 0;
+    font: var(--app-row-title);
+    letter-spacing: -.015em;
+  }
+  #fund-explore .fund-row-creator { font: var(--app-caption); }
+  #fund-explore .fund-list-trend {
+    display: block;
+    grid-column: 3;
+    grid-row: 1;
+    align-self: center;
+    width: 100%;
+  }
+  #fund-explore .fund-list-result { grid-column: 4; grid-row: 1; align-self: center; min-width: 4.5rem; }
+  #fund-explore .fund-list-result strong { font: 600 1rem/1.25 var(--sans); letter-spacing: 0; }
+  body.atp-formal-market #fund-explore .fund-asset-icons { display: none; }
+
+  .app-ticket-fund {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    min-height: 44px;
+    margin-bottom: 14px;
+    color: var(--ink);
+    font: var(--app-row-title);
+  }
+  .app-ticket-fund img { display: block; flex: none; object-fit: cover; }
+  .app-ticket-fund .app-icon-tile { width: 42px; height: 42px; }
+  body.atp-formal-fund .app-bottom-sheet #ticket .panel-b { padding-top: 0; }
+  body.atp-formal-fund .app-bottom-sheet #ticket .swap { gap: 12px; }
+  body.atp-formal-fund .app-bottom-sheet #ticket .swap-box {
+    padding: 10px 14px;
+    background: var(--app-grouped);
+    border: 1px solid transparent;
+  }
+  body.atp-formal-fund .app-bottom-sheet #ticket .swap-box:focus-within { border-color: var(--app-action); }
+  body.atp-formal-fund .app-bottom-sheet #ticket .swap-box > input {
+    min-height: 48px;
+    margin: 0;
+    font: 600 2.375rem/1.2 var(--sans);
+    letter-spacing: -.03em;
+  }
+  .app-bottom-sheet #ticket :is(.swap-label, .swap-sub, .fine) { font: var(--app-secondary); }
+  .app-ticket-currency { grid-area: slot; color: var(--steel); font: 600 .9375rem/1.45 var(--sans); }
+  #ticket .app-ticket-close-position { border-color: transparent; color: var(--app-action); }
+  .app-bottom-sheet #ticket .btn.block { min-height: 50px; font: 600 1rem/1.25 var(--sans); }
+  .app-ticket-presets { display: flex; gap: 7px; }
+  .app-ticket-presets button {
+    min-width: 44px;
+    min-height: 44px;
+    padding-inline: 13px;
+    border: 0;
+    background: var(--app-grouped);
+    color: var(--deep);
+    font: 600 14px/1 var(--sans);
+  }
+  .app-ticket-amount {
+    display: grid;
+    gap: 3px;
+    margin: 18px 0;
+    text-align: center;
+    color: var(--steel);
+    font: 400 14px/1.3 var(--sans);
+  }
+  .app-ticket-amount strong, .app-ticket-receipt-amount {
+    color: var(--ink);
+    font: 650 clamp(26px, 8vw, 38px)/1.12 var(--sans);
+    font-variant-numeric: tabular-nums;
+    overflow-wrap: anywhere;
+  }
+  .app-ticket-summary { background: transparent; padding-inline: 0; }
+  .app-ticket-details > * { font: var(--app-secondary); }
+  .app-ticket-details dd { font-variant-numeric: tabular-nums; }
+  .app-ticket-note, .app-ticket-result p { font: var(--app-secondary); }
+  .app-ticket-summary > :first-child, .app-ticket-summary > :nth-child(2) { border-top: 1px solid var(--app-card-line); }
+  .app-bottom-sheet .app-sheet-heading-hidden { min-height: 42px; padding: 0; }
+  .app-ticket-receipt .app-ticket-result {
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    gap: 7px;
+    margin-bottom: 16px;
+    padding: 0 4px;
+    border: 0;
+    background: transparent;
+    text-align: center;
+  }
+  .app-ticket-receipt .app-ticket-result-icon { width: 52px; height: 52px; margin-bottom: 4px; }
+  .app-ticket-receipt .app-ticket-result strong { font-size: 23px; letter-spacing: -.02em; }
+  .app-ticket-receipt .app-ticket-result p { max-width: 32ch; margin: 0; }
+  .app-ticket-receipt .app-ticket-fund { margin-bottom: 0; }
+  .app-ticket-receipt .app-ticket-explorer { color: var(--deep); }
+  .app-ticket-receipt .app-sheet-actions {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 8px;
+  }
+  .app-ticket-receipt .app-sheet-actions > .btn { width: auto; }
+  .app-ticket-receipt .app-sheet-actions > .btn.primary { flex: 1; }
+
+  #root .app-portfolio-summary {
+    padding: 14px 12px 20px;
+    margin-bottom: 8px;
+    border: 0;
+    background: transparent;
+    text-align: center;
+  }
+  #root .app-portfolio-summary :is(.app-portfolio-kicker, .app-portfolio-meta) { justify-content: center; }
+  #root .app-portfolio-summary .app-portfolio-kicker { font: 400 .9375rem/1.35 var(--sans); }
+  #root .app-portfolio-summary .app-portfolio-value {
+    font-size: clamp(2.375rem, 11vw, 2.875rem);
+    letter-spacing: -.035em;
+    font-variant-numeric: tabular-nums;
+  }
+  #root .app-portfolio-summary .app-portfolio-meta { font: var(--app-caption); }
+  #root .app-portfolio-tabs [data-slot="tabs-trigger"] { font: 500 .9375rem/1.2 var(--sans); }
+  #root .app-portfolio-guest {
+    justify-items: center;
+    padding-block: clamp(32px, 8vh, 90px) 24px;
+  }
+  #root .app-portfolio-guest > .wallet-menu--inline { width: min(100%, 280px); }
+  #root .app-portfolio-ledger { display: grid; background: transparent; }
+  #root .app-portfolio-ledger > li { margin: 0; padding: 12px 0; border: 0; }
+  #root .app-portfolio-ledger > li + li { border-top: 1px solid var(--app-card-line); }
+  #root .app-holding-row {
+    display: grid;
+    grid-template-columns: 46px minmax(0, 1fr) max-content auto;
+    align-items: center;
+    gap: 8px;
+  }
+  .app-holding-cover { width: 46px; height: 46px; object-fit: cover; }
+  .app-holding-main h3 { margin: 0 0 3px; font: var(--app-row-title); overflow-wrap: anywhere; }
+  .app-holding-main h3 a { text-decoration: none; }
+  .app-holding-row > strong { max-width: 95px; font: 600 1rem/1.2 var(--sans); font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+  .app-holding-row > .app-icon { color: var(--steel); }
+  .app-holding-status { display: flex; flex-wrap: wrap; align-items: center; gap: 3px; color: var(--steel); font: var(--app-caption); }
+  #root .app-holding-status .badge { padding: 0; border: 0; font: inherit; }
+  .app-holding-address { font-size: 12px; color: var(--steel); }
+}
+
+
+
+/* Layered important rules override the vendor's square-corner reset. */
+@layer app-shapes {
+  :is(.btn, [data-slot="button"], .app-icon-tile, .app-ticket-presets button,
+      [data-slot="sheet-close"], .app-fund-toolbar > :is(a, button),
+      .fund-introduction-identity img, .app-facts-navigation :is(a, summary, details > div),
+      .activity-filter-select, .app-bottom-sheet select, .wallet-menu__item,
+      #fund-explore :is(.explore-search, .app-filter-trigger, .explore-filter > summary)) {
+    border-radius: var(--app-control-radius) !important;
+  }
+  :is(.card, .wallet-menu__panel, .app-ticket-fund, .app-ticket-result, [data-sonner-toast]) {
+    border-radius: var(--app-card-radius) !important;
+  }
+  .app-bottom-sheet[data-slot="sheet-content"] {
+    border-radius: var(--app-sheet-radius) var(--app-sheet-radius) 0 0 !important;
+  }
+  @media (max-width: 719px) {
+    :is(.atp-facts-trigger, .collection-tabs > a, .public-periods > button, [data-slot="tabs-trigger"],
+        .app-ticket-fund img, .app-holding-cover, #fund-explore .fund-thumb, .app-ticket-result-icon) {
+      border-radius: var(--app-control-radius) !important;
+    }
+    :is(#atp-fund-cover, .app-bottom-sheet #ticket .swap-box,
+        .app-portfolio-tabs [data-slot="tabs-list"], .app-bottom-sheet .public-periods) {
+      border-radius: var(--app-card-radius) !important;
+    }
+    :is(.app-filter-count, .app-portfolio-ledger .badge) {
+      border-radius: var(--app-badge-radius) !important;
+    }
+    .public-periods { border-radius: var(--app-control-radius) !important; }
+    .app-filter-check { border-radius: 50% !important; }
+  }
+}
+
+/*
+ * ── App shell（手機，2026-11-11）──
+ * 目標是「打開像 App，不像縮小的網站」，視覺語言對齊 iOS 26 的 Liquid Glass：
+ *   1. 玻璃只用在「浮在內容上方的控制層」（分頁列、頂部按鈕、底部交易列），內容本身不上玻璃。
+ *   2. 分頁列與交易列是浮動膠囊，不貼齊螢幕邊；內容可以從下方透出來。
+ *   3. 頂部不是一整條實心導覽列，而是 scroll edge effect：內容捲到下面時才出現由上而下的柔和霧化，
+ *      小標題同時淡入。大標題由頁面自己的 h1 擔任。
+ *   4. 瀏覽器做不到真正的折射（SVG displacement 的 backdrop-filter 只有 Chromium 支援，iOS Safari 不行），
+ *      所以用模糊＋飽和＋提亮＋內緣高光來模擬玻璃的厚度與反光。
+ *   5. 「減少透明度」或不支援 backdrop-filter 時退回實心白底，文字對比不受影響。
+ */
+.app-nav-bar { display: none; }
+@media (max-width: 719px) {
+  :root {
+    --glass-fill: rgb(255 255 255 / 58%);
+    --glass-edge: rgb(255 255 255 / 75%);
+    --glass-blur: blur(18px) saturate(190%) brightness(1.06);
+    --glass-shadow:
+      0 12px 32px rgb(22 34 45 / 13%),
+      0 2px 6px rgb(22 34 45 / 7%),
+      inset 0 1px 0 rgb(255 255 255 / 90%),
+      inset 0 -1px 1px rgb(22 34 45 / 5%);
+    --glass-press: rgb(22 34 45 / 7%);
+    --app-dock-gap: max(10px, calc(env(safe-area-inset-bottom) - 10px));
+    --app-dock-height: calc(64px + var(--app-dock-gap) + 14px);
+  }
+  html { -webkit-tap-highlight-color: transparent; }
+  #root a, #root button, #root summary { touch-action: manipulation; }
+
+  /* 頂部：透明列＋右上玻璃按鈕；捲動後出現 scroll edge 霧化與小標題。 */
+  #root .app-nav-bar {
+    position: sticky;
+    top: 0;
+    z-index: 42;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    min-height: calc(52px + env(safe-area-inset-top));
+    padding: env(safe-area-inset-top) max(14px, env(safe-area-inset-right)) 0 max(14px, env(safe-area-inset-left));
+    background: transparent;
+  }
+  #root .app-nav-bar::before {
+    position: absolute;
+    z-index: -1;
+    inset: 0 0 -18px;
+    background: linear-gradient(rgb(255 255 255 / 90%) 0%, rgb(255 255 255 / 72%) 62%, rgb(255 255 255 / 0%) 100%);
+    -webkit-backdrop-filter: blur(10px) saturate(160%);
+    backdrop-filter: blur(10px) saturate(160%);
+    -webkit-mask-image: linear-gradient(#000 60%, transparent);
+    mask-image: linear-gradient(#000 60%, transparent);
+    opacity: 0;
+    transition: opacity .25s ease;
+    content: "";
+    pointer-events: none;
+  }
+  #root .app-nav-bar[data-scrolled="true"]::before { opacity: 1; }
+  .app-nav-bar-title {
+    position: absolute;
+    left: 72px;
+    right: 72px;
+    bottom: 0;
+    overflow: hidden;
+    color: var(--ink);
+    font: 600 17px/52px var(--app-native-font);
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity .2s ease, transform .2s ease;
+    pointer-events: none;
+  }
+  .app-nav-bar[data-scrolled="true"] > .app-nav-bar-title { opacity: 1; transform: none; }
+  #root .app-nav-bar .header-wallet.app-wallet-toolbar {
+    border: 1px solid var(--glass-edge);
+    background: var(--glass-fill);
+    box-shadow: var(--glass-shadow);
+    -webkit-backdrop-filter: var(--glass-blur);
+    backdrop-filter: var(--glass-blur);
+  }
+  /* 導覽列已佔住頂部安全區，頁面不必再自己留一次。 */
+  html body #root:has(> .app-nav-bar) > main { padding-top: 2px; }
+  #root:has(> .app-nav-bar) > main :is(.explore-heading h1),
+  body.atp-complete-create #root:has(> .app-nav-bar) > main > div:first-child > h1 {
+    font: 700 2.125rem/1.12 var(--app-native-font);
+    letter-spacing: -.02em;
+  }
+  #root .app-portfolio .explore-heading { padding-right: 0; }
+  body.atp-complete-create #root:has(> .app-nav-bar) > main > div:first-child { padding-top: 0; }
+  /* 頁面本身已有大的連線按鈕時，右上角不再重複一個。 */
+  #root:has(.app-portfolio-guest) .app-nav-bar .header-wallet[data-wallet-state="disconnected"] { visibility: hidden; }
+
+  /* 底部：浮動玻璃膠囊（分頁列與基金頁的交易列共用同一個造型）。 */
+  #root .app-mobile-nav,
+  #root .public-mobile-cta {
+    inset: auto max(14px, env(safe-area-inset-left)) var(--app-dock-gap) max(14px, env(safe-area-inset-right));
+    min-height: 64px;
+    padding: 5px;
+    border: 1px solid var(--glass-edge);
+    background: var(--glass-fill);
+    box-shadow: var(--glass-shadow);
+    -webkit-backdrop-filter: var(--glass-blur);
+    backdrop-filter: var(--glass-blur);
+  }
+  #root .app-mobile-nav { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
+  #root .app-mobile-nav a {
+    min-height: 52px;
+    gap: 2px;
+    transition: background-color .2s ease, transform .12s ease;
+  }
+  /* 選中項：玻璃膠囊裡再嵌一顆淡色膠囊，跟 iOS 26 分頁列一樣用「位置＋底色＋顏色」三重標示。 */
+  #root .app-mobile-nav a[aria-current="page"] { background: rgb(22 34 45 / 8%); color: var(--ink); }
+  #root .app-mobile-nav a:active { transform: scale(.94); background: var(--glass-press); }
+  #root .public-mobile-cta { gap: 6px; }
+  #root .public-mobile-cta .btn { min-height: 52px; }
+  #root .public-mobile-cta .btn.ghost { background: rgb(22 34 45 / 6%); border-color: transparent; }
+  body.atp-complete-fund .vault-content { padding-bottom: calc(var(--app-dock-height) + 24px); }
+
+  /* 基金封面上的返回／分享鈕：深色玻璃圓鈕。 */
+  #atp-fund-cover .fund-cover-nav > :is(a, button) {
+    border: 1px solid rgb(255 255 255 / 22%);
+    background: rgb(22 34 45 / 34%);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 28%), 0 4px 14px rgb(0 0 0 / 18%);
+    -webkit-backdrop-filter: blur(14px) saturate(160%);
+    backdrop-filter: blur(14px) saturate(160%);
+  }
+
+  /*
+   * Funds 列表：一屏約十檔。原本每列 61px、一屏約 12 檔，名字、走勢與報酬擠在一起。
+   * 列高拉到約 72px，縮圖 36→44px，名稱 17px，報酬 17px，留白讓每檔基金是一個清楚的點擊目標。
+   */
+  #fund-explore .fund-row-link {
+    grid-template-columns: 44px minmax(0, 1fr) clamp(40px, 12vw, 56px) max-content;
+    column-gap: 12px;
+    min-height: 72px;
+    padding: 12px 0;
+  }
+  body.atp-formal-market #fund-explore :is(.public-portrait, .fund-thumb) {
+    width: 44px;
+    height: 44px;
+    max-width: 44px;
+    max-height: 44px;
+  }
+  #fund-explore .fund-list-result strong { font: 600 1.0625rem/1.25 var(--sans); }
+  #fund-explore .fund-list-trend { height: 26px; }
+  /* 名稱最多兩行，超過以刪節號收尾，列高才會一致。 */
+  #fund-explore .fund-list-body h3 .fund-title-link {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+  /* 有機構名時，機構那一行另外算：名字兩行＋機構一行。 */
+  #fund-explore .fund-list-body h3 .fund-title-link:has(.fund-name-org) { -webkit-line-clamp: 3; }
+
+  /* 分類（All / Themes / Public figures / X voices）捲動時固定在頂部，不必捲回最上面才能切換。 */
+  #fund-explore > .collection-tabs {
+    position: sticky;
+    top: calc(52px + env(safe-area-inset-top));
+    z-index: 43;
+    /* 撐滿整個螢幕寬，背景不會在右側缺一截。 */
+    width: auto;
+    margin-inline: calc(50% - 50vw);
+    padding: 6px 16px 8px;
+    background: rgb(255 255 255 / 97%);
+    scrollbar-width: none;
+  }
+  #fund-explore > .collection-tabs::-webkit-scrollbar { display: none; }
+  #fund-explore > .collection-tabs > a { flex: none; }
+  /* Funds 頁捲動後，頂部列與分類連成同一塊頁首（同樣的白），不讓列表從兩者之間的縫透出來。 */
+  #root:has(#fund-explore) .app-nav-bar::before {
+    inset: 0;
+    background: rgb(255 255 255 / 97%);
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  /* 標題列也固定時，各區塊標題捲到分類下方仍要看得到。 */
+  #fund-explore .explore-collection > header { scroll-margin-top: calc(110px + env(safe-area-inset-top)); }
+
+  /* 點擊回饋 */
+  #root :is(.fund-row, .creator-table tbody tr, .app-portfolio-ledger > li) { transition: background-color .12s ease; }
+  #root :is(.fund-row, .creator-table tbody tr, .app-portfolio-ledger > li):active { background: var(--app-grouped); }
+  #root :is(.btn, [data-slot="button"], .header-wallet) { transition: transform .12s ease, background-color .15s ease; }
+  #root :is(.btn, [data-slot="button"], .header-wallet):not(:disabled):active { transform: scale(.97); }
+
+  /* 「人名 · 機構」→ 兩行 */
+  #root .fund-row .fund-name-sep { display: none; }
+  #root .fund-row .fund-name-org {
+    display: block;
+    margin-top: 1px;
+    color: var(--steel);
+    font: 400 .8125rem/1.35 var(--app-native-font);
+    letter-spacing: 0;
+  }
+
+  /* Creators：一列就是一個 creator，手機不需要表頭。 */
+  #creator-leaderboard .creator-count::after { content: " funds"; color: var(--steel); font: 400 .8125rem var(--app-native-font); }
+  #creator-leaderboard .creator-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+}
+/*
+ * ── Studio（creator 工作區）──
+ * 跟投資模式共用版面與元件（Portfolio 的卡片、清單），只在「這是另一個工作區」的地方做出差異：
+ * 頂部的 Studio 標記、深色的分頁列、右上角的模式切換。差異要一眼看得出來，但不換一套設計語言。
+ */
+.app-mode-switch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 40px;
+  padding: 0 14px;
+  border: 1px solid var(--hair-2);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--ink);
+  font: 500 14px/1.2 var(--sans);
+  text-decoration: none;
+  white-space: nowrap;
+}
+.app-mode-switch:hover { border-color: var(--ink); }
+.app-mode-label {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: var(--deep);
+  color: var(--snow);
+  font: 600 12px/1.2 var(--sans);
+  letter-spacing: .02em;
+}
+.app-studio-section { display: grid; gap: 4px; margin-top: 28px; }
+.app-studio-section > h2 { margin: 0 0 4px; font: 600 20px/1.25 var(--sans); letter-spacing: -.3px; }
+.app-studio-detail { margin: 4px 0 0; color: var(--steel); font: 400 13px/1.45 var(--sans); }
+.app-studio-ledger .app-holding-status { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.app-studio-ledger > li { display: grid; grid-template-columns: minmax(0, 1fr) auto 15px; gap: 16px; align-items: center; }
+.app-studio-ledger h3 { margin: 0 0 4px; font: 600 17px/1.3 var(--sans); letter-spacing: -.2px; }
+.app-studio-ledger > li > strong { font: 550 15px/1.3 var(--sans); font-variant-numeric: tabular-nums; }
+.app-studio-ledger > li > .app-icon:last-child { color: var(--steel); }
+.app-studio-clear { display: grid; justify-items: start; gap: 6px; padding: 18px 0; }
+.app-studio-clear p { margin: 0; color: var(--steel); font-size: 14px; }
+.app-studio-clear > strong::before { display: inline-block; width: 7px; height: 7px; margin-right: 8px; border-radius: 50%; background: var(--positive); vertical-align: middle; content: ""; }
+.app-studio-more { display: inline-flex; align-items: center; gap: 6px; width: fit-content; min-height: 44px; color: var(--deep); font: 500 14px/1.3 var(--sans); }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: .28s; }
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root), ::view-transition-new(root) { animation: none; }
+}
+
+@media (max-width: 719px) {
+  /* 分頁數依模式不同（投資 3、Studio 4），平均分配寬度。 */
+  #root .app-mobile-nav[data-count="3"] { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  #root .app-mobile-nav[data-count="4"] { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+  /* 頂部列：左邊 Studio 標記、中間捲動後的小標題、右邊模式切換＋錢包。 */
+  #root .app-nav-bar { justify-content: space-between; }
+  .app-nav-bar-actions { display: flex; align-items: center; gap: 8px; margin-left: auto; }
+  #root .app-nav-bar .app-mode-label { position: relative; z-index: 1; padding: 5px 10px; border-radius: 999px; font-size: 13px; }
+  #root .app-nav-bar .app-mode-switch {
+    min-height: 40px;
+    padding: 0 15px;
+    border: 1px solid var(--glass-edge);
+    background: var(--glass-fill);
+    box-shadow: var(--glass-shadow);
+    font: 600 14px/1 var(--app-native-font);
+    -webkit-backdrop-filter: var(--glass-blur);
+    backdrop-filter: var(--glass-blur);
+  }
+  #root .app-nav-bar .app-mode-switch:active { transform: scale(.96); }
+  /* 手機也是同一個語言：進 Studio 帶品牌藍灰淡色，離開 Studio 是中性玻璃膠囊。 */
+  #root .app-nav-bar .app-mode-switch[data-target="studio"] { padding: 0 14px 0 12px; background: rgb(225 234 241 / 78%); color: var(--deep); }
+  .app-studio-section { margin-top: 22px; }
+  /* Studio 的列沒有封面圖，覆蓋 Portfolio 列表替封面保留的第一欄。 */
+  #root .app-studio-ledger > li.app-holding-row { grid-template-columns: minmax(0, 1fr) auto; }
+  .app-studio-ledger > li > .app-icon:last-child { display: none; }
+
+  /* Studio 的分頁列是深色玻璃：換了工作區，最常看的地方就要不一樣。 */
+  body.studio-mode #root .app-mobile-nav {
+    border-color: rgb(255 255 255 / 14%);
+    background: rgb(22 34 45 / 80%);
+    box-shadow: 0 12px 32px rgb(22 34 45 / 28%), inset 0 1px 0 rgb(255 255 255 / 16%);
+  }
+  body.studio-mode #root .app-mobile-nav a { color: rgb(238 243 247 / 70%); }
+  body.studio-mode #root .app-mobile-nav a[aria-current="page"] { background: rgb(255 255 255 / 15%); color: var(--white); }
+  body.studio-mode #root .app-mobile-nav a[aria-current="page"] :is(path, circle, rect, g)[fill="currentColor"] { fill: var(--white); }
+  body.studio-mode #root .app-mobile-nav a:active { background: rgb(255 255 255 / 12%); }
+}
+
+/*
+ * ── 形狀系統（全站，2026-11-11）──
+ * 原本同一頁裡按鈕有直角、10px、12px、膠囊四種形狀。改成跟 iOS 一樣的單一規則：
+ *   - 會按的東西（按鈕、模式切換、錢包、分段控制、搜尋欄、分類標籤）＝ 膠囊；只有圖示的按鈕＝正圓。
+ *   - 要輸入的欄位（文字框、下拉選單）＝ 12px 圓角矩形。
+ *   - 容器（卡片、抽屜、封面）沿用各自較大的圓角；圖片縮圖維持既有比例。
+ * vendor 有一條把全站圓角歸零的 !important，而 app-shapes layer 內的 !important 又優先於未分層的規則，
+ * 所以形狀一律寫在這個 layer 的最後。`:is(#root, body)` 讓這些規則的權重高於 layer 內前面的同類規則，
+ * 也涵蓋 portal 到 body 的抽屜與對話框。
+ */
+@layer app-shapes {
+  :is(#root, body) :is(.btn, [data-slot="button"], .app-mode-switch, .header-wallet, .app-wallet-toolbar,
+      .app-filter-trigger, .creator-filter-trigger, .explore-search, .creator-search, .creator-periods,
+      .creator-periods button, .public-periods, .public-periods button,
+      .atp-facts-trigger, .app-ticket-presets button, .wallet-menu__item,
+      [data-slot="sheet-close"], .app-fund-toolbar > :is(a, button), .fund-cover-nav > :is(a, button),
+      .explore-filter > summary, .app-mobile-nav, .app-mobile-nav a, .public-mobile-cta,
+      .app-nav-bar .app-mode-label, .explore-filter--all .app-filter-count) {
+    border-radius: 999px !important;
+  }
+  /* 分頁標籤與基金分類：桌面是底線式導覽（底線必須是直的）；手機是分段控制，跟按鈕一樣是膠囊。 */
+  :is(#root, body) :is([data-slot="tabs-trigger"], .collection-tabs > a) { border-radius: 0 !important; }
+  @media (max-width: 719px) {
+    :is(#root, body) :is([data-slot="tabs-trigger"], [data-slot="tabs-list"], .collection-tabs > a) { border-radius: 999px !important; }
+  }
+  :is(#root, body) :is(input:not([type="checkbox"]):not([type="radio"]):not([type="range"]), select, textarea) {
+    border-radius: 12px !important;
+  }
+  :is(#root, body) .app-whitelist-note { border-radius: 12px !important; }
+  @media (min-width: 720px) {
+    body.atp-formal-market #fund-explore .fund-thumb { border-radius: 14px !important; }
+    body.atp-formal-fund #ticket .swap-box { border-radius: 12px !important; }
+  }
+  /* 搜尋欄本身是膠囊，裡面的輸入框不再自帶一層圓角矩形。 */
+  :is(#root, body) :is(.explore-search, .creator-search) input { border-radius: 0 !important; }
+  #root .app-masthead .app-mode-label { border-radius: 6px !important; }
+}
+@media (max-width: 719px) and (prefers-reduced-transparency: reduce) {
+  :root { --glass-fill: var(--white); }
+  #root .app-nav-bar::before { background: var(--white); -webkit-backdrop-filter: none; backdrop-filter: none; -webkit-mask-image: none; mask-image: none; }
+  #root :is(.app-mobile-nav, .public-mobile-cta, .app-nav-bar .header-wallet) { -webkit-backdrop-filter: none; backdrop-filter: none; }
+}
+@supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+  :root { --glass-fill: var(--white); }
+}
+@media (max-width: 719px) and (prefers-reduced-motion: reduce) {
+  #root .app-nav-bar::before, .app-nav-bar-title, #root .app-mobile-nav a,
+  #root :is(.btn, [data-slot="button"], .header-wallet) { transition: none; }
+  #root :is(.btn, [data-slot="button"], .header-wallet):active,
+  #root .app-mobile-nav a:active { transform: none; }
+}

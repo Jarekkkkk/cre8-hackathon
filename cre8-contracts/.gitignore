@@ -1,0 +1,9 @@
+out/
+cache/
+broadcast/
+.env
+.env.*
+# The template carries no secret and must be committed so fork-test users can copy it.
+!.env.example
+node_modules/
+.DS_Store

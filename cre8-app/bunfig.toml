@@ -1,0 +1,4 @@
+# 沙盒（workspace-write）下 ~/.bun/install/cache 不可寫，所以把 cache 指到專案內。
+# 這只是本機安裝細節，不影響 build 產物。
+[install]
+cache = ".bun-cache"

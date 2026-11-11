@@ -1,0 +1,255 @@
+/* CRE8 landing: the page's own styles on top of the shared design.css. Loaded only by the landing (web/content/prototype/index.html).
+   The hero's layout, stage and motion are the live site's (.cl-hero in design.css, coins from assets/hero-tokens.mjs);
+   this file sets its words in the landing's type and holds the landing's type, spacing and section rules. */
+
+/* =========================================================
+   Demo overrides on top of the live landing (assets/styles.css).
+   1. Type: Geist for display and text; Geist Mono only for figures.
+   2. Four sizes: 64 / 24 / 16 / 13 (display drops to 40 on phones). Nothing below 12px.
+   3. No uppercase anywhere except the logo.
+   4. Hairlines: 0.5px on high-density screens; image frames 1px.
+   5. Shorter page: static How it works, sort controls and digit reel removed.
+   ========================================================= */
+:root{
+  --dm-display:"Geist",system-ui,sans-serif;
+  --dm-text:"Geist",system-ui,sans-serif;
+  --dm-figure:"Geist Mono",ui-monospace,monospace;
+  --dm-xl:64px; --dm-l:24px; --dm-m:16px; --dm-s:13px;
+}
+@media (max-width:860px){ :root{ --dm-xl:40px } }
+
+/* ---- type families ---- */
+body.landing-page, body.landing-page main *, body.landing-page .cl-nav a:not(.brand), body.landing-page .cl-foot *:not(.c8-cre):not(.c8-cre *):not([class*="c8-"]){
+  font-family:var(--dm-text);
+}
+body.landing-page main{font-variant-numeric:tabular-nums}
+body.landing-page main .cl-fcard dd, body.landing-page main .cl-fcard li b,
+body.landing-page #earn output:not(#cl-out){font-family:var(--dm-figure) !important;letter-spacing:-.01em}
+body.landing-page #story .cl-mid{font-family:var(--dm-text) !important}
+
+/* ---- no uppercase (logo excluded) ---- */
+body.landing-page main *, body.landing-page .cl-nav a:not(.brand), body.landing-page .cl-foot *:not([class*="c8-"]){
+  text-transform:none !important; letter-spacing:normal;
+}
+
+/* ---- display: 64 ---- */
+body.landing-page .cl-hero-h1,
+body.landing-page main .cl-h2,
+body.landing-page #story .cl-split-say, body.landing-page #story .cl-split-say span,
+body.landing-page #cl-out{
+  font-family:var(--dm-display) !important; font-weight:600; font-size:var(--dm-xl) !important;
+  line-height:1.02; letter-spacing:-.04em !important;
+}
+body.landing-page main .cl-h2 i, body.landing-page main .cl-h2 b{font-size:inherit !important}
+
+/* ---- level 24 ---- */
+body.landing-page main .cl-lead,
+body.landing-page #story .cl-ws:not(dd), body.landing-page #story .cl-oc:not(dd),
+body.landing-page main .cl-fcard-name,
+body.landing-page .dm-how h3,
+body.landing-page #earn output:not(#cl-out){
+  font-size:var(--dm-l) !important; line-height:1.3; letter-spacing:-.01em;
+}
+body.landing-page #story .cl-ws:not(dd), body.landing-page #story .cl-oc:not(dd){font-family:var(--dm-display) !important;font-weight:600}
+body.landing-page #earn output:not(#cl-out){font-weight:500}
+
+/* ---- level 16 ---- */
+body.landing-page main p, body.landing-page main dd, body.landing-page main summary,
+body.landing-page main .cl-fcard-rule, body.landing-page main .cl-fcard-go, body.landing-page main .cl-textlink,
+body.landing-page main .btn, body.landing-page .cl-nav a:not(.brand), body.landing-page .dm-link{
+  font-size:var(--dm-m) !important; line-height:1.55;
+}
+body.landing-page main .cl-lead{font-size:var(--dm-l) !important}
+body.landing-page main summary{font-weight:600}
+
+/* ---- level 13 ---- */
+body.landing-page main dt, body.landing-page main li:not(.dm-steps > li), body.landing-page main li b,
+body.landing-page main .cl-sim, body.landing-page main .cl-fcard-by, body.landing-page main .cl-mid,
+body.landing-page main .cl-calc-l, body.landing-page main .cl-take-note,
+body.landing-page .cl-foot h3, body.landing-page .cl-foot a, body.landing-page .cl-foot p, body.landing-page .cl-foot span:not([class*="c8-"]){
+  font-size:var(--dm-s) !important;
+}
+body.landing-page main .cl-calc-l{font-weight:500;color:var(--muted,#4E6A7F)}
+
+/* ---- buttons: square (site rule), sentence case, text face ---- */
+body.landing-page .btn{font-family:var(--dm-text) !important;font-weight:500;letter-spacing:0 !important;height:48px;padding:0 22px}
+body.landing-page .cl-nav .btn{height:40px;font-size:var(--dm-m) !important}
+
+/* ---- hero: the live site's hero in the new words and type (2026-11-05) ----
+   Headline at the display size like every section title, one colour for both lines; the lead at the second size (24) so
+   it reads with the headline; Explore funds and Learn more (the docs), the second a soft fill. The words still rise out
+   of their masks, the lead comes in just before the buttons, and the coins merge into one fund on the right. */
+body.landing-page .cl-hero-h1{line-height:.98;color:#0E1B33}
+body.landing-page .cl-hero-h1 .cl-l2{color:#0E1B33}
+body.landing-page main .cl-hero-h1 *{letter-spacing:inherit !important}
+body.landing-page .cl-hero-lead{margin:20px 0 0;font-size:var(--dm-l) !important;line-height:1.3;color:var(--deep,#2B4254);animation:clFadeUp .9s cubic-bezier(.2,.75,.2,1) .8s both}
+body.landing-page .cl-hero-lead .cl-keep{white-space:nowrap}
+body.landing-page .cl-hero .cl-ctas{margin-top:24px}
+/* The coins start where the live site starts them, or past the headline ("The Fund Market" is 7.4em) when it is the wider */
+@media (min-width:861px){ body.landing-page .cl-hero-stage{left:max(calc(var(--edge,24px) + var(--hk) * var(--h1) + 40px),calc(var(--edge,24px) + 7.4 * var(--dm-xl) + 56px))} }
+body.landing-page .cl-hero .btn.ghost{background:var(--snow,#EEF3F7);border-color:var(--snow,#EEF3F7);color:var(--ink,#16222D)}
+body.landing-page .cl-hero .btn.ghost:hover{background:#E1E9F0;border-color:#E1E9F0}
+body.landing-page .cl-fund-label b{font:600 var(--dm-l)/1 var(--dm-display);letter-spacing:-.01em}
+body.landing-page main .cl-fund-label span{font-family:var(--dm-figure);letter-spacing:.12em}
+@media (prefers-reduced-motion:reduce){ body.landing-page .cl-hero-lead{animation:none} }
+
+/* ---- hairlines ---- */
+/* (0.5px hairlines are applied by a small script in index.html on screens with devicePixelRatio >= 2) */
+body.landing-page main img{border-width:1px !important}
+
+/* ---- shorter page ---- */
+body.landing-page .cl-sort{display:none !important}
+body.landing-page .cl-take-num{display:none !important}
+body.landing-page #cl-out{position:static !important;width:auto !important;height:auto !important;clip:auto !important;clip-path:none !important;overflow:visible !important;margin:8px 0 6px;display:block;white-space:nowrap}
+
+/* ---- How it works: the step carousel on every screen, illustration beside the step on desktop ---- */
+@media (min-width:1024px){
+  body.landing-page .cl-flow-main{display:flex;align-items:stretch;border-top:1px solid var(--hair,rgba(22,34,45,.13))}
+  body.landing-page .cl-flow-stage{position:relative;top:auto;flex:0 0 50%;height:600px}
+  body.landing-page .cl-flow-body{position:relative;flex:1 1 50%;border-top:0;display:flex;flex-direction:column}
+  body.landing-page .cl-flow-steps{display:grid;grid-auto-flow:column;grid-auto-columns:100%;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-width:none;flex:1}
+  body.landing-page .cl-flow-steps::-webkit-scrollbar{display:none}
+  body.landing-page .cl-flow-step{scroll-snap-align:start;padding:112px clamp(32px,5vw,80px) 48px;border-bottom:0;opacity:1 !important}
+  body.landing-page .cl-flow-step:last-child{padding-bottom:48px}
+  body.landing-page .cl-flow-step:last-child::after{display:none}
+  body.landing-page .cl-flow-step:last-child .cl-flow-text{position:static}
+  body.landing-page .cl-flow-arrows{position:absolute;top:40px;left:clamp(32px,5vw,80px);z-index:1;display:flex;gap:8px}
+  body.landing-page .cl-flow-arrows button{display:grid;place-items:center;width:40px;height:40px;border:1px solid var(--hair-2,rgba(22,34,45,.3));font-size:16px;color:var(--ink,#16222D);background:none;cursor:pointer}
+  body.landing-page .cl-flow-arrows button:disabled{opacity:.35;cursor:default}
+}
+body.landing-page .cl-flow-text h3{font-family:var(--dm-display);font-weight:600;font-size:var(--dm-l) !important;letter-spacing:-.02em;line-height:1.25;margin-top:0}
+body.landing-page .cl-flow-nav button{font-family:var(--dm-text) !important;font-size:var(--dm-s) !important;letter-spacing:0 !important}
+
+/* ---- CRE8 AI: same section, still ---- */
+body.landing-page .cl-ai-title{font-size:var(--dm-xl) !important}
+
+/* ---- CRE8 AI app preview on the same four sizes ---- */
+body.landing-page #ai .cl-ai-app *{font-family:var(--dm-text) !important}
+body.landing-page #ai .cl-ai-app small, body.landing-page #ai .cl-ai-app .cl-ai-tag,
+body.landing-page #ai .cl-ai-app .cl-ai-count, body.landing-page #ai .cl-ai-app span{font-size:var(--dm-s) !important}
+body.landing-page #ai .cl-ai-app b, body.landing-page #ai .cl-ai-app .cl-ai-name,
+body.landing-page #ai .cl-ai-app .cl-ai-x, body.landing-page #ai .cl-ai-app .cl-ai-send, body.landing-page #ai .cl-ai-app .cl-ai-share{font-size:var(--dm-m) !important}
+body.landing-page #ai .cl-ai-app li b{font-size:var(--dm-s) !important}
+body.landing-page #ai .cl-ai-app .cl-ai-share{font-family:var(--dm-figure) !important}
+
+/* ---- How it works illustrations on the same four sizes ---- */
+body.landing-page .cl-flow-stage *:not(:where(.ss-stage *)){font-family:var(--dm-text) !important}
+body.landing-page .cl-flow-stage h4:not(:where(.ss-stage *)), body.landing-page .cl-flow-stage .cl-s2-amount b,
+body.landing-page .cl-flow-stage .cl-s4-main h4 span{font-size:var(--dm-l) !important}
+body.landing-page .cl-flow-stage .cl-btn, body.landing-page .cl-flow-stage small:not(:where(.ss-stage *)),
+body.landing-page .cl-flow-stage .cl-checks i, body.landing-page .cl-flow-stage .cl-s3-done span{font-size:var(--dm-s) !important}
+body.landing-page .cl-flow-stage .cl-tk{font-size:var(--dm-s) !important;width:20px;height:24px}
+body.landing-page .cl-flow-stage .cl-tks-sm .cl-tk{width:20px;height:24px}
+body.landing-page .cl-flow-stage .cl-s2-amount b, body.landing-page .cl-flow-stage [data-count]{font-family:var(--dm-figure) !important}
+body.landing-page .cl-flow-stage i:not(:where(.ss-stage *)){font-size:var(--dm-s) !important}
+@media (max-width:1023px){ body.landing-page .cl-flow-text h3{margin-top:56px !important} }
+
+/* ---- the CRE8 wordmark inside a headline ---- */
+body.landing-page .cl-h2 .dm-logo{--c8:.84em;vertical-align:-.03em;margin:0 .02em;letter-spacing:.02em !important}
+body.landing-page .cl-h2 .dm-logo *{font-family:"Anton",Impact,"Arial Narrow",sans-serif !important}
+body.landing-page .cl-h2 .dm-logo .c8-cre{font-size:1em !important}
+body.landing-page .cl-h2 .dm-logo .c8-reel{font-size:.78em !important;letter-spacing:0 !important}
+body.landing-page .cl-h2 .dm-logo .c8-reel i{font-size:1em !important}
+
+/* ---- Wall Street section: one-sentence lead in white; table header keeps only the arrow ---- */
+body.landing-page #story .cl-split-say{color:var(--white,#fff) !important;max-width:14em}
+body.landing-page #story .cl-mid::after{margin-top:0}
+
+/* How it works: each step's Stageshow scene fills the stage above the step bar and fades with the carousel */
+.cl-sc .cc-mount{position:absolute;left:0;right:0;top:0;bottom:61px;overflow:hidden;transition:opacity .35s ease;container-type:size;display:flex;justify-content:center;align-items:center}
+/* Fit the scene to the room above the step bar: by width, or by height when the stage is short */
+.cl-sc .cc-mount>.cc{width:min(100cqw,calc(100cqh * 700 / 520))}
+@container (max-width:599px){.cl-sc .cc-mount>.cc{width:min(100cqw,calc(100cqh * 375 / 360))}}
+.cl-sc.is-out .cc-mount{opacity:0}
+
+/* =========================================================
+   Screen-size fixes (2026-11-02)
+   ========================================================= */
+/* Hero: the copy sits over the art only from 1200px; below that it stacks above it (it overlapped the art at 861-1199) */
+
+/* Display size: 52 on tablets, between phone 40 and desktop 64 */
+@media (min-width:600px) and (max-width:860px){ :root{ --dm-xl:52px } }
+/* Smallest phones: "The Fund Market" stays on one line */
+@media (max-width:400px){ body.landing-page .cl-hero-h1{font-size:clamp(34px,10.4vw,40px) !important} }
+/* No one-word last lines */
+body.landing-page .cl-hero-h1, body.landing-page main h2, body.landing-page main h3{text-wrap:balance}
+body.landing-page main p, body.landing-page .cl-foot p{text-wrap:pretty}
+
+/* CRE8 AI: the same side gutter as every other section */
+body.landing-page .cl-ai-stage{padding-inline:max(24px,5%,calc((100% - 1680px) / 2))}
+body.landing-page .cl-ai-head, body.landing-page .cl-ai-app{max-width:none}
+@media (max-width:860px){ body.landing-page .cl-ai-stage{padding-inline:24px} }
+@media (max-width:640px){ body.landing-page .cl-ai-stage{padding-inline:20px} }
+/* CRE8 AI on phones: the asset table already lists the changes, and the chat needs less empty room */
+@media (max-width:560px){
+  body.landing-page #ai .cl-ai-changes{display:none}
+  body.landing-page #ai .cl-ai-chat{min-height:300px}
+}
+/* Single-column head (860px and below): the title runs full width, so the ASCII orb would sit behind it; it shows beside the title from 861px */
+@media (max-width:860px){ body.landing-page .cl-ai-bot{display:none} }
+
+/* How it works, desktop: the step text sits in the middle of its column, not at the top */
+@media (min-width:1024px){
+  body.landing-page .cl-flow-step{display:flex;flex-direction:column;justify-content:center;padding-top:96px}
+  body.landing-page .cl-flow-text p{max-width:30em}
+}
+
+/* Pick a fund, tablets: two cards and the edge of the third, so the row reads as swipeable */
+@media (min-width:641px) and (max-width:1023px){
+  body.landing-page .cl-fcards{grid-auto-columns:max(304px,calc((100% - 2 * var(--gut) - 24px) / 2.2))}
+}
+
+/* Phones: tap targets at least 44px tall without moving the type */
+@media (max-width:640px){
+  body.landing-page .cl-dots button{width:44px;height:44px}
+  body.landing-page main .cl-textlink, body.landing-page .cl-flow-more{position:relative}
+  body.landing-page main .cl-textlink::before, body.landing-page .cl-flow-more::before{content:"";position:absolute;inset:-10px -4px}
+  body.landing-page .cl-foot .cf-cols a{padding-block:12px}
+}
+
+/* =========================================================
+   Phone navigation and CRE8 AI pacing (2026-11-02)
+   ========================================================= */
+/* Phones and small tablets: the section links stay, as a second row under the logo that scrolls sideways if it must */
+@media (max-width:860px){
+  body.landing-page .cl-nav-in{flex-wrap:wrap;row-gap:0}
+  body.landing-page .cl-links{display:flex;order:3;flex:1 0 100%;gap:22px;margin:0;padding:0 0 2px;overflow-x:auto;scrollbar-width:none;font-size:var(--dm-s)}
+  body.landing-page .cl-links::-webkit-scrollbar{display:none}
+  body.landing-page .cl-links a{display:inline-flex;align-items:center;min-height:44px;white-space:nowrap;font-size:15px !important}
+}
+
+/* CRE8 AI: a shorter head, so the demo window comes up sooner under the title */
+@media (min-width:861px){
+  body.landing-page .cl-ai-bot{height:clamp(260px,24vw,360px)}
+  body.landing-page .cl-ai-head{margin-bottom:clamp(24px,3vw,40px)}
+}
+
+/* Pick a fund: on a desktop pointer the allocation bar opens into a labelled breakdown while the card is hovered.
+   The bar and legend share the same four holdings, remaining holdings and cash. Every value stays in the legend on touch screens. */
+body.landing-page .cl-fcard-bar{height:28px;margin-top:4px;align-items:flex-end}
+body.landing-page .cl-fcard-bar i{position:relative;flex:var(--w) 1 0;width:auto;min-width:0;height:10px;overflow:hidden;transition:height .35s cubic-bezier(.25,.8,.25,1)}
+body.landing-page .cl-fcard-bar i span{position:absolute;inset:0;display:grid;place-items:center;font:500 12px/1 var(--dm-figure);color:#fff;white-space:nowrap;opacity:0;transition:opacity .2s ease}
+body.landing-page .cl-fcard-bar i:nth-child(2) span,body.landing-page .cl-fcard-bar i:nth-child(3) span,body.landing-page .cl-fcard-bar i.other span,body.landing-page .cl-fcard-bar i.idle span{color:var(--ink,#16222D)}
+body.landing-page .cl-fcard-bar i.other,body.landing-page .cl-fcard-legend li.other{--c:var(--slate,#8297A8)}
+body.landing-page .cl-fcard-bar i.idle span{background:var(--snow,#EEF3F7);margin:5px 1px}
+body.landing-page .cl-fcard-facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (hover:hover) and (pointer:fine){
+  body.landing-page .cl-fcard:hover .cl-fcard-bar i,body.landing-page .cl-fcard:focus-visible .cl-fcard-bar i{height:28px}
+  body.landing-page .cl-fcard:hover .cl-fcard-bar i span,body.landing-page .cl-fcard:focus-visible .cl-fcard-bar i span{opacity:1;transition-delay:.15s}
+}
+@media (prefers-reduced-motion:reduce){ body.landing-page .cl-fcard-bar i,body.landing-page .cl-fcard-bar i span{transition:none} }
+
+/* Token logos are always round, and the How it works scenes keep their own shapes (assets/styles.css skips both) */
+body.landing-page img[src*="/logos/tokens/"],body.landing-page img[src*="/logos/stocks/"]:not([src*="/stocks/underlying/"]){border-radius:50%;object-fit:cover}
+
+/* The Create scene uses the formal App's generated strategy artwork, including entry/exit marks and candles.
+   The existing scene keeps its timing and layout; only its decorative SVG surfaces are replaced. */
+body.landing-page .cl-sc-create .cr-spark{background-repeat:no-repeat;background-position:center;background-size:contain}
+body.landing-page .cl-sc-create .cr-spark path{display:none}
+body.landing-page .cl-sc-create .cr-strat .cr-spark{background-image:url("./strategy/stack-mini.svg")}
+body.landing-page .cl-sc-create .ss-stage .cr-card .cr-spark{height:42px}
+body.landing-page .cl-sc-create .cr-card:nth-child(1) .cr-spark{background-image:url("./strategy/hold.svg")}
+body.landing-page .cl-sc-create .cr-card:nth-child(2) .cr-spark{background-image:url("./strategy/stack.svg")}
+body.landing-page .cl-sc-create .cr-card:nth-child(3) .cr-spark{background-image:url("./strategy/dips.svg")}
+body.landing-page .cl-sc-create .cr-card:nth-child(4) .cr-spark{background-image:url("./strategy/range.svg")}
+body.landing-page .cl-sc-create .ss-stage[data-layout="compact"] .cr-plan{padding-block:4px}

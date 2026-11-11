@@ -1,0 +1,594 @@
+.public-portrait {
+  position: relative;
+  display: block;
+}
+.public-portrait .fund-thumb {
+  position: relative;
+  padding: 0;
+  border: 0;
+}
+.fund-x-badge {
+  position: absolute;
+  right: -3px;
+  bottom: -3px;
+  width: 22px;
+  height: 22px;
+  border: 2px solid white;
+  background: var(--ink);
+  color: white;
+  border-radius: 50% !important;
+  display: grid;
+  place-items: center;
+}
+.fund-x-badge svg {
+  width: 12px;
+  height: 12px;
+}
+.fund-list-result > small {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--steel);
+  margin-top: 6px;
+}
+.fund-asset-icons a {
+  display: block;
+}
+.public-sheet {
+  background: white;
+  color: var(--ink);
+  max-width: min(700px, 100vw);
+  font-family: var(--sans);
+}
+.public-sheet > [data-slot="sheet-header"] {
+  padding: 28px 48px 18px 24px;
+}
+.public-sheet-body {
+  padding: 16px 24px 36px;
+}
+.public-sheet-body > p {
+  color: var(--steel);
+  font-size: 13px;
+  line-height: 1.7;
+}
+.public-sheet .public-periods {
+  margin: 18px 0 24px;
+  display: flex;
+  border: 0;
+  background: none;
+  gap: 8px;
+}
+.public-periods button {
+  flex: 1;
+  border: 0;
+  min-height: 42px;
+  border-radius: 24px !important;
+  background: none;
+  color: var(--steel);
+}
+.public-periods button.on {
+  color: white;
+  background: var(--ink);
+}
+.public-chart {
+  position: relative;
+}
+body.atp-complete-fund .vault-performance .public-chart > svg {
+  display: block;
+  width: calc(100% - 54px);
+  height: 260px;
+}
+.public-chart-axis {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 46px;
+  color: var(--steel);
+  font: 12px/1 var(--mono);
+}
+.public-chart-axis > span {
+  position: absolute;
+  right: 0;
+  transform: translateY(-50%);
+}
+body.atp-complete-fund .vault-performance .performance-return.pos,
+body.atp-complete-fund .vault-performance .public-chart.pos {
+  color: var(--positive);
+}
+body.atp-complete-fund .vault-performance .performance-return.neg,
+body.atp-complete-fund .vault-performance .public-chart.neg {
+  color: var(--negative);
+}
+.public-chart-readout {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: white;
+  padding: 8px;
+  font-size: 12px;
+  border: 1px solid var(--hair);
+}
+.public-kpis {
+  margin-bottom: 12px !important;
+}
+.public-profile-summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 24px;
+  color: var(--steel);
+  font-size: 12px;
+}
+.public-profile-summary .fund-thumb {
+  width: 32px;
+  height: 32px;
+  border-radius: 50% !important;
+  overflow: hidden;
+}
+.public-profile-summary .fund-thumb img {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+}
+.public-profile-summary .fund-x-badge {
+  width: 14px;
+  height: 14px;
+  right: 0;
+  bottom: 0;
+}
+.public-profile-summary .fund-x-badge svg {
+  width: 8px;
+  height: 8px;
+}
+.public-token-row {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--hair);
+}
+.public-token-row a {
+  overflow-wrap: anywhere;
+  font-size: 12px;
+}
+.public-token-row h3 {
+  font-size: 16px;
+}
+.trade-position-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 0;
+}
+.trade-position-row > a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.trade-position-row img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+.trade-position-row small {
+  color: var(--steel);
+}
+.trade-update-link {
+  position: relative;
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 0 24px 12px 0;
+  background: none;
+  border: 0;
+}
+.trade-update-link > p {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.trade-update-chevron {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 26px;
+  color: var(--steel);
+}
+.trade-update-assets {
+  display: flex;
+  align-items: center;
+  margin-top: 14px;
+  gap: 3px;
+}
+.trade-update-assets img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  border-radius: 50% !important;
+}
+.trade-update-assets small {
+  margin-left: 8px;
+  color: var(--steel);
+}
+@media (max-width: 719px) {
+  #fund-explore .public-portrait {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    width: 76px;
+  }
+  .public-sheet {
+    max-width: 100vw !important;
+    width: 100vw !important;
+  }
+  .public-sheet-body {
+    padding-inline: 20px;
+  }
+  body.atp-complete-fund #ticket {
+    display: block;
+  }
+  .public-periods {
+    display: flex;
+    max-width: 100%;
+    gap: 4px;
+  }
+  .public-periods button {
+    min-width: 0;
+    padding: 8px;
+  }
+  .public-sheet .performance-detail-metrics > div {
+    grid-template-columns: minmax(0, 1fr) minmax(90px, 0.8fr);
+  }
+  .public-profile-summary {
+    margin-bottom: 18px;
+  }
+}
+
+.public-person-name {
+  font: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+  text-align: inherit;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: help;
+}
+
+body.atp-complete-market .explore-wrap {
+  max-width: 1344px;
+  padding: 48px 40px 80px;
+}
+body.atp-complete-market .explore-heading h1 {
+  font-size: 44px;
+}
+.vault-manager > small {
+  font-size: 12px;
+  color: var(--steel);
+}
+@media (max-width: 719px) {
+  body.atp-complete-market .explore-wrap {
+    padding: 20px 16px 60px;
+  }
+  body.atp-complete-market .explore-heading h1 {
+    font-size: 32px;
+  }
+}
+
+body:is(
+    .atp-complete-market,
+    .atp-complete-fund,
+    .atp-complete-create,
+    .atp-asset-page
+  )
+  img[src*="background=dark"] {
+  background: #16222d;
+  border-radius: 22% !important;
+}
+
+#root .public-periods button,
+#atp-reference-sheet .public-periods button {
+  border-radius: 24px !important;
+}
+
+#root .fund-profile-card,
+#root .asset-preview-card {
+  border-radius: 14px !important;
+}
+#root .fund-x-badge {
+  border-radius: 50% !important;
+}
+
+.public-creator-link {
+  position: relative;
+  z-index: 3;
+}
+/* 縮圖介紹與獨立資產連結要在整列導覽連結上方，保留各自操作。 */
+#fund-explore .public-portrait,
+#fund-explore .fund-row-creator,
+#fund-explore .fund-asset-icons {
+  position: relative;
+  z-index: 3;
+}
+
+.public-mobile-cta {
+  display: none;
+}
+@media (max-width: 719px) {
+  body.atp-complete-fund .vault-content {
+    padding-bottom: 110px;
+  }
+  .public-mobile-cta {
+    display: flex;
+    position: fixed;
+    z-index: 40;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    gap: 12px;
+    padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+    min-height: 80px;
+    background: white;
+    border-top: 1px solid var(--hair);
+  }
+  #root .public-mobile-cta .btn {
+    border-radius: 11px !important;
+    min-height: 56px;
+    flex: 1;
+  }
+  .public-mobile-cta .btn.ghost {
+    flex: 0 0 120px;
+  }
+  body.atp-complete-market .fund-row-creator {
+    flex-wrap: wrap;
+    font-size: 12px;
+  }
+  .fund-source-caption {
+    flex-wrap: wrap;
+    max-width: 100%;
+    white-space: normal;
+  }
+  .fund-source-caption a {
+    overflow-wrap: anywhere;
+    max-width: 100%;
+  }
+  #root .masthead .nav {
+    gap: 14px;
+    max-width: 100%;
+    font-size: 12px;
+  }
+  #root .masthead .nav > a {
+    font-size: 12px;
+  }
+}
+/* 設計器側欄保留原佈局，焦點與背景鎖定交給既有 Sheet。 */
+.public-builder-strategy[data-state] {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  gap: 0;
+  overflow: hidden;
+  width: min(540px, 100vw);
+  max-width: 100vw;
+}
+@media (max-width: 719px) {
+  #fund-explore .fund-list-result small {
+    display: block;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    max-width: 100%;
+    line-height: 1.4;
+  }
+}
+@media (max-width: 719px) {
+  #root .public-mobile-cta .btn:not(.ghost) {
+    background: var(--ink);
+    color: white;
+    border-color: var(--ink);
+  }
+}
+
+/* 公開基金分類與已核准的手機封面比例。 */
+#fund-explore .collection-tabs > a {
+  flex: none;
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding-block: 6px 12px;
+  border-bottom: 2px solid transparent;
+  color: var(--steel);
+  font: 500 15px/1.4 var(--sans);
+  text-decoration: none;
+}
+#fund-explore .collection-tabs > a[aria-current="page"] {
+  color: var(--ink);
+  border-color: var(--ink);
+}
+#fund-explore .collection-tabs > a:focus-visible {
+  outline-offset: -4px;
+}
+.fund-cover-nav {
+  display: none;
+}
+
+body.atp-complete-fund .holdings-table .holding-identity {
+  gap: 12px;
+}
+body.atp-complete-fund .holdings-table .holding-identity img {
+  width: 40px;
+  height: 40px;
+  padding: 4px;
+}
+body.atp-complete-fund .holdings-table :is(th, td):not(:first-child) {
+  text-align: right;
+}
+body.atp-complete-fund .holdings-table th:not(:first-child) button {
+  margin-left: auto;
+  justify-content: flex-end;
+}
+body.atp-complete-fund .holdings-table :is(th, td):first-child {
+  width: 38%;
+}
+body.atp-complete-fund .holdings-table :is(th, td):nth-child(2) {
+  width: 17%;
+}
+body.atp-complete-fund .holdings-table :is(th, td):nth-child(3) {
+  width: 27%;
+}
+body.atp-complete-fund .holdings-table :is(th, td):nth-child(4) {
+  width: 18%;
+}
+body.atp-complete-fund #ticket .swap .btn.block {
+  min-height: 52px;
+}
+
+.portfolio-table-scroll {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+}
+.portfolio-table-scroll > .table {
+  min-width: 530px;
+}
+.fund-disclosures {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.fund-disclosures > li {
+  padding-block: 16px;
+  border-bottom: 1px solid var(--hair);
+}
+.fund-disclosures time,
+.fund-disclosures p {
+  color: var(--steel);
+  font-size: 13px;
+}
+.fund-disclosures h3 {
+  margin: 4px 0;
+  font-size: 15px;
+  font-weight: 500;
+}
+.fund-disclosures p {
+  margin: 0;
+}
+.trade-pagination button:disabled {
+  color: var(--slate);
+  cursor: default;
+}
+
+@media (max-width: 719px) {
+  #fund-explore .collection-tabs {
+    gap: clamp(10px, 4vw, 24px);
+  }
+  #fund-explore .collection-tabs > a {
+    font-size: 14px;
+  }
+  #fund-explore .fund-row-link {
+    grid-template-columns: 76px minmax(0, 1fr) minmax(90px, 104px);
+    gap: 8px 12px;
+  }
+  #fund-explore .fund-thumb {
+    width: 76px;
+    height: 76px;
+  }
+  #fund-explore .explore-filter-panel {
+    position: static;
+    box-shadow: none;
+    margin-bottom: 6px;
+  }
+  body.atp-complete-fund:has(#atp-fund-cover) .masthead {
+    display: none;
+  }
+  body.atp-complete-fund .vault-content {
+    padding: 0 16px 110px;
+  }
+  body.atp-complete-fund .vhead > .vault-back {
+    display: none;
+  }
+  body.atp-complete-fund #atp-fund-cover {
+    margin-inline: -16px;
+    width: calc(100% + 32px);
+  }
+  #atp-fund-cover .fund-cover-nav {
+    position: absolute;
+    z-index: 1;
+    inset: max(12px, env(safe-area-inset-top)) 16px auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  #atp-fund-cover .fund-cover-nav > :is(a, button) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0 16px;
+    border: 0;
+    border-radius: 24px !important;
+    background: rgb(22 34 45 / 52%);
+    color: var(--white);
+    font: 500 15px/1 var(--sans);
+  }
+  #atp-fund-cover .fund-cover-nav > a {
+    padding: 0;
+  }
+  #atp-fund-cover .fund-cover-nav > :focus-visible {
+    outline-color: var(--white);
+  }
+  body.atp-complete-fund #root .vault-performance .public-chart {
+    margin: 16px -16px 12px;
+    width: calc(100% + 32px);
+  }
+  body.atp-complete-fund .vault-performance .public-chart > svg {
+    width: 100%;
+    height: clamp(205px, 69vw, 300px);
+  }
+  .public-chart-axis,
+  .public-chart-grid {
+    display: none;
+  }
+  body.atp-complete-fund .holdings-table .holding-identity {
+    gap: 7px;
+  }
+  body.atp-complete-fund .holdings-table .holding-identity img {
+    width: 28px;
+    height: 28px;
+    padding: 2px;
+  }
+  body.atp-complete-fund .holdings-table td {
+    font-size: 14px;
+  }
+  body.atp-complete-fund .holdings-table :is(th, td):first-child {
+    width: 42%;
+  }
+  body.atp-complete-fund .holdings-table :is(th, td):nth-child(3) {
+    width: 23%;
+  }
+  body.portfolio-page .explore-wrap {
+    padding-inline: 16px;
+  }
+}
+
+@media (max-width: 360px) {
+  #fund-explore .fund-row-link {
+    grid-template-columns: 60px minmax(0, 1fr) 86px;
+    column-gap: 10px;
+  }
+  #fund-explore :is(.fund-thumb, .public-portrait) {
+    width: 60px;
+  }
+  #fund-explore .fund-thumb {
+    height: 60px;
+  }
+}
+
+/* whitelist-only 基金按下送出後的說明（桌面在按鈕下方；手機用 TicketReceipt）。 */
+.app-whitelist-note {
+  display: grid;
+  gap: 4px;
+  margin-top: 12px;
+  padding: 12px 14px;
+  background: var(--snow);
+  color: var(--ink);
+}
+.app-whitelist-note strong { font: 600 14px/1.35 var(--sans); }
+.app-whitelist-note p { margin: 0; color: var(--steel); font: 400 13px/1.5 var(--sans); }

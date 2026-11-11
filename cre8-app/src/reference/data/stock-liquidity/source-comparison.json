@@ -1,0 +1,4402 @@
+{
+  "schema": "cre8/stock-source-quotes@1",
+  "chainId": 56,
+  "capturedAt": "2026-11-04T10:09:48.668Z",
+  "sourceUrl": "https://x.pancakeswap.com/order-price/get-price",
+  "sourceDocumentation": "https://developer.pancakeswap.finance/contracts/pcsx/swap-integration",
+  "policy": {
+    "quoteReserveRaw": "50000000000000000000000",
+    "depthRaw": "10000000000000000000000",
+    "probeRaw": "100000000000000000000",
+    "notionalRaw": "50000000000000000000000",
+    "maxImpactBps": 200
+  },
+  "indicativeOnly": true,
+  "entries": [
+    {
+      "token": "0x10343ef7da3301493d7ecb647d68a288c6c1db2f",
+      "symbol": "AAOIB",
+      "ticker": "AAOI",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:08:35.589Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0x149bda9e7251dc36f536d1fe7f92a5ea203f4f3d",
+      "symbol": "AAOIon",
+      "ticker": "AAOI",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:08:37.364Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x149bda9e7251dc36f536d1fe7f92a5ea203f4f3d",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "1504069930956429061",
+        "minOutputRaw": "1502565861025472631",
+        "priceImpactBps": 110,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:36.003Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x149bda9e7251dc36f536d1fe7f92a5ea203f4f3d",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "752071817035604883944",
+        "minOutputRaw": "751319745218569279060",
+        "priceImpactBps": 110,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:36.109Z"
+      },
+      "sell": {
+        "inputToken": "0x149bda9e7251dc36f536d1fe7f92a5ea203f4f3d",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "751319745218569279060",
+        "outputRaw": "49667684437092188735065",
+        "minOutputRaw": "49618016752655096546329",
+        "priceImpactBps": -54,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:37.364Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0x431a3bee82e2ca41e49895cbece5bb0f76a89b7a",
+      "symbol": "AAPLB",
+      "ticker": "AAPL",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:08:37.392Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x431a3bee82e2ca41e49895cbece5bb0f76a89b7a",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "296553778797454806",
+        "minOutputRaw": "296257225018657351",
+        "priceImpactBps": 146,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:36.355Z"
+      },
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4",
+      "symbol": "AAPLon",
+      "ticker": "AAPL",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:08:37.414Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "299740656790450148",
+        "minOutputRaw": "299440916133659697",
+        "priceImpactBps": 7,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:36.648Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "149853676084893869641",
+        "minOutputRaw": "149703822408808975771",
+        "priceImpactBps": 8,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:36.722Z"
+      },
+      "sell": {
+        "inputToken": "0x390a684ef9cade28a7ad0dfa61ab1eb3842618c4",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "149703822408808975771",
+        "outputRaw": "49856535805353978605668",
+        "minOutputRaw": "49806679269548624627062",
+        "priceImpactBps": 10,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:37.414Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0x65c0249d49e3231540fd0db0a1ae9259e6eaaf57",
+      "symbol": "ADBEB",
+      "ticker": "ADBE",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:08:36.907Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0xcb22db0ecb6fe58b7b47db443dcfdfdfbf729cef",
+      "symbol": "ADBEon",
+      "ticker": "ADBE",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:08:39.264Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xcb22db0ecb6fe58b7b47db443dcfdfdfbf729cef",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "416871856042781530",
+        "minOutputRaw": "416454984186738748",
+        "priceImpactBps": 14,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:37.780Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xcb22db0ecb6fe58b7b47db443dcfdfdfbf729cef",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "208446141892974229726",
+        "minOutputRaw": "208237695751081255496",
+        "priceImpactBps": 13,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:37.865Z"
+      },
+      "sell": {
+        "inputToken": "0xcb22db0ecb6fe58b7b47db443dcfdfdfbf729cef",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "208237695751081255496",
+        "outputRaw": "49787582668523717420137",
+        "minOutputRaw": "49737795085855193702716",
+        "priceImpactBps": 18,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:39.264Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0x1282493ede6a22753d45cb2c0fdbd8d35e97555a",
+      "symbol": "ALABB",
+      "ticker": "ALAB",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:08:38.026Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0x573e11cc667a8e5be0c7af2410403371088d3d0d",
+      "symbol": "ALABon",
+      "ticker": "ALAB",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:08:39.770Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x573e11cc667a8e5be0c7af2410403371088d3d0d",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "412091518068994263",
+        "minOutputRaw": "411679426550925268",
+        "priceImpactBps": 62,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:38.564Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x573e11cc667a8e5be0c7af2410403371088d3d0d",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "206055855781939263609",
+        "minOutputRaw": "205849799926157324345",
+        "priceImpactBps": 62,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:38.627Z"
+      },
+      "sell": {
+        "inputToken": "0x573e11cc667a8e5be0c7af2410403371088d3d0d",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "205849799926157324345",
+        "outputRaw": "49662963568373726679260",
+        "minOutputRaw": "49613300604805352952580",
+        "priceImpactBps": -4,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:39.770Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0xa304bd78e739c0f777202b3eb73ac3736d1df801",
+      "symbol": "AMATB",
+      "ticker": "AMAT",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:08:38.679Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0x5ecc352c4640f1d26bd231dbbd171f40f7d0eec6",
+      "symbol": "AMATon",
+      "ticker": "AMAT",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:08:40.600Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x5ecc352c4640f1d26bd231dbbd171f40f7d0eec6",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "257482757494456005",
+        "minOutputRaw": "257225274736961548",
+        "priceImpactBps": 66,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:39.459Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x5ecc352c4640f1d26bd231dbbd171f40f7d0eec6",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "128745829135666290605",
+        "minOutputRaw": "128617083306530624314",
+        "priceImpactBps": 66,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:39.498Z"
+      },
+      "sell": {
+        "inputToken": "0x5ecc352c4640f1d26bd231dbbd171f40f7d0eec6",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "128617083306530624314",
+        "outputRaw": "49719853206168273964019",
+        "minOutputRaw": "49670133352962105690054",
+        "priceImpactBps": -20,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:40.599Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0x96e7d606e229448ef817a7f35fd7394c3e15d00c",
+      "symbol": "AMCB",
+      "ticker": "AMC",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:08:39.804Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0x1d7b5e06fdbe4fd33f5c64c081e32b5d539751d0",
+      "symbol": "AMCon",
+      "ticker": "AMC",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:08:40.079Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0x75fd4cf6f8392e41e70391d60c90c0d5211603a1",
+      "symbol": "AMDB",
+      "ticker": "AMD",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:08:40.695Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0x9f16e46c73b43bdb70861247d537bee4ea18f639",
+      "symbol": "AMDon",
+      "ticker": "AMD",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:08:42.856Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x9f16e46c73b43bdb70861247d537bee4ea18f639",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "192828429268345368",
+        "minOutputRaw": "192635600839077022",
+        "priceImpactBps": 29,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:41.283Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x9f16e46c73b43bdb70861247d537bee4ea18f639",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "96418939167109221431",
+        "minOutputRaw": "96322520227942112209",
+        "priceImpactBps": 29,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:41.342Z"
+      },
+      "sell": {
+        "inputToken": "0x9f16e46c73b43bdb70861247d537bee4ea18f639",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "96322520227942112209",
+        "outputRaw": "49743914034431737119592",
+        "minOutputRaw": "49694170120397305382472",
+        "priceImpactBps": 12,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:42.856Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0x1a4b499833a79a09ad7cf1d42d7dacf71e92eb00",
+      "symbol": "AMZNB",
+      "ticker": "AMZN",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:08:42.402Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0x4553cfe1c09f37f38b12dc509f676964e392f8fc",
+      "symbol": "AMZNon",
+      "ticker": "AMZN",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:08:42.784Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x4553cfe1c09f37f38b12dc509f676964e392f8fc",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "388176887061892177",
+        "minOutputRaw": "387788710174830284",
+        "priceImpactBps": 54,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:41.880Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x4553cfe1c09f37f38b12dc509f676964e392f8fc",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "194097954340607736950",
+        "minOutputRaw": "193903856386267129213",
+        "priceImpactBps": 54,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:42.026Z"
+      },
+      "sell": {
+        "inputToken": "0x4553cfe1c09f37f38b12dc509f676964e392f8fc",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "193903856386267129213",
+        "outputRaw": "49788390867604580558919",
+        "minOutputRaw": "49738602476736975978360",
+        "priceImpactBps": -21,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:42.784Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0x15ec59551096d5ae2df8cde08618035145828548",
+      "symbol": "APPB",
+      "ticker": "APP",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:08:42.121Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0xedb3124e96c64c177eb709cbc64f9977db40ea74",
+      "symbol": "APPon",
+      "ticker": "APP",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:08:44.445Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xedb3124e96c64c177eb709cbc64f9977db40ea74",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "399181302083539142",
+        "minOutputRaw": "398782120781455602",
+        "priceImpactBps": 12,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:43.029Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xedb3124e96c64c177eb709cbc64f9977db40ea74",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "199600431473091359463",
+        "minOutputRaw": "199400831041618268103",
+        "priceImpactBps": 11,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:43.094Z"
+      },
+      "sell": {
+        "inputToken": "0xedb3124e96c64c177eb709cbc64f9977db40ea74",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "199400831041618268103",
+        "outputRaw": "49824233033717381287470",
+        "minOutputRaw": "49774408800683663906182",
+        "priceImpactBps": 13,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:44.444Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0xd42a79ebb7f527f40faecd196ffb47ad5e8d6f8c",
+      "symbol": "ARMB",
+      "ticker": "ARM",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:08:43.139Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0x527c6436e1eaa4f2065cde4090f798cb5d031dd6",
+      "symbol": "ARMon",
+      "ticker": "ARM",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:08:45.241Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x527c6436e1eaa4f2065cde4090f798cb5d031dd6",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "477261192486118546",
+        "minOutputRaw": "476783931293632427",
+        "priceImpactBps": 84,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:43.656Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x527c6436e1eaa4f2065cde4090f798cb5d031dd6",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "238642289727426641897",
+        "minOutputRaw": "238403647437699215255",
+        "priceImpactBps": 83,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:43.904Z"
+      },
+      "sell": {
+        "inputToken": "0x527c6436e1eaa4f2065cde4090f798cb5d031dd6",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "238403647437699215255",
+        "outputRaw": "49598062541584682125718",
+        "minOutputRaw": "49548464479043097443592",
+        "priceImpactBps": -13,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:45.241Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0xfbfb4f79cfb4c34dcd7c82bdee5a0fa199b2e7f9",
+      "symbol": "ASMLB",
+      "ticker": "ASML",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:08:43.876Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0xb034f6cb52b7f2fd5a7eeeffca6b9adcd6b9a6f6",
+      "symbol": "ASMLon",
+      "ticker": "ASML",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:08:45.782Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xb034f6cb52b7f2fd5a7eeeffca6b9adcd6b9a6f6",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "63912553390001417",
+        "minOutputRaw": "63848640836611415",
+        "priceImpactBps": 40,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:44.552Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xb034f6cb52b7f2fd5a7eeeffca6b9adcd6b9a6f6",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "31963599281955307874",
+        "minOutputRaw": "31931635682673352566",
+        "priceImpactBps": 38,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:44.711Z"
+      },
+      "sell": {
+        "inputToken": "0xb034f6cb52b7f2fd5a7eeeffca6b9adcd6b9a6f6",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "31931635682673352566",
+        "outputRaw": "49836950978617618839158",
+        "minOutputRaw": "49787114027639001220318",
+        "priceImpactBps": -15,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:45.782Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0x58b6f5feeb8436489f5bf4a56619092b1fa8e777",
+      "symbol": "ASTSB",
+      "ticker": "ASTS",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:08:44.902Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0x45abf29515bc23f8c0ed2a06584444ce473a75fb",
+      "symbol": "ASTSon",
+      "ticker": "ASTS",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:08:46.704Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x45abf29515bc23f8c0ed2a06584444ce473a75fb",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "2606925121456197081",
+        "minOutputRaw": "2604318196334740883",
+        "priceImpactBps": 25,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:45.471Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x45abf29515bc23f8c0ed2a06584444ce473a75fb",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "1303507621193278272879",
+        "minOutputRaw": "1302204113572084994606",
+        "priceImpactBps": 25,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:45.629Z"
+      },
+      "sell": {
+        "inputToken": "0x45abf29515bc23f8c0ed2a06584444ce473a75fb",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "1302204113572084994606",
+        "outputRaw": "49590800386473507472163",
+        "minOutputRaw": "49541209586087033964690",
+        "priceImpactBps": 46,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:46.704Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0x76682c454467b3a1150ad8b6a92fc5ee2c21d7ed",
+      "symbol": "AVGOB",
+      "ticker": "AVGO",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:08:45.940Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0x0ed2e3180edf393e6bf8db124bd15ddd54de150a",
+      "symbol": "AVGOon",
+      "ticker": "AVGO",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:08:47.699Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x0ed2e3180edf393e6bf8db124bd15ddd54de150a",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "296031757606199221",
+        "minOutputRaw": "295735725848593021",
+        "priceImpactBps": 35,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:46.339Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x0ed2e3180edf393e6bf8db124bd15ddd54de150a",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "148023131944114008163",
+        "minOutputRaw": "147875108812169894154",
+        "priceImpactBps": 35,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:46.517Z"
+      },
+      "sell": {
+        "inputToken": "0x0ed2e3180edf393e6bf8db124bd15ddd54de150a",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "147875108812169894154",
+        "outputRaw": "49808029345066651886925",
+        "minOutputRaw": "49758221315721585235038",
+        "priceImpactBps": -6,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:47.698Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0x9bdc8b470dbf89dbcb123587c6f5e49cca3463be",
+      "symbol": "AXTIB",
+      "ticker": "AXTI",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:08:46.894Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0x0c50323af81d5c33822c6add256fb9093d42bc74",
+      "symbol": "AXTIon",
+      "ticker": "AXTI",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:08:48.588Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x0c50323af81d5c33822c6add256fb9093d42bc74",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "1866103582810639569",
+        "minOutputRaw": "1864237479227828929",
+        "priceImpactBps": 77,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:47.356Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x0c50323af81d5c33822c6add256fb9093d42bc74",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "933097513231056027143",
+        "minOutputRaw": "932164415717824971115",
+        "priceImpactBps": 77,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:47.484Z"
+      },
+      "sell": {
+        "inputToken": "0x0c50323af81d5c33822c6add256fb9093d42bc74",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "932164415717824971115",
+        "outputRaw": "49624063416903347470141",
+        "minOutputRaw": "49574439353486444122670",
+        "priceImpactBps": -12,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:48.588Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0x4ef9d3062c7f6eba4aae4990c5036598c6eff4ec",
+      "symbol": "BABAB",
+      "ticker": "BABA",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:08:48.726Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0xd5964f3fcee8d649995ab88f04b8982539c282d2",
+      "symbol": "BABAon",
+      "ticker": "BABA",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:08:49.076Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xd5964f3fcee8d649995ab88f04b8982539c282d2",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "955824993854689088",
+        "minOutputRaw": "954869168860834398",
+        "priceImpactBps": 23,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:48.138Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xd5964f3fcee8d649995ab88f04b8982539c282d2",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "477935915811593992531",
+        "minOutputRaw": "477457979895782398538",
+        "priceImpactBps": 22,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:48.395Z"
+      },
+      "sell": {
+        "inputToken": "0xd5964f3fcee8d649995ab88f04b8982539c282d2",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "477457979895782398538",
+        "outputRaw": "49832224865503261836937",
+        "minOutputRaw": "49782392640637758575100",
+        "priceImpactBps": 0,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:49.076Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0x5519de00f5388c17d886b97cb5d2d43a812a82bc",
+      "symbol": "BEB",
+      "ticker": "BE",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:08:48.536Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0x17d03ae104a9d12e9e5794efb109b817dd7f3404",
+      "symbol": "BEon",
+      "ticker": "BE",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:08:50.694Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x17d03ae104a9d12e9e5794efb109b817dd7f3404",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "439697061718174056",
+        "minOutputRaw": "439257364656455881",
+        "priceImpactBps": 78,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:49.279Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x17d03ae104a9d12e9e5794efb109b817dd7f3404",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "219859303976194620263",
+        "minOutputRaw": "219639444672218425642",
+        "priceImpactBps": 77,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:49.445Z"
+      },
+      "sell": {
+        "inputToken": "0x17d03ae104a9d12e9e5794efb109b817dd7f3404",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "219639444672218425642",
+        "outputRaw": "49729082577733179004563",
+        "minOutputRaw": "49679353495155445825558",
+        "priceImpactBps": -33,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:50.694Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0x3548da95a9effe481e8604664d75e95821e557f5",
+      "symbol": "BMNRB",
+      "ticker": "BMNR",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:08:50.535Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0x52ad57a7ea642e99a892afc79e937b383f1b59e9",
+      "symbol": "BMNRon",
+      "ticker": "BMNR",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:08:50.882Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x52ad57a7ea642e99a892afc79e937b383f1b59e9",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "4792952320585552046",
+        "minOutputRaw": "4788159368264966493",
+        "priceImpactBps": 44,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:50.008Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x52ad57a7ea642e99a892afc79e937b383f1b59e9",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "2396593593501083494132",
+        "minOutputRaw": "2394196999907582410637",
+        "priceImpactBps": 43,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:50.163Z"
+      },
+      "sell": {
+        "inputToken": "0x52ad57a7ea642e99a892afc79e937b383f1b59e9",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "2394196999907582410637",
+        "outputRaw": "49648805434122294438060",
+        "minOutputRaw": "49599156628688172143621",
+        "priceImpactBps": 16,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:50.882Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0xd16c99b3f877b22a5dd42eef2fa77bd403306685",
+      "symbol": "BOTB",
+      "ticker": "BOT",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:08:50.244Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0xc43ae29afe58bf90da6fe3edd570c2e735fb2850",
+      "symbol": "BOTon",
+      "ticker": "BOT",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:08:51.043Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0xe81c6bb0266cd68b4f17278531dd03ea1f12da4e",
+      "symbol": "CBRSB",
+      "ticker": "CBRS",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:08:51.343Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0x441a4d4fc23f17f4cf23e3d60f12d2bd6f176728",
+      "symbol": "CBRSon",
+      "ticker": "CBRS",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:08:53.212Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x441a4d4fc23f17f4cf23e3d60f12d2bd6f176728",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "1005483173906004679",
+        "minOutputRaw": "1004477690732098674",
+        "priceImpactBps": 122,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:51.890Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x441a4d4fc23f17f4cf23e3d60f12d2bd6f176728",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "502766222523547060354",
+        "minOutputRaw": "502263456301023513293",
+        "priceImpactBps": 121,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:52.026Z"
+      },
+      "sell": {
+        "inputToken": "0x441a4d4fc23f17f4cf23e3d60f12d2bd6f176728",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "502263456301023513293",
+        "outputRaw": "49337720546668155153007",
+        "minOutputRaw": "49288382826121486997853",
+        "priceImpactBps": 1,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:53.212Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0x5131859a059b2446abeefe0f5d313b3c54ff3d36",
+      "symbol": "COHRB",
+      "ticker": "COHR",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:08:52.026Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0x0585756aafb241b0f8a9df62db26c566091bde0b",
+      "symbol": "COHRon",
+      "ticker": "COHR",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:08:53.815Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x0585756aafb241b0f8a9df62db26c566091bde0b",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "465742549982263627",
+        "minOutputRaw": "465276807432281363",
+        "priceImpactBps": 80,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:52.634Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x0585756aafb241b0f8a9df62db26c566091bde0b",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "232879325361283416344",
+        "minOutputRaw": "232646446035922132927",
+        "priceImpactBps": 80,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:52.718Z"
+      },
+      "sell": {
+        "inputToken": "0x0585756aafb241b0f8a9df62db26c566091bde0b",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "232646446035922132927",
+        "outputRaw": "49725163982782900905907",
+        "minOutputRaw": "49675438818800118005001",
+        "priceImpactBps": -35,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:53.815Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0x585bde7c54abb5ccd7791f923d6c2187635f3952",
+      "symbol": "COINB",
+      "ticker": "COIN",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:08:52.803Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0xf8589b526fdd65f7f301c605a6e04f0f1b4b3620",
+      "symbol": "COINon",
+      "ticker": "COIN",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:08:54.766Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xf8589b526fdd65f7f301c605a6e04f0f1b4b3620",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "681366243060534060",
+        "minOutputRaw": "680684876817473525",
+        "priceImpactBps": 63,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:53.469Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xf8589b526fdd65f7f301c605a6e04f0f1b4b3620",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "340699815838618749745",
+        "minOutputRaw": "340359116022780130995",
+        "priceImpactBps": 63,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:53.637Z"
+      },
+      "sell": {
+        "inputToken": "0xf8589b526fdd65f7f301c605a6e04f0f1b4b3620",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "340359116022780130995",
+        "outputRaw": "49646088291969278071451",
+        "minOutputRaw": "49596442203677308793379",
+        "priceImpactBps": -2,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:54.765Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0x80f3d493ebce97e343c53d29a137942416b4ffc0",
+      "symbol": "CRCLB",
+      "ticker": "CRCL",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:08:54.886Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0x992879cd8ce0c312d98648875b5a8d6d042cbf34",
+      "symbol": "CRCLon",
+      "ticker": "CRCL",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:08:55.278Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x992879cd8ce0c312d98648875b5a8d6d042cbf34",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "1315820881821454351",
+        "minOutputRaw": "1314505060939632896",
+        "priceImpactBps": 47,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:54.314Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x992879cd8ce0c312d98648875b5a8d6d042cbf34",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "657933183620657106135",
+        "minOutputRaw": "657275250437036449028",
+        "priceImpactBps": 47,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:54.582Z"
+      },
+      "sell": {
+        "inputToken": "0x992879cd8ce0c312d98648875b5a8d6d042cbf34",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "657275250437036449028",
+        "outputRaw": "49548726595087504693688",
+        "minOutputRaw": "49499177868492417188994",
+        "priceImpactBps": 32,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:55.277Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0x6e7d451f9d30327d32020f116fa79c23b24e9c8d",
+      "symbol": "CRDOB",
+      "ticker": "CRDO",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:08:54.769Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0xf157481bebd0c0686780fd0f61806c900a6137e8",
+      "symbol": "CRDOon",
+      "ticker": "CRDO",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:08:56.886Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xf157481bebd0c0686780fd0f61806c900a6137e8",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "641161709741903797",
+        "minOutputRaw": "640520548032161893",
+        "priceImpactBps": 193,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:55.476Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xf157481bebd0c0686780fd0f61806c900a6137e8",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "320596564118944103561",
+        "minOutputRaw": "320275967554825159457",
+        "priceImpactBps": 192,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:55.645Z"
+      },
+      "sell": {
+        "inputToken": "0xf157481bebd0c0686780fd0f61806c900a6137e8",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "320275967554825159457",
+        "outputRaw": "48983873002281014733982",
+        "minOutputRaw": "48934889129278733719248",
+        "priceImpactBps": 0,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:56.886Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0x8c433eca1be0e2a357015602f63751c768f6f643",
+      "symbol": "CRMB",
+      "ticker": "CRM",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:08:55.749Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0xd04a2bb053277721a8321d7441eed5b42fdf7250",
+      "symbol": "CRMon",
+      "ticker": "CRM",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:08:57.910Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xd04a2bb053277721a8321d7441eed5b42fdf7250",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "438950307360202285",
+        "minOutputRaw": "438511357052842082",
+        "priceImpactBps": 102,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:56.194Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xd04a2bb053277721a8321d7441eed5b42fdf7250",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "219485908500811388917",
+        "minOutputRaw": "219266422592310577528",
+        "priceImpactBps": 101,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:56.495Z"
+      },
+      "sell": {
+        "inputToken": "0xd04a2bb053277721a8321d7441eed5b42fdf7250",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "219266422592310577528",
+        "outputRaw": "49429842320786998114753",
+        "minOutputRaw": "49380412478466211116638",
+        "priceImpactBps": 2,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:57.910Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0x814981cf5df4a14d4d7328f9abf0d02e9ed54cd1",
+      "symbol": "CRWDB",
+      "ticker": "CRWD",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:08:56.422Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0xe6837794fbc6dd024733a1a31f86061296fa2752",
+      "symbol": "CRWDon",
+      "ticker": "CRWD",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:08:58.322Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xe6837794fbc6dd024733a1a31f86061296fa2752",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "100364701809751175",
+        "minOutputRaw": "100264337107941423",
+        "priceImpactBps": 57,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:57.089Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xe6837794fbc6dd024733a1a31f86061296fa2752",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "50184809963123150929",
+        "minOutputRaw": "50134625153160027778",
+        "priceImpactBps": 56,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:57.258Z"
+      },
+      "sell": {
+        "inputToken": "0xe6837794fbc6dd024733a1a31f86061296fa2752",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "50134625153160027778",
+        "outputRaw": "49563465081425852517176",
+        "minOutputRaw": "49513901616344426664658",
+        "priceImpactBps": 20,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:58.322Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0x33e7317e17838fee56b10fe8d0b9ca6ca3090c95",
+      "symbol": "CRWVB",
+      "ticker": "CRWV",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:08:57.426Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0x76e39171cb665a35981e744e2ceb7012f76caeac",
+      "symbol": "CRWVon",
+      "ticker": "CRWV",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:08:59.233Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x76e39171cb665a35981e744e2ceb7012f76caeac",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "1891008184692658122",
+        "minOutputRaw": "1889117176507965463",
+        "priceImpactBps": 124,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:58.091Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x76e39171cb665a35981e744e2ceb7012f76caeac",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "945536775659856870758",
+        "minOutputRaw": "944591238884197013887",
+        "priceImpactBps": 124,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:58.253Z"
+      },
+      "sell": {
+        "inputToken": "0x76e39171cb665a35981e744e2ceb7012f76caeac",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "944591238884197013887",
+        "outputRaw": "49600773615611504759132",
+        "minOutputRaw": "49551172841995893254372",
+        "priceImpactBps": -55,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:59.232Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0x0e7a51966c66648999d506e1372efdea1b78cb0b",
+      "symbol": "DELLB",
+      "ticker": "DELL",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:08:58.370Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0xf26518958935654878de15be7bc79a26971583ba",
+      "symbol": "DELLon",
+      "ticker": "DELL",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:00.138Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xf26518958935654878de15be7bc79a26971583ba",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "237960515936935914",
+        "minOutputRaw": "237722555420998978",
+        "priceImpactBps": 88,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:59.061Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xf26518958935654878de15be7bc79a26971583ba",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "118986088292862561794",
+        "minOutputRaw": "118867102204569699232",
+        "priceImpactBps": 87,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:59.142Z"
+      },
+      "sell": {
+        "inputToken": "0xf26518958935654878de15be7bc79a26971583ba",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "118867102204569699232",
+        "outputRaw": "49627996961218053186954",
+        "minOutputRaw": "49578368964256835133767",
+        "priceImpactBps": -23,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:00.138Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0x93862d63fd9fd488b1328e9b47717d75e994a84b",
+      "symbol": "DRAMB",
+      "ticker": "DRAM",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:08:59.411Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0x087b5761b161429013d41ea54cd2fb6022a21564",
+      "symbol": "DRAMon",
+      "ticker": "DRAM",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:01.385Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x087b5761b161429013d41ea54cd2fb6022a21564",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "2078325055608886882",
+        "minOutputRaw": "2076246730553277995",
+        "priceImpactBps": 70,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:08:59.777Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x087b5761b161429013d41ea54cd2fb6022a21564",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "1039213449316459744432",
+        "minOutputRaw": "1038174235867143284687",
+        "priceImpactBps": 70,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:00.156Z"
+      },
+      "sell": {
+        "inputToken": "0x087b5761b161429013d41ea54cd2fb6022a21564",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "1038174235867143284687",
+        "outputRaw": "49849698387000234530710",
+        "minOutputRaw": "49799848688613234296179",
+        "priceImpactBps": -50,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:01.385Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0xbe82f76637dba2c114c41df856c2c51e522e2cb8",
+      "symbol": "EWYB",
+      "ticker": "EWY",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:09:01.399Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xbe82f76637dba2c114c41df856c2c51e522e2cb8",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "637206313828001618",
+        "minOutputRaw": "636569107514173616",
+        "priceImpactBps": 68,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:00.078Z"
+      },
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0x12b7adc48416a103f63e7e6210f62c81dfb91fd0",
+      "symbol": "EWYon",
+      "ticker": "EWY",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:01.675Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x12b7adc48416a103f63e7e6210f62c81dfb91fd0",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "637782892542087900",
+        "minOutputRaw": "637145109649545812",
+        "priceImpactBps": 54,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:00.732Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x12b7adc48416a103f63e7e6210f62c81dfb91fd0",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "318907072733872132477",
+        "minOutputRaw": "318588165661138260344",
+        "priceImpactBps": 54,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:00.964Z"
+      },
+      "sell": {
+        "inputToken": "0x12b7adc48416a103f63e7e6210f62c81dfb91fd0",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "318588165661138260344",
+        "outputRaw": "49844577145739944212869",
+        "minOutputRaw": "49794732568594204268656",
+        "priceImpactBps": -33,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:01.675Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0x4af1d41cd9dd950dca43984b43aaa2a8702714ac",
+      "symbol": "FLNCB",
+      "ticker": "FLNC",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:09:02.058Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0xf1a96d4b591e446445600789d60c73dd636b357c",
+      "symbol": "FLNCon",
+      "ticker": "FLNC",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:03.504Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xf1a96d4b591e446445600789d60c73dd636b357c",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "16820718509367590096",
+        "minOutputRaw": "16803897790858222505",
+        "priceImpactBps": 120,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:02.118Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xf1a96d4b591e446445600789d60c73dd636b357c",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "8410650001521703000639",
+        "minOutputRaw": "8402239351520181297638",
+        "priceImpactBps": 120,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:02.311Z"
+      },
+      "sell": {
+        "inputToken": "0xf1a96d4b591e446445600789d60c73dd636b357c",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "8402239351520181297638",
+        "outputRaw": "49532789066584390240295",
+        "minOutputRaw": "49483256277517805850054",
+        "priceImpactBps": -37,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:03.504Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0x5eadd95a428bc66698620c093eddd8a4b3165269",
+      "symbol": "GEVB",
+      "ticker": "GEV",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:09:02.343Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0x2aea1d415d45ccf3eabe565d45dcaf4ea2035b9c",
+      "symbol": "GEVon",
+      "ticker": "GEV",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:04.519Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x2aea1d415d45ccf3eabe565d45dcaf4ea2035b9c",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "109447562911475022",
+        "minOutputRaw": "109338115348563546",
+        "priceImpactBps": 50,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:02.850Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x2aea1d415d45ccf3eabe565d45dcaf4ea2035b9c",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "54725673278107461797",
+        "minOutputRaw": "54670947604829354335",
+        "priceImpactBps": 50,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:03.214Z"
+      },
+      "sell": {
+        "inputToken": "0x2aea1d415d45ccf3eabe565d45dcaf4ea2035b9c",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "54670947604829354335",
+        "outputRaw": "49636925212982095475906",
+        "minOutputRaw": "49587288287769113380430",
+        "priceImpactBps": 12,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:04.519Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0x740e075cbbea22a082b9d6679e65e82767875b6a",
+      "symbol": "GLWB",
+      "ticker": "GLW",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:09:03.189Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0x25a4dbae9a0cd8c75656d6b50ffdf4900cc20d8f",
+      "symbol": "GLWon",
+      "ticker": "GLW",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:05.048Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x25a4dbae9a0cd8c75656d6b50ffdf4900cc20d8f",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "778842100068783525",
+        "minOutputRaw": "778063257968714741",
+        "priceImpactBps": 87,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:03.699Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x25a4dbae9a0cd8c75656d6b50ffdf4900cc20d8f",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "389440132620751566466",
+        "minOutputRaw": "389050692488130814899",
+        "priceImpactBps": 87,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:04.050Z"
+      },
+      "sell": {
+        "inputToken": "0x25a4dbae9a0cd8c75656d6b50ffdf4900cc20d8f",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "389050692488130814899",
+        "outputRaw": "49492564896858388248227",
+        "minOutputRaw": "49443072331961529859978",
+        "priceImpactBps": 4,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:05.048Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0x46ceefda28dd7207059ed19b0acdc026955bb15c",
+      "symbol": "GMEB",
+      "ticker": "GME",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:09:05.149Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0xdabb9aff4cf02f26d2014e4ca9f94ac6fe6572a3",
+      "symbol": "GMEon",
+      "ticker": "GME",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:05.598Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xdabb9aff4cf02f26d2014e4ca9f94ac6fe6572a3",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "4078912398378367074",
+        "minOutputRaw": "4074833485979988706",
+        "priceImpactBps": 30,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:04.338Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xdabb9aff4cf02f26d2014e4ca9f94ac6fe6572a3",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "2039556137543940444469",
+        "minOutputRaw": "2037516581406396504024",
+        "priceImpactBps": 29,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:04.817Z"
+      },
+      "sell": {
+        "inputToken": "0xdabb9aff4cf02f26d2014e4ca9f94ac6fe6572a3",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "2037516581406396504024",
+        "outputRaw": "49672120688870206081847",
+        "minOutputRaw": "49622448568181335875765",
+        "priceImpactBps": 25,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:05.597Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0x3f53de71c126bdabae20f9cd64848d317f6c3238",
+      "symbol": "GOOGLB",
+      "ticker": "GOOGL",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:09:06.300Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0x091fc7778e6932d4009b087b191d1ee3bac5729a",
+      "symbol": "GOOGLon",
+      "ticker": "GOOGL",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:06.817Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x091fc7778e6932d4009b087b191d1ee3bac5729a",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "352813619698162376",
+        "minOutputRaw": "352460806078464213",
+        "priceImpactBps": 24,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:05.749Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x091fc7778e6932d4009b087b191d1ee3bac5729a",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "176419153213214363528",
+        "minOutputRaw": "176242734060001149164",
+        "priceImpactBps": 23,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:05.974Z"
+      },
+      "sell": {
+        "inputToken": "0x091fc7778e6932d4009b087b191d1ee3bac5729a",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "176242734060001149164",
+        "outputRaw": "49834017100309329304832",
+        "minOutputRaw": "49784183083209019975527",
+        "priceImpactBps": 0,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:06.817Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0x20cce6656e5f7f79f280e2d0f5db55b401bdbfce",
+      "symbol": "GSB",
+      "ticker": "GS",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:09:05.992Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0x0d4f9b25f81163fb4840ba4f434672543823000c",
+      "symbol": "GSon",
+      "ticker": "GS",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:07.718Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x0d4f9b25f81163fb4840ba4f434672543823000c",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "107253949826667920",
+        "minOutputRaw": "107146695876841252",
+        "priceImpactBps": 94,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:06.503Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x0d4f9b25f81163fb4840ba4f434672543823000c",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "53629602766604600318",
+        "minOutputRaw": "53575973163837995717",
+        "priceImpactBps": 94,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:06.716Z"
+      },
+      "sell": {
+        "inputToken": "0x0d4f9b25f81163fb4840ba4f434672543823000c",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "53575973163837995717",
+        "outputRaw": "48638278891746056969401",
+        "minOutputRaw": "48589640612854310912431",
+        "priceImpactBps": 169,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:07.718Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0xee6f4bcc88c2c8583d5a65c7d0c877b464100711",
+      "symbol": "HIMSB",
+      "ticker": "HIMS",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:09:06.885Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0x4693f6f5ef257381a28afd0673e64d8b32d5c6ad",
+      "symbol": "HIMSon",
+      "ticker": "HIMS",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:08.670Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x4693f6f5ef257381a28afd0673e64d8b32d5c6ad",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "3810262601949626320",
+        "minOutputRaw": "3806452339347676693",
+        "priceImpactBps": 116,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:07.377Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x4693f6f5ef257381a28afd0673e64d8b32d5c6ad",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "1905224657080176223356",
+        "minOutputRaw": "1903319432423096047132",
+        "priceImpactBps": 115,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:07.645Z"
+      },
+      "sell": {
+        "inputToken": "0x4693f6f5ef257381a28afd0673e64d8b32d5c6ad",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "1903319432423096047132",
+        "outputRaw": "49631877794578339320668",
+        "minOutputRaw": "49582245916783760981347",
+        "priceImpactBps": -52,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:08.670Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0xa394dcea3fd3847fd793afbfd163e2e3858b7c65",
+      "symbol": "HOODB",
+      "ticker": "HOOD",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:09:09.109Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0x19601179a60f55ff6636f5d1a8b6671053bd60a8",
+      "symbol": "HOODon",
+      "ticker": "HOOD",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:09.246Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x19601179a60f55ff6636f5d1a8b6671053bd60a8",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "1163098393157382735",
+        "minOutputRaw": "1161935294764225352",
+        "priceImpactBps": 57,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:08.360Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x19601179a60f55ff6636f5d1a8b6671053bd60a8",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "581577693915353570847",
+        "minOutputRaw": "580996116221438217276",
+        "priceImpactBps": 57,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:08.566Z"
+      },
+      "sell": {
+        "inputToken": "0x19601179a60f55ff6636f5d1a8b6671053bd60a8",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "580996116221438217276",
+        "outputRaw": "49551756857242428058277",
+        "minOutputRaw": "49502205100385185630218",
+        "priceImpactBps": 22,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:09.246Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0xd56eb30d2ea7b5866dc0066d33bbaab36f7e8860",
+      "symbol": "HPEB",
+      "ticker": "HPE",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:09:08.749Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0x492e678c1ea048c70edc635047cdbb87ff5362a2",
+      "symbol": "HPEon",
+      "ticker": "HPE",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:11.022Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x492e678c1ea048c70edc635047cdbb87ff5362a2",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "1828841650487878195",
+        "minOutputRaw": "1827012808837390316",
+        "priceImpactBps": 48,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:09.444Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x492e678c1ea048c70edc635047cdbb87ff5362a2",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "914452434938991545067",
+        "minOutputRaw": "913537982504052553521",
+        "priceImpactBps": 48,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:09.624Z"
+      },
+      "sell": {
+        "inputToken": "0x492e678c1ea048c70edc635047cdbb87ff5362a2",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "913537982504052553521",
+        "outputRaw": "49452446294827987233090",
+        "minOutputRaw": "49402993848533159245856",
+        "priceImpactBps": 51,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:11.022Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0xfa273b076feb8c0fb34e554ae341082323d016a3",
+      "symbol": "IBMB",
+      "ticker": "IBM",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:09:09.783Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0xe8ff70859ce4cbd72e4352b4fb45f5bf39d07464",
+      "symbol": "IBMon",
+      "ticker": "IBM",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:11.509Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xe8ff70859ce4cbd72e4352b4fb45f5bf39d07464",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "388655690274748345",
+        "minOutputRaw": "388267034584473596",
+        "priceImpactBps": 32,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:10.260Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xe8ff70859ce4cbd72e4352b4fb45f5bf39d07464",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "194337367678301608366",
+        "minOutputRaw": "194143030310623306757",
+        "priceImpactBps": 32,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:10.340Z"
+      },
+      "sell": {
+        "inputToken": "0xe8ff70859ce4cbd72e4352b4fb45f5bf39d07464",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "194143030310623306757",
+        "outputRaw": "49810616224709814615157",
+        "minOutputRaw": "49760805608485104800541",
+        "priceImpactBps": -4,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:11.509Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0xe614e2fc6c787035ff51f452e8e826bfd32d5283",
+      "symbol": "INTCB",
+      "ticker": "INTC",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:09:11.422Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0xa528caaa2f96090e379d43f90834c75df54d6e74",
+      "symbol": "INTCon",
+      "ticker": "INTC",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:12.130Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xa528caaa2f96090e379d43f90834c75df54d6e74",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "1644989068336558684",
+        "minOutputRaw": "1643344079268222125",
+        "priceImpactBps": 102,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:11.059Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xa528caaa2f96090e379d43f90834c75df54d6e74",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "822534838417311086406",
+        "minOutputRaw": "821712303578893775319",
+        "priceImpactBps": 102,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:11.235Z"
+      },
+      "sell": {
+        "inputToken": "0xa528caaa2f96090e379d43f90834c75df54d6e74",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "821712303578893775319",
+        "outputRaw": "49633463155653999922042",
+        "minOutputRaw": "49583829692498345922119",
+        "priceImpactBps": -39,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:12.130Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0xfdc2f2cab77b28f7ef6c819a404706cfa9bca33b",
+      "symbol": "IRENB",
+      "ticker": "IREN",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:09:11.681Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0x8fd70ee385f470c8d6fda2d93a4e49c849bac6a6",
+      "symbol": "IRENon",
+      "ticker": "IREN",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:13.728Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x8fd70ee385f470c8d6fda2d93a4e49c849bac6a6",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "4179790821104952851",
+        "minOutputRaw": "4175611030283847898",
+        "priceImpactBps": 77,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:12.330Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x8fd70ee385f470c8d6fda2d93a4e49c849bac6a6",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "2089997820552273231379",
+        "minOutputRaw": "2087907822731720958147",
+        "priceImpactBps": 76,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:12.430Z"
+      },
+      "sell": {
+        "inputToken": "0x8fd70ee385f470c8d6fda2d93a4e49c849bac6a6",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "2087907822731720958147",
+        "outputRaw": "49747685875079446858819",
+        "minOutputRaw": "49697938189204367411960",
+        "priceImpactBps": -36,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:13.728Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0xbd49d695ba2cc46c8c603eb62afcd7fff4698281",
+      "symbol": "JPMB",
+      "ticker": "JPM",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:09:12.511Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0x317bf42b43a394860718266dec445dcc9fd9da49",
+      "symbol": "JPMon",
+      "ticker": "JPM",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:14.434Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x317bf42b43a394860718266dec445dcc9fd9da49",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "287811495158785945",
+        "minOutputRaw": "287523683663627159",
+        "priceImpactBps": 28,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:12.972Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x317bf42b43a394860718266dec445dcc9fd9da49",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "143938814124314460820",
+        "minOutputRaw": "143794875310190146359",
+        "priceImpactBps": 25,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:13.163Z"
+      },
+      "sell": {
+        "inputToken": "0x317bf42b43a394860718266dec445dcc9fd9da49",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "143794875310190146359",
+        "outputRaw": "49734825146143891460027",
+        "minOutputRaw": "49685090320997747568566",
+        "priceImpactBps": 17,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:14.433Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0x64748bea17b6d19e242adf20425de2440c656142",
+      "symbol": "LITEB",
+      "ticker": "LITE",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:09:13.269Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0x0facafb97ffdba3cae88512070af49bd30674cd9",
+      "symbol": "LITEon",
+      "ticker": "LITE",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:15.125Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x0facafb97ffdba3cae88512070af49bd30674cd9",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "143367125220670973",
+        "minOutputRaw": "143223758095450302",
+        "priceImpactBps": 80,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:13.964Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x0facafb97ffdba3cae88512070af49bd30674cd9",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "71687075280680244707",
+        "minOutputRaw": "71615388205399564462",
+        "priceImpactBps": 79,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:14.080Z"
+      },
+      "sell": {
+        "inputToken": "0x0facafb97ffdba3cae88512070af49bd30674cd9",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "71615388205399564462",
+        "outputRaw": "49416901890208667217143",
+        "minOutputRaw": "49367484988318458549925",
+        "priceImpactBps": 27,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:15.124Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0x5407912f1aa4b9e05cbe6abeb9721547a643ec6b",
+      "symbol": "LLYB",
+      "ticker": "LLY",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:09:14.390Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0x341d31b2be1fee9c00e395a62ba41837f4322eed",
+      "symbol": "LLYon",
+      "ticker": "LLY",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:16.036Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x341d31b2be1fee9c00e395a62ba41837f4322eed",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "69636398809932345",
+        "minOutputRaw": "69566762411122412",
+        "priceImpactBps": 30,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:14.848Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x341d31b2be1fee9c00e395a62ba41837f4322eed",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "34819905582115500381",
+        "minOutputRaw": "34785085676533384880",
+        "priceImpactBps": 29,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:14.973Z"
+      },
+      "sell": {
+        "inputToken": "0x341d31b2be1fee9c00e395a62ba41837f4322eed",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "34785085676533384880",
+        "outputRaw": "49695156301859390673603",
+        "minOutputRaw": "49645461145557531282929",
+        "priceImpactBps": 21,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:16.035Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0x7425889fe94f9d693e8daefe88bcced6acfef4c0",
+      "symbol": "METAB",
+      "ticker": "META",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:09:16.400Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0xd7df5863a3e742f0c767768cdfcb63f09e0422f6",
+      "symbol": "METAon",
+      "ticker": "META",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:16.659Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xd7df5863a3e742f0c767768cdfcb63f09e0422f6",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "157010966187434108",
+        "minOutputRaw": "156853955221246673",
+        "priceImpactBps": 45,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:15.677Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xd7df5863a3e742f0c767768cdfcb63f09e0422f6",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "78509330054893706883",
+        "minOutputRaw": "78430820724838813176",
+        "priceImpactBps": 44,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:15.922Z"
+      },
+      "sell": {
+        "inputToken": "0xd7df5863a3e742f0c767768cdfcb63f09e0422f6",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "78430820724838813176",
+        "outputRaw": "49789347149572710688044",
+        "minOutputRaw": "49739557802423137977355",
+        "priceImpactBps": -12,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:16.658Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0x5fd86da9b05abe396fe9d02a4a213a7c00556503",
+      "symbol": "MRNAB",
+      "ticker": "MRNA",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:09:16.079Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0x01486675da0764ee780ea7cb65c33062e9b2d28c",
+      "symbol": "MRNAon",
+      "ticker": "MRNA",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:18.592Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x01486675da0764ee780ea7cb65c33062e9b2d28c",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "428881293030927082",
+        "minOutputRaw": "428452411737896154",
+        "priceImpactBps": 36,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:17.199Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x01486675da0764ee780ea7cb65c33062e9b2d28c",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "214448059951316596338",
+        "minOutputRaw": "214233611891365279741",
+        "priceImpactBps": 35,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:17.675Z"
+      },
+      "sell": {
+        "inputToken": "0x01486675da0764ee780ea7cb65c33062e9b2d28c",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "214233611891365279741",
+        "outputRaw": "49807932963279331562807",
+        "minOutputRaw": "49758125030316052231244",
+        "priceImpactBps": -7,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:18.592Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0x16cd4fe7e8880ecc3ba222795229e20489fc2c76",
+      "symbol": "MRVLB",
+      "ticker": "MRVL",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:09:17.219Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0x1501ec83ffef405b4331cc4f73277a40fb0c627d",
+      "symbol": "MRVLon",
+      "ticker": "MRVL",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:18.868Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x1501ec83ffef405b4331cc4f73277a40fb0c627d",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "574924970760769741",
+        "minOutputRaw": "574350045790008971",
+        "priceImpactBps": 81,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:17.584Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x1501ec83ffef405b4331cc4f73277a40fb0c627d",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "287476571747061789829",
+        "minOutputRaw": "287189095175314728039",
+        "priceImpactBps": 81,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:17.731Z"
+      },
+      "sell": {
+        "inputToken": "0x1501ec83ffef405b4331cc4f73277a40fb0c627d",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "287189095175314728039",
+        "outputRaw": "49695332745395058011205",
+        "minOutputRaw": "49645637412649662953193",
+        "priceImpactBps": -30,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:18.868Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0x80106cb3ead06659a5ad19df39d9b4733863b9b0",
+      "symbol": "MSFTB",
+      "ticker": "MSFT",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:09:19.050Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0x6bfe75d1ad432050ea973c3a3dcd88f02e2444c3",
+      "symbol": "MSFTon",
+      "ticker": "MSFT",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:19.116Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x6bfe75d1ad432050ea973c3a3dcd88f02e2444c3",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "188871132777832640",
+        "minOutputRaw": "188682261645054807",
+        "priceImpactBps": 44,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:18.334Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x6bfe75d1ad432050ea973c3a3dcd88f02e2444c3",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "94440193963236941509",
+        "minOutputRaw": "94345753769273704567",
+        "priceImpactBps": 43,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:18.415Z"
+      },
+      "sell": {
+        "inputToken": "0x6bfe75d1ad432050ea973c3a3dcd88f02e2444c3",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "94345753769273704567",
+        "outputRaw": "49851572833653840839523",
+        "minOutputRaw": "49801721260820186998683",
+        "priceImpactBps": -24,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:19.116Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0xe87afb3076aeb0f9b14e368de8145ae6a2826a14",
+      "symbol": "MSTRB",
+      "ticker": "MSTR",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:09:20.274Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0x7313ea16493b2f55054df0131a3a14b043ec8992",
+      "symbol": "MSTRon",
+      "ticker": "MSTR",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:21.287Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x7313ea16493b2f55054df0131a3a14b043ec8992",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "724513720114035542",
+        "minOutputRaw": "723789206393921506",
+        "priceImpactBps": 72,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:19.766Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x7313ea16493b2f55054df0131a3a14b043ec8992",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "362274611531458722587",
+        "minOutputRaw": "361912336919927263864",
+        "priceImpactBps": 71,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:20.274Z"
+      },
+      "sell": {
+        "inputToken": "0x7313ea16493b2f55054df0131a3a14b043ec8992",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "361912336919927263864",
+        "outputRaw": "49615228581213247993359",
+        "minOutputRaw": "49565613352632034745365",
+        "priceImpactBps": -4,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:21.287Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0xcdf2f3e0fa43c47a6662a91c9e4a7c5f69762699",
+      "symbol": "MUB",
+      "ticker": "MU",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:09:21.107Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xcdf2f3e0fa43c47a6662a91c9e4a7c5f69762699",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "115153344208784365",
+        "minOutputRaw": "115038190864575580",
+        "priceImpactBps": 25,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:21.107Z"
+      },
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0x8b6acf6041a81567f012ff6a4c6d96d5818d74bf",
+      "symbol": "MUon",
+      "ticker": "MU",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:22.109Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x8b6acf6041a81567f012ff6a4c6d96d5818d74bf",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "114949482156328307",
+        "minOutputRaw": "114834532674171978",
+        "priceImpactBps": 30,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:21.102Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x8b6acf6041a81567f012ff6a4c6d96d5818d74bf",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "57477557481412066795",
+        "minOutputRaw": "57420079923930654728",
+        "priceImpactBps": 30,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:20.999Z"
+      },
+      "sell": {
+        "inputToken": "0x8b6acf6041a81567f012ff6a4c6d96d5818d74bf",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "57420079923930654728",
+        "outputRaw": "49726974614110190464582",
+        "minOutputRaw": "49677247639496080274117",
+        "priceImpactBps": 14,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:22.109Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0xe256bc2a4f5297f8ba6f043f180a46300ecbcbb1",
+      "symbol": "NBISB",
+      "ticker": "NBIS",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:09:20.918Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-400",
+        "quote-http-400",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0xee268780473e7a0e47bac41547c6e01512555a16",
+      "symbol": "NBISon",
+      "ticker": "NBIS",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:22.913Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xee268780473e7a0e47bac41547c6e01512555a16",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "655498360828002655",
+        "minOutputRaw": "654842862467174652",
+        "priceImpactBps": 70,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:21.680Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xee268780473e7a0e47bac41547c6e01512555a16",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "327485797844360550201",
+        "minOutputRaw": "327158312046516189650",
+        "priceImpactBps": 78,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:21.800Z"
+      },
+      "sell": {
+        "inputToken": "0xee268780473e7a0e47bac41547c6e01512555a16",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "327158312046516189650",
+        "outputRaw": "49656831855186379517759",
+        "minOutputRaw": "49607175023331193138241",
+        "priceImpactBps": -19,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:22.913Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0xd6829ea836b6fa224d099d40e54b31262f874631",
+      "symbol": "NFLXB",
+      "ticker": "NFLX",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:09:23.246Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0x7048f5227b032326cc8dbc53cf3fddd947a2c757",
+      "symbol": "NFLXon",
+      "ticker": "NFLX",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:23.405Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x7048f5227b032326cc8dbc53cf3fddd947a2c757",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "156966780495249320",
+        "minOutputRaw": "156809813714754070",
+        "priceImpactBps": 14,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:22.588Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x7048f5227b032326cc8dbc53cf3fddd947a2c757",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "78487236126197663990",
+        "minOutputRaw": "78408748890071466326",
+        "priceImpactBps": 14,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:22.722Z"
+      },
+      "sell": {
+        "inputToken": "0x7048f5227b032326cc8dbc53cf3fddd947a2c757",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "78408748890071466326",
+        "outputRaw": "49793829531451406465449",
+        "minOutputRaw": "49744035701919955058983",
+        "priceImpactBps": 16,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:23.405Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0x7c4d7a180d737dd5a70d8065a90e6746a69c37ea",
+      "symbol": "NOKB",
+      "ticker": "NOK",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:09:23.129Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0xe9518cb0010c717db69001f1418eff9e97330137",
+      "symbol": "NOKon",
+      "ticker": "NOK",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:25.045Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xe9518cb0010c717db69001f1418eff9e97330137",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "11455560354932616301",
+        "minOutputRaw": "11444104794577683684",
+        "priceImpactBps": 44,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:23.612Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xe9518cb0010c717db69001f1418eff9e97330137",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "5728060852740223294446",
+        "minOutputRaw": "5722332791887483071151",
+        "priceImpactBps": 44,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:23.973Z"
+      },
+      "sell": {
+        "inputToken": "0xe9518cb0010c717db69001f1418eff9e97330137",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "5722332791887483071151",
+        "outputRaw": "49792800669894415933672",
+        "minOutputRaw": "49743007869224521517738",
+        "priceImpactBps": -13,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:25.044Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0x02fca66c1d1afb4e2a7884261eb00f63598a7436",
+      "symbol": "NVDAB",
+      "ticker": "NVDA",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:09:25.598Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x02fca66c1d1afb4e2a7884261eb00f63598a7436",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "476842076537696631",
+        "minOutputRaw": "476365234461158934",
+        "priceImpactBps": 46,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:23.638Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x02fca66c1d1afb4e2a7884261eb00f63598a7436",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "238064998734354142590",
+        "minOutputRaw": "237826933735619788447",
+        "priceImpactBps": 61,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:24.902Z"
+      },
+      "sell": {
+        "inputToken": "0x02fca66c1d1afb4e2a7884261eb00f63598a7436",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "237826933735619788447",
+        "outputRaw": "49799446962978404720000",
+        "minOutputRaw": "49749647516015426315280",
+        "priceImpactBps": -31,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:25.598Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0xa9ee28c80f960b889dfbd1902055218cba016f75",
+      "symbol": "NVDAon",
+      "ticker": "NVDA",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:25.288Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xa9ee28c80f960b889dfbd1902055218cba016f75",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "476559876733240567",
+        "minOutputRaw": "476083316856507326",
+        "priceImpactBps": 35,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:24.352Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xa9ee28c80f960b889dfbd1902055218cba016f75",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "238291614667891855808",
+        "minOutputRaw": "238053323053223963952",
+        "priceImpactBps": 34,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:24.605Z"
+      },
+      "sell": {
+        "inputToken": "0xa9ee28c80f960b889dfbd1902055218cba016f75",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "238053323053223963952",
+        "outputRaw": "49858130279182659080827",
+        "minOutputRaw": "49808272148903476421746",
+        "priceImpactBps": -16,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:25.288Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0x4684d9887fc1c71cba7bab8e88835cec217eb598",
+      "symbol": "ORCLB",
+      "ticker": "ORCL",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:09:24.665Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0x03e4bd1ea53f1da84513da0319d1f03dd1bbcf93",
+      "symbol": "ORCLon",
+      "ticker": "ORCL",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:27.097Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x03e4bd1ea53f1da84513da0319d1f03dd1bbcf93",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "789415914508794875",
+        "minOutputRaw": "788626498594286080",
+        "priceImpactBps": 40,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:25.577Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x03e4bd1ea53f1da84513da0319d1f03dd1bbcf93",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "394727298912175158163",
+        "minOutputRaw": "394332571613262983004",
+        "priceImpactBps": 39,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:25.663Z"
+      },
+      "sell": {
+        "inputToken": "0x03e4bd1ea53f1da84513da0319d1f03dd1bbcf93",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "394332571613262983004",
+        "outputRaw": "49754542626316850958514",
+        "minOutputRaw": "49704788083690534107555",
+        "priceImpactBps": 0,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:27.097Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0x95b0409679b55c31772daa2fb4bee7b125b77521",
+      "symbol": "PDDB",
+      "ticker": "PDD",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:09:27.167Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0xf3e82ea164cb344b2b11bad4c24b0ea4f7ba4714",
+      "symbol": "PDDon",
+      "ticker": "PDD",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:27.377Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xf3e82ea164cb344b2b11bad4c24b0ea4f7ba4714",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "1226770927780248904",
+        "minOutputRaw": "1225544156852468655",
+        "priceImpactBps": 47,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:26.400Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xf3e82ea164cb344b2b11bad4c24b0ea4f7ba4714",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "613415521281951375384",
+        "minOutputRaw": "612802105760669424008",
+        "priceImpactBps": 47,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:26.573Z"
+      },
+      "sell": {
+        "inputToken": "0xf3e82ea164cb344b2b11bad4c24b0ea4f7ba4714",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "612802105760669424008",
+        "outputRaw": "49838725280723229495064",
+        "minOutputRaw": "49788886555442506265568",
+        "priceImpactBps": -25,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:27.377Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0x7f732f9d2f2ea3e7e223c2e737e5257007f90e01",
+      "symbol": "PENGB",
+      "ticker": "PENG",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:09:26.616Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0x2144d620e3471441b12bf256e01a09eaa5ea7f12",
+      "symbol": "PENGon",
+      "ticker": "PENG",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:27.345Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0x0ca5d51d0277bd006fd9607d3e560785ebad8222",
+      "symbol": "PLTRB",
+      "ticker": "PLTR",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:09:27.663Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0x9351abd19f42101dd36025e495b98e910b255d78",
+      "symbol": "PLTRon",
+      "ticker": "PLTR",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:29.961Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x9351abd19f42101dd36025e495b98e910b255d78",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "582081155949900363",
+        "minOutputRaw": "581499074793950462",
+        "priceImpactBps": 19,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:28.177Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x9351abd19f42101dd36025e495b98e910b255d78",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "291054839676938094781",
+        "minOutputRaw": "290763784837261156686",
+        "priceImpactBps": 19,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:28.474Z"
+      },
+      "sell": {
+        "inputToken": "0x9351abd19f42101dd36025e495b98e910b255d78",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "290763784837261156686",
+        "outputRaw": "49752997425568611881343",
+        "minOutputRaw": "49703244428143043269461",
+        "priceImpactBps": 20,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:29.961Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0x2806a561fc1f9259b2d54a281796bde0d92762ae",
+      "symbol": "PYPLB",
+      "ticker": "PYPL",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:09:28.409Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0x374d03a6c0d5bd4be0a5117ebe1b49d52ac8a53f",
+      "symbol": "PYPLon",
+      "ticker": "PYPL",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:30.144Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x374d03a6c0d5bd4be0a5117ebe1b49d52ac8a53f",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "1686337599714242124",
+        "minOutputRaw": "1684651262114527881",
+        "priceImpactBps": 38,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:28.899Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x374d03a6c0d5bd4be0a5117ebe1b49d52ac8a53f",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "843210117195867326542",
+        "minOutputRaw": "842366907078671459215",
+        "priceImpactBps": 38,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:29.102Z"
+      },
+      "sell": {
+        "inputToken": "0x374d03a6c0d5bd4be0a5117ebe1b49d52ac8a53f",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "842366907078671459215",
+        "outputRaw": "49417578452095881006043",
+        "minOutputRaw": "49368160873643785125036",
+        "priceImpactBps": 68,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:30.144Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0x5f7a56e877b9130608bf8be962621011182fefe1",
+      "symbol": "QCOMB",
+      "ticker": "QCOM",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:09:29.112Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0xfbd4d681c92ead6af0e49950c8b2e47eeacbb2db",
+      "symbol": "QCOMon",
+      "ticker": "QCOM",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:30.703Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xfbd4d681c92ead6af0e49950c8b2e47eeacbb2db",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "593866604088723946",
+        "minOutputRaw": "593272737484635222",
+        "priceImpactBps": 31,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:29.624Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xfbd4d681c92ead6af0e49950c8b2e47eeacbb2db",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "296947852504278938226",
+        "minOutputRaw": "296650904651774659287",
+        "priceImpactBps": 30,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:29.806Z"
+      },
+      "sell": {
+        "inputToken": "0xfbd4d681c92ead6af0e49950c8b2e47eeacbb2db",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "296650904651774659287",
+        "outputRaw": "49687101821622409550540",
+        "minOutputRaw": "49637414719800787140989",
+        "priceImpactBps": 22,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:30.703Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0x205812cdbed920aff76c6580abd681a46d11efc7",
+      "symbol": "QQQB",
+      "ticker": "QQQ",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:09:32.330Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x205812cdbed920aff76c6580abd681a46d11efc7",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "144245634095928419",
+        "minOutputRaw": "144101388461832490",
+        "priceImpactBps": 56,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:30.441Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x205812cdbed920aff76c6580abd681a46d11efc7",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "72108849247813962450",
+        "minOutputRaw": "72036740398566148487",
+        "priceImpactBps": 58,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:31.596Z"
+      },
+      "sell": {
+        "inputToken": "0x205812cdbed920aff76c6580abd681a46d11efc7",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "72036740398566148487",
+        "outputRaw": "49697224361555546403000",
+        "minOutputRaw": "49647527137193990856597",
+        "priceImpactBps": -7,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:32.330Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0x0cde6936d305d5b34667fc46425e852efd73559a",
+      "symbol": "QQQon",
+      "ticker": "QQQ",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:32.055Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x0cde6936d305d5b34667fc46425e852efd73559a",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "144149716971179419",
+        "minOutputRaw": "144005567254208239",
+        "priceImpactBps": 22,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:30.875Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x0cde6936d305d5b34667fc46425e852efd73559a",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "72081526145523094758",
+        "minOutputRaw": "72009444619377571663",
+        "priceImpactBps": 21,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:31.066Z"
+      },
+      "sell": {
+        "inputToken": "0x0cde6936d305d5b34667fc46425e852efd73559a",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "72009444619377571663",
+        "outputRaw": "49885835170665078343295",
+        "minOutputRaw": "49835949335494413264951",
+        "priceImpactBps": -8,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:32.055Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0x41622a9125a22767df8c1dc79fc17299bac4bd0b",
+      "symbol": "RDDTB",
+      "ticker": "RDDT",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:09:31.229Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0x4da12f47578ef89c76179b760c778e70b668f80b",
+      "symbol": "RDDTon",
+      "ticker": "RDDT",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:32.697Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x4da12f47578ef89c76179b760c778e70b668f80b",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "1028667410979042972",
+        "minOutputRaw": "1027638743568063929",
+        "priceImpactBps": 41,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:31.732Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x4da12f47578ef89c76179b760c778e70b668f80b",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "514358909102299801549",
+        "minOutputRaw": "513844550193197501747",
+        "priceImpactBps": 41,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:31.777Z"
+      },
+      "sell": {
+        "inputToken": "0x4da12f47578ef89c76179b760c778e70b668f80b",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "513844550193197501747",
+        "outputRaw": "49381594502930034230354",
+        "minOutputRaw": "49332212908427104196123",
+        "priceImpactBps": 72,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:32.697Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0xc8da12cbcce7c45180692a6420b0076e03a5179a",
+      "symbol": "RKLBB",
+      "ticker": "RKLB",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:09:32.063Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0xb4d695569236273745b4cd54b539b1b9cc1513af",
+      "symbol": "RKLBon",
+      "ticker": "RKLB",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:34.390Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xb4d695569236273745b4cd54b539b1b9cc1513af",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "1813636617558186159",
+        "minOutputRaw": "1811822980940627972",
+        "priceImpactBps": 83,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:32.858Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xb4d695569236273745b4cd54b539b1b9cc1513af",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "906862745099852923604",
+        "minOutputRaw": "905955882354753070680",
+        "priceImpactBps": 82,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:33.052Z"
+      },
+      "sell": {
+        "inputToken": "0xb4d695569236273745b4cd54b539b1b9cc1513af",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "905955882354753070680",
+        "outputRaw": "49687190600450569843479",
+        "minOutputRaw": "49637503409850119273635",
+        "priceImpactBps": -30,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:34.390Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0xca750ef65f295bbecd685abf54e82caf297bdb61",
+      "symbol": "SKHYB",
+      "ticker": "SKHY",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:09:34.305Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xca750ef65f295bbecd685abf54e82caf297bdb61",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "650456584093872225",
+        "minOutputRaw": "649806127509778352",
+        "priceImpactBps": 92,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:33.222Z"
+      },
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0x4268f2bfb23a7496504aa5ed1ee325248586299f",
+      "symbol": "SKHYon",
+      "ticker": "SKHY",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:34.474Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x4268f2bfb23a7496504aa5ed1ee325248586299f",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "651003088072582737",
+        "minOutputRaw": "650352084984510154",
+        "priceImpactBps": 82,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:33.580Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x4268f2bfb23a7496504aa5ed1ee325248586299f",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "325517494410118834322",
+        "minOutputRaw": "325191976915708715487",
+        "priceImpactBps": 82,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:33.758Z"
+      },
+      "sell": {
+        "inputToken": "0x4268f2bfb23a7496504aa5ed1ee325248586299f",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "325191976915708715487",
+        "outputRaw": "49746130096627357443376",
+        "minOutputRaw": "49696383966530730085932",
+        "priceImpactBps": -41,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:34.474Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0x387dea1d2772d716d081a29116f3effa0ffe1f36",
+      "symbol": "SMCIB",
+      "ticker": "SMCI",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:09:33.914Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0xc142ba8ccd36d80c3a001342fb83e4c3d218a873",
+      "symbol": "SMCIon",
+      "ticker": "SMCI",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:36.170Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xc142ba8ccd36d80c3a001342fb83e4c3d218a873",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "2959549576650780104",
+        "minOutputRaw": "2956590027074129323",
+        "priceImpactBps": 73,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:34.756Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xc142ba8ccd36d80c3a001342fb83e4c3d218a873",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "1479825942821915096542",
+        "minOutputRaw": "1478346116879093181445",
+        "priceImpactBps": 73,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:34.847Z"
+      },
+      "sell": {
+        "inputToken": "0xc142ba8ccd36d80c3a001342fb83e4c3d218a873",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "1478346116879093181445",
+        "outputRaw": "49750465469421791992614",
+        "minOutputRaw": "49700715003952370200621",
+        "priceImpactBps": -33,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:36.170Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0x3ee4df61bd4f867e349beae8bfe07bc31b4850fb",
+      "symbol": "SNDKB",
+      "ticker": "SNDK",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:09:36.100Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0x4fd67cb8cfedc718bac984b5936abe3330d0a2a4",
+      "symbol": "SNDKon",
+      "ticker": "SNDK",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:36.374Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x4fd67cb8cfedc718bac984b5936abe3330d0a2a4",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "87204251527273964",
+        "minOutputRaw": "87117047275746690",
+        "priceImpactBps": 76,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:35.487Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x4fd67cb8cfedc718bac984b5936abe3330d0a2a4",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "43613798697200270090",
+        "minOutputRaw": "43570184898503069819",
+        "priceImpactBps": 74,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:35.563Z"
+      },
+      "sell": {
+        "inputToken": "0x4fd67cb8cfedc718bac984b5936abe3330d0a2a4",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "43570184898503069819",
+        "outputRaw": "49638002425861593224677",
+        "minOutputRaw": "49588364423435731631452",
+        "priceImpactBps": -11,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:36.374Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0xd97d097a89113fa59b76c572e5b2eb647e8eefaf",
+      "symbol": "SOXLB",
+      "ticker": "SOXL",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:09:36.898Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0xb943c8a0d77b656daf5244da060d647fd9152289",
+      "symbol": "SOXLon",
+      "ticker": "SOXL",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:38.319Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xb943c8a0d77b656daf5244da060d647fd9152289",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "1294272654857229243",
+        "minOutputRaw": "1292978382202372013",
+        "priceImpactBps": 135,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:36.898Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xb943c8a0d77b656daf5244da060d647fd9152289",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "647242647477114175028",
+        "minOutputRaw": "646595404829637060852",
+        "priceImpactBps": 133,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:37.123Z"
+      },
+      "sell": {
+        "inputToken": "0xb943c8a0d77b656daf5244da060d647fd9152289",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "646595404829637060852",
+        "outputRaw": "49775961526662144072183",
+        "minOutputRaw": "49726185565135481928110",
+        "priceImpactBps": -100,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:38.319Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0xe28cd11c99af2df76bb8ada4cd0ef3904378280f",
+      "symbol": "SOXSB",
+      "ticker": "SOXS",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:09:38.152Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0x335dd4112704f108b5ddd8f8a44bd9ed68522a80",
+      "symbol": "SOXSon",
+      "ticker": "SOXS",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:38.401Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x335dd4112704f108b5ddd8f8a44bd9ed68522a80",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "19290748792059818435",
+        "minOutputRaw": "19271458043267758616",
+        "priceImpactBps": -102,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:37.613Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x335dd4112704f108b5ddd8f8a44bd9ed68522a80",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "9645847043026955032174",
+        "minOutputRaw": "9636201195983928077141",
+        "priceImpactBps": -103,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:37.711Z"
+      },
+      "sell": {
+        "inputToken": "0x335dd4112704f108b5ddd8f8a44bd9ed68522a80",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "9636201195983928077141",
+        "outputRaw": "49780531356259373415899",
+        "minOutputRaw": "49730750824903114042483",
+        "priceImpactBps": 135,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:38.401Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0xbe9d156892e55e7154bcd3cb0fea677f9d3103e1",
+      "symbol": "SPCXB",
+      "ticker": "SPCX",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:09:41.109Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xbe9d156892e55e7154bcd3cb0fea677f9d3103e1",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "731712976203571292",
+        "minOutputRaw": "730981263227367720",
+        "priceImpactBps": 20,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:37.912Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xbe9d156892e55e7154bcd3cb0fea677f9d3103e1",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "365945946522361409570",
+        "minOutputRaw": "365580000575839048160",
+        "priceImpactBps": 17,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:39.125Z"
+      },
+      "sell": {
+        "inputToken": "0xbe9d156892e55e7154bcd3cb0fea677f9d3103e1",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "365580000575839048160",
+        "outputRaw": "49764918576820613628000",
+        "minOutputRaw": "49715153658243793014372",
+        "priceImpactBps": 19,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:41.109Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0xd0a58bc9d88d3ff48c0294cb7e45937d0e41a928",
+      "symbol": "SPCXon",
+      "ticker": "SPCX",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:39.926Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xd0a58bc9d88d3ff48c0294cb7e45937d0e41a928",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "733336550397187551",
+        "minOutputRaw": "732603213846790363",
+        "priceImpactBps": -1,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:38.946Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xd0a58bc9d88d3ff48c0294cb7e45937d0e41a928",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "366686242843194095207",
+        "minOutputRaw": "366319556600350901111",
+        "priceImpactBps": -2,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:39.115Z"
+      },
+      "sell": {
+        "inputToken": "0xd0a58bc9d88d3ff48c0294cb7e45937d0e41a928",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "366319556600350901111",
+        "outputRaw": "49817163875779724736531",
+        "minOutputRaw": "49767346711903945011794",
+        "priceImpactBps": 29,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:39.925Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0x7138b48df7d98d7e3cc221bfe7192d0a178182d8",
+      "symbol": "SPYB",
+      "ticker": "SPY",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:09:42.051Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x7138b48df7d98d7e3cc221bfe7192d0a178182d8",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "130948710137345141",
+        "minOutputRaw": "130817761427207795",
+        "priceImpactBps": 50,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:40.261Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x7138b48df7d98d7e3cc221bfe7192d0a178182d8",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "65207044111689435101",
+        "minOutputRaw": "65141837067577745665",
+        "priceImpactBps": 91,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:40.390Z"
+      },
+      "sell": {
+        "inputToken": "0x7138b48df7d98d7e3cc221bfe7192d0a178182d8",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "65141837067577745665",
+        "outputRaw": "49521786962698792044000",
+        "minOutputRaw": "49472265175736093251956",
+        "priceImpactBps": -5,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:42.050Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0x6a708ead771238919d85930b5a0f10454e1c331a",
+      "symbol": "SPYon",
+      "ticker": "SPY",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:40.545Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x6a708ead771238919d85930b5a0f10454e1c331a",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "130192773302724056",
+        "minOutputRaw": "130062580529421331",
+        "priceImpactBps": 11,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:39.375Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x6a708ead771238919d85930b5a0f10454e1c331a",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "65099576533932252447",
+        "minOutputRaw": "65034476957398320194",
+        "priceImpactBps": 11,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:39.860Z"
+      },
+      "sell": {
+        "inputToken": "0x6a708ead771238919d85930b5a0f10454e1c331a",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "65034476957398320194",
+        "outputRaw": "49892674943882620181951",
+        "minOutputRaw": "49842782268938737561769",
+        "priceImpactBps": 0,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:40.545Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0x25e572b466d152604d9e6c3e53b432b978825342",
+      "symbol": "SQQQB",
+      "ticker": "SQQQ",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:09:40.632Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0x17515b68378d86c38f394c666e79907da05dcba9",
+      "symbol": "SQQQon",
+      "ticker": "SQQQ",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:42.709Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x17515b68378d86c38f394c666e79907da05dcba9",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "2322759693446805924",
+        "minOutputRaw": "2320436933753359118",
+        "priceImpactBps": -36,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:41.363Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x17515b68378d86c38f394c666e79907da05dcba9",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "1161644980134402974066",
+        "minOutputRaw": "1160483335154268571091",
+        "priceImpactBps": -38,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:41.596Z"
+      },
+      "sell": {
+        "inputToken": "0x17515b68378d86c38f394c666e79907da05dcba9",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "1160483335154268571091",
+        "outputRaw": "49850099750124588712972",
+        "minOutputRaw": "49800249650374464124259",
+        "priceImpactBps": 58,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:42.709Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0x2e065f65f1699964f4092de1d39a8efe6c8d6f32",
+      "symbol": "STXB",
+      "ticker": "STX",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:09:41.514Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0x966ebcba3c51e81f5cf159a1eabefd2327ab5e8d",
+      "symbol": "STXon",
+      "ticker": "STX",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:43.332Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x966ebcba3c51e81f5cf159a1eabefd2327ab5e8d",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "162584626946953072",
+        "minOutputRaw": "162422042320006118",
+        "priceImpactBps": 110,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:42.152Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x966ebcba3c51e81f5cf159a1eabefd2327ab5e8d",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "81295123530746561939",
+        "minOutputRaw": "81213828407215815377",
+        "priceImpactBps": 110,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:42.171Z"
+      },
+      "sell": {
+        "inputToken": "0x966ebcba3c51e81f5cf159a1eabefd2327ab5e8d",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "81213828407215815377",
+        "outputRaw": "49335142785384313254850",
+        "minOutputRaw": "49285807642598928941595",
+        "priceImpactBps": 13,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:43.332Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0x462b5f13b7c7748279358962925c5de83bb9e598",
+      "symbol": "TQQQB",
+      "ticker": "TQQQ",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:09:42.351Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0xe42cfb20e00912409b77a602b5bdcff3c7acc5f4",
+      "symbol": "TQQQon",
+      "ticker": "TQQQ",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:44.135Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xe42cfb20e00912409b77a602b5bdcff3c7acc5f4",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "1608633497765148586",
+        "minOutputRaw": "1607024864267383437",
+        "priceImpactBps": 67,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:42.898Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xe42cfb20e00912409b77a602b5bdcff3c7acc5f4",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "804356162375552787891",
+        "minOutputRaw": "803551806213177235103",
+        "priceImpactBps": 66,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:43.191Z"
+      },
+      "sell": {
+        "inputToken": "0xe42cfb20e00912409b77a602b5bdcff3c7acc5f4",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "803551806213177235103",
+        "outputRaw": "49850099750124587502877",
+        "minOutputRaw": "49800249650374462915374",
+        "priceImpactBps": -47,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:44.135Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0x5b1910eaad6450e50f816082aa078c41f10c292f",
+      "symbol": "TSLAB",
+      "ticker": "TSLA",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:09:43.466Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x5b1910eaad6450e50f816082aa078c41f10c292f",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "256344324659254321",
+        "minOutputRaw": "256087980334595066",
+        "priceImpactBps": 139,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:43.466Z"
+      },
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0x2494b603319d4d9f9715c9f4496d9e0364b59d93",
+      "symbol": "TSLAon",
+      "ticker": "TSLA",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:45.041Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x2494b603319d4d9f9715c9f4496d9e0364b59d93",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "259843617875906293",
+        "minOutputRaw": "259583774258030386",
+        "priceImpactBps": 5,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:43.797Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x2494b603319d4d9f9715c9f4496d9e0364b59d93",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "129926300590473133994",
+        "minOutputRaw": "129796374289882660860",
+        "priceImpactBps": 4,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:44.073Z"
+      },
+      "sell": {
+        "inputToken": "0x2494b603319d4d9f9715c9f4496d9e0364b59d93",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "129796374289882660860",
+        "outputRaw": "49853761099695513170250",
+        "minOutputRaw": "49803907338595817657079",
+        "priceImpactBps": 14,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:45.040Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0xab78b89b5bb00236be0b4b20704cbfa04efc711c",
+      "symbol": "TSMB",
+      "ticker": "TSM",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:09:45.319Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0xc37042a7a4fa510d8884a433762ab87257b91965",
+      "symbol": "TSMon",
+      "ticker": "TSM",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:45.590Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xc37042a7a4fa510d8884a433762ab87257b91965",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "241249998457135227",
+        "minOutputRaw": "241008748458678091",
+        "priceImpactBps": 50,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:44.765Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xc37042a7a4fa510d8884a433762ab87257b91965",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "120630910149317047129",
+        "minOutputRaw": "120510279239167730081",
+        "priceImpactBps": 50,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:44.874Z"
+      },
+      "sell": {
+        "inputToken": "0xc37042a7a4fa510d8884a433762ab87257b91965",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "120510279239167730081",
+        "outputRaw": "49829628901246402106310",
+        "minOutputRaw": "49779799272345155704203",
+        "priceImpactBps": -26,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:45.590Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0xcd345d4450e04cdef422a60b97d9265d24e0bcee",
+      "symbol": "USARB",
+      "ticker": "USAR",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:09:45.166Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0x2206e07410a8fe9ef595e7184b2e9d160fdb7211",
+      "symbol": "USARon",
+      "ticker": "USAR",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:47.210Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x2206e07410a8fe9ef595e7184b2e9d160fdb7211",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "11196969258036679425",
+        "minOutputRaw": "11185772288778642745",
+        "priceImpactBps": 107,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:45.776Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0x2206e07410a8fe9ef595e7184b2e9d160fdb7211",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "5599694962296388462171",
+        "minOutputRaw": "5594095267334092073708",
+        "priceImpactBps": 105,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:45.957Z"
+      },
+      "sell": {
+        "inputToken": "0x2206e07410a8fe9ef595e7184b2e9d160fdb7211",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "5594095267334092073708",
+        "outputRaw": "49681008658700742642924",
+        "minOutputRaw": "49631327650042041900281",
+        "priceImpactBps": -52,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:47.210Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0xc7fb9c23f359b7e072706eb43db8cf489aa8f87f",
+      "symbol": "VSTB",
+      "ticker": "VST",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:09:46.102Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0xf2c24c47805f4f72d3919c8674bfdd401505794b",
+      "symbol": "VSTon",
+      "ticker": "VST",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:47.767Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xf2c24c47805f4f72d3919c8674bfdd401505794b",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "724210603438366771",
+        "minOutputRaw": "723486392834928404",
+        "priceImpactBps": 59,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:46.512Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xf2c24c47805f4f72d3919c8674bfdd401505794b",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "362117820116040315919",
+        "minOutputRaw": "361755702295924275603",
+        "priceImpactBps": 58,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:46.681Z"
+      },
+      "sell": {
+        "inputToken": "0xf2c24c47805f4f72d3919c8674bfdd401505794b",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "361755702295924275603",
+        "outputRaw": "49483478448637222597273",
+        "minOutputRaw": "49433994970188585374675",
+        "priceImpactBps": 34,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:47.767Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0xebe29695f8047c13d36e7a790ca8c1b239ffad1c",
+      "symbol": "WDCB",
+      "ticker": "WDC",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:09:46.854Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0xceb29848d04ad3cb46e1fe8e45b82ffac39d797d",
+      "symbol": "WDCon",
+      "ticker": "WDC",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:48.665Z",
+      "method": "pcsx-indicative-rfq",
+      "small": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xceb29848d04ad3cb46e1fe8e45b82ffac39d797d",
+        "inputRaw": "100000000000000000000",
+        "outputRaw": "285247523395794106",
+        "minOutputRaw": "284962275872398311",
+        "priceImpactBps": 61,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:47.492Z"
+      },
+      "buy": {
+        "inputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "outputToken": "0xceb29848d04ad3cb46e1fe8e45b82ffac39d797d",
+        "inputRaw": "50000000000000000000000",
+        "outputRaw": "142656549659451936349",
+        "minOutputRaw": "142513893109792484412",
+        "priceImpactBps": 58,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:47.731Z"
+      },
+      "sell": {
+        "inputToken": "0xceb29848d04ad3cb46e1fe8e45b82ffac39d797d",
+        "outputToken": "0x55d398326f99059ff775485246999027b3197955",
+        "inputRaw": "142513893109792484412",
+        "outputRaw": "49595151585431885967689",
+        "minOutputRaw": "49545556433846454081721",
+        "priceImpactBps": 12,
+        "marketStatus": "closed",
+        "quotedAt": "2026-11-04T10:09:48.665Z"
+      },
+      "errors": []
+    },
+    {
+      "token": "0xded1c5fb38c262beb9cff1e1116eff3c5bf278cd",
+      "symbol": "WENB",
+      "ticker": "WEN",
+      "issuer": "bstock",
+      "checkedAt": "2026-11-04T10:09:47.798Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    },
+    {
+      "token": "0x79ed7f4d9668e8e7aaadd12a711d19064840b9a5",
+      "symbol": "WENon",
+      "ticker": "WEN",
+      "issuer": "ondo",
+      "checkedAt": "2026-11-04T10:09:48.171Z",
+      "method": "pcsx-indicative-rfq",
+      "small": null,
+      "buy": null,
+      "sell": null,
+      "errors": [
+        "quote-http-404",
+        "quote-http-404",
+        "no-buy-quote"
+      ]
+    }
+  ]
+}

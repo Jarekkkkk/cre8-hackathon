@@ -1,0 +1,300 @@
+/* ATP 控制項對齊已核准 DESIGN.md；覆蓋只落在控制項，不改 vendor 或來源元件。 */
+#root .masthead .header-wallet {
+  min-height: 40px;
+  height: 40px;
+  padding: 0 16px;
+  border: 1px solid var(--ink);
+  border-radius: 10px !important;
+  background: var(--ink);
+  color: var(--snow);
+  font: 500 14px/1.3 var(--sans);
+  letter-spacing: 0;
+  text-transform: none;
+}
+#root .masthead .header-wallet:hover { background: var(--deep); }
+#root .masthead .nav > a { border-radius: 0 !important; }
+
+/* Radix 保留鍵盤與 disabled 行為，只把視覺接回 CRE8。 */
+[data-slot="button"] {
+  min-height: 46px;
+  height: auto;
+  padding: 0 22px;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--snow);
+  font: 500 15px/1.3 var(--sans);
+  letter-spacing: 0;
+  box-shadow: none;
+}
+[data-slot="button"]:hover { background: var(--deep); }
+[data-slot="button"][data-variant="outline"],
+[data-slot="button"][data-variant="ghost"] { background: transparent; color: var(--ink); border-color: var(--hair-2); }
+[data-slot="button"][data-variant="outline"]:hover,
+[data-slot="button"][data-variant="ghost"]:hover { background: var(--snow); border-color: var(--ink); }
+[data-slot="button"][data-size="sm"] { min-height: 38px; padding: 0 16px; font-size: 14px; }
+[data-slot="button"]:disabled { background: var(--snow); color: var(--slate); border-color: var(--hair); opacity: 1; }
+@media (pointer: coarse) { [data-slot="button"][data-size="sm"] { min-height: 40px; } }
+
+/* 期間是分段控制：膠囊外框裡放膠囊選項，選中為深色膠囊（與全站按鈕同一個形狀）。 */
+:is(#root, #atp-reference-sheet) .public-periods {
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  padding: 3px;
+  gap: 2px;
+  border: 0;
+  background: var(--snow);
+}
+:is(#root, #atp-reference-sheet) .public-periods button {
+  flex: 1;
+  min-width: 0;
+  min-height: 32px;
+  height: 32px;
+  padding: 0 14px;
+  border: 0;
+  background: transparent;
+  color: var(--steel);
+  font: 500 12px/1.3 var(--mono);
+  letter-spacing: .04em;
+  box-shadow: none;
+}
+:is(#root, #atp-reference-sheet) .public-periods button:is(.on, [aria-pressed="true"]) { background: var(--ink); color: var(--snow); }
+:is(#root, #atp-reference-sheet) .public-periods button:hover:not(.on):not([aria-pressed="true"]) { color: var(--ink); }
+@media (pointer: coarse) {
+  :is(#root, #atp-reference-sheet) .public-periods button { min-height: 36px; height: 36px; }
+}
+
+/* 關閉圖示仍為 16px，點擊範圍擴成 40px，且不套主要按鈕外觀。 */
+[data-slot="sheet-content"] > [data-slot="sheet-close"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--steel);
+  opacity: 1;
+  box-shadow: none;
+  cursor: pointer;
+}
+[data-slot="sheet-content"] > [data-slot="sheet-close"]:hover { background: var(--snow); color: var(--ink); }
+[data-slot="sheet-content"] > [data-slot="sheet-close"]:focus-visible {
+  outline: 2px solid var(--fog);
+  outline-offset: 3px;
+  box-shadow: none;
+}
+
+/* 角標在裁切框外獨立定位，照片仍保留 22% 圓角。 */
+.public-portrait { overflow: visible; }
+.public-portrait > .fund-x-badge { pointer-events: none; }
+
+/* 已核准的封面例外只套在圖片操作框，不影響一般按鈕。 */
+body.atp-complete-create #root div[data-fund-cover],
+body.atp-complete-create #root button[data-fund-cover] { border-radius: 12px !important; overflow: hidden; }
+body.atp-complete-create #root button[data-fund-cover] img { border-radius: 8px !important; }
+
+/*
+ * ── 全站版面格線（桌面與平板）──
+ * 原本頁首 1240／24、基金列表 1344／40、Portfolio 與基金詳情 1120／24、Create 1240／24，
+ * 同一個視窗裡五個頁面的左緣落在五個位置，換頁時整個版面會「跳」。
+ * 統一成 DESIGN.md 的 1344px／40px gutter：logo、頁標題、返回連結與內容都對齊同一條線。
+ */
+@media (min-width: 720px) {
+  :root { --page-max: 1344px; --page-gutter: 40px; }
+  #root .app-masthead .wrap,
+  #root > main.explore-wrap,
+  #root > main.vault-content,
+  #root > main.page,
+  body.atp-complete-create #root > main {
+    max-width: var(--page-max);
+    margin-inline: auto;
+    padding-left: var(--page-gutter);
+    padding-right: var(--page-gutter);
+  }
+  body.atp-complete-market #root > main.explore-wrap { padding-left: var(--page-gutter); padding-right: var(--page-gutter); }
+
+  /* 基金詳情：主欄變寬後封面改 21:9，報酬數字才不會被推到第一屏以外。 */
+  body.atp-formal-fund .vgrid { grid-template-columns: minmax(0, 1fr) 360px; gap: 64px; }
+  body.atp-formal-fund #atp-fund-cover { aspect-ratio: 21 / 9; }
+  body.atp-formal-fund .vgrid > .main :is(.vault-about, .recent-trades) p { max-width: 72ch; }
+
+  /* 頁標題：各頁同一個字級與節奏（Create 原本是 32px、其他是 44px）。 */
+  body.atp-complete-create #root > main > div:first-child > h1 {
+    font: 600 44px/1.15 var(--sans);
+    letter-spacing: -1.6px;
+  }
+
+  /*
+   * 桌面 Funds 改成封面卡片：原本是一列一檔，名字在最左、報酬在最右，中間一大片空白，
+   * 而每檔基金精心做的封面只縮成小圖。卡片讓封面成為主角，名字、報酬、走勢集中在一起，
+   * 眼睛不必橫跨整個螢幕。標記不變，只換版面（手機維持列表）。
+   */
+  body.atp-formal-market #fund-explore .fund-list-columns { display: none; }
+  body.atp-formal-market #fund-explore .fund-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 44px 28px;
+    border: 0;
+  }
+  body.atp-formal-market #fund-explore .fund-row,
+  body.atp-formal-market #fund-explore .fund-row:hover { border: 0; background: none; }
+  body.atp-formal-market #fund-explore .fund-row-link {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: auto auto auto auto;
+    column-gap: 16px;
+    row-gap: 0;
+    align-items: start;
+    padding: 0;
+  }
+  /* 封面點下去是進基金頁（整張卡片都是連結）；人物介紹改由滑過名字觸發。 */
+  body.atp-formal-market #fund-explore .public-portrait {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    z-index: auto;
+    width: 100%;
+    max-width: none;
+    margin-bottom: 16px;
+    pointer-events: none;
+  }
+  body.atp-formal-market #fund-explore .fund-thumb {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: none;
+    max-height: none;
+    aspect-ratio: 16 / 10;
+  }
+  body.atp-formal-market #fund-explore .fund-thumb > img { transition: transform .4s ease; }
+  body.atp-formal-market #fund-explore .fund-row:hover .fund-thumb > img { transform: scale(1.03); }
+  body.atp-formal-market #fund-explore .fund-list-body { grid-column: 1; grid-row: 2 / span 2; }
+  body.atp-formal-market #fund-explore .fund-list-body h3 { margin: 0 0 4px; font: 600 18px/1.3 var(--sans); letter-spacing: -.3px; }
+  body.atp-formal-market #fund-explore .fund-row .fund-name-sep { display: none; }
+  body.atp-formal-market #fund-explore .fund-row .fund-name-org { display: block; margin-top: 2px; color: var(--steel); font: 400 14px/1.4 var(--sans); letter-spacing: 0; }
+  body.atp-formal-market #fund-explore .fund-list-result { grid-column: 2; grid-row: 2; }
+  body.atp-formal-market #fund-explore .fund-list-result strong { font: 600 18px/1.3 var(--sans); letter-spacing: -.2px; }
+  body.atp-formal-market #fund-explore .fund-list-trend { display: block; grid-column: 2; grid-row: 3; justify-self: end; width: 84px; height: 24px; margin-top: 4px; }
+  .fund-list-trend.pos { color: var(--positive); }
+  .fund-list-trend.neg { color: var(--negative); }
+  body.atp-formal-market #fund-explore .fund-asset-icons { grid-column: 1 / -1; grid-row: 4; justify-content: flex-start; margin-top: 14px; }
+  body.atp-formal-market #fund-explore .fund-asset-icons img { width: 22px; height: 22px; }
+
+  /*
+   * 篩選壓成一列：分類標籤在左、Assets／Advanced／搜尋在右，共用一條底線。
+   * 原本標題、分類、篩選、分區標題、欄位標題疊了五層，第一檔基金要到半個螢幕以下才出現。
+   */
+  body.atp-formal-market #fund-explore { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 0; }
+  body.atp-formal-market #fund-explore > * { grid-column: 1 / -1; }
+  body.atp-formal-market #fund-explore > .collection-tabs,
+  body.atp-formal-market #fund-explore > .explore-toolbar {
+    align-self: stretch;
+    margin: 0 0 40px;
+    border-bottom: 1px solid var(--hair);
+  }
+  body.atp-formal-market #fund-explore > .collection-tabs { grid-column: 1; }
+  body.atp-formal-market #fund-explore > .explore-toolbar { grid-column: 2; align-items: center; gap: 20px; padding: 0 0 8px 24px; }
+  body.atp-formal-market #fund-explore .explore-heading { margin-bottom: 20px; }
+  body.atp-formal-market #fund-explore .explore-collection { margin-bottom: 64px; }
+  body.atp-formal-market #fund-explore .explore-collection > header { margin-bottom: 20px; }
+
+  /* 頁首：未連錢包時 Connect wallet 是唯一的主要動作（深色）；連上後是淺色帳戶膠囊。Studio 是次要文字按鈕。 */
+  #root .masthead .header-wallet[data-wallet-state="disconnected"] { border-color: var(--ink); background: var(--ink); color: var(--snow); }
+  #root .masthead .header-wallet[data-wallet-state="disconnected"]:hover { border-color: var(--deep); background: var(--deep); }
+  /* 進 Studio：品牌藍灰淡色底，跟一般文字按鈕區分；離開 Studio：中性的文字按鈕。都不搶 Connect wallet。 */
+  #root .app-masthead .app-mode-switch { gap: 6px; border-color: transparent; background: transparent; color: var(--deep); font-weight: 600; }
+  #root .app-masthead .app-mode-switch[data-target="studio"] { background: rgb(111 147 174 / 16%); color: var(--deep); }
+  #root .app-masthead .app-mode-switch[data-target="studio"]:hover { background: rgb(111 147 174 / 26%); color: var(--ink); }
+  #root .app-masthead .app-mode-switch[data-target="invest"]:hover { background: var(--snow); color: var(--ink); }
+}
+@media (min-width: 720px) and (max-width: 1023px) {
+  :root { --page-gutter: 24px; }
+  #root .app-masthead .wrap { gap: 28px; }
+  #root .app-masthead .wrap > .app-mode-label { margin-left: -12px; }
+  body.atp-formal-market #fund-explore .fund-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px 20px; }
+  body.atp-formal-market #fund-explore { grid-template-columns: minmax(0, 1fr); }
+  body.atp-formal-market #fund-explore > .explore-toolbar { grid-column: 1; margin-top: -24px; padding-left: 0; }
+  body.atp-formal-fund .vgrid { grid-template-columns: minmax(0, 1fr) 300px; gap: 32px; }
+}
+@media (min-width: 1680px) {
+  body.atp-formal-market #fund-explore .fund-list { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+/* 桌面頁首：Studio 標記緊跟在 logo 後，模式切換放在錢包左邊，兩者同高。 */
+@media (min-width: 720px) {
+  /* 頁首 .wrap 的 gap 是 48px（平板 28px）；把標記拉回 logo 旁，看起來是 logo 的一部分。 */
+  #root .app-masthead .wrap > .app-mode-label { margin-left: -24px; }
+  #root .app-masthead .head-right { display: flex; align-items: center; gap: 10px; }
+}
+
+/*
+ * ── 基金頁（桌面）──
+ * 報酬：標籤在數字上方（先說「這是什麼」再給數字）；關鍵數字排成一列，不再一個在最左、一個在最右。
+ * 交易面板：外框保留（它是固定在側邊的操作區），裡面的輸入區不再是框中框。
+ * 主要按鈕在桌面統一為深色（與頁首 Connect wallet 一致）。
+ */
+@media (min-width: 720px) {
+  body.atp-formal-fund .atp-fund-byline { min-height: 0; padding-top: 14px; }
+  body.atp-formal-fund .atp-fund-byline:not(:has(.fund-introduction-identity)) { justify-content: flex-end; }
+  body.atp-formal-fund .vault-performance .performance-head { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; margin-top: 12px; }
+  body.atp-formal-fund .vault-performance .performance-meta { order: -1; display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 8px; margin: 0; }
+  body.atp-formal-fund .vault-performance .performance-meta > p { margin: 0; color: var(--steel); font: 500 14px/1.4 var(--sans); }
+  body.atp-formal-fund .vault-performance .performance-description { order: -1; color: var(--ink) !important; }
+  body.atp-formal-fund .vault-performance .performance-description::after { margin-left: 8px; color: var(--slate); content: "·"; }
+  body.atp-formal-fund #keyfig.public-kpis {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 56px;
+    margin: 24px 0 8px;
+    padding: 20px 0 0;
+    border-top: 1px solid var(--hair);
+  }
+  body.atp-formal-fund #keyfig.public-kpis > div { display: grid; gap: 4px; text-align: left; }
+  body.atp-formal-fund #keyfig.public-kpis dt { color: var(--steel); font: 400 13px/1.4 var(--sans); }
+  body.atp-formal-fund #keyfig.public-kpis dd { margin: 0; color: var(--ink); font: 550 22px/1.25 var(--sans); letter-spacing: -.3px; font-variant-numeric: tabular-nums; }
+  body.atp-formal-fund #keyfig.public-kpis dd small { color: var(--steel); font-size: 13px; font-weight: 400; }
+
+  body.atp-formal-fund #ticket .swap-box { border: 0; background: var(--paper); }
+  html #root .btn:is(.primary, .btn--primary):not(:disabled) { border-color: var(--ink); background: var(--ink); color: var(--snow); }
+  html #root .btn:is(.primary, .btn--primary):not(:disabled):is(:hover, :active) { border-color: var(--deep); background: var(--deep); }
+}
+
+/*
+ * 桌面的空狀態（未連錢包、還沒有基金）置中：原本整塊靠左，右邊留一大片空白，看起來像版面壞掉。
+ * 同一個畫面只留一個 Connect wallet：頁面本身已有連線按鈕時，頁首那顆隱藏（手機版本來就這樣）。
+ */
+@media (min-width: 720px) {
+  #root .app-portfolio-summary.app-portfolio-guest {
+    justify-items: center;
+    max-width: 520px;
+    margin: 72px auto 0;
+    padding: 0;
+    text-align: center;
+  }
+  #root .app-portfolio-guest .wallet-menu--inline { width: 100%; max-width: 320px; margin-top: 10px; }
+  #root .app-portfolio-guest > a:not(.btn) { justify-self: center; }
+  #root .app-portfolio-guest > .btn { margin-top: 10px; }
+  #root:has(main .wallet-menu--inline) .masthead .header-wallet[data-wallet-state="disconnected"] { display: none; }
+  /* 空狀態本身已經有「建立基金」的連結，標題旁那顆就不重複。 */
+  #root .app-studio:has(.app-portfolio-guest) .app-portfolio-create { display: none; }
+}
+
+/* Funds 桌面的單一 Filters：面板靠右對齊按鈕，資產類型與排序／期間放在同一個面板。 */
+@media (min-width: 720px) {
+  #fund-explore .explore-filter--all { position: relative; }
+  #fund-explore .explore-filter--all > .explore-filter-panel { left: auto; right: 0; display: grid; gap: 16px; min-width: 340px; }
+  #fund-explore .explore-filter--all .app-filter-fields { display: grid; gap: 6px; margin: 0; padding: 0; border: 0; }
+  #fund-explore .explore-filter--all .app-filter-fields > legend { margin-bottom: 6px; color: var(--steel); font: 500 13px/1.3 var(--sans); }
+  #fund-explore .explore-filter--all .app-filter-count {
+    display: inline-grid;
+    place-items: center;
+    min-width: 18px;
+    height: 18px;
+    margin-left: 6px;
+    padding: 0 5px;
+    border-radius: 999px;
+    background: var(--ink);
+    color: var(--snow);
+    font: 600 11px/1 var(--sans);
+  }
+}

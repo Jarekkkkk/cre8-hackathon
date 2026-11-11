@@ -1,0 +1,54 @@
+name: CI
+
+# 只在「會改變產物」的事件上跑：
+#   pull_request        → 別人的 PR 也要驗
+#   push to main        → 部署前的最後一道
+#   workflow_dispatch   → 手動重跑
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# 同一分支的新 push 會取消舊的執行 —— 前端的 typecheck+build 很快，不需要排隊。
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: typecheck + build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: '1.4.4'   # 與本機一致；升版要跟 lockfile 一起升
+
+      # `--frozen-lockfile`：lockfile 與 package.json 不一致時**直接失敗**，
+      # 而不是安靜地裝一組新的依賴。CI 上這比「方便」重要。
+      - name: Install
+        run: bun install --frozen-lockfile
+
+      # 先 typecheck 再 build：build script 本身也含 tsc，但分開跑才能一眼看出
+      # 是型別壞了還是打包壞了。
+      - name: Unit tests
+        run: bun test tests
+
+      - name: Typecheck
+        run: bun run typecheck
+
+      - name: Build
+        # VITE_CHAIN_ID 等值來自 `.env.production`（已進版控），不是這裡注入 ——
+        # 建置設定只有一個來源，避免 CI 與本機產生不同的 bundle。
+        run: bun run build
+
+      - name: Upload dist
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist
+          retention-days: 7

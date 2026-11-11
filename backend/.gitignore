@@ -1,0 +1,15 @@
+node_modules/
+dist/
+coverage/
+.env
+.env.*
+!.env.example
+.DS_Store
+*.log
+
+# Railway CLI 的設定目錄（含登入 token）—— 沙箱不能寫 ~/.railway，所以指到工作區內
+.railway-home/
+# Railway 的專案連結狀態
+.railway/
+# prepare-deploy.ts 產生的部署目錄（每次部署前重生）
+.deploy/

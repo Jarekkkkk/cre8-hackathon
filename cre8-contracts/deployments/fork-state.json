@@ -1,0 +1,95 @@
+{
+  "capturedAt": "2026-11-06T09:43:51Z",
+  "chainId": 56,
+  "blockNumber": 131983191,
+  "anvilRpc": "http://127.0.0.1:8545",
+  "contracts": {
+    "registry": {
+      "address": "0x27739a1AD35a924F5545C7d04C2B0537069CA76C",
+      "source": "broadcast/DeployAtp.s.sol/56/run-latest.json",
+      "contractName": "AtpRegistry",
+      "codeBytes": 6410,
+      "hasCode": true
+    },
+    "executor": {
+      "address": "0x60691760815C69d32c1f68146FA11669F62A4b38",
+      "source": "broadcast/DeployAtp.s.sol/56/run-latest.json",
+      "contractName": "AtpExecutor",
+      "codeBytes": 5629,
+      "hasCode": true
+    },
+    "oracle": {
+      "address": "0x3D79c9BE8c087097Cbb1A8Be0D2714cf8BA95B84",
+      "source": "broadcast/DeployAtp.s.sol/56/run-latest.json",
+      "contractName": "PancakeV3TwapOracle",
+      "codeBytes": 5699,
+      "hasCode": true
+    },
+    "pool": {
+      "address": "0x36696169C63e42cd08ce11f5deeBbCeBae652050",
+      "source": "upstream BSC",
+      "codeBytes": 22962,
+      "hasCode": true
+    },
+    "router": {
+      "address": "0x1A0A18AC4BECDDbd6389559687d1A73d8927E416",
+      "source": "upstream BSC",
+      "codeBytes": 16684,
+      "hasCode": true
+    },
+    "permit2": {
+      "address": "0x31c2F6fcFf4F8759b3Bd5Bf0e1084A055615c768",
+      "source": "upstream BSC",
+      "codeBytes": 7020,
+      "hasCode": true
+    }
+  },
+  "registry": {
+    "operator": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "owner": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "ownerIsOperator": true,
+    "activeVersion_of_1": 1,
+    "versionCount_of_1": 1,
+    "strategy1": {
+      "provider": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+      "name": "Fork Mag7 Index",
+      "description": "integration test",
+      "isPublic": true
+    },
+    "isEnrolled_operator": true,
+    "enrollments_operator": {
+      "strategyId": 1,
+      "version": 1,
+      "paused": false
+    },
+    "nextStrategyId": 1,
+    "nextStrategyIdNote": "id = ++nextStrategyId，故下一次 createStrategy 會拿到 id=2",
+    "defaultSwapFeeBps": 0,
+    "effectiveFeeBps_of_1": 0,
+    "swapFeeBpsGetter": "不存在（swapFeeBps()/feeBps() 皆 revert）；實際 getter 為 defaultSwapFeeBps() 與 effectiveFeeBps(uint256)",
+    "operatorBalanceWei": "9999999323724850000000",
+    "operatorBalanceBnb": "9999.99932372485"
+  },
+  "kernelInfra": {
+    "entryPointV07": {
+      "address": "0x0000000071727De22E5E9d8BAf0edAc6f37da032",
+      "codeBytes": 16035,
+      "hasCode": true
+    },
+    "metaFactory": {
+      "address": "0xd703aaE79538628d27099B8c4f621bE4CCd142d5",
+      "codeBytes": 1871,
+      "hasCode": true
+    },
+    "factoryV33": {
+      "address": "0x2577507b78c2008Ff367261CB6285d44ba5eF2E9",
+      "codeBytes": 950,
+      "hasCode": true
+    },
+    "ecdsaValidator": {
+      "address": "0x845ADb2C711129d4f3966735eD98a9F09fC4cE57",
+      "codeBytes": 1819,
+      "hasCode": true
+    }
+  }
+}

@@ -1,0 +1,136 @@
+/*
+ * 正式 UI 同步（2026-11-11）。來源：bnb-agent-vaults 4045d854。
+ * 只疊加公開市集的呈現；vendor 設計稿、sx- token、交易元件與工具頁不互相覆寫。
+ */
+body.atp-formal-market, body.atp-formal-fund {
+  --bg: var(--white);
+  --card: var(--white);
+  background: var(--white);
+}
+body.atp-formal-market .explore-wrap { max-width: 1120px; padding: 40px 24px 80px; }
+body.atp-formal-market .explore-heading { margin-bottom: 18px; }
+body.atp-formal-market .explore-heading h1 { font: 600 44px/1.15 var(--sans); letter-spacing: -1.6px; }
+body.atp-formal-market .explore-disclosure { margin: 0 0 30px; font: 400 13px/1.5 var(--sans); color: var(--steel); }
+body.atp-formal-market .explore-toolbar { margin-bottom: 36px; }
+body.atp-formal-market .explore-filter summary { min-height: 44px; display: flex; align-items: center; gap: 7px; }
+body.atp-formal-market .explore-filter-panel { z-index: 30; border-radius: 12px !important; }
+body.atp-formal-market .atp-sort-filter label { display: grid; gap: 10px; }
+body.atp-formal-market .atp-sort-filter select { width: 100%; min-height: 40px; }
+body.atp-formal-market .atp-sort-filter p { margin: 10px 0 0; color: var(--steel); font-size: 12px; line-height: 1.5; }
+body.atp-formal-market .explore-search { min-height: 42px; border-radius: 999px !important; }
+body.atp-formal-market .explore-search input { min-height: 40px; font-size: 14px; }
+body.atp-formal-market .explore-collection { margin-bottom: 44px; }
+body.atp-formal-market .explore-collection > header { margin-bottom: 18px; }
+body.atp-formal-market .explore-collection h2 { font: 600 25px/1.2 var(--sans); }
+body.atp-formal-market .fund-row-link,
+body.atp-formal-market .fund-list-columns {
+  display: grid; grid-template-columns: 88px minmax(0, 1fr) 112px 172px;
+  column-gap: 24px; align-items: center;
+}
+body.atp-formal-market .fund-row { border: 0; border-bottom: 1px solid rgba(22, 34, 45, .08); background: var(--white); }
+body.atp-formal-market .fund-row-link { padding: 26px 0; text-decoration: none; color: var(--ink); }
+body.atp-formal-market .fund-list-columns { padding: 8px 0 4px; color: var(--steel); font: 400 13px/1.5 var(--sans); text-align: right; }
+body.atp-formal-market .fund-list-columns > span:first-child { grid-column: 1 / span 2; text-align: left; }
+body.atp-formal-market #fund-explore .fund-thumb { display: block; width: 88px; height: 88px; overflow: hidden; border-radius: 22% !important; background: var(--snow); }
+body.atp-formal-market .fund-thumb > img { display: block; width: 100%; height: 100%; object-fit: cover; }
+body.atp-formal-market .fund-list-body { min-width: 0; }
+body.atp-formal-market .fund-list-body h3 { margin: 0 0 8px; font: 600 22px/1.25 var(--sans); letter-spacing: -.5px; overflow-wrap: normal; }
+body.atp-formal-market .fund-row-creator { display: flex; align-items: center; gap: 7px; color: var(--steel); font: 400 14px/1.4 var(--sans); }
+body.atp-formal-market .fund-row-creator img { width: 17px; height: 17px; flex: none; }
+body.atp-formal-market .fund-list-result { text-align: right; white-space: nowrap; }
+body.atp-formal-market .fund-list-result strong { font: 550 22px/1.25 var(--sans); letter-spacing: -.5px; font-variant-numeric: tabular-nums; }
+body.atp-formal-market .fund-asset-icons { display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: 6px; min-width: 0; }
+body.atp-formal-market .fund-asset-icons img { display: block; width: 28px; height: 28px; flex: none; border-radius: 50% !important; object-fit: contain; }
+body.atp-formal-market .fund-assets-more { margin-left: 2px; color: var(--steel); font: 500 13px/1.4 var(--sans); white-space: nowrap; }
+body.atp-formal-market .fund-row-link:hover h3 { text-decoration: none; color: var(--deep); }
+
+body.atp-formal-fund .vault-content { max-width: 1120px; padding: 28px 24px 64px; }
+body.atp-formal-fund .vgrid { grid-template-columns: minmax(0, 1fr) 320px; gap: 48px; align-items: start; }
+body.atp-formal-fund .vgrid > .main { display: flex; flex-direction: column; gap: 0; min-width: 0; }
+body.atp-formal-fund .vgrid > .side { position: sticky; top: 96px; min-width: 0; }
+body.atp-formal-fund .vault-top { margin-bottom: 20px; }
+body.atp-formal-fund .vhead { margin: 0; }
+body.atp-formal-fund .vault-heading { display: block; }
+body.atp-formal-fund .vault-back { display: inline-flex; margin: 0 0 24px; font: 500 16px/1.5 var(--sans); }
+body.atp-formal-fund #atp-fund-cover { position: relative; isolation: isolate; aspect-ratio: 16 / 9; overflow: hidden; border-radius: 12px !important; background: var(--deep); }
+body.atp-formal-fund .atp-fund-cover > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+body.atp-formal-fund .atp-fund-cover-shade { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 48%, rgba(22, 34, 45, .8) 100%); }
+body.atp-formal-fund .atp-fund-cover h1 { position: absolute; left: 24px; right: 24px; bottom: 24px; margin: 0; font: 600 38px/1.12 var(--sans); letter-spacing: -1px; color: var(--white); text-wrap: balance; }
+body.atp-formal-fund .atp-fund-byline { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; min-height: 64px; }
+body.atp-formal-fund .atp-fund-byline .vault-head-actions { margin-inline-start: auto; }
+body.atp-formal-fund .vault-manager { display: flex; align-items: center; gap: 7px; margin: 0; font: 400 14px var(--sans); color: var(--steel); }
+body.atp-formal-fund .vault-manager strong { color: var(--ink); font-weight: 500; }
+body.atp-formal-fund .vault-manager img { flex: none; }
+body.atp-formal-fund .vault-head-actions { margin: 0; gap: 12px; }
+body.atp-formal-fund .atp-facts-trigger { padding: 8px 0; min-height: 44px; border: 0; background: none; color: var(--steel); font: 400 14px var(--sans); cursor: pointer; }
+body.atp-formal-fund .vault-performance { margin: 0; padding: 0; border: 0; background: var(--white); box-shadow: none; }
+body.atp-formal-fund .atp-performance-return { margin: 0; font: 550 52px/1.1 var(--sans); letter-spacing: -1.8px; font-variant-numeric: tabular-nums; }
+body.atp-formal-fund .atp-performance-caption { margin: 8px 0 0; color: var(--steel); font: 400 13px/1.5 var(--sans); }
+body.atp-formal-fund .vault-performance .chart { margin-top: 24px; }
+body.atp-formal-fund .vault-chart-top { justify-content: flex-start; margin-top: 12px; }
+body.atp-formal-fund .vault-chart-top .seg { display: flex; width: 100%; max-width: 390px; justify-content: space-between; gap: 12px; border: 0; background: transparent; }
+body.atp-formal-fund #atp-chart-period button { flex: 1; min-height: 42px; border: 0; border-radius: 22px !important; padding: 8px 12px; color: var(--steel); font: 400 14px var(--sans); }
+body.atp-formal-fund #atp-chart-period button.on { background: var(--ink); color: var(--white); }
+body.atp-formal-fund .atp-fund-secondary { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 28px 0 44px; }
+body.atp-formal-fund .atp-fund-secondary > div:last-child { text-align: right; }
+body.atp-formal-fund .atp-fund-secondary dt { margin-bottom: 4px; color: var(--steel); font: 400 13px/1.5 var(--sans); }
+body.atp-formal-fund .atp-fund-secondary dd { margin: 0; font: 500 20px/1.4 var(--sans); font-variant-numeric: tabular-nums; }
+body.atp-formal-fund .atp-holding-identity { display: inline-flex; align-items: center; gap: 7px; }
+body.atp-formal-fund .atp-holding-identity img { width: 20px; height: 20px; object-fit: contain; flex: none; }
+body.atp-formal-fund #ticket { border: 1px solid rgba(22, 34, 45, .08); border-radius: 16px !important; overflow: hidden; background: var(--white); scroll-margin-top: 110px; }
+body.atp-formal-fund #ticket [data-slot="tabs-list"] { display: flex; width: 100%; padding: 0; min-height: 56px; background: var(--white); border-bottom: 1px solid var(--hair); }
+body.atp-formal-fund #ticket [data-slot="tabs-trigger"] { min-height: 56px; border: 0; border-radius: 0 !important; background: transparent; color: var(--steel); font: 500 16px var(--sans); }
+body.atp-formal-fund #ticket [data-slot="tabs-trigger"][data-state="active"] { color: var(--ink); border-bottom: 2px solid var(--ink); box-shadow: none; }
+body.atp-formal-fund #ticket .btn { border-radius: 11px !important; min-height: 52px; }
+body.atp-formal-fund #ticket .swap-box { border-radius: 11px !important; }
+
+@media (max-width: 960px) and (min-width: 720px) {
+  body.atp-formal-fund .vgrid { grid-template-columns: minmax(0, 1fr) 290px; gap: 28px; }
+  body.atp-formal-fund .atp-fund-cover h1 { font-size: 30px; }
+}
+@media (max-width: 700px) {
+  body.atp-formal-market .explore-wrap { padding: 28px 20px 60px; }
+  body.atp-formal-market .explore-heading h1 { font-size: 32px; letter-spacing: -1px; }
+  body.atp-formal-market .explore-collection h2 { font-size: 22px; }
+  body.atp-formal-market .explore-collection > header { margin-bottom: 8px; }
+  body.atp-formal-market .fund-list-columns { display: none; }
+  body.atp-formal-market .fund-row-link { grid-template-columns: 76px minmax(0, 1fr) 104px; gap: 10px 14px; padding: 24px 0; }
+  body.atp-formal-market #fund-explore .fund-thumb { width: 76px; height: 76px; grid-column: 1; grid-row: 1 / span 2; }
+  body.atp-formal-market .fund-list-body { grid-column: 2; grid-row: 1 / span 2; }
+  body.atp-formal-market .fund-list-body h3 { font-size: 20px; }
+  body.atp-formal-market .fund-list-result { grid-column: 3; grid-row: 1; align-self: end; }
+  body.atp-formal-market .fund-list-result strong { font-size: 20px; }
+  body.atp-formal-market .fund-asset-icons { grid-column: 3; grid-row: 2; align-self: start; gap: 4px; }
+  body.atp-formal-market .fund-asset-icons img { width: 22px; height: 22px; }
+  body.atp-formal-market .fund-assets-more { font-size: 12px; margin: 0; }
+  body.atp-formal-market .explore-toolbar { flex-wrap: wrap; gap: 12px; }
+  body.atp-formal-market .explore-filter-list { flex-wrap: wrap; }
+}
+@media (max-width: 719px) {
+  body.atp-formal-fund .vault-content { padding: 18px 20px 64px; }
+  body.atp-formal-fund .vgrid { display: flex; flex-direction: column; gap: 28px; }
+  body.atp-formal-fund .vgrid > .main, body.atp-formal-fund .vgrid > .side { width: 100%; }
+  body.atp-formal-fund .vgrid > .side { position: static; }
+  body.atp-formal-fund .vault-back { margin-bottom: 16px; }
+  body.atp-formal-fund #atp-fund-cover { margin-inline: -20px; width: calc(100% + 40px); border-radius: 0 !important; }
+  body.atp-formal-fund .atp-fund-cover h1 { font-size: 34px; left: 22px; right: 22px; bottom: 24px; }
+  body.atp-formal-fund .atp-performance-return { font-size: 46px; }
+  body.atp-formal-fund .vault-chart-top .seg { gap: 5px; }
+  body.atp-formal-fund #atp-chart-period button { padding-inline: 8px; }
+  body.atp-formal-fund .dk-table.vault-where { min-width: 0; }
+  body.atp-formal-fund .dk-table.vault-where th, body.atp-formal-fund .dk-table.vault-where td { font-size: 13px; padding-inline: 5px; }
+  body.atp-formal-fund .atp-holding-identity { gap: 5px; }
+}
+@media (max-width: 360px) {
+  body.atp-formal-market .explore-wrap { padding-inline: 16px; }
+  body.atp-formal-market .fund-row-link { grid-template-columns: 60px minmax(0, 1fr) 86px; column-gap: 10px; }
+  body.atp-formal-market #fund-explore .fund-thumb { width: 60px; height: 60px; }
+  body.atp-formal-market .fund-list-body h3, body.atp-formal-market .fund-list-result strong { font-size: 17px; }
+  body.atp-formal-market .fund-asset-icons { gap: 3px; }
+  body.atp-formal-market .fund-asset-icons img { width: 19px; height: 19px; }
+}
+
+/* vendor 的全域方角規則優先序很高，公開目錄以本身 id 限定覆蓋。 */
+#fund-explore .explore-collection h2 span { border-radius: 20px !important; }
+#fund-explore .explore-search { border-radius: 999px !important; }
+#fund-explore .explore-filter-panel { border-radius: 12px !important; }

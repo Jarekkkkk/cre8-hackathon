@@ -1,0 +1,39 @@
+{
+  "chainId": 56,
+  "deployedAt": "2026-11-09T19:26:00Z",
+  "deployer": "0x70fc55f8BF3BE3E599566417A1a58c9bf6a7c60c",
+  "note": "\u9996\u6b21\u4e3b\u7db2\u90e8\u7f72\u3002oracle \u7d81\u5b9a\u7684\u6c60\u5b50\u5df2\u9a57\u8b49\u6709\u6d41\u52d5\u6027\uff08TSLAB 8.12e23 / SPCXB 5.19e23 / BTCB 9.43e23 / ETH 3.39e23\uff09",
+  "contracts": {
+    "AtpRegistry": "0xf429929c9fc89446c08fd4c201543b40d7d3d67a",
+    "PancakeV3TwapOracle_WBNB_USDT": "0x7c7df82b4c27251db247af363f99e595d42a8d78",
+    "PancakeV3TwapOracle_NVDAB_USDT": "0xebf5a243e79436b49dcfb8092968b161e323d873",
+    "AtpMultiPoolOracle": "0x6a31f0c5180e5d25accf5775da98e2404a46d869",
+    "AtpExecutor": "0x547764c2a6f789986f0f3e532c115ffc7e3ac9e7",
+    "PancakeV3TwapOracle_DOGE_USDT": "0x90ee0746cd1e32f55c0188bbe1e60a954cea1fd1"
+  },
+  "gasSpent": "0.000299 BNB",
+  "txCount": 7,
+  "oraclePools": {
+    "TSLAB": {
+      "pool": "0xb0f5e5400e8f0f7c242f2b7740c004f020579c41",
+      "fee": 2500
+    },
+    "SPCXB": {
+      "pool": "0x977daffc095b33872e2741c19568925015c35b4d",
+      "fee": 2500
+    },
+    "BTCB": {
+      "pool": "0x46cf1cf8c69595804ba91dfdd8d6b960c9b0a7c4",
+      "fee": 500
+    },
+    "ETH": {
+      "pool": "0xbe141893e4c6ad9272e8c04bab7e6a10604501a5",
+      "fee": 500
+    },
+    "DOGE": {
+      "pool": "0x89da4102853c6cf3f4e9979cbb1dc4a166f38e84",
+      "fee": 10000
+    }
+  },
+  "notes": "DOGE oracle \u984d\u5916\u90e8\u7f72\uff082026-11-09\uff09\uff1afee=10000 \u7684 DOGE/USDT \u6c60\uff0c\u56e0\u70ba fee=500 \u7684\u6c60 liquidity \u662f 0\u3001fee=2500 \u7684\u6c60\u5169\u500b\u65b9\u5411\u5831\u50f9\u5dee 20 \u500d\u3002"
+}
