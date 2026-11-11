@@ -10,7 +10,7 @@ funds only — target weights plus a rebalance schedule, with bStock tokens on B
 
 **New to this project → read in this order:**
 
-1. [HANDOFF.zh-TW.md](./HANDOFF.zh-TW.md) — current state, what is done, what to do next
+1. [HANDOFF.md](./HANDOFF.md) — current state, what is done, what to do next
 2. [pitfalls.zh-TW.md](./pitfalls.zh-TW.md) — the traps we already hit. **This one saves you the most time**
 3. [decisions.zh-TW.md](./decisions.zh-TW.md) — why things are built this way, including decisions that were overturned
 4. [runbook.zh-TW.md](./runbook.zh-TW.md) — how to start it, how to verify, how to debug
@@ -26,7 +26,7 @@ has many cases where the error message points at the wrong thing.
 
 | Document | Content | When to read |
 |---|---|---|
-| [HANDOFF.zh-TW.md](./HANDOFF.zh-TW.md) | Current state, open items, next decision points | Every handover, end of every milestone |
+| [HANDOFF.md](./HANDOFF.md) | Current state, open items, next decision points | Every handover, end of every milestone |
 | [pitfalls.zh-TW.md](./pitfalls.zh-TW.md) | Traps actually hit: symptom → cause → fix | **First stop when something behaves oddly** |
 | [decisions.zh-TW.md](./decisions.zh-TW.md) | Decision log: options, choice, rationale, risk, owner | Before an architectural change, or when questioning a design |
 | [runbook.zh-TW.md](./runbook.zh-TW.md) | Environment startup, verification commands, troubleshooting table | Whenever you need to run something |
