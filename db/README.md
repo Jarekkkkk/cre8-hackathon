@@ -1,6 +1,6 @@
 # cre8-atp-db
 
-The off-chain database schema for CRE8 ATP (Postgres 15+). A standalone project holding only migrations
+The off-chain database schema for CRE8 (Postgres 15+). A standalone project holding only migrations
 and documentation; the code that runs them lives in [`backend/`](../backend).
 
 ## Files

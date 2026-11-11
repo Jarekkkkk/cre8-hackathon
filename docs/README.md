@@ -1,4 +1,4 @@
-# CRE8 ATP documentation
+# CRE8 documentation
 
 CRE8 moved from a pooled vault to **ATP (Automated Token Portfolio)**: one non-custodial smart
 account per user, with the architecture modelled on Glider. The first release covers equity index

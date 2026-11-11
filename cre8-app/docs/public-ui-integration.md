@@ -23,7 +23,7 @@
 * 初始資料完整保留來源已發布 NAV、人物、持倉與調倉更新，沒有使用目前配置重算過去。
 * 人物官方資料按持倉基準日重建；X voices 按來源公開貼文模型重播。持倉快照變動保留其披露來源，不能宣稱本人逐筆實盤成交。
 * Sharpe 與 volatility 使用來源的日曆日方法，至少 90 個連續日報酬；無風險參考利率只用前一 NAV 日已觀察到的最新值。選定期間會同時套用報酬、回撤與詳細統計。
-* 當期持倉權重會隨價格漂移；ATP 的目標配置取 `backtest.targets`，不把漂移後持倉當成配置指令。
+* 當期持倉權重會隨價格漂移；CRE8 的目標配置取 `backtest.targets`，不把漂移後持倉當成配置指令。
 * `/reference-data/demo-funds` 為固定 Vercel 來源的 GET/HEAD 代理，拒絕其他方法，不轉發 Cookie 或 Authorization，也不回傳 Set-Cookie。
 * 客戶端只接受完整同一目錄、連續日期 NAV、吻合的 share price／returns／drawdown 與有效來源更新；原子套用。請求或驗證失敗保留原截止日，一小時後可重試。
 * 資產行情保留其自身資料時間，並非即時成交報價；公開基金參考數值不會代替 Portfolio 的真實 API 估值。

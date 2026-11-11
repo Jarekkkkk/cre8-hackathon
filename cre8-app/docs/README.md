@@ -7,7 +7,7 @@
 | [`user-flow.md`](./user-flow.md) | 使用者流程圖：登入、建基金、再平衡、續期、失敗時看到什麼 | 想知道「按下去會發生什麼」 |
 | [`architecture.md`](./architecture.md) | 合約架構、ERC 標準、帳戶與安全模型、後端架構、DB schema | 想知道「錢在哪裡、誰能動」 |
 | [`uiux-handoff.md`](./uiux-handoff.md) | 公開頁／工具頁的樣式邊界與完整 UI 接手規範 | 修改任何 UI 前 |
-| [`public-ui-integration.md`](./public-ui-integration.md) | 30 檔來源基金、底層資產、完整設計器與 ATP 啟用界線 | 核對公開資料和真實帳戶如何整合 |
+| [`public-ui-integration.md`](./public-ui-integration.md) | 30 檔來源基金、底層資產、完整設計器與 CRE8 啟用界線 | 核對公開資料和真實帳戶如何整合 |
 
 前兩份的流程圖使用 **Mermaid**，GitHub 會直接渲染成圖。
 

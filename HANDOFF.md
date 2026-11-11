@@ -1,6 +1,6 @@
-# CRE8 ATP — 三個 repo 的入口
+# CRE8 — 三個 repo 的入口
 
-這個資料夾是 CRE8 ATP（Automated Token Portfolio）的三個獨立 repo。
+這個資料夾是 CRE8（Automated Token Portfolio）的三個獨立 repo。
 
 **先讀 [`docs/`](./docs/README.md)** —— 文件已全部收進這個工作區，不再依賴外部 repo：
 

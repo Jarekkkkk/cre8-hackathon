@@ -1,4 +1,4 @@
-// Demo: exercise the CRE8 ATP backend end-to-end (health -> SIWE auth -> create strategy -> publish version -> read back).
+// Demo: exercise the CRE8 backend end-to-end (health -> SIWE auth -> create strategy -> publish version -> read back).
 // Run with: bun run scripts/demo-flow.ts
 // Requires the backend running at BACKEND_URL (default http://localhost:8080) with a Postgres DATABASE_URL.
 

@@ -1,4 +1,4 @@
-# CRE8 ATP — Asset Tokenization Protocol
+# CRE8 — Asset Tokenization Protocol
 
 **Tokenized index funds on BNB Chain, with non-custodial accounts and delegated rebalancing.**
 
@@ -24,7 +24,7 @@ Tokenized funds usually force a trade-off:
 - **Fully manual** — the user signs every swap. Unusable for anything periodic.
 
 Recreating an index fund needs three things that conflict: *the user owns the assets*, *rebalancing
-is frequent*, and *the user is not present every time*. CRE8 ATP resolves this with ERC-4337 smart
+is frequent*, and *the user is not present every time*. CRE8 resolves this with ERC-4337 smart
 accounts plus a narrowly scoped session key.
 
 ## How it works

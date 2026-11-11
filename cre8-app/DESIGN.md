@@ -1,4 +1,4 @@
-# CRE8 design system — ATP
+# CRE8 design system
 
 本專案適用規格取自 CRE8 已核准的 [DESIGN.md](https://github.com/0xJoooe/bnb-agent-vaults/blob/0f3196d37821561050dee1176d9d33e3b51c5d5e/DESIGN.md)。來源 commit：`0f3196d37821561050dee1176d9d33e3b51c5d5e`（2026-11-11 同步）。下列只整理已決定的 App 規則；來源 P3–P6 等待確認提案不當作新規格。
 
@@ -35,7 +35,7 @@
 - 所有寬度不得整頁橫向溢出。驗收 320、360、390、430、768、1024、1440、1920px。
 - `prefers-reduced-motion` 關閉非必要動畫與平滑捲動。
 
-## ATP integration and data
+## CRE8 integration and data
 
 - Vendor CSS 與 `src/reference/` 的同步來源保留；整合覆蓋放在本專案自己的樣式。Tailwind 不載入 preflight，shadcn token 保留 `sx-` 前綴。
 - Native wallet、API、transaction handler、authorization 與 mutation invalidation 不因樣式調整而更動。

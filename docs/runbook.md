@@ -38,9 +38,11 @@ cd backend && bun install && bun run migrate && bun test
 
 Expect **473 pass / 16 skip / 0 fail**, and `bun run typecheck` exit 0.
 
-> The skip is the on-chain integration test, which requires both `DATABASE_URL` and **`RPC_URL` to be
-> non-empty**. `backend/.env` leaves `RPC_URL` empty, so it skips by default — **that is normal, not a
-> failure**.
+> The 16 skips are the on-chain tests, which require **`RPC_URL` to be non-empty** as well as
+> `DATABASE_URL`. `backend/.env` leaves `RPC_URL` empty, so they skip — **normal, not a failure**.
+>
+> Note that `DATABASE_URL` is required even for the pure unit tests: `getConfig()` throws without it, so
+> Postgres must be up (§1) before `bun test` can run at all.
 
 ---
 

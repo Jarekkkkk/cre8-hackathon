@@ -26,7 +26,7 @@ export const SIWE_CLOCK_SKEW_MS = 2 * 60 * 1_000;
 /** EIP-4361 message version. Part of the wire contract: parsers must see `Version: 1`. */
 export const SIWE_VERSION = '1';
 /** EIP-4361 `statement` (the human-readable line the wallet shows). Part of the auth contract. */
-export const SIWE_STATEMENT = 'Sign in to CRE8 ATP';
+export const SIWE_STATEMENT = 'Sign in to CRE8';
 
 /** 32 random bytes as hex (64 chars), for both nonces and session tokens. */
 function randomToken(): string {

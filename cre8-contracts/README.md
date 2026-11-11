@@ -1,6 +1,6 @@
 # cre8-contracts
 
-The CRE8 ATP (Automated Token Portfolio) smart contracts. A standalone project, migrated from the
+The CRE8 smart contracts. A standalone project, migrated from the
 pooled-vault architecture in `bnb-agent-vaults`: one non-custodial smart account per user, with the
 platform only executing and distributing a "weights + schedule" mandate.
 

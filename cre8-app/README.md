@@ -1,6 +1,6 @@
 # cre8-app
 
-The CRE8 ATP frontend. Vite + React 19 + TypeScript. Public pages keep the original design CSS;
+The CRE8 frontend. Vite + React 19 + TypeScript. Public pages keep the original design CSS;
 forms and drawers use shadcn / Tailwind v4 (no preflight).
 
 ## Technology choices
@@ -215,7 +215,7 @@ failed request keeps the previous cut-off date.
 ### Create fund (`/create`) and activation (`/create/activate`)
 
 `/create/design` is the full source designer: assets, weights, strategies, rules, X handle, cover, draft
-and JSON export. From a finished design you can enter the native activation form; what ATP can actually
+and JSON export. From a finished design you can enter the native activation form; what CRE8 can actually
 execute today is a **target-weight allocation**. Importing brings only exact token addresses and weights
 — other rules are never silently turned into an execution strategy. Before activation you confirm the
 allocation mode, and every address must still pass the backend's tradable-asset list.

@@ -1,4 +1,4 @@
-# CRE8 ATP handover (as of 2026-11-06)
+# CRE8 handover (as of 2026-11-06)
 
 Last updated: 2026-11-06
 Replaces: `docs/archive/handoff-2026-11-06.zh-TW.md` (its "next step is Kernel deployment" and

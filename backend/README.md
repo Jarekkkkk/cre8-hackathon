@@ -1,6 +1,6 @@
 # cre8-atp-backend
 
-The off-chain backend for CRE8 ATP. Bun + TypeScript + Postgres, using `pg` directly and **no ORM**
+The off-chain backend for CRE8. Bun + TypeScript + Postgres, using `pg` directly and **no ORM**
 (matching the web app). The default chain is BNB Chain mainnet (chain 56). It currently provides the
 strategy data layer, version publishing, SIWE (EIP-4361) wallet-signature auth, portfolio renewal, and a
 **bundler relay** (`POST /bundler` — browsers cannot reach alto directly, see §bundler relay).
@@ -65,7 +65,7 @@ bun run dev                # bun --watch src/index.ts (migrates on startup)
 bun run migrate            # apply migrations only
 bun run start              # bun src/index.ts
 bun run typecheck          # tsc --noEmit (two tsconfigs: src + test)
-bun test                   # bun's built-in runner; DB tests skip without DATABASE_URL
+bun test                   # bun's built-in runner; needs DATABASE_URL (see below)
 ```
 
 Requires Bun >= 1.4 (`engines` in `package.json`). Bun runs TypeScript natively, so there is no build step
@@ -73,12 +73,16 @@ and no tsx.
 
 ### Tests and the DB
 
-```bash
-# pure functions + auth/route tests (no DB)
-bun test
+**`DATABASE_URL` is required even for the unit tests.** `getConfig()` throws without it, and several
+test modules load it at import time, so a bare `bun test` fails before any assertion runs. Start Postgres
+(see `../docs/runbook.md` §1) and pass the connection string:
 
-# with DB integration tests; use a disposable database, the tests migrate and create/delete rows
+```bash
+# everything; use a disposable database, the DB tests migrate and create/delete rows
 DATABASE_URL='postgres://postgres@127.0.0.1:5432/cre8_atp_test' bun test
+
+# on a machine with the dev database already running
+DATABASE_URL='postgres://postgres:postgres@127.0.0.1:5432/cre8_atp' bun test
 ```
 
 ### Tests that send on-chain transactions (`RUN_CHAIN_TESTS=1`)
@@ -202,7 +206,7 @@ chain is unusable.
    ```bash
    curl -s -X POST localhost:8080/auth/nonce
    # {"nonce":"<64 hex>","domain":"localhost","chainId":56,"uri":"http://localhost",
-   #  "statement":"Sign in to CRE8 ATP","version":"1",
+   #  "statement":"Sign in to CRE8","version":"1",
    #  "issuedAt":"2026-11-06T01:00:00.000Z","expiresAt":"2026-11-06T01:05:00.000Z"}
    ```
    `domain` / `chainId` / `uri` / `statement` come from server config (`AUTH_DOMAIN`, `CHAIN_ID`,
@@ -226,7 +230,7 @@ chain is unusable.
    const signature = await walletClient.signMessage({ account, message });
    ```
    The wallet shows the standard SIWE layout (`<domain> wants you to sign in with your Ethereum account:`
-   plus the address, `Sign in to CRE8 ATP`, and `URI` / `Version` / `Chain ID` / `Nonce` / `Issued At`).
+   plus the address, `Sign in to CRE8`, and `URI` / `Version` / `Chain ID` / `Nonce` / `Issued At`).
 3. `POST /auth/login` with a body of just `{"message":"<complete EIP-4361 message>","signature":"0x…"}`:
    ```bash
    curl -s -X POST localhost:8080/auth/login -H 'content-type: application/json' -d '{

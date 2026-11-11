@@ -45,6 +45,6 @@ export function kernelAddressesForChain(chainId: number): typeof KERNEL_V3_3_ADD
     return KERNEL_V3_3_ADDRESSES;
   }
   throw new Error(
-    `Unsupported chainId ${chainId}: CRE8 ATP 目前只支援 BSC mainnet (56) 與 anvil fork (31337) 的 Kernel v3.3 canonical 位址`,
+    `Unsupported chainId ${chainId}: CRE8 目前只支援 BSC mainnet (56) 與 anvil fork (31337) 的 Kernel v3.3 canonical 位址`,
   );
 }

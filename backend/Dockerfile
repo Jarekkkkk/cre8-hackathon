@@ -1,4 +1,4 @@
-# CRE8 ATP backend（Railway / 任何容器平台）
+# CRE8 backend（Railway / 任何容器平台）
 #
 # 為什麼需要它：Railway 的預設 buildpack 會猜 `bun install` + `bun start`，但我們的啟動指令是
 # `bun src/index.ts`，而且 `migrate` 必須在啟動前跑一次。寫死在這張 Dockerfile 裡比在平台上

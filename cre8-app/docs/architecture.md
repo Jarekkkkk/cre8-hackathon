@@ -7,7 +7,7 @@
 
 ---
 
-## 公開參考資料與 ATP 帳戶的邊界（2026-11-11）
+## 公開參考資料與 CRE8 帳戶的邊界（2026-11-11）
 
 `src/reference/` 保留釘定來源的 30 檔基金、219 個底層資產頁與 218 個 Create 選項；
 `src/features/reference/` 呈現原始 NAV、人物、披露／貼文來源與期間統計。
@@ -16,7 +16,7 @@
 驗證後原子套用；失敗保留原截止日，不轉發錢包憑證。
 `/create` 負責設計／匯出，`/create/activate` 才經原生 API 啟用目標權重配置：
 精確代幣地址仍須通過後端清單，設計器其他規則不會轉成執行權限。
-真實帳戶、存提款與 Operator 沿用下述 ATP 模型，詳見 [公開 UI 整合](public-ui-integration.md)。
+真實帳戶、存提款與 Operator 沿用下述 CRE8 模型，詳見 [公開 UI 整合](public-ui-integration.md)。
 
 ---
 
@@ -101,7 +101,7 @@ flowchart TB
         ACCT["Kernel v3.3 帳戶<br/>0x2b08…d042<br/>持有所有資產"]
     end
 
-    subgraph atp["CRE8 ATP（我們部署的）"]
+    subgraph atp["CRE8（我們部署的）"]
         REG[AtpRegistry<br/>0x2773…a76C]
         EX1[AtpExecutor<br/>0x6069…4b38]
         EX2[AtpExecutorMultiPool<br/>0x9C41…3f4a]
@@ -141,7 +141,7 @@ flowchart TB
 | **AtpMultiPoolOracle** | `oracleOf(asset)` → 該資產的 per-pair oracle；未註冊就 revert `OracleNotSet` | 不自報價 |
 | **PancakeV3TwapOracle** | 對單一池子算 TWAP，回 `previewSwap` 的 floor（最小到手量） | 不看別的池 |
 | **Kernel 帳戶** | 持有資產、執行 `approve` / `executeRebalance`、驗證簽名 | 不含任何策略邏輯 |
-| **EntryPoint** | 驗證 UserOp、付 gas、執行 callData | 與 ATP 無關（標準元件） |
+| **EntryPoint** | 驗證 UserOp、付 gas、執行 callData | 與 CRE8 無關（標準元件） |
 
 **設計上最重要的一條**：**Executor 是唯一能動錢的合約**，而它只做「照著 steps 換幣」。
 策略、權重、排程、要不要動 —— 全部在鏈下（後端）決定。這是刻意的：

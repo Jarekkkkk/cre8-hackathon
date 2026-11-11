@@ -404,7 +404,7 @@ Cloudflare Pages (project cre8-atp) + public/_worker.js proxying /api → the Ra
   the previous NAV day of the historical risk-free reference rate; Sharpe and volatility need at least 90
   consecutive daily returns. The full method lives in Performance details rather than cluttering the main
   page.
-* Current holdings in `public-funds.ts` drift with daily prices; ATP target weights use `backtest.targets`,
+* Current holdings in `public-funds.ts` drift with daily prices; CRE8 target weights use `backtest.targets`,
   and drifted weights must never be treated as the target. Unsupported assets are not mapped to USDT.
 * `/create` is a full designer with export; native activation moved to `/create/activate`. Only allocations
   with exact addresses are imported, checked one by one against the API's tradable list; other design rules
@@ -421,7 +421,7 @@ Cloudflare Pages (project cre8-atp) + public/_worker.js proxying /api → the Ra
 
 ## 14. The 2026-11-11 DESIGN alignment and the creator leaderboard
 
-* The approved specification for ATP is collected in the root `../DESIGN.md`, with the source still pinned
+* The approved specification for CRE8 is collected in the root `../DESIGN.md`, with the source still pinned
   to the same commit as the public UI. `design-controls.css` is the control integration layer and preserves
   the existing mechanics of vendor, `src/reference/` and shadcn.
 * `PhaseBanner` and its dedicated styles are removed site-wide; the short model/history labels are not

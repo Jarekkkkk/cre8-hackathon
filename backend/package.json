@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "CRE8 ATP off-chain API: strategies, versions and the operation log (Postgres, no ORM).",
+  "description": "CRE8 off-chain API: strategies, versions and the operation log (Postgres, no ORM).",
   "engines": {
     "bun": ">=1.4"
   },
